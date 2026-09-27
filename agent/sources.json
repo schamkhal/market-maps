@@ -1,0 +1,22 @@
+{
+  "userAgent": "market-maps-refresh/1.0 (+https://github.com/YOUR_USER/market-maps; contact: you@example.com)",
+  "note": "Tier 1 = primary or wire reporting, trusted to overwrite an incumbent figure. Tier 2 = trade press, accepted with a source link. Tier 3 = aggregators, used for discovery only, never as the sole source for a valuation. Paywalled outlets are polled for headlines and summaries only — never circumvent a paywall.",
+  "feeds": [
+    { "publisher": "TechCrunch",      "tier": 1, "url": "https://techcrunch.com/feed/" },
+    { "publisher": "TechCrunch Venture","tier": 1, "url": "https://techcrunch.com/category/venture/feed/" },
+    { "publisher": "Axios Pro Rata",  "tier": 1, "url": "https://api.axios.com/feed/newsletter/axios-prorata" },
+    { "publisher": "Reuters Tech",    "tier": 1, "url": "https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best" },
+    { "publisher": "Crunchbase News", "tier": 2, "url": "https://news.crunchbase.com/feed/" },
+    { "publisher": "VentureBeat",     "tier": 2, "url": "https://venturebeat.com/category/ai/feed/" },
+    { "publisher": "The Verge AI",    "tier": 2, "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml" },
+    { "publisher": "Newcomer",        "tier": 1, "url": "https://www.newcomer.co/feed" },
+    { "publisher": "Upstarts Media",  "tier": 1, "url": "https://www.upstartsmedia.com/feed" },
+    { "publisher": "PR Newswire Tech","tier": 2, "url": "https://www.prnewswire.com/rss/technology-latest-news/technology-latest-news-list.rss" }
+  ],
+  "companyBlogs": {
+    "town": "https://www.town.com/blog/rss.xml",
+    "martin": "https://www.trymartin.com/blog/rss.xml",
+    "lindy": "https://www.lindy.ai/blog/rss.xml"
+  },
+  "paywalled": ["The Information", "Bloomberg", "Newcomer", "Upstarts Media"]
+}

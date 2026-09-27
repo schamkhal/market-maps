@@ -1,0 +1,51 @@
+name: Weekly refresh
+
+on:
+  schedule:
+    - cron: '0 10 * * 1'     # Mondays 06:00 America/New_York (10:00 UTC)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Propose only; do not change data/'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+
+      - name: Run the refresh agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node agent/refresh.mjs ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Validate the proposed data
+        if: ${{ !inputs.dry_run }}
+        run: npm run validate
+
+      - name: Open a pull request
+        if: ${{ !inputs.dry_run }}
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: refresh/${{ github.run_id }}
+          title: "Weekly data refresh"
+          body-path: .agent-cache/pr-body.md
+          commit-message: "data: weekly refresh"
+          labels: automated, data
+          delete-branch: true
+
+      - name: Publish the dry-run proposal
+        if: ${{ inputs.dry_run }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: refresh-proposal
+          path: .agent-cache/

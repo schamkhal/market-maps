@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://marketmaps.local/schema/market.schema.json",
+  "title": "Market map",
+  "type": "object",
+  "required": ["schemaVersion", "market", "companies"],
+  "additionalProperties": true,
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "integer", "const": 1 },
+
+    "market": {
+      "type": "object",
+      "required": ["id", "name", "definition", "inclusion", "axes", "asOf"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string", "minLength": 1 },
+        "tagline": { "type": "string" },
+        "definition": { "type": "string", "minLength": 10 },
+        "scope": { "type": "string" },
+        "inclusion": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "exclusions": { "type": "array", "items": { "type": "string" } },
+        "excludedNonUS": { "type": "array", "items": { "type": "object" } },
+        "sizeBy": { "type": "string" },
+        "sizeByOptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["key", "label", "path"],
+            "properties": {
+              "key": { "type": "string" },
+              "label": { "type": "string" },
+              "path": { "type": "string" }
+            }
+          }
+        },
+        "asOf": { "type": "string", "format": "date" },
+        "axes": {
+          "type": "object",
+          "required": ["x", "y"],
+          "additionalProperties": true,
+          "properties": {
+            "x": { "$ref": "#/$defs/axisDef" },
+            "y": { "$ref": "#/$defs/axisDef" },
+            "yAlt": { "$ref": "#/$defs/axisDef" }
+          }
+        }
+      }
+    },
+
+    "companies": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/company" }
+    }
+  },
+
+  "$defs": {
+    "axisDef": {
+      "type": "object",
+      "required": ["key", "label", "rubric"],
+      "properties": {
+        "key": { "type": "string" },
+        "label": { "type": "string" },
+        "rubric": { "type": "string", "minLength": 20 }
+      }
+    },
+
+    "score": {
+      "type": "object",
+      "required": ["score"],
+      "properties": {
+        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "rationale": { "type": "string" }
+      }
+    },
+
+    "source": {
+      "type": ["object", "null"],
+      "required": ["url", "publisher", "date"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "publisher": { "type": "string", "minLength": 1 },
+        "date": { "type": "string", "format": "date" }
+      }
+    },
+
+    "company": {
+      "type": "object",
+      "required": ["id", "name", "class", "description", "axes", "lastRound", "lastVerified"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string", "minLength": 1 },
+        "company": { "type": "string" },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "class": { "type": "string", "enum": ["independent", "platform", "acquired"] },
+        "region": { "type": "string" },
+        "hq": { "type": ["string", "null"] },
+        "website": { "type": ["string", "null"], "format": "uri" },
+        "description": { "type": "string", "minLength": 20 },
+        "founded": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2100 },
+        "founders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "role": { "type": ["string", "null"] },
+              "linkedin": { "type": ["string", "null"], "pattern": "^https://(www\\.)?linkedin\\.com/in/[^\\s]+$" }
+            }
+          }
+        },
+        "parent": { "type": ["string", "null"] },
+        "traction": { "type": ["string", "null"] },
+
+        "axes": {
+          "type": "object",
+          "required": ["autonomy", "breadth", "distribution"],
+          "additionalProperties": false,
+          "properties": {
+            "autonomy": { "$ref": "#/$defs/score" },
+            "breadth": { "$ref": "#/$defs/score" },
+            "distribution": { "$ref": "#/$defs/score" }
+          }
+        },
+
+        "lastRound": {
+          "type": "object",
+          "required": ["series", "confidence"],
+          "additionalProperties": false,
+          "properties": {
+            "series": { "type": "string" },
+            "amountUsd": { "type": ["number", "null"], "minimum": 0 },
+            "postMoneyUsd": { "type": ["number", "null"], "minimum": 0 },
+            "date": { "type": ["string", "null"], "format": "date" },
+            "leads": { "type": "array", "items": { "type": "string" } },
+            "otherInvestors": { "type": "array", "items": { "type": "string" } },
+            "confidence": {
+              "type": "string",
+              "enum": ["reported", "estimated", "rumored", "manual", "undisclosed"]
+            },
+            "postMoneyConfidence": {
+              "type": ["string", "null"],
+              "enum": ["reported", "estimated", "rumored", "manual", "undisclosed", null],
+              "description": "Confidence in the valuation specifically. Falls back to `confidence` when absent — a round can be well reported while its post-money is a hand-entered figure."
+            },
+            "note": { "type": ["string", "null"] },
+            "source": { "$ref": "#/$defs/source" }
+          }
+        },
+
+        "metrics": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "totalRaisedUsd": { "type": ["number", "null"], "minimum": 0 },
+            "headcount": { "type": ["number", "null"] },
+            "estUsers": { "type": ["number", "null"] }
+          }
+        },
+
+        "news": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title", "url", "publisher", "date"],
+            "properties": {
+              "title": { "type": "string", "minLength": 1 },
+              "url": { "type": "string", "format": "uri" },
+              "publisher": { "type": "string" },
+              "date": { "type": "string", "format": "date" }
+            }
+          }
+        },
+
+        "locked": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Dot-paths the weekly agent must never overwrite, e.g. lastRound.postMoneyUsd"
+        },
+
+        "lastVerified": { "type": "string", "format": "date" }
+      }
+    }
+  }
+}

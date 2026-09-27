@@ -1,0 +1,46 @@
+<style>/*__STYLES__*/</style>
+<a class="skip-link" href="#landscape">Skip to market map</a>
+<div class="page">
+  <header class="masthead">
+    <a class="wordmark" data-home href="./"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Market maps<span class="edition">/ 01</span></a>
+    <nav aria-label="Main navigation"><a class="active" href="#landscape">Landscape</a><a href="#research">Research</a><a href="#methodology">Methodology</a></nav>
+    <span class="edition-note">Independent research</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="pageTitle">
+      <div><h1 id="pageTitle">Personal AI Agents</h1><p class="creator-credit"><span>Created by <strong>Shamkhal Murtazaaliev</strong></span></p></div>
+      <div class="snapshot"><span class="snapshot-label">Dataset snapshot <span id="updated"></span></span><div class="snapshot-numbers" id="marketStats"></div></div>
+    </section>
+
+    <section id="landscape" class="workspace" aria-label="Market landscape">
+      <div class="category-tabs" id="categoryFilters" aria-label="Product focus"></div>
+      <div class="filter-bar">
+        <label class="search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" autocomplete="off" placeholder="Find a company or capability…" aria-label="Search companies and capabilities"></label>
+        <label class="select-control"><span>Ownership</span><select id="ownership" aria-label="Company ownership"><option value="all">All companies</option><option value="independent">Independent</option><option value="platform">Platform products</option><option value="acquired">Acquired</option></select></label>
+        <button class="text-button" id="resetFilters" hidden>Reset filters</button>
+        <div class="view-switch" aria-label="Display view"><button data-view="map" aria-pressed="true"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="5" r="3"/><circle cx="15" cy="14" r="2"/></svg>Map</button><button data-view="table" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5h12M4 10h12M4 15h12"/></svg>List</button></div>
+      </div>
+      <div class="workspace-heading"><div><h2 id="viewTitle">Capability landscape</h2><p id="categoryCopy"></p></div><span id="resultCount" class="result-count" role="status" aria-live="polite"></span></div>
+      <div class="chart-controls" id="chartControls"><label><span>Vertical axis</span><select id="yAxis"><option value="breadth">Context breadth</option><option value="distribution">Distribution</option></select></label><label><span>Bubble area</span><select id="sizeBy"><option value="valuation">Post-money valuation</option><option value="raised">Total funding</option><option value="equal">Equal size</option></select></label><a href="#methodology">How to read this map <span aria-hidden="true">↗</span></a></div>
+      <div class="list-controls" id="listControls" hidden><span>Open a company to see its sources and scoring rationale.</span><label>Sort by <select id="sortBy"><option value="autonomy">Autonomy: high to low</option><option value="breadth">Breadth: high to low</option><option value="valuation">Valuation: high to low</option><option value="name">Company: A–Z</option></select></label></div>
+      <div class="map-view" id="mapView"><div class="pan-note">Scroll horizontally to explore <span aria-hidden="true">↔</span></div><div class="plot-scroll" tabindex="0" aria-label="Scrollable market map"><svg id="plot" viewBox="0 0 1160 530" role="group" aria-label="Companies plotted by autonomy and context breadth"></svg></div><div id="tooltip" class="tooltip" role="tooltip" hidden></div><div class="map-footer"><div class="symbol-key"><span><i class="symbol circle"></i>Company</span><span><i class="symbol square"></i>Platform product</span><span><i class="symbol hollow"></i>No disclosed figure</span></div><div id="sizeLegend" class="size-legend"></div></div><p class="chart-note" id="chartNote"></p></div>
+      <div class="list-view" id="listView" hidden><div class="table-scroll"><table><thead><tr><th scope="col">Company</th><th scope="col">Focus / ownership</th><th scope="col">Autonomy</th><th scope="col">Breadth</th><th scope="col">Post-money valuation</th><th scope="col">Last round / event</th></tr></thead><tbody id="tableRows"></tbody></table></div><div id="mobileRows" class="company-cards"></div></div>
+      <div class="empty-state" id="emptyState" hidden><div aria-hidden="true">⌕</div><h3>No matches this time</h3><p>Try a different company name, capability, or ownership filter.</p><button id="clearFilters" class="primary-button">Show all companies</button></div>
+    </section>
+
+    <section id="research" class="research-section"><div class="section-heading"><div><h2>Latest research</h2></div><p id="researchSummary">Recent sources linked to the companies in this view.</p></div><div class="research-grid" id="researchItems"></div></section>
+
+    <section id="methodology" class="methodology"><div><h2>Read the landscape</h2><p>Positions reflect editorial judgment, not benchmark results. Open a company for the reasoning behind its scores.</p><a data-changelog href="./changelog/">View data changelog ↗</a></div><div class="method-details"><details open><summary>What do the axes measure?</summary><div id="axisRubrics"></div></details><details><summary>What does the financial data mean?</summary><p>Bubble area is proportional to the selected financial figure on a fixed scale across filters. Post-money valuation and cumulative funding are separate measures. Hollow circles indicate an undisclosed figure, not zero.</p><p>Reported values, sourced estimates, and manual values are labeled wherever a valuation appears. Manual values have no public source. Platform products have no standalone company valuation; their parent’s value is excluded. Acquisition prices and historical valuations are not interchangeable.</p></details><details><summary>What is included in this map?</summary><div id="scopeDetails"></div><p>Focus categories are editorial groupings based on the descriptions in this dataset. Some products span several groups; each appears once under its primary focus. The dataset also retains adjacent and acquired products for comparison.</p></details></div></section>
+  </main>
+  <footer class="site-footer"><span class="footer-brand">Market maps / Personal AI Agents</span><span>US companies · <span id="footerDate"></span> snapshot</span><a data-changelog href="./changelog/">Changelog ↗</a></footer>
+</div>
+
+<dialog id="companyDialog" class="company-dialog" aria-labelledby="companyTitle"><div class="dialog-top"><span class="eyebrow">Company profile</span><button id="closeDialog" class="icon-button" aria-label="Close company profile">×</button></div><div id="companyContent"></div></dialog>
+<noscript><p class="noscript">Enable JavaScript to explore the interactive map. The individual company pages remain available through the site’s sitemap.</p></noscript>
+<script type="module">
+const DATA = /*__DATA__*/[];
+const SITE = /*__SITE__*/null;
+/*__MODEL__*/
+/*__APP__*/
+</script>

@@ -1,0 +1,21 @@
+name: Validate data
+
+on:
+  pull_request:
+    paths: ['data/**', 'schema/**', 'scripts/**', 'templates/**']
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      # Fails the PR before a human reads it if any figure lost its source,
+      # a platform gained a valuation, or a locked path stopped resolving.
+      - run: npm run validate
+      - run: npm test
+      - run: node scripts/build.mjs

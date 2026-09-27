@@ -1,0 +1,25 @@
+{
+  "name": "market-maps",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Public, sourced, agent-refreshed VC market maps.",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "npm run validate && node scripts/build.mjs",
+    "admin": "node scripts/admin.mjs",
+    "refresh": "node agent/refresh.mjs",
+    "refresh:dry": "node agent/refresh.mjs --dry-run",
+    "test": "node agent/refresh.test.mjs && node --test templates/map-model.test.mjs",
+    "preview": "node scripts/preview.mjs",
+    "build:relative": "RELATIVE=1 node scripts/build.mjs",
+    "docs": "node scripts/docs.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

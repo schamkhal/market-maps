@@ -1,0 +1,152 @@
+<title>Market Maps Handbook</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--paper:#F4F5F9;--surface:#fff;--surface-2:#EBEDF4;--ink:#131826;--ink-2:#3E475E;--ink-3:#6B7490;
+ --rule:#D6DAE6;--rule-soft:#E4E7F0;--accent:#2748CC;--accent-soft:#E5E9FA;--accent-ink:#1B3496;--ochre:#A2660D;--ochre-soft:#F7EDD9;
+ --shadow:0 1px 2px rgba(19,24,38,.06),0 8px 24px -12px rgba(19,24,38,.16);
+ --display:"Newsreader",Georgia,serif;--body:"IBM Plex Sans",-apple-system,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#0D1119;--surface:#151A26;--surface-2:#1D2331;
+ --ink:#EDEFF5;--ink-2:#B4BBCD;--ink-3:#828BA3;--rule:#2A3242;--rule-soft:#222937;--accent:#7D95F5;--accent-soft:#1C2647;--accent-ink:#A8B9FF;--ochre:#D9A448;--ochre-soft:#2E2413;
+ --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6)}}
+:root[data-theme=dark]{--paper:#0D1119;--surface:#151A26;--surface-2:#1D2331;--ink:#EDEFF5;--ink-2:#B4BBCD;--ink-3:#828BA3;
+ --rule:#2A3242;--rule-soft:#222937;--accent:#7D95F5;--accent-soft:#1C2647;--accent-ink:#A8B9FF;--ochre:#D9A448;--ochre-soft:#2E2413;
+ --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6)}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding-inline:20px;padding-block:0 72px}
+header.mast{padding-block:48px 28px;border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 16px}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(2.1rem,5.4vw,3.3rem);line-height:1.08;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+.stand{font-size:clamp(1rem,2.2vw,1.15rem);color:var(--ink-2);max-width:62ch;margin:0}
+.jump{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.jump a{font-family:var(--mono);font-size:11.5px;padding:7px 13px;border:1px solid var(--rule);border-radius:20px;
+ background:var(--surface);color:var(--ink-2);text-decoration:none}
+.jump a:hover{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
+.cols{display:grid;grid-template-columns:200px minmax(0,1fr);gap:56px;margin-top:44px;align-items:start}
+nav.toc{position:sticky;top:24px;font-family:var(--mono);font-size:11.5px;line-height:1.5}
+nav.toc p{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+nav.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;counter-reset:s}
+nav.toc li{counter-increment:s}
+nav.toc a{color:var(--ink-2);text-decoration:none;display:flex;gap:9px}
+nav.toc a::before{content:counter(s,decimal-leading-zero);color:var(--ink-3);flex:none}
+nav.toc a:hover{color:var(--accent)}
+nav.toc li{padding-left:0}
+nav.toc li::before{content:none}
+@media (max-width:900px){.cols{grid-template-columns:1fr;gap:32px}nav.toc{display:none}}
+main{min-width:0}
+main h1{display:none}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,3.4vw,2rem);line-height:1.18;letter-spacing:-.01em;
+ margin:52px 0 10px;padding-top:24px;border-top:1px solid var(--rule);text-wrap:balance;scroll-margin-top:20px}
+main > h2:first-child{margin-top:0;padding-top:0;border-top:0}
+h3{font-family:var(--body);font-weight:600;font-size:15px;margin:30px 0 10px;color:var(--ink);scroll-margin-top:20px}
+p{max-width:68ch;margin:0 0 14px;color:var(--ink-2)}
+p strong{color:var(--ink);font-weight:600}
+a{color:var(--accent);text-underline-offset:2px}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:3px;color:var(--ink)}
+pre{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;overflow-x:auto;margin:18px 0;
+ font-size:12.5px;line-height:1.65;box-shadow:var(--shadow)}
+pre code{background:none;padding:0;color:var(--ink-2)}
+ul,ol{max-width:68ch;margin:0 0 16px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+li{padding-left:20px;position:relative;color:var(--ink-2)}
+ul li::before{content:"";position:absolute;left:3px;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+ol{counter-reset:n}
+ol li{counter-increment:n}
+ol li::before{content:counter(n);position:absolute;left:0;top:0;font-family:var(--mono);font-size:11px;color:var(--accent);font-weight:600}
+li strong{color:var(--ink)}
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--rule);border-radius:4px;background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:480px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+ font-weight:500;background:var(--surface-2);border-bottom:1px solid var(--rule)}
+tbody tr:last-child td{border-bottom:0}
+td{color:var(--ink-2)}
+hr{border:0;border-top:1px solid var(--rule);margin:36px 0 20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--rule);margin-top:30px}
+.stats div{padding:14px 16px 14px 0;border-right:1px solid var(--rule-soft)}
+.stats div:last-child{border-right:0}
+.stats dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:0 0 5px}
+.stats dd{margin:0;font-size:14px;font-weight:500;color:var(--ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+</style>
+<div class="wrap">
+<header class="mast">
+  <p class="eyebrow">Project handbook · updated 14 September 2026</p>
+  <h1>Market Maps Handbook</h1>
+  <p class="stand">How this project is built, what its rules are, and why. The design rule the whole repo enforces: every figure carries its source, or it is explicitly marked as having none.</p>
+  <dl class="stats">
+    <div><dt>Map 01</dt><dd>Personal AI Agents</dd></div>
+    <div><dt>Companies</dt><dd>20</dd></div>
+    <div><dt>Stack</dt><dd>JSON in git · static build</dd></div>
+    <div><dt>Refresh</dt><dd>Weekly agent → pull request</dd></div>
+  </dl>
+  <div class="jump">
+    <a href="https://claude.ai/code/artifact/e54d1688-0123-4c5e-8c12-613d93c2fe27">Live site preview →</a>
+    <a href="https://claude.ai/code/artifact/e2567cf7-66f6-4033-9380-d50d5a22de1e">The map alone →</a>
+    <a href="https://claude.ai/code/artifact/5a4159f1-7b97-4ed6-98f5-ee757358443a">Original build plan →</a>
+  </div>
+</header>
+<div class="cols">
+  <nav class="toc"><p>Contents</p><ol><li><a href="#seeing-it-before-you-push">Seeing it before you push</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#the-data-model">The data model</a></li><li><a href="#validation-rules">Validation rules</a></li><li><a href="#the-weekly-agent">The weekly agent</a></li><li><a href="#setup">Setup</a></li><li><a href="#adding-a-market">Adding a market</a></li><li><a href="#scope-of-map-01">Scope of map 01</a></li><li><a href="#known-gaps">Known gaps</a></li></ol></nav>
+  <main><h1>Market Maps</h1>
+<p>Public, sourced, agent-refreshed VC market maps. The first map covers <strong>Personal AI Agents</strong> — US companies building agents that act on your behalf across your personal life.</p>
+<p>The design rule the whole repo enforces: <strong>every figure carries its source, or it is explicitly marked as having none.</strong> A market map nobody can check is a screenshot.</p>
+<pre><code>npm install
+npm run validate     # schema + editorial rules
+npm test             # refresh-agent guardrails (no API key needed)
+npm run build        # → dist/
+npm run preview      # → http://127.0.0.1:5173  see the whole site locally
+npm run admin        # → http://127.0.0.1:4321  edit data by hand
+npm run refresh:dry  # agent proposes, writes nothing</code></pre>
+<h2 id="seeing-it-before-you-push">Seeing it before you push</h2>
+<p><code>npm run preview</code> builds and serves the site on localhost. Nothing is published and nothing leaves your machine — it is the same <code>dist/</code> the deploy uses.</p>
+<p>Two link modes exist because root-relative links (<code>/changelog/</code>) need a real server:</p>
+<div class="tw"><table><thead><tr><th>Command</th><th>Links</th><th>Use for</th></tr></thead><tbody><tr><td><code>npm run build</code></td><td><code>/changelog/</code></td><td>Production deploys</td></tr><tr><td><code>npm run preview</code></td><td><code>../changelog/index.html</code></td><td>Localhost, or opening <code>dist/index.html</code> directly</td></tr></tbody></table></div>
+<p><code>npm run build:relative</code> gives you the relative build without starting a server — useful if you want to host the site inside a subdirectory.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>There is no database and no backend. Data is JSON in git, and <strong>the review queue is a pull request.</strong></p>
+<pre><code>data/markets/*.json   ← the only source of truth
+      │
+      ├── scripts/validate.mjs   schema + rules that a schema can't express   (CI, every PR)
+      ├── scripts/build.mjs      → dist/ : map, one page per company, changelog
+      ├── scripts/preview.mjs    local server, see it before you push
+      ├── scripts/admin.mjs      local form editor, writes back to the JSON
+      └── agent/refresh.mjs      weekly: proposes changes as a PR you approve</code></pre>
+<p>Merging a PR deploys the site and adds the diff to the public changelog. Git gives you the review queue, audit log, version history and rollback for free.</p>
+<h2 id="the-data-model">The data model</h2>
+<p>Two details carry the design:</p>
+<p><strong><code>source</code> on every figure</strong>, not one citation per company. This is what lets a page say "as of Aug 2026, per TechCrunch" and mean it.</p>
+<p><strong><code>locked</code></strong> is your manual override. Add a dot-path — <code>"locked": ["lastRound.postMoneyUsd"]</code> — and the weekly agent is forbidden from touching it. Without this, a number you typed in by hand silently disappears on the next Monday run. The admin editor's padlock buttons write this array; <code>agent/refresh.test.mjs</code> proves the agent honors it.</p>
+<p><code>confidence</code> is one of <code>reported | estimated | rumored | manual | undisclosed</code>. A figure you typed yourself with no source is automatically downgraded to <code>manual</code>, so the UI never implies a citation that doesn't exist.</p>
+<p><code>confidence</code> describes the <strong>round</strong>; <code>postMoneyConfidence</code> describes the <strong>valuation</strong>, falling back to <code>confidence</code> when absent. They are separate because a round can be well reported while the post-money beside it was typed in by hand — Pally's $5.2M seed is sourced to Dealroom, but its valuation is not. The company page reflects this: the round row cites Dealroom, the valuation row does not.</p>
+<p>A <code>manual</code> figure is treated as a different kind of claim everywhere it appears: the panel and company page say <em>"entered by hand · no public source"</em> instead of citing the round's article. The map itself makes no distinction — a bubble is sized by its valuation whether that figure was reported or entered by hand — because the map's job is to show relative scale, and splitting the visual language into two categories made it harder to read for a difference the panel already states plainly.</p>
+<h2 id="validation-rules">Validation rules</h2>
+<p><code>npm run validate</code> enforces the JSON Schema plus the editorial rules it can't express:</p>
+<div class="tw"><table><thead><tr><th>#</th><th>Rule</th></tr></thead><tbody><tr><td>1</td><td>Any confidence other than <code>undisclosed</code> must carry a source</td></tr><tr><td>2</td><td>A stated post-money must carry a source, unless it is openly hand-entered (then rules 4 and 4b apply)</td></tr><tr><td>3</td><td><code>platform</code> companies must not carry a valuation — a parent's market cap is not a bet on one product</td></tr><tr><td>4</td><td>An <code>estimated</code> or <code>manual</code> valuation must carry a note explaining the basis</td></tr><tr><td>4b</td><td>A <code>manual</code> valuation must be locked, or the agent will overwrite it</td></tr><tr><td>5</td><td>Every <code>locked</code> path must resolve to a real field</td></tr><tr><td>6</td><td>No date may be later than <code>market.asOf</code></td></tr></tbody></table></div>
+<p>Rule 4 caught a real gap on its first run: Superhuman's $825M was marked estimated with nothing saying it was a pre-acquisition primary round rather than an exit price.</p>
+<h2 id="the-weekly-agent">The weekly agent</h2>
+<p>One GitHub Action, Mondays 06:00 ET. Five stages, each a narrow model call — cheaper and far easier to debug than one long loop.</p>
+<div class="tw"><table><thead><tr><th>Stage</th><th>Model</th><th>Job</th></tr></thead><tbody><tr><td>1 Discover</td><td>Haiku 4.5</td><td>Poll RSS + SEC EDGAR Form D, triage headlines</td></tr><tr><td>2 Extract</td><td>Sonnet 5</td><td>Read articles → typed claims with sources</td></tr><tr><td>3 Reconcile</td><td>Sonnet 5</td><td>Diff against live data, apply guardrails</td></tr><tr><td>4 Propose</td><td>—</td><td>Write JSON + a human-readable PR body</td></tr><tr><td>5 Publish</td><td>you</td><td>Merge; CI validates, builds and deploys</td></tr></tbody></table></div>
+<p><strong>Never Opus in this loop</strong> — 2.5× Sonnet for a job that is mostly reading and filling a schema.</p>
+<p>Cost control, in order of impact: prompt caching on the system block (cache reads bill at 0.1× input), the Batch API (50% off; you're asleep), and discovering URLs from free RSS and EDGAR rather than paying $10 per 1,000 web searches. Projected <strong>$12–15/month</strong> for a weekly run over 20 companies.</p>
+<h3 id="guardrails">Guardrails</h3>
+<p>Tested offline in <code>agent/refresh.test.mjs</code>:</p>
+<ul><li>Locked fields are never overwritten, including via a locked parent path</li><li>A source older than the incumbent is rejected</li><li>Platforms never take round data</li><li>Two sources that disagree are <strong>flagged, never silently picked</strong></li><li>More than five field changes to one company escalates instead of applying</li><li>The agent can never delete a company</li></ul>
+<p><strong>Run the first two weeks with <code>--dry-run</code>.</strong> Read the PRs, close them, tune the prompts, and only then let one merge.</p>
+<h2 id="setup">Setup</h2>
+<ol><li>Push this repo to GitHub (public — Actions are free for public repos).</li><li>Add secret <code>ANTHROPIC_API_KEY</code>.</li><li>For deploys, add <code>CLOUDFLARE_API_TOKEN</code> and <code>CLOUDFLARE_ACCOUNT_ID</code>, plus repo variable <code>SITE_URL</code>.</li><li>Create a Cloudflare Pages project named <code>market-maps</code>. Free tier, unlimited bandwidth.</li><li>Run the refresh manually first: Actions → Weekly refresh → Run workflow, with <strong>dry run</strong> checked.</li></ol>
+<p>Total recurring infrastructure cost: a domain, about $12/year.</p>
+<h2 id="adding-a-market">Adding a market</h2>
+<p>Add <code>data/markets/&lt;slug&gt;.json</code> matching <code>schema/market.schema.json</code>. The build picks it up automatically — no code changes. This is the real test of whether the schema generalizes, so do it early.</p>
+<h2 id="scope-of-map-01">Scope of map 01</h2>
+<p>US-headquartered companies only. A company is included if it acts on behalf of an <em>individual</em> (not a team), spans at least two life surfaces, and <em>takes actions</em> rather than only answering questions.</p>
+<p>Out of scope: coding agents, enterprise and vertical copilots, companionship AI, and agent infrastructure. Notable non-US players tracked but excluded: Manus (Singapore), Today AI (China), Fyxer (UK).</p>
+<h3 id="judged-and-excluded">Judged and excluded</h3>
+<p>Kept here so the boundary stays falsifiable — each name fails a stated criterion, not a mood:</p>
+<div class="tw"><table><thead><tr><th>Candidate</th><th>Fails</th><th>Why</th></tr></thead><tbody><tr><td>Notion AI</td><td>two surfaces</td><td>Assists inside one workspace; does not act across your life</td></tr><tr><td>Granola</td><td>takes actions</td><td>Reactive meeting notetaker, single surface</td></tr><tr><td>Glean</td><td>on behalf of an individual</td><td>Enterprise knowledge copilot, explicitly out of scope</td></tr><tr><td>Sierra</td><td>on behalf of an individual</td><td>Acts for a business on its customers, not for you</td></tr><tr><td>Replit Agent</td><td>scope</td><td>Coding agent, explicitly out of scope</td></tr><tr><td>tldraw computers</td><td>scope</td><td>Canvas SDK and a creative-tool feature, not a personal agent</td></tr></tbody></table></div>
+<p><strong>Comet (Perplexity)</strong> and <strong>Motion</strong> were judged <em>in</em> and added — Comet acts across every authenticated site, Motion reschedules your day unprompted. <strong>Manus</strong> qualified on the criteria but is Singapore-based, so it falls to the US-only scope rule. <strong>Muse</strong> was already on the map.</p>
+<h2 id="known-gaps">Known gaps</h2>
+<ul><li><strong>4 of 13 non-platform companies have no valuation at all</strong> (Littlebird, Martin, Cora, Limitless); two of those are unfixable — Cora has never raised, and Limitless's acquisition price was undisclosed. The 7 platforms are excluded by rule 3, not missing. Three figures (Duckbill, Ohai.ai, Pally) are hand-entered rather than reported.</li><li>Bubble size switches between <strong>post-money</strong> and <strong>total raised</strong>. Total raised is known for 12 of 13 non-platform companies against 9 for valuation, so it shows more of the field at true scale; valuation is the better read on how the market prices them.</li><li>Axis scores are editorial judgments against a published rubric. Each carries a one-line rationale; argue with them via the correction link.</li><li>The changelog needs <code>fetch-depth: 0</code> on checkout, or it builds empty.</li></ul>
+<hr>
+<p>Educational use only. Figures are compiled from public reporting and may be inaccurate or out of date. Not investment advice.</p></main>
+</div>
+</div>
