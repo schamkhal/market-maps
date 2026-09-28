@@ -211,11 +211,15 @@ Tested offline in `agent/refresh.test.mjs`:
 
 ## Setup
 
-1. Push this repo to GitHub (public — Actions are free for public repos).
-2. Add secret `ANTHROPIC_API_KEY`.
+1. Push this repo to GitHub. Public repos get unlimited Actions minutes; a private repo works too, since these jobs are small.
+2. Add secret `ANTHROPIC_API_KEY`, and put a real contact address in `agent/sources.json` (SEC EDGAR expects one).
 3. For deploys, add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, plus repo variable `SITE_URL`.
 4. Create a Cloudflare Pages project named `market-maps`. Free tier, unlimited bandwidth.
 5. Run the refresh manually first: Actions → Weekly refresh → Run workflow, with **dry run** checked.
+
+Until its secrets exist, the Deploy or Weekly refresh workflow is skipped with a notice rather than failing.
+
+**Or let Cloudflare Pages build the site itself** (Workers & Pages → Create → connect this repository): framework preset *None*, build command `npm run build`, build output directory `dist`, environment variable `SITE_URL` set to the site's address. The Node version comes from `.node-version`. Leave the Cloudflare secrets out of GitHub so the Actions deploy stays skipped and the site is not deployed twice. The changelog is built from git history, so if it comes out shorter than expected there, the Actions deploy (which checks out the full history) is the one to use.
 
 Total recurring infrastructure cost: a domain, about $12/year.
 
