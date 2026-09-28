@@ -36,8 +36,8 @@ http.createServer((req, res) => {
   const url = decodeURIComponent(new URL(req.url, `http://${req.headers.host}`).pathname);
   let file = path.join(DIST, url);
 
-  // Refuse anything that escapes dist/.
-  if (!file.startsWith(DIST)) { res.writeHead(403).end('Forbidden'); return; }
+  // Refuse anything that escapes dist/ (including a sibling such as dist-old/).
+  if (file !== DIST && !file.startsWith(DIST + path.sep)) { res.writeHead(403).end('Forbidden'); return; }
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
 
   if (!fs.existsSync(file)) {
@@ -51,7 +51,9 @@ http.createServer((req, res) => {
   });
   fs.createReadStream(file).pipe(res);
 }).listen(PORT, '127.0.0.1', () => {
-  const n = fs.readdirSync(path.join(DIST, 'personal-ai-agents')).length;
+  // Company pages live at <market>/<company>/index.html, for every market.
+  const dirs = p => fs.readdirSync(p, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name);
+  const n = dirs(DIST).filter(d => !['assets', 'changelog'].includes(d)).flatMap(d => dirs(path.join(DIST, d))).length;
   console.log(`\n  Preview  →  http://127.0.0.1:${PORT}`);
   console.log(`  ${n} company pages · changelog at /changelog/`);
   console.log(`  Nothing is published. Ctrl-C to stop.\n`);

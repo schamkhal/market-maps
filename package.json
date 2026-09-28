@@ -10,7 +10,7 @@
     "admin": "node scripts/admin.mjs",
     "refresh": "node agent/refresh.mjs",
     "refresh:dry": "node agent/refresh.mjs --dry-run",
-    "test": "node agent/refresh.test.mjs && node --test templates/map-model.test.mjs",
+    "test": "node agent/refresh.test.mjs && node --test templates/map-model.test.mjs templates/profile.test.mjs templates/label-layout.test.mjs scripts/lib/validate-market.test.mjs scripts/lib/site.test.mjs scripts/lib/edit-company.test.mjs",
     "preview": "node scripts/preview.mjs",
     "build:relative": "RELATIVE=1 node scripts/build.mjs",
     "docs": "node scripts/docs.mjs"

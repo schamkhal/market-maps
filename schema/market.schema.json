@@ -18,20 +18,40 @@
         "name": { "type": "string", "minLength": 1 },
         "tagline": { "type": "string" },
         "definition": { "type": "string", "minLength": 10 },
+        "featured": { "type": "boolean", "description": "The map served at the site root. At most one market may be featured; without one, the lowest edition is." },
+        "edition": { "type": "integer", "minimum": 1, "description": "Map number shown in the masthead and eyebrow (Market map 01)." },
+        "author": { "type": "string", "minLength": 1 },
+        "scopeLabel": { "type": "string", "minLength": 1, "description": "Short scope shown beside the edition, e.g. US companies." },
+        "regions": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "description": "Every company's `region` must be one of these." },
         "scope": { "type": "string" },
         "inclusion": { "type": "array", "minItems": 1, "items": { "type": "string" } },
         "exclusions": { "type": "array", "items": { "type": "string" } },
-        "excludedNonUS": { "type": "array", "items": { "type": "object" } },
-        "sizeBy": { "type": "string" },
-        "sizeByOptions": {
+        "excludedNonUS": {
           "type": "array",
+          "description": "Candidates that meet the criteria but fall outside the region scope.",
           "items": {
             "type": "object",
-            "required": ["key", "label", "path"],
+            "required": ["name", "hq"],
+            "additionalProperties": false,
             "properties": {
-              "key": { "type": "string" },
-              "label": { "type": "string" },
-              "path": { "type": "string" }
+              "name": { "type": "string", "minLength": 1 },
+              "company": { "type": "string" },
+              "hq": { "type": "string", "minLength": 1 },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "judgedExcluded": {
+          "type": "array",
+          "description": "Candidates judged against the inclusion criteria and left off, with the criterion each one fails.",
+          "items": {
+            "type": "object",
+            "required": ["name", "fails", "why"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "fails": { "type": "string", "minLength": 1 },
+              "why": { "type": "string", "minLength": 1 }
             }
           }
         },
@@ -45,6 +65,27 @@
             "y": { "$ref": "#/$defs/axisDef" },
             "yAlt": { "$ref": "#/$defs/axisDef" }
           }
+        },
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Editorial focus groups for the map's tabs and colors. Every company's `category` must name one of these ids.",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "color", "description"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z0-9-]+$", "not": { "const": "all" } },
+              "name": { "type": "string", "minLength": 1 },
+              "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+              "description": { "type": "string", "minLength": 10 }
+            }
+          }
+        },
+        "quadrants": {
+          "type": "object",
+          "description": "Corner labels per vertical-axis key, e.g. quadrants.breadth.topRight.",
+          "additionalProperties": { "$ref": "#/$defs/quadrantNames" }
         }
       }
     },
@@ -57,14 +98,52 @@
   },
 
   "$defs": {
+    "quadrantNames": {
+      "type": "object",
+      "required": ["topLeft", "topRight", "bottomLeft", "bottomRight"],
+      "additionalProperties": false,
+      "properties": {
+        "topLeft": { "type": "string", "minLength": 1 },
+        "topRight": { "type": "string", "minLength": 1 },
+        "bottomLeft": { "type": "string", "minLength": 1 },
+        "bottomRight": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "webUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "Only http(s) links are published; anything else (javascript:, data:) is rejected."
+    },
+
+    "article": {
+      "type": "object",
+      "required": ["title", "url", "publisher", "date"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "$ref": "#/$defs/webUrl" },
+        "publisher": { "type": "string" },
+        "date": { "type": "string", "format": "date" }
+      }
+    },
+
     "axisDef": {
       "type": "object",
       "required": ["key", "label", "rubric"],
       "properties": {
-        "key": { "type": "string" },
+        "key": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
         "label": { "type": "string" },
+        "short": { "type": "string", "description": "Compact label for controls and score rows, e.g. Distribution." },
+        "low": { "type": "string", "description": "What a score of 0 looks like, printed at the low end of the axis." },
+        "high": { "type": "string", "description": "What a score of 100 looks like, printed at the high end of the axis." },
         "rubric": { "type": "string", "minLength": 20 }
       }
+    },
+
+    "confidence": {
+      "type": "string",
+      "enum": ["reported", "estimated", "rumored", "manual", "undisclosed"]
     },
 
     "score": {
@@ -80,7 +159,7 @@
       "type": ["object", "null"],
       "required": ["url", "publisher", "date"],
       "properties": {
-        "url": { "type": "string", "format": "uri" },
+        "url": { "$ref": "#/$defs/webUrl" },
         "publisher": { "type": "string", "minLength": 1 },
         "date": { "type": "string", "format": "date" }
       }
@@ -93,12 +172,15 @@
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
         "name": { "type": "string", "minLength": 1 },
+        "shortName": { "type": ["string", "null"], "minLength": 1, "description": "Compact map label, e.g. Comet for Comet (Perplexity)." },
         "company": { "type": "string" },
         "aliases": { "type": "array", "items": { "type": "string" } },
         "class": { "type": "string", "enum": ["independent", "platform", "acquired"] },
+        "category": { "type": ["string", "null"], "description": "One of market.categories[].id." },
+        "brand": { "type": ["string", "null"], "description": "Consumer-facing parent name shown on the map for platform products, e.g. Google for Alphabet." },
         "region": { "type": "string" },
         "hq": { "type": ["string", "null"] },
-        "website": { "type": ["string", "null"], "format": "uri" },
+        "website": { "anyOf": [{ "$ref": "#/$defs/webUrl" }, { "type": "null" }] },
         "description": { "type": "string", "minLength": 20 },
         "founded": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2100 },
         "founders": {
@@ -119,13 +201,10 @@
 
         "axes": {
           "type": "object",
-          "required": ["autonomy", "breadth", "distribution"],
-          "additionalProperties": false,
-          "properties": {
-            "autonomy": { "$ref": "#/$defs/score" },
-            "breadth": { "$ref": "#/$defs/score" },
-            "distribution": { "$ref": "#/$defs/score" }
-          }
+          "minProperties": 1,
+          "description": "One score per market axis, keyed by market.axes.*.key. The validator checks the keys match the market's axes exactly.",
+          "propertyNames": { "pattern": "^[a-z][a-zA-Z0-9]*$" },
+          "additionalProperties": { "$ref": "#/$defs/score" }
         },
 
         "lastRound": {
@@ -139,17 +218,18 @@
             "date": { "type": ["string", "null"], "format": "date" },
             "leads": { "type": "array", "items": { "type": "string" } },
             "otherInvestors": { "type": "array", "items": { "type": "string" } },
-            "confidence": {
-              "type": "string",
-              "enum": ["reported", "estimated", "rumored", "manual", "undisclosed"]
-            },
+            "confidence": { "$ref": "#/$defs/confidence" },
             "postMoneyConfidence": {
               "type": ["string", "null"],
               "enum": ["reported", "estimated", "rumored", "manual", "undisclosed", null],
               "description": "Confidence in the valuation specifically. Falls back to `confidence` when absent — a round can be well reported while its post-money is a hand-entered figure."
             },
             "note": { "type": ["string", "null"] },
-            "source": { "$ref": "#/$defs/source" }
+            "source": { "$ref": "#/$defs/source" },
+            "postMoneySource": {
+              "$ref": "#/$defs/source",
+              "description": "Citation for the valuation when it differs from the round's source. Falls back to `source` when absent, so an update to the round never silently re-cites the valuation."
+            }
           }
         },
 
@@ -158,6 +238,11 @@
           "additionalProperties": true,
           "properties": {
             "totalRaisedUsd": { "type": ["number", "null"], "minimum": 0 },
+            "totalRaisedConfidence": {
+              "anyOf": [{ "$ref": "#/$defs/confidence" }, { "type": "null" }],
+              "description": "Confidence in the cumulative funding figure. `manual` marks a hand-entered total; leave null only while no provenance has been recorded."
+            },
+            "totalRaisedSource": { "$ref": "#/$defs/source" },
             "headcount": { "type": ["number", "null"] },
             "estUsers": { "type": ["number", "null"] }
           }
@@ -165,16 +250,14 @@
 
         "news": {
           "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["title", "url", "publisher", "date"],
-            "properties": {
-              "title": { "type": "string", "minLength": 1 },
-              "url": { "type": "string", "format": "uri" },
-              "publisher": { "type": "string" },
-              "date": { "type": "string", "format": "date" }
-            }
-          }
+          "description": "Published coverage: articles, announcements and data profiles about the company.",
+          "items": { "$ref": "#/$defs/article" }
+        },
+
+        "checks": {
+          "type": "array",
+          "description": "Verification log: pages an editor checked to confirm a fact. Not news; never shown in research feeds.",
+          "items": { "$ref": "#/$defs/article" }
         },
 
         "locked": {

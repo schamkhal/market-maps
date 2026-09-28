@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: '20', cache: 'npm' }
+        with: { node-version-file: '.node-version', cache: 'npm' }
       - run: npm ci
       # Fails the PR before a human reads it if any figure lost its source,
       # a platform gained a valuation, or a locked path stopped resolving.

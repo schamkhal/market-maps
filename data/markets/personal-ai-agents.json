@@ -6,6 +6,13 @@
     "name": "Personal AI Agents",
     "tagline": "Agents that act on your behalf across your personal life.",
     "definition": "Agents that act on behalf of an individual across personal life surfaces — inbox, calendar, bookings, purchases, health, home.",
+    "featured": true,
+    "edition": 1,
+    "author": "Shamkhal Murtazaaliev",
+    "scopeLabel": "US companies",
+    "regions": [
+      "US"
+    ],
     "scope": "US-headquartered companies only.",
     "inclusion": [
       "Acts on behalf of an individual, not a team or business function",
@@ -36,25 +43,91 @@
         "hq": "United Kingdom"
       }
     ],
-    "sizeBy": "lastRound.postMoneyUsd",
+    "judgedExcluded": [
+      {
+        "name": "Notion AI",
+        "fails": "two surfaces",
+        "why": "Assists inside one workspace; does not act across your life"
+      },
+      {
+        "name": "Granola",
+        "fails": "takes actions",
+        "why": "Reactive meeting notetaker, single surface"
+      },
+      {
+        "name": "Glean",
+        "fails": "on behalf of an individual",
+        "why": "Enterprise knowledge copilot, explicitly out of scope"
+      },
+      {
+        "name": "Sierra",
+        "fails": "on behalf of an individual",
+        "why": "Acts for a business on its customers, not for you"
+      },
+      {
+        "name": "Replit Agent",
+        "fails": "scope",
+        "why": "Coding agent, explicitly out of scope"
+      },
+      {
+        "name": "tldraw computers",
+        "fails": "scope",
+        "why": "Canvas SDK and a creative-tool feature, not a personal agent"
+      }
+    ],
     "axes": {
       "x": {
         "key": "autonomy",
         "label": "Autonomy",
+        "low": "Prompted",
+        "high": "Acts within your guardrails",
         "rubric": "0 = you must prompt it every time; 50 = executes multi-step tasks you delegate; 100 = acts unprompted inside guardrails you set"
       },
       "y": {
         "key": "breadth",
         "label": "Context breadth",
+        "low": "One surface",
+        "high": "Whole life",
         "rubric": "0 = one surface; 50 = a connected cluster (mail, calendar, docs); 100 = whole-life incl. payments, health, home, travel"
       },
       "yAlt": {
         "key": "distribution",
         "label": "Distribution surface",
+        "short": "Distribution",
+        "low": "Own app only",
+        "high": "Where you already are",
         "rubric": "0 = own app only; 100 = embedded in surfaces the user already lives in (WhatsApp, iMessage, the OS)"
       }
     },
-    "asOf": "2026-09-26"
+    "categories": [
+      {
+        "id": "executive",
+        "name": "Personal assistants",
+        "color": "#456cd3",
+        "description": "Assistants for everyday life, household coordination, and personal admin."
+      },
+      {
+        "id": "workflow",
+        "name": "Work & productivity",
+        "color": "#25806a",
+        "description": "Agents for email, planning, browsing, and recall across the tools you work in."
+      }
+    ],
+    "quadrants": {
+      "breadth": {
+        "topLeft": "Context giants",
+        "topRight": "Life OS",
+        "bottomLeft": "Smart tools",
+        "bottomRight": "Autonomous wedges"
+      },
+      "distribution": {
+        "topLeft": "Embedded, reactive",
+        "topRight": "Embedded, agentic",
+        "bottomLeft": "Own app, reactive",
+        "bottomRight": "Own app, agentic"
+      }
+    },
+    "asOf": "2026-09-28"
   },
   "companies": [
     {
@@ -63,6 +136,7 @@
       "company": "Hark",
       "aliases": [],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "United States",
       "website": "https://hark.com",
@@ -127,12 +201,6 @@
           "date": "2026-08-27"
         },
         {
-          "title": "Hark launch status — waitlist checked September 26, 2026",
-          "url": "https://hark.com/",
-          "publisher": "Hark",
-          "date": "2026-09-26"
-        },
-        {
           "title": "Hark raises $700M Series A for its secretive 'universal' AI interface",
           "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
           "publisher": "TechCrunch",
@@ -145,6 +213,14 @@
           "date": "2026-03-24"
         }
       ],
+      "checks": [
+        {
+          "title": "Hark launch status — waitlist",
+          "url": "https://hark.com/",
+          "publisher": "Hark",
+          "date": "2026-09-26"
+        }
+      ],
       "locked": [],
       "lastVerified": "2026-09-26"
     },
@@ -154,6 +230,7 @@
       "company": "Spear Street Technology",
       "aliases": [],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://instinct.com",
@@ -181,39 +258,46 @@
         }
       },
       "lastRound": {
-        "series": "Series B",
-        "amountUsd": 250000000,
-        "postMoneyUsd": 2500000000,
-        "date": "2026-08-26",
-        "leads": [
-          "Index Ventures",
-          "Benchmark"
+        "series": "Series C",
+        "amountUsd": 1000000000,
+        "postMoneyUsd": 10000000000,
+        "date": "2026-09-28",
+        "leads": [],
+        "otherInvestors": [
+          "Sequoia Capital",
+          "Benchmark",
+          "Coatue"
         ],
-        "otherInvestors": [],
         "confidence": "reported",
         "postMoneyConfidence": null,
-        "note": null,
+        "note": "$1B Series C at a $10B post-money valuation, announced September 28, 2026; Sequoia Capital, Benchmark and Coatue invested and no lead was named. Total funding of $1.35B adds this round to the $350M TechCrunch reported through the Series B on August 26, 2026.",
         "source": {
-          "url": "https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/",
+          "url": "https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/",
           "publisher": "TechCrunch",
-          "date": "2026-08-26"
+          "date": "2026-09-28"
         }
       },
       "metrics": {
-        "totalRaisedUsd": 350000000
+        "totalRaisedUsd": 1350000000
       },
       "news": [
+        {
+          "title": "Viral AI agent Instinct raises $1B Series C at a $10B valuation",
+          "url": "https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/",
+          "publisher": "TechCrunch",
+          "date": "2026-09-28"
+        },
+        {
+          "title": "AI agent startup Instinct raises $1 billion at $10 billion value",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-28/ai-agent-startup-instinct-raises-1-billion-at-10-billion-value",
+          "publisher": "Bloomberg",
+          "date": "2026-09-28"
+        },
         {
           "title": "Instinct and Muse add calling in limited early access",
           "url": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/",
           "publisher": "TechCrunch",
           "date": "2026-09-17"
-        },
-        {
-          "title": "Product availability and features — checked September 26, 2026",
-          "url": "https://instinct.com/",
-          "publisher": "Instinct",
-          "date": "2026-09-26"
         },
         {
           "title": "Viral AI startup Instinct has raised $350M at a $2.5B valuation",
@@ -234,8 +318,16 @@
           "date": "2026-09-03"
         }
       ],
+      "checks": [
+        {
+          "title": "Product availability and features",
+          "url": "https://instinct.com/",
+          "publisher": "Instinct",
+          "date": "2026-09-26"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-09-28"
     },
     {
       "id": "town",
@@ -243,6 +335,7 @@
       "company": "Town",
       "aliases": [],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://www.town.com",
@@ -277,7 +370,7 @@
       "lastRound": {
         "series": "Series A",
         "amountUsd": 55000000,
-        "postMoneyUsd": null,
+        "postMoneyUsd": 1000000000,
         "date": "2026-06-03",
         "leads": [
           "Andreessen Horowitz"
@@ -289,16 +382,27 @@
           "Conviction"
         ],
         "confidence": "reported",
-        "postMoneyConfidence": "undisclosed",
-        "note": "Latest company-confirmed round: $55M Series A announced June 3, 2026. The displayed $55M funding figure is the confirmed disclosed minimum, not an independently verified all-time total. Upstarts reported a proposed $90M Series B at $1B on September 3, 2026; closing was not confirmed in this review. That proposal remains context only and is excluded from completed funding and confirmed valuation. No confirmed historical valuation was found in the reviewed sources.",
+        "postMoneyConfidence": "rumored",
+        "note": "The $1B is the latest reported valuation: Upstarts Media reported on September 3, 2026 that Town is raising a $90M Series B at a $1B valuation, co-led by Forerunner Ventures and Menlo Ventures, with a16z and First Round participating (Newcomer reported talks near $1B on August 28). Town has not announced the round as of September 28, 2026, and the report does not say whether $1B is pre- or post-money. Total funding of $163M counts the $18M seed led by First Round Capital (March 2025, when Town launched as a small-business tax service), the $55M Series A (June 3, 2026) and that $90M Series B; confirmed funding is $73M. The Series A did not disclose a valuation.",
         "source": {
           "url": "https://www.town.com/press/series-a",
           "publisher": "Town",
           "date": "2026-06-03"
+        },
+        "postMoneySource": {
+          "url": "https://www.upstartsmedia.com/p/scoop-town-fundraise-vc-reshuffle",
+          "publisher": "Upstarts Media",
+          "date": "2026-09-03"
         }
       },
       "metrics": {
-        "totalRaisedUsd": 55000000
+        "totalRaisedUsd": 163000000,
+        "totalRaisedConfidence": "rumored",
+        "totalRaisedSource": {
+          "url": "https://www.upstartsmedia.com/p/scoop-town-fundraise-vc-reshuffle",
+          "publisher": "Upstarts Media",
+          "date": "2026-09-03"
+        }
       },
       "news": [
         {
@@ -306,12 +410,6 @@
           "url": "https://www.town.com/updates",
           "publisher": "Town",
           "date": "2026-09-10"
-        },
-        {
-          "title": "Product availability and features — checked September 26, 2026",
-          "url": "https://www.town.com/docs",
-          "publisher": "Town",
-          "date": "2026-09-26"
         },
         {
           "title": "Town announces $55M Series A",
@@ -336,10 +434,24 @@
           "url": "https://fortune.com/2026/06/03/towns-ai-assistants-andreessen-horowitz-forerunner-55-million/",
           "publisher": "Fortune",
           "date": "2026-06-03"
+        },
+        {
+          "title": "Town secures $18M to revolutionise tax support for small businesses",
+          "url": "https://fintech.global/2025/03/17/town-secures-18m-to-revolutionise-tax-support-for-small-businesses/",
+          "publisher": "FinTech Global",
+          "date": "2025-03-17"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Product availability and features",
+          "url": "https://www.town.com/docs",
+          "publisher": "Town",
+          "date": "2026-09-26"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-09-28"
     },
     {
       "id": "superhuman",
@@ -349,6 +461,7 @@
         "Superhuman"
       ],
       "class": "acquired",
+      "category": "workflow",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://superhuman.com",
@@ -385,27 +498,33 @@
         ],
         "otherInvestors": [],
         "confidence": "estimated",
-        "postMoneyConfidence": null,
-        "note": "Historical pre-acquisition financing reference, retained from the prior dataset; not the acquisition price or a current valuation of the combined Superhuman business. The acquisition consideration was not disclosed.",
+        "postMoneyConfidence": "reported",
+        "note": "Last private valuation: $825M at the $75M Series C led by IVP (Forbes, August 4, 2021). Not the acquisition price or a current valuation of the combined Superhuman business; the consideration in Grammarly's July 2025 acquisition was not disclosed.",
         "source": {
           "url": "https://www.crunchbase.com/organization/superhuman",
           "publisher": "Crunchbase",
           "date": "2026-09-12"
+        },
+        "postMoneySource": {
+          "url": "https://www.forbes.com/sites/alexkonrad/2021/08/04/superhuman-raises-75-million-for-its-waitlist-only-email-productivity-app/",
+          "publisher": "Forbes",
+          "date": "2021-08-04"
         }
       },
       "metrics": {
         "totalRaisedUsd": 113000000
       },
-      "news": [
+      "news": [],
+      "checks": [
         {
-          "title": "Superhuman Mail and parent rebrand — checked September 26, 2026",
+          "title": "Superhuman Mail and parent rebrand",
           "url": "https://superhuman.com/company/about",
           "publisher": "Superhuman",
           "date": "2026-09-26"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-09-28"
     },
     {
       "id": "duckbill",
@@ -413,6 +532,7 @@
       "company": "Duckbill",
       "aliases": [],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "Boston, MA",
       "website": "https://www.getduckbill.com",
@@ -475,16 +595,18 @@
           "date": "2023-09-23"
         },
         {
-          "title": "Product availability and features — checked September 26, 2026",
-          "url": "https://getduckbill.com/",
-          "publisher": "Duckbill",
-          "date": "2026-09-26"
-        },
-        {
           "title": "Forerunner Ventures leads $33M seed and Series A for Duckbill",
           "url": "https://www.citybiz.co/article/467208/forerunner-ventures-lead-33m-seed-and-series-a-for-duckbill/",
           "publisher": "citybiz",
           "date": "2023-09-18"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Product availability and features",
+          "url": "https://getduckbill.com/",
+          "publisher": "Duckbill",
+          "date": "2026-09-26"
         }
       ],
       "locked": [
@@ -498,6 +620,7 @@
       "company": "Lindy",
       "aliases": [],
       "class": "independent",
+      "category": "workflow",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://www.lindy.ai",
@@ -553,16 +676,18 @@
       },
       "news": [
         {
-          "title": "Lindy plans and personal-assistant availability — checked September 26, 2026",
-          "url": "https://www.lindy.ai/",
-          "publisher": "Lindy",
-          "date": "2026-09-26"
-        },
-        {
           "title": "Lindy — valuation, funding rounds and secondary pricing",
           "url": "https://www.caplight.com/company/lindy-businessproductivity-software",
           "publisher": "Caplight",
           "date": "2026-09-12"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Lindy plans and personal-assistant availability",
+          "url": "https://www.lindy.ai/",
+          "publisher": "Lindy",
+          "date": "2026-09-26"
         }
       ],
       "locked": [],
@@ -574,6 +699,7 @@
       "company": "Littlebird",
       "aliases": [],
       "class": "independent",
+      "category": "workflow",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://littlebird.ai",
@@ -636,12 +762,6 @@
       },
       "news": [
         {
-          "title": "Product availability and features — checked September 26, 2026",
-          "url": "https://littlebird.ai/",
-          "publisher": "Littlebird",
-          "date": "2026-09-26"
-        },
-        {
           "title": "Littlebird raises $11 million to launch the only AI that already knows what you're working on",
           "url": "https://www.prnewswire.com/news-releases/littlebird-raises-11-million-to-launch-the-only-ai-that-already-knows-what-youre-working-on-302721664.html",
           "publisher": "PR Newswire",
@@ -654,6 +774,14 @@
           "date": "2026-03-23"
         }
       ],
+      "checks": [
+        {
+          "title": "Product availability and features",
+          "url": "https://littlebird.ai/",
+          "publisher": "Littlebird",
+          "date": "2026-09-26"
+        }
+      ],
       "locked": [],
       "lastVerified": "2026-09-26"
     },
@@ -663,6 +791,7 @@
       "company": "Ohai.ai",
       "aliases": [],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "United States",
       "website": "https://www.ohai.ai",
@@ -723,12 +852,6 @@
       },
       "news": [
         {
-          "title": "Product availability and features — checked September 26, 2026",
-          "url": "https://www.ohai.ai/",
-          "publisher": "Ohai.ai",
-          "date": "2026-09-26"
-        },
-        {
           "title": "Ohai.ai announces strategic investment led by Muse Capital",
           "url": "https://www.prnewswire.com/news-releases/ohaiai-raises-strategic-investment-led-by-muse-capital-celebrity-and-executive-mothers-to-save-parents-hours-of-mental-load-302533511.html",
           "publisher": "Ohai.ai / PR Newswire",
@@ -739,6 +862,14 @@
           "url": "https://www.axios.com/2024/01/22/ohai-ai-virtual-assistant-startup-sheila-lirio-marcelo-care",
           "publisher": "Axios",
           "date": "2024-01-22"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Product availability and features",
+          "url": "https://www.ohai.ai/",
+          "publisher": "Ohai.ai",
+          "date": "2026-09-26"
         }
       ],
       "locked": [
@@ -752,6 +883,7 @@
       "company": "Pally",
       "aliases": [],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "United States",
       "website": "https://pally.com",
@@ -798,11 +930,16 @@
           "468 Capital"
         ],
         "confidence": "reported",
-        "postMoneyConfidence": "manual",
-        "note": "The $30M valuation remains the locked editorial input, not a newly verified post-money. The $5.2M raise is corroborated by the founder; August 6 is the reporting date, not a confirmed closing date. Public aggregator valuation figures are inconsistent.",
+        "postMoneyConfidence": "reported",
+        "note": "Business Insider reported that Pally said the seed financing valued it at $30M (as cited by RuntimeWire, August 6, 2026). Dealroom lists a $19.4M valuation for the same round, which appears to be its own estimate. The $5.2M raise is corroborated by the founder; August 6 is the reporting date, not a confirmed closing date.",
         "source": {
           "url": "https://dealroom.co/news/143591-pally-raises-5-2m-seed-for-an-ai-assistant-that-lives-in-your-texts/",
           "publisher": "Dealroom",
+          "date": "2026-08-06"
+        },
+        "postMoneySource": {
+          "url": "https://runtimewire.com/article/pally-raised-5-2-million-ai-assistant-text-messages",
+          "publisher": "RuntimeWire, citing Business Insider",
           "date": "2026-08-06"
         }
       },
@@ -811,34 +948,42 @@
       },
       "news": [
         {
-          "title": "Founder confirms $5.2M raised — checked September 26, 2026",
+          "title": "Pally raises $5.2M seed for an AI assistant that lives in your texts",
+          "url": "https://dealroom.co/news/143591-pally-raises-5-2m-seed-for-an-ai-assistant-that-lives-in-your-texts/",
+          "publisher": "Dealroom",
+          "date": "2026-08-06"
+        },
+        {
+          "title": "Pally raises $5.2 million to put an AI assistant in your text messages",
+          "url": "https://runtimewire.com/article/pally-raised-5-2-million-ai-assistant-text-messages",
+          "publisher": "RuntimeWire",
+          "date": "2026-08-06"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Founder confirms $5.2M raised",
           "url": "https://www.linkedin.com/posts/hazhubble_weve-raised-52m-to-build-the-default-ai-activity-7491167428010463233-3Pwo",
           "publisher": "Haz Hubble / LinkedIn",
           "date": "2026-09-26"
         },
         {
-          "title": "Pally team and 2024 founding year — checked September 26, 2026",
+          "title": "Pally team and 2024 founding year",
           "url": "https://www.ycombinator.com/companies/pally",
           "publisher": "Y Combinator",
           "date": "2026-09-26"
         },
         {
-          "title": "Product availability and features — checked September 26, 2026",
+          "title": "Product availability and features",
           "url": "https://pally.com/",
           "publisher": "Pally",
           "date": "2026-09-26"
-        },
-        {
-          "title": "Pally raises $5.2M seed for an AI assistant that lives in your texts",
-          "url": "https://dealroom.co/news/143591-pally-raises-5-2m-seed-for-an-ai-assistant-that-lives-in-your-texts/",
-          "publisher": "Dealroom",
-          "date": "2026-08-06"
         }
       ],
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-09-28"
     },
     {
       "id": "motion",
@@ -846,6 +991,7 @@
       "company": "Motion",
       "aliases": [],
       "class": "independent",
+      "category": "workflow",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://www.usemotion.com",
@@ -893,12 +1039,6 @@
       },
       "news": [
         {
-          "title": "Product availability and features — checked September 26, 2026",
-          "url": "https://www.usemotion.com/",
-          "publisher": "Motion",
-          "date": "2026-09-26"
-        },
-        {
           "title": "Motion reports $75M total funding and latest $550M valuation",
           "url": "https://www.usemotion.com/blog/motion-raises-60m-to-build-the-agentic-work-suite-for-businesses",
           "publisher": "Motion",
@@ -911,6 +1051,14 @@
           "date": "2026-09-12"
         }
       ],
+      "checks": [
+        {
+          "title": "Product availability and features",
+          "url": "https://www.usemotion.com/",
+          "publisher": "Motion",
+          "date": "2026-09-26"
+        }
+      ],
       "locked": [],
       "lastVerified": "2026-09-26"
     },
@@ -920,6 +1068,7 @@
       "company": "Martin",
       "aliases": [],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://www.trymartin.com",
@@ -974,18 +1123,6 @@
       },
       "news": [
         {
-          "title": "Martin pricing — checked September 26, 2026",
-          "url": "https://www.trymartin.com/pricing",
-          "publisher": "Martin",
-          "date": "2026-09-26"
-        },
-        {
-          "title": "Product availability and features — checked September 26, 2026",
-          "url": "https://www.trymartin.com/",
-          "publisher": "Martin",
-          "date": "2026-09-26"
-        },
-        {
           "title": "These Yale and Berkeley dropouts just raised $2 million to build an AI assistant that could rival OpenAI",
           "url": "https://venturebeat.com/ai/these-yale-and-berkeley-dropouts-just-raised-2-million-to-build-an-ai-assistant-that-could-rival-openai",
           "publisher": "VentureBeat",
@@ -998,6 +1135,20 @@
           "date": "2025-02-20"
         }
       ],
+      "checks": [
+        {
+          "title": "Martin pricing",
+          "url": "https://www.trymartin.com/pricing",
+          "publisher": "Martin",
+          "date": "2026-09-26"
+        },
+        {
+          "title": "Product availability and features",
+          "url": "https://www.trymartin.com/",
+          "publisher": "Martin",
+          "date": "2026-09-26"
+        }
+      ],
       "locked": [],
       "lastVerified": "2026-09-26"
     },
@@ -1007,6 +1158,7 @@
       "company": "Every",
       "aliases": [],
       "class": "independent",
+      "category": "workflow",
       "region": "US",
       "hq": "United States",
       "website": "https://cora.computer",
@@ -1053,9 +1205,10 @@
       "metrics": {
         "totalRaisedUsd": null
       },
-      "news": [
+      "news": [],
+      "checks": [
         {
-          "title": "Product availability and features — checked September 26, 2026",
+          "title": "Product availability and features",
           "url": "https://cora.computer/",
           "publisher": "Cora / Every",
           "date": "2026-09-26"
@@ -1067,9 +1220,12 @@
     {
       "id": "comet",
       "name": "Comet (Perplexity)",
+      "shortName": "Comet",
       "company": "Perplexity",
       "aliases": [],
       "class": "platform",
+      "category": "workflow",
+      "brand": "Perplexity",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://comet.perplexity.ai",
@@ -1132,6 +1288,8 @@
       "company": "Meta Platforms",
       "aliases": [],
       "class": "platform",
+      "category": "executive",
+      "brand": "Meta",
       "region": "US",
       "hq": "Menlo Park, CA",
       "website": "https://meta.ai",
@@ -1212,6 +1370,8 @@
       "company": "Alphabet",
       "aliases": [],
       "class": "platform",
+      "category": "workflow",
+      "brand": "Google",
       "region": "US",
       "hq": "Mountain View, CA",
       "website": "https://gemini.google.com",
@@ -1280,6 +1440,8 @@
       "company": "OpenAI",
       "aliases": [],
       "class": "platform",
+      "category": "executive",
+      "brand": "OpenAI",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://chatgpt.com",
@@ -1319,9 +1481,10 @@
       "metrics": {
         "totalRaisedUsd": null
       },
-      "news": [
+      "news": [],
+      "checks": [
         {
-          "title": "ChatGPT Work capabilities and availability — checked September 26, 2026",
+          "title": "ChatGPT Work capabilities and availability",
           "url": "https://learn.chatgpt.com/docs/use-chatgpt",
           "publisher": "OpenAI documentation",
           "date": "2026-09-26"
@@ -1339,6 +1502,8 @@
         "Cowork"
       ],
       "class": "platform",
+      "category": "workflow",
+      "brand": "Anthropic",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://claude.ai",
@@ -1401,6 +1566,8 @@
       "company": "Amazon",
       "aliases": [],
       "class": "platform",
+      "category": "executive",
+      "brand": "Amazon",
       "region": "US",
       "hq": "Seattle, WA",
       "website": "https://www.amazon.com/alexaplus",
@@ -1466,6 +1633,8 @@
         "Apple Intelligence"
       ],
       "class": "platform",
+      "category": "executive",
+      "brand": "Apple",
       "region": "US",
       "hq": "Cupertino, CA",
       "website": "https://www.apple.com/siri/",
@@ -1531,6 +1700,7 @@
         "Foible"
       ],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://wajo.ai",
@@ -1570,21 +1740,10 @@
         "source": null
       },
       "metrics": {
-        "totalRaisedUsd": 10000000
+        "totalRaisedUsd": 10000000,
+        "totalRaisedConfidence": "manual"
       },
       "news": [
-        {
-          "title": "Fo product and availability — checked September 26, 2026",
-          "url": "https://wajo.ai/",
-          "publisher": "Wajo",
-          "date": "2026-09-26"
-        },
-        {
-          "title": "Wajo founder and US office — checked September 26, 2026",
-          "url": "https://wajo.ai/about",
-          "publisher": "Wajo",
-          "date": "2026-09-26"
-        },
         {
           "title": "Fo support and connected-client access",
           "url": "https://wajo.ai/support",
@@ -1596,6 +1755,20 @@
           "url": "https://wajo.ai/blog/unveiling-wajo/",
           "publisher": "Wajo",
           "date": "2026-08-25"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Fo product and availability",
+          "url": "https://wajo.ai/",
+          "publisher": "Wajo",
+          "date": "2026-09-26"
+        },
+        {
+          "title": "Wajo founder and US office",
+          "url": "https://wajo.ai/about",
+          "publisher": "Wajo",
+          "date": "2026-09-26"
         }
       ],
       "locked": [
@@ -1610,6 +1783,7 @@
       "company": "Ollie AI",
       "aliases": [],
       "class": "independent",
+      "category": "executive",
       "region": "US",
       "hq": "San Diego, CA",
       "website": "https://ollie.ai",
@@ -1675,16 +1849,18 @@
           "date": "2026-03-10"
         },
         {
-          "title": "Ollie founding team — checked September 26, 2026",
-          "url": "https://ollie.ai/about/",
-          "publisher": "Ollie",
-          "date": "2026-09-26"
-        },
-        {
           "title": "Ollie seed financing and San Diego company profile",
           "url": "https://dealroom.co/news/149015-ollie-lands-7-5m-seed-to-build-a-privacy-first-family-ai-assistant/",
           "publisher": "Dealroom",
           "date": "2026-09-05"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Ollie founding team",
+          "url": "https://ollie.ai/about/",
+          "publisher": "Ollie",
+          "date": "2026-09-26"
         }
       ],
       "locked": [],
@@ -1698,6 +1874,7 @@
         "The Interaction Company"
       ],
       "class": "acquired",
+      "category": "executive",
       "region": "US",
       "hq": "Palo Alto, CA",
       "website": "https://poke.com",
@@ -1721,23 +1898,34 @@
       "lastRound": {
         "series": "Acquired",
         "amountUsd": null,
-        "postMoneyUsd": null,
+        "postMoneyUsd": 300000000,
         "date": "2026-07-23",
         "leads": [
           "Cognition"
         ],
         "otherInvestors": [],
         "confidence": "reported",
-        "postMoneyConfidence": "undisclosed",
-        "note": "Cognition announced the acquisition and said Poke users could continue using the product. Consideration and a current standalone valuation were not disclosed; no parent-company valuation is assigned to Poke.",
+        "postMoneyConfidence": "reported",
+        "note": "Last private valuation: $300M post-money after a $10M round backed by Spark Capital and General Catalyst, on top of a $15M seed in 2025 (TechCrunch, April 8, 2026). This is not the acquisition price: Cognition bought the company in July 2026 in a deal TechCrunch described only as \"low nine figures\". No parent-company valuation is assigned to Poke.",
         "source": {
           "url": "https://cognition.com/blog/interaction",
           "publisher": "Cognition",
           "date": "2026-07-23"
+        },
+        "postMoneySource": {
+          "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+          "publisher": "TechCrunch",
+          "date": "2026-04-08"
         }
       },
       "metrics": {
-        "totalRaisedUsd": null
+        "totalRaisedUsd": 25000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+          "publisher": "TechCrunch",
+          "date": "2026-04-08"
+        }
       },
       "news": [
         {
@@ -1747,20 +1935,28 @@
           "date": "2026-07-23"
         },
         {
-          "title": "Poke plans and availability — checked September 26, 2026",
+          "title": "Poke makes using AI agents as easy as sending a text",
+          "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+          "publisher": "TechCrunch",
+          "date": "2026-04-08"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Poke plans and availability",
           "url": "https://poke.com/",
           "publisher": "Poke",
           "date": "2026-09-26"
         },
         {
-          "title": "Poke company location — secondary directory checked September 26, 2026",
+          "title": "Poke company location — secondary directory",
           "url": "https://aventure.vc/companies/poke-palo-alto-ca-us",
           "publisher": "aVenture",
           "date": "2026-09-26"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-09-28"
     },
     {
       "id": "grok-bot",
@@ -1770,6 +1966,8 @@
         "xAI Grok Bot"
       ],
       "class": "platform",
+      "category": "executive",
+      "brand": "SpaceXAI",
       "region": "US",
       "hq": "United States",
       "website": "https://x.ai/bot",
@@ -1821,9 +2019,11 @@
           "url": "https://x.ai/bot/guides/grok-bot-101",
           "publisher": "SpaceXAI",
           "date": "2026-09-11"
-        },
+        }
+      ],
+      "checks": [
         {
-          "title": "SpaceXAI US company details — checked September 26, 2026",
+          "title": "SpaceXAI US company details",
           "url": "https://x.ai/legal/faq",
           "publisher": "SpaceXAI",
           "date": "2026-09-26"
