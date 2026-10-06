@@ -231,23 +231,23 @@ Add `data/markets/<slug>.json` matching `schema/market.schema.json`. The build p
 
 US-headquartered companies only. A company is included if it acts on behalf of an *individual* (not a team), spans at least two life surfaces, and *takes actions* rather than only answering questions.
 
-Out of scope: coding agents, enterprise and vertical copilots, companionship AI, and agent infrastructure. Notable non-US players tracked but excluded: Manus (Singapore), Today AI (China), Fyxer (UK).
+Out of scope: coding agents, enterprise and vertical copilots, companionship AI, and agent infrastructure. Notable non-US players tracked but excluded: Manus (Singapore), Today AI (China), Fyxer (UK), Orbits (Canada).
 
 ### Judged and excluded
 
-Kept in the data (`market.judgedExcluded`) and shown on the site under Methodology, so the boundary stays falsifiable — each name fails a stated criterion, not a mood: Notion AI (two surfaces), Granola (takes actions), Glean and Sierra (on behalf of an individual), Replit Agent and tldraw computers (scope).
+Kept in the data (`market.judgedExcluded`) and shown on the site under Methodology, so the boundary stays falsifiable — each name fails a stated criterion, not a mood: Notion AI (two surfaces), Granola (takes actions), Glean and Sierra (on behalf of an individual), Replit Agent, tldraw computers and Microsoft Copilot Autopilot (scope), Fambot (takes actions), Miso (two surfaces).
 
 **Comet (Perplexity)** and **Motion** were judged *in* and added — Comet acts across every authenticated site, Motion reschedules your day unprompted. **Manus** qualified on the criteria but is Singapore-based, so it falls to the US-only scope rule. **Muse** was already on the map.
 
 ## Known gaps
 
-- **Valuations use the latest reported figure** (checked September 28, 2026). **4 of 15 non-platform companies have no valuation** (Littlebird, Martin, Cora, Ollie); none has been reported. The 8 platforms are excluded by rule 3, not missing. Three figures (Duckbill, Ohai.ai, Wajo / Fo) are hand-entered because no valuation has been reported for them. Lindy's is a secondary-market estimate. Poke's and Superhuman's are their last private-round valuations, not acquisition prices.
+- **Valuations use the latest reported figure** (checked October 5, 2026). **5 of 16 non-platform companies have no valuation** (Littlebird, Martin, Cora, Ollie, folk); none has been reported. The 8 platforms are excluded by rule 3, not missing. Three figures (Duckbill, Ohai.ai, Wajo / Fo) are hand-entered because no valuation has been reported for them. Lindy's is a secondary-market estimate. Poke's and Superhuman's are their last private-round valuations, not acquisition prices.
 - Pally's $30M is company-stated, per Business Insider; Dealroom lists $19.4M for the same round, which appears to be its own estimate. The figure stays locked, so any change to it goes to a human.
 - **11 total-funding figures have no recorded source.** They are shown with "source not recorded" on each profile, and `npm run validate` lists them; add `metrics.totalRaisedSource` as each is checked. Wajo / Fo's total is hand-entered and labelled manual.
 - `agent/sources.json` still carries a placeholder user agent. SEC EDGAR expects a real contact address; set one before the first live run.
-- Bubble size switches between **post-money** and **total raised**. Total raised is known for 14 of 15 non-platform companies against 11 for valuation, so it shows more of the field at true scale; valuation is the better read on how the market prices them.
+- Bubble size switches between **post-money** and **total raised**. Total raised is known for 15 of 16 non-platform companies against 11 for valuation, so it shows more of the field at true scale; valuation is the better read on how the market prices them.
 - Town is drawn at the $1B valuation Upstarts Media reported for the $90M Series B it is raising, labelled **rumored** because the round has not been announced. Its funding total follows the same basis: $163M, also rumored, counting the $18M seed (March 2025), the $55M Series A and the $90M Series B; confirmed funding is $73M. When a tier-1 source confirms the close, the refresh agent relabels both reported with that citation.
-- Comet was last verified on 2026-09-12, two weeks before the snapshot date; `npm run validate` warns until it is re-checked.
+- Comet was last verified on 2026-09-12, more than three weeks before the snapshot date, and 12 other companies were not re-checked in the October 5 refresh; `npm run validate` lists each until it is.
 - Axis scores are editorial judgments against a published rubric. Each company carries a one-line scoring note (stored on the primary axis); an axis may carry its own rationale, shown under its score. Argue with them via the correction link.
 - The changelog needs `fetch-depth: 0` on checkout, or it builds empty.
 

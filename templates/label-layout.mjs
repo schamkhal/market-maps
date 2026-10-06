@@ -245,7 +245,7 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
   // long as the neighbour then finds another. Either both fit or nothing moves.
   for (const node of ordered) {
     if (labels.get(node.id)) continue;
-    const neighbours = nodes.filter(other => other !== node && labels.get(other.id) && Math.hypot(other.x - node.x, other.y - node.y) < (compact ? 90 : 160))
+    const neighbours = nodes.filter(other => other !== node && labels.get(other.id) && Math.hypot(other.x - node.x, other.y - node.y) < (compact ? 140 : 160))
       .sort((a, b) => Math.hypot(a.x - node.x, a.y - node.y) - Math.hypot(b.x - node.x, b.y - node.y));
     for (const other of neighbours) {
       const theirs = labels.get(other.id);

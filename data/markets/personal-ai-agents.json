@@ -41,6 +41,12 @@
         "name": "Fyxer AI",
         "company": "Fyxer",
         "hq": "United Kingdom"
+      },
+      {
+        "name": "Orbits",
+        "company": "Orbits (Bit)",
+        "hq": "Canada",
+        "note": "Household agent that books, buys and gathers service quotes; qualifies on the criteria but is Canadian."
       }
     ],
     "judgedExcluded": [
@@ -73,6 +79,21 @@
         "name": "tldraw computers",
         "fails": "scope",
         "why": "Canvas SDK and a creative-tool feature, not a personal agent"
+      },
+      {
+        "name": "Microsoft Copilot Autopilot",
+        "fails": "scope",
+        "why": "Persistent agent inside Microsoft 365 Copilot, in private preview for enterprise customers: an enterprise copilot, explicitly out of scope"
+      },
+      {
+        "name": "Fambot",
+        "fails": "takes actions",
+        "why": "Family reminders and calendar summaries; no bookings, purchases or other transactions"
+      },
+      {
+        "name": "Miso",
+        "fails": "two surfaces",
+        "why": "Books flights over iMessage with a human team: travel only"
       }
     ],
     "axes": {
@@ -127,7 +148,7 @@
         "bottomRight": "Own app, agentic"
       }
     },
-    "asOf": "2026-09-28"
+    "asOf": "2026-10-05"
   },
   "companies": [
     {
@@ -150,7 +171,7 @@
         }
       ],
       "parent": null,
-      "traction": "Pre-launch: the official site still offers a launch notification signup as of September 26, 2026.",
+      "traction": "Launch announced for the week of October 5, 2026: the first 100,000 sign-ups get the paid plan free (Brett Adcock, October 4). In August Hark showed Handoff, a browser agent for tasks such as ordering gifts and booking appointments.",
       "axes": {
         "autonomy": {
           "score": 66,
@@ -211,6 +232,12 @@
           "url": "https://techcrunch.com/2026/03/24/meet-the-former-apple-designer-building-a-new-ai-interface-at-hark/",
           "publisher": "TechCrunch",
           "date": "2026-03-24"
+        },
+        {
+          "title": "Figure plans to release Hark AI assistant this week",
+          "url": "https://www.testingcatalog.com/figure-plans-to-release-hark-ai-assistant-this-week/",
+          "publisher": "TestingCatalog",
+          "date": "2026-10-05"
         }
       ],
       "checks": [
@@ -222,7 +249,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-05"
     },
     {
       "id": "instinct",
@@ -244,7 +271,7 @@
         }
       ],
       "parent": null,
-      "traction": "Text-based onboarding is offered on the official site.",
+      "traction": "Invite-only since August 2026. Group chats reached early-access users on October 5, 2026: the agent can join a thread with friends who have no account, to plan trips, buy tickets or coordinate carpools.",
       "axes": {
         "autonomy": {
           "score": 88,
@@ -254,7 +281,8 @@
           "score": 85
         },
         "distribution": {
-          "score": 72
+          "score": 80,
+          "rationale": "Reached by text and phone with no app, and since October 5, 2026 it joins group chats, even with friends who have no account. That matches the other text-native agents (Pally, Ollie). Rescored from 72."
         }
       },
       "lastRound": {
@@ -316,6 +344,18 @@
           "url": "https://www.upstartsmedia.com/p/scoop-town-fundraise-vc-reshuffle",
           "publisher": "Upstarts Media",
           "date": "2026-09-03"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
+        },
+        {
+          "title": "Instinct brings its AI agent to group chats, even for friends without an account",
+          "url": "https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-05"
         }
       ],
       "checks": [
@@ -327,7 +367,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-28"
+      "lastVerified": "2026-10-05"
     },
     {
       "id": "town",
@@ -383,7 +423,7 @@
         ],
         "confidence": "reported",
         "postMoneyConfidence": "rumored",
-        "note": "The $1B is the latest reported valuation: Upstarts Media reported on September 3, 2026 that Town is raising a $90M Series B at a $1B valuation, co-led by Forerunner Ventures and Menlo Ventures, with a16z and First Round participating (Newcomer reported talks near $1B on August 28). Town has not announced the round as of September 28, 2026, and the report does not say whether $1B is pre- or post-money. Total funding of $163M counts the $18M seed led by First Round Capital (March 2025, when Town launched as a small-business tax service), the $55M Series A (June 3, 2026) and that $90M Series B; confirmed funding is $73M. The Series A did not disclose a valuation.",
+        "note": "The $1B is the latest reported valuation: Upstarts Media reported on September 3, 2026 that Town is raising a $90M Series B at a $1B valuation, co-led by Forerunner Ventures and Menlo Ventures, with a16z and First Round participating (Newcomer reported talks near $1B on August 28). Town has not announced the round as of October 5, 2026, and the report does not say whether $1B is pre- or post-money. Total funding of $163M counts the $18M seed led by First Round Capital (March 2025, when Town launched as a small-business tax service), the $55M Series A (June 3, 2026) and that $90M Series B; confirmed funding is $73M. The Series A did not disclose a valuation.",
         "source": {
           "url": "https://www.town.com/press/series-a",
           "publisher": "Town",
@@ -440,6 +480,12 @@
           "url": "https://fintech.global/2025/03/17/town-secures-18m-to-revolutionise-tax-support-for-small-businesses/",
           "publisher": "FinTech Global",
           "date": "2025-03-17"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
         }
       ],
       "checks": [
@@ -448,10 +494,16 @@
           "url": "https://www.town.com/docs",
           "publisher": "Town",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Town press page: no Series B announcement yet",
+          "url": "https://www.town.com/press",
+          "publisher": "Town",
+          "date": "2026-10-05"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-28"
+      "lastVerified": "2026-10-05"
     },
     {
       "id": "superhuman",
@@ -862,6 +914,12 @@
           "url": "https://www.axios.com/2024/01/22/ohai-ai-virtual-assistant-startup-sheila-lirio-marcelo-care",
           "publisher": "Axios",
           "date": "2024-01-22"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
         }
       ],
       "checks": [
@@ -958,6 +1016,12 @@
           "url": "https://runtimewire.com/article/pally-raised-5-2-million-ai-assistant-text-messages",
           "publisher": "RuntimeWire",
           "date": "2026-08-06"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
         }
       ],
       "checks": [
@@ -1133,6 +1197,12 @@
           "url": "https://www.dailycal.org/news/campus/19-year-old-uc-berkeley-dropout-receives-2m-for-ai-startup/article_cafbb8b0-e9d1-11ef-bba1-371944ef4e87.html",
           "publisher": "The Daily Californian",
           "date": "2025-02-20"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
         }
       ],
       "checks": [
@@ -1297,7 +1367,7 @@
       "founded": 2004,
       "founders": [],
       "parent": "Meta Platforms — public (NASDAQ: META). Muse is a first-party personal agent, available through its own app and WhatsApp; the parent’s market capitalization is not a standalone product valuation.",
-      "traction": "Launched September 8, 2026. Prior app-chart and pricing claims were not reverified.",
+      "traction": "Launched September 8, 2026. Meta said on September 23 that Muse is coming to its AI glasses, and on September 30 launched Muse for Small Business. Prior app-chart and pricing claims were not reverified.",
       "axes": {
         "autonomy": {
           "score": 82,
@@ -1359,10 +1429,22 @@
           "url": "https://www.cnbc.com/2026/09/08/meta-personal-ai-agents-public-reckoning-privacy-safety.html",
           "publisher": "CNBC",
           "date": "2026-09-08"
+        },
+        {
+          "title": "Your personal agent is coming to AI glasses",
+          "url": "https://www.meta.com/blog/muse-personal-agent-ai-glasses/",
+          "publisher": "Meta",
+          "date": "2026-09-23"
+        },
+        {
+          "title": "Meta adds business-facing Muse AI features",
+          "url": "https://www.mediapost.com/publications/article/418408/meta-adds-business-facing-muse-ai-features.html",
+          "publisher": "MediaPost",
+          "date": "2026-09-30"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-05"
     },
     {
       "id": "spark",
@@ -1438,25 +1520,29 @@
       "id": "chatgpt",
       "name": "ChatGPT",
       "company": "OpenAI",
-      "aliases": [],
+      "aliases": [
+        "dots",
+        "ChatGPT dots"
+      ],
       "class": "platform",
       "category": "executive",
       "brand": "OpenAI",
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://chatgpt.com",
-      "description": "OpenAI’s general assistant now includes ChatGPT Work for multi-step research, files, connected tools and browser actions. Work can create finished documents and repeat scheduled workflows, with permissions and availability depending on the plan and environment.",
+      "description": "OpenAI’s assistant now includes dots: always-on agents, each with its own cloud computer and browser, that pursue a goal in the background, connect to more than 4,000 apps and bring results back for review. ChatGPT Work still covers multi-step research, files and scheduled workflows.",
       "founded": 2015,
       "founders": [],
       "parent": "OpenAI — private. ChatGPT is a product within the broader company, not a separately valued personal-agent business.",
-      "traction": "Web and desktop experiences; tools and access vary by plan, region, rollout and workspace settings.",
+      "traction": "Dots rolled out from September 29, 2026 to Pro and Business Premium subscribers in eligible markets, with the first dot included in the plan; text-message access is coming. Tools and access vary by plan, region and workspace settings.",
       "axes": {
         "autonomy": {
-          "score": 62,
-          "rationale": "Multi-step tool use and scheduled workflows extend beyond question answering. Existing editorial score retained; connected context and execution depend on granted access."
+          "score": 82,
+          "rationale": "Dots pursue user-set goals continuously in the background with minimal oversight, on their own cloud computer and browser; a read-only mode keeps them out of your browser or computer while you are away. Rescored October 5, 2026 for dots, from 62."
         },
         "breadth": {
-          "score": 58
+          "score": 72,
+          "rationale": "More than 4,000 app connections cover work tools and everyday tasks such as restaurant bookings; payments, health and home are not described. Rescored from 58."
         },
         "distribution": {
           "score": 86
@@ -1481,7 +1567,20 @@
       "metrics": {
         "totalRaisedUsd": null
       },
-      "news": [],
+      "news": [
+        {
+          "title": "OpenAI launches Dots, its bubbly agentic avatar",
+          "url": "https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/",
+          "publisher": "TechCrunch",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "OpenAI launches ‘dots,’ personal AI assistant ‘built to handle everything’",
+          "url": "https://www.aljazeera.com/economy/2026/9/30/openai-launches-dots-personal-ai-assistant-built-to-handle-everything",
+          "publisher": "Al Jazeera",
+          "date": "2026-09-30"
+        }
+      ],
       "checks": [
         {
           "title": "ChatGPT Work capabilities and availability",
@@ -1491,7 +1590,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-05"
     },
     {
       "id": "cowork",
@@ -1645,8 +1744,8 @@
       "traction": "English beta in the 27-series operating systems from September 14, 2026. Device, language and regional restrictions apply.",
       "axes": {
         "autonomy": {
-          "score": 36,
-          "rationale": "Personal-context and app-action capabilities have started rolling out. The existing score is retained pending a separate reassessment of the new beta, not a claim that it remains unshipped."
+          "score": 42,
+          "rationale": "Reassessed on the shipping beta: Siri looks up personal context across Messages, Mail and Photos and acts in supported apps (WhatsApp and Audible today), chaining a lookup to an action, but only on request and with no background work. Rescored October 5, 2026, from 36."
         },
         "breadth": {
           "score": 70
@@ -1686,10 +1785,16 @@
           "url": "https://www.1000.software/post/siri-ai-is-back-again-the-real-story-isn-t-apple-catching-up-it-s-apple-betting-on-on-device-agen",
           "publisher": "1000.software",
           "date": "2026-06-01"
+        },
+        {
+          "title": "Apple starts shipping Siri AI with app access and cloud limits",
+          "url": "https://www.therundown.ai/news/apple-siri-ai-rollout-ios-27",
+          "publisher": "The Rundown AI",
+          "date": "2026-09-15"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-05"
     },
     {
       "id": "wajo",
@@ -1714,7 +1819,7 @@
         }
       ],
       "parent": null,
-      "traction": "Public Fo Mini signup; expanded OG Fo access is invite-only. Wajo also offers an agent builder and custom business agents. Company-wide financing figures are user-provided, not publicly verified.",
+      "traction": "Opened to the public on September 28, 2026 after a month of invite-only alpha: a free Fo Mini plan with a daily task limit, invite-only OG Fo with unlimited tasks, and a Pro plan priced on request. Fo acts with its own phone number, email address and single-use payment cards, and hands a task to a human operator when a business will not deal with AI. Company-wide financing figures are user-provided, not publicly verified.",
       "axes": {
         "autonomy": {
           "score": 76,
@@ -1755,6 +1860,12 @@
           "url": "https://wajo.ai/blog/unveiling-wajo/",
           "publisher": "Wajo",
           "date": "2026-08-25"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
         }
       ],
       "checks": [
@@ -1775,7 +1886,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-05"
     },
     {
       "id": "ollie",
@@ -1853,6 +1964,12 @@
           "url": "https://dealroom.co/news/149015-ollie-lands-7-5m-seed-to-build-a-privacy-first-family-ai-assistant/",
           "publisher": "Dealroom",
           "date": "2026-09-05"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
         }
       ],
       "checks": [
@@ -1939,6 +2056,12 @@
           "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
           "publisher": "TechCrunch",
           "date": "2026-04-08"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
         }
       ],
       "checks": [
@@ -2031,6 +2154,99 @@
       ],
       "locked": [],
       "lastVerified": "2026-09-26"
+    },
+    {
+      "id": "folk",
+      "name": "folk",
+      "company": "Nozomio Labs",
+      "aliases": [
+        "Nozomio"
+      ],
+      "class": "independent",
+      "category": "executive",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://www.folk.com",
+      "description": "Personal assistant that lives in iMessage, Telegram and WhatsApp and texts you first. It books tables, watches flights and handles email when asked, runs background watchers, and works through multi-step tasks from its own cloud computer.",
+      "founded": 2025,
+      "founders": [
+        {
+          "name": "Arlan Rakhmetzhanov",
+          "role": "Founder",
+          "linkedin": null
+        }
+      ],
+      "parent": null,
+      "traction": "Free plan with unlimited chatting and three background watchers; Pro $9.99 a month (folk.com, October 5, 2026).",
+      "axes": {
+        "autonomy": {
+          "score": 60,
+          "rationale": "Editorial estimate under the existing rubric: it texts first, runs background watchers on flights and prices, and books tables or handles email when asked; payments and phone calls are not advertised."
+        },
+        "breadth": {
+          "score": 56
+        },
+        "distribution": {
+          "score": 82,
+          "rationale": "Lives entirely inside iMessage, Telegram and WhatsApp, with no app to install."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 6200000,
+        "postMoneyUsd": null,
+        "date": "2025-09-01",
+        "leads": [
+          "CRV"
+        ],
+        "otherInvestors": [
+          "BoxGroup",
+          "LocalGlobe",
+          "Y Combinator",
+          "Paul Graham"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": null,
+        "note": "Company-level seed for Nozomio Labs, which also builds Nia, a context tool for coding agents, so it is not a folk-only round; announced September 1, 2025 per startup press. An aggregator lists a further $62M round in February 2026 that no company statement or reporting confirms, so it is not counted.",
+        "source": {
+          "url": "https://www.nozomio.com/about",
+          "publisher": "Nozomio Labs",
+          "date": "2026-10-05"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 6200000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.nozomio.com/about",
+          "publisher": "Nozomio Labs",
+          "date": "2026-10-05"
+        }
+      },
+      "news": [
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
+        }
+      ],
+      "checks": [
+        {
+          "title": "folk product, channels and pricing",
+          "url": "https://www.folk.com/",
+          "publisher": "Nozomio Labs",
+          "date": "2026-10-05"
+        },
+        {
+          "title": "Nozomio Labs location and seed round",
+          "url": "https://www.nozomio.com/about",
+          "publisher": "Nozomio Labs",
+          "date": "2026-10-05"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-05"
     }
   ]
 }
