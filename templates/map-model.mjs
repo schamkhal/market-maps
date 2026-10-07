@@ -2,23 +2,26 @@
 // profile renderer, the build, and the node:test suite.
 
 // Focus categories come from market.categories in the dataset. `all` is the
-// only built-in entry; configureCategories() fills in the rest at startup.
+// only built-in entry; configureCategories() fills in the rest at startup, and
+// the market's own allDescription, when it has one, describes the "all" tab.
+const ALL_DESCRIPTION = 'Compare every company across the full landscape.';
 export const CATEGORIES = {
-  all: { name: 'All companies', color: '#30634b', description: 'Compare autonomy, context, and reach across the full landscape.' },
+  all: { name: 'All companies', color: '#30634b', description: ALL_DESCRIPTION },
 };
-export function configureCategories(list = []) {
+export function configureCategories(list = [], allDescription = null) {
   for (const key of Object.keys(CATEGORIES)) if (key !== 'all') delete CATEGORIES[key];
+  CATEGORIES.all.description = allDescription || ALL_DESCRIPTION;
   for (const { id, name, color, description } of list) CATEGORIES[id] = { name, color, description };
   return CATEGORIES;
 }
 export const OWNERSHIP = { independent: 'Independent', platform: 'Platform product', acquired: 'Acquired' };
-export const CONFIDENCE = { reported: 'Reported', estimated: 'Estimate', rumored: 'Rumored', manual: 'Manual · no source', undisclosed: 'Undisclosed' };
+export const CONFIDENCE = { reported: 'Reported', estimated: 'Estimate', rumored: 'Rumored', manual: 'Entered manually', undisclosed: 'Unknown' };
 // What each confidence level means, in one sentence, for the "Why this figure?" note.
 export const CONFIDENCE_MEANING = {
   reported: 'Stated in the cited reporting or company announcement.',
   estimated: 'An estimate published by the cited source, not a disclosed price.',
   rumored: 'Reported as under discussion; not confirmed by the company.',
-  manual: 'Entered by hand with no public source. Treat it as an editorial estimate.',
+  manual: 'Entered manually from a source that is not public.',
   undisclosed: 'No figure has been disclosed publicly.',
 };
 
@@ -47,10 +50,11 @@ export const esc = text => String(text ?? '').replace(/[&<>"']/g, c => ({ '&': '
 // Only web links are ever rendered as links; the schema enforces the same rule,
 // this is the second lock for anything that reaches the page another way.
 export const safeUrl = url => /^https?:\/\//i.test(String(url ?? '').trim()) ? String(url).trim() : null;
-export const date = value => value ? new Date(value + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Date undisclosed';
+export const date = value => value ? new Date(value + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Date unknown';
 // minimumFractionDigits keeps ICU from padding compact values ("$30.00M").
-export const money = value => value == null ? 'Undisclosed' : new Intl.NumberFormat('en-US', {
-  style: 'currency', currency: 'USD', notation: 'compact', minimumFractionDigits: 0, maximumFractionDigits: 2,
+// Figures round to one decimal place everywhere: $53.6M, $2.6B, $6B.
+export const money = value => value == null ? 'Unknown' : new Intl.NumberFormat('en-US', {
+  style: 'currency', currency: 'USD', notation: 'compact', minimumFractionDigits: 0, maximumFractionDigits: 1,
 }).format(value);
 
 // The label a crowded chart can afford: "Comet", not "Comet (Perplexity)".
@@ -73,60 +77,88 @@ export function raisedConfidence(company) {
   if (company.cls === 'platform' || company.raised == null) return 'undisclosed';
   return company.raisedConf || null;
 }
-const MARKER = { manual: ' *', estimated: ' est.', rumored: ' rumored' };
+// Map labels show the plain figure. Estimates and rumored figures say what they
+// are in their tooltips, list rows and profiles; a figure entered manually says
+// so on its profile only.
+// An announced acquisition price is not a round valuation, and says so wherever it appears.
+export const isDealPrice = company => company.valBasis === 'acquisition';
 // Platform products are labelled with their consumer brand, never a parent financial.
 export const platformLabel = company => company.brand?.trim() || company.company?.trim() || 'Platform product';
-export function valueLabel(company, size = 'valuation') {
+// On the chart a label is just the figure; tooltips and accessible names
+// (`verbose`) add "raised" to funding and "deal" to an acquisition price, so
+// neither is mistaken for a round valuation.
+export function valueLabel(company, size = 'valuation', { verbose = false } = {}) {
   if (company.cls === 'platform') return platformLabel(company);
   if (size === 'equal') return OWNERSHIP[company.cls];
-  if (company[size] == null) return 'Undisclosed';
+  // An undisclosed figure has no text anywhere on the map: the empty circle
+  // says it, and the legend names it.
+  if (company[size] == null) return '';
   const value = money(company[size]);
-  if (size === 'raised') return value + ' raised' + (MARKER[raisedConfidence(company)] ?? '');
-  return value + (MARKER[valueConfidence(company)] ?? '');
+  if (size === 'raised') return value + (verbose ? ' raised' : '');
+  if (!verbose) return value;
+  // An acquired company's figure says what it is: the deal price, or the
+  // last private valuation from before the deal.
+  if (isDealPrice(company)) return value + ' deal';
+  return value + (company.cls === 'acquired' ? ' before acquisition' : '');
 }
+// Only a caveat earns a word beside a figure: an estimate or a rumour says so;
+// a reported or manual figure is shown plain (its profile still says which).
+export const isCaveat = level => level === 'estimated' || level === 'rumored';
+
+// A rubric reads "0 = …; 25 = …; 100 = …". Split it into its anchored steps,
+// each with a capitalised description; a rubric without anchors returns [].
+export function rubricSteps(rubric) {
+  return [...String(rubric ?? '').matchAll(/(\d+)\s*=\s*(.+?)(?=;\s*\d+\s*=|$)/gs)]
+    .map(([, score, text]) => ({ score: Number(score), text: text.trim().replace(/^./, first => first.toUpperCase()) }));
+}
+
 export function tooltipLines(company, size = 'valuation') {
   const category = CATEGORIES[company.cat]?.name ?? '';
   if (company.cls === 'platform') return [category, valueLabel(company, size)];
   const level = size === 'valuation' && company.valuation != null ? valueConfidence(company)
     : size === 'raised' && company.raised != null ? raisedConfidence(company) : null;
-  return [category + ' · ' + OWNERSHIP[company.cls], valueLabel(company, size) + (level ? ' · ' + CONFIDENCE[level] : '')];
+  const figure = valueLabel(company, size, { verbose: true });
+  return [category + ' · ' + OWNERSHIP[company.cls], ...(figure ? [figure + (isCaveat(level) ? ' · ' + CONFIDENCE[level] : '')] : [])];
 }
 
-// Bubble geometry. Area, not radius, tracks value on a fixed dataset-wide scale.
-// Tiny disclosed values are floored at MIN_RADIUS so a real figure never draws
-// smaller than a hollow "undisclosed" mark; the legend states the threshold.
-export const MAX_RADIUS = 40;
-export const MIN_RADIUS = 4;
-export const UNDISCLOSED_RADIUS = MIN_RADIUS;
+// Bubble geometry. Size follows the figure on a log scale, gently bent so each
+// tenfold step adds a little more than the one before ($100M → $1B reads as a
+// bigger jump than $10M → $100M). A field that runs from $5M seeds to $10B
+// leaders stays readable, and no giant crowds its neighbours' labels off the chart.
+// The scale is fixed for the whole dataset (a filter never rescales it).
+// Figures at or under LOG_FLOOR draw at MIN_RADIUS, never smaller than a
+// hollow "undisclosed" mark; the legend says so.
+export const MAX_RADIUS = 14;      // the dataset's largest figure, on a 1,160px chart
+export const MIN_RADIUS = 5;
+export const UNDISCLOSED_RADIUS = 4;
+export const LOG_FLOOR = 1e7;      // $10M
+export const LOG_BEND = 1.5;       // 1 = equal steps per tenfold; above 1, larger steps for larger figures
 export function bubbleRadius(company, size, maximum, maxRadius = MAX_RADIUS) {
   const scale = maxRadius / MAX_RADIUS;
-  if (company.cls === 'platform') return 6 * Math.max(scale, .8);
+  // Platform squares are a fixed size that grows with the chart: easy to spot
+  // on a desktop map, and no bigger than today's on a phone, where room is short.
+  if (company.cls === 'platform') return 8.5 * scale;
   if (size === 'equal') return 8 * Math.max(scale, .8);
   if (company[size] == null || company[size] <= 0 || maximum <= 0) return UNDISCLOSED_RADIUS;
-  return Math.max(MIN_RADIUS, maxRadius * Math.sqrt(company[size] / maximum));
+  const decades = Math.log10(maximum / LOG_FLOOR);
+  const step = decades > 0 ? Math.min(1, Math.max(0, Math.log10(company[size] / LOG_FLOOR) / decades)) : 1;
+  // Narrow charts shrink the range (down to 60%), so phones keep room for labels.
+  return MIN_RADIUS + (MAX_RADIUS - MIN_RADIUS) * Math.max(scale, .6) * step ** LOG_BEND;
 }
-// Values below this draw at the floor rather than at true area.
-export const floorThreshold = (maximum, maxRadius = MAX_RADIUS) => maximum * (MIN_RADIUS / maxRadius) ** 2;
 
-// Three 1-2-5 reference values that span the data actually on the scale:
-// the largest nice value under the maximum, the smallest above the floor,
-// and the nice value nearest their geometric mean.
-export function legendReferences(maximum, maxRadius = MAX_RADIUS) {
+// An acquired company keeps its circle, sized by its figure, inside a thin
+// ring. The layout treats the ring as part of the mark.
+export const RING_GAP = 3;
+export const markRadius = (company, size, maximum, maxRadius = MAX_RADIUS) =>
+  bubbleRadius(company, size, maximum, maxRadius) + (company.cls === 'acquired' ? RING_GAP + 1 : 0);
+
+// The legend's reference sizes: one per tenfold step, from the floor up to
+// the dataset's largest figure.
+export function legendReferences(maximum) {
   if (!(maximum > 0)) return [];
-  const nice = [];
-  for (let exp = Math.floor(Math.log10(maximum)) - 4; exp <= Math.ceil(Math.log10(maximum)); exp++) {
-    for (const m of [1, 2, 5]) nice.push(m * 10 ** exp);
-  }
-  const floor = floorThreshold(maximum, maxRadius);
-  const high = [...nice].reverse().find(v => v <= maximum) ?? maximum;
-  const low = nice.find(v => v >= floor && v < high) ?? high;
-  if (low === high) return [high];
-  // Nearest to the geometric mean, with a small preference for round powers
-  // of ten ($1B reads faster than $500M when the two are equally central).
-  const mean = Math.sqrt(low * high);
-  const distance = v => Math.abs(Math.log(v / mean)) - (Math.abs(Math.log10(v) % 1) < 1e-9 ? .05 : 0);
-  const mid = nice.filter(v => v > low && v < high).sort((a, b) => distance(a) - distance(b))[0];
-  return mid ? [low, mid, high] : [low, high];
+  const refs = [];
+  for (let value = LOG_FLOOR; value <= maximum * 1.0001; value *= 10) refs.push(value);
+  return refs.length ? refs : [maximum];
 }
 
 // Headline numbers for the hero. Rounds are each company's latest round only,
@@ -197,7 +229,7 @@ export function sortCompanies(companies, sort) {
     return rank(b) - rank(a) || (rank(a) === 0 ? b[sort] - a[sort] : 0) || a.name.localeCompare(b.name);
   });
 }
-// Only `news` feeds research. Verification visits live in `checks` and never appear here.
+// Only `news` feeds the news section. Verification visits live in `checks` and never appear here.
 export function researchArticles(companies, limit = 6) {
   const grouped = new Map();
   for (const company of companies) for (const article of company.news || []) {

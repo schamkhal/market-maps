@@ -1,14 +1,12 @@
 const $ = selector => document.querySelector(selector);
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const MOBILE = '(max-width:700px)';
-configureCategories(SITE.categories);
+configureCategories(SITE.categories, SITE.allDescription);
 configureAxes(SITE.axes);
 const color = categoryColor;
-const profileHref = company => SITE.companyHref.replace('__ID__', encodeURIComponent(company.id));
 // Fixed dataset-wide maxima: a filter never rescales the bubbles.
 const maximums = { valuation: Math.max(0, ...DATA.filter(c => c.cls !== 'platform').map(c => c.valuation || 0)), raised: Math.max(0, ...DATA.filter(c => c.cls !== 'platform').map(c => c.raised || 0)) };
 const SIZE_NAMES = { valuation: 'Post-money valuation', raised: 'Total funding', equal: 'Equal size' };
-const pad2 = n => String(n).padStart(2, '0');
 let state = readState(location.search, matchMedia(MOBILE).matches);
 let currentRows = [];
 let selectedTrigger = null;
@@ -36,19 +34,18 @@ function syncUrl(push = false) {
   } catch { return false; }
 }
 const muted = (text = '—') => `<span class="cell-muted">${text}</span>`;
+// A figure carries a chip only when it is a caveat: an estimate or a rumour.
+const caveatChip = level => isCaveat(level) ? `<span class="cell-secondary"><span class="confidence ${level}">${esc(CONFIDENCE[level])}</span></span>` : '';
 function valuationMarkup(company) {
-  if (company.cls === 'platform') return muted() + '<span class="cell-secondary">Parent value excluded</span>';
-  if (company.valuation == null) return '<span class="cell-secondary">Undisclosed</span>';
-  return `<span class="value-amount">${money(company.valuation)}</span><span class="cell-secondary">${confidenceChip(company)}</span>`;
+  if (company.valuation == null) return '<span class="cell-secondary">Unknown</span>';
+  return `<span class="value-amount">${money(company.valuation)}</span>${caveatChip(valueConfidence(company))}${isDealPrice(company) ? '<span class="cell-secondary">Acquisition price</span>' : ''}`;
 }
 function raisedMarkup(company) {
-  if (company.cls === 'platform') return muted();
-  if (company.raised == null) return '<span class="cell-secondary">Undisclosed</span>';
-  const level = raisedConfidence(company);
-  const chip = level && level !== 'reported' ? `<span class="cell-secondary"><span class="confidence ${level}">${esc(CONFIDENCE[level])}</span></span>` : '';
-  return `<span class="value-amount">${money(company.raised)}</span>${chip}`;
+  if (company.raised == null) return '<span class="cell-secondary">Unknown</span>';
+  return `<span class="value-amount">${money(company.raised)}</span>${caveatChip(raisedConfidence(company))}`;
 }
-const roundSignificant = (value, digits = 2) => { if (!value) return value; const p = 10 ** (Math.floor(Math.log10(value)) - digits + 1); return Math.round(value / p) * p; };
+// The list's ownership tag: one short word beside the focus colour.
+const OWNERSHIP_TAG = { independent: 'Independent', platform: 'Platform', acquired: 'Acquired' };
 
 // Columns are data-driven: one score column per market axis.
 const columns = () => [
@@ -61,17 +58,10 @@ const columns = () => [
 ];
 
 function initialize() {
-  const { edition, scopeLabel, author } = SITE;
+  const { author } = SITE;
   $('#pageTitle').textContent = SITE.name;
   if (SITE.tagline) $('#tagline').textContent = SITE.tagline; else $('#tagline').remove();
-  const eyebrow = [edition ? `Market map ${pad2(edition)}` : 'Market map', scopeLabel].filter(Boolean).join(' · ');
-  $('#eyebrow').textContent = eyebrow;
-  if (edition) $('#edition').textContent = `/ ${pad2(edition)}`; else $('#edition').remove();
   if (author) $('#byline').innerHTML = `By <strong>${esc(author)}</strong>`; else $('#byline').remove();
-  $('#footerBrand').textContent = `Market maps / ${SITE.name}`;
-  $('#footerScope').textContent = scopeLabel ? `${scopeLabel} · ` : '';
-  $('#updated').textContent = date(SITE.asOf);
-  $('#footerDate').textContent = date(SITE.asOf);
   const stats = heroStats(DATA, SITE.asOf);
   $('#marketStats').innerHTML = [
     [stats.tracked, 'products tracked'],
@@ -80,11 +70,10 @@ function initialize() {
     [stats.platforms, 'big-platform products'],
   ].map(([value, label]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('');
   $('#statsNote').textContent = `${stats.year} total sums the latest round of ${stats.roundsThisYear} companies that raised this year; earlier rounds are not included.`;
-  document.querySelectorAll('[data-changelog]').forEach(link => link.href = SITE.changelog);
   document.querySelectorAll('[data-home]').forEach(link => link.href = SITE.home);
   if (SITE.maps?.length > 1) {
     $('#mapSwitch').hidden = false;
-    $('#mapSelect').innerHTML = SITE.maps.map(map => `<option value="${esc(map.href)}"${map.id === SITE.marketId ? ' selected' : ''}>${map.edition ? pad2(map.edition) + ' · ' : ''}${esc(map.name)}</option>`).join('');
+    $('#mapSelect').innerHTML = SITE.maps.map(map => `<option value="${esc(map.href)}"${map.id === SITE.marketId ? ' selected' : ''}>${esc(map.name)}</option>`).join('');
     $('#mapSelect').addEventListener('change', event => { location.href = event.target.value; });
   }
   $('#categoryFilters').innerHTML = Object.entries(CATEGORIES).map(([id, category]) => `<button data-category="${esc(id)}" aria-pressed="false" style="--category:${esc(category.color)}">${id !== 'all' ? '<i class="category-dot" aria-hidden="true"></i>' : ''}${esc(category.name)}<span class="count"></span></button>`).join('');
@@ -94,7 +83,16 @@ function initialize() {
   $('#tableHead').innerHTML = columns().map(col => col.sort
     ? `<th scope="col" data-col="${esc(col.key)}"${col.num ? ' class="num"' : ''}><button class="sort-button" data-sort="${esc(col.sort)}">${esc(col.label)}<span class="sort-arrow" aria-hidden="true"></span></button></th>`
     : `<th scope="col">${esc(col.label)}</th>`).join('');
-  $('#axisRubrics').innerHTML = [SITE.axes.x, SITE.axes.y, SITE.axes.yAlt].filter(Boolean).map(axis => `<div class="rubric"><strong>${esc(axis.label)}</strong><p>${esc(axis.rubric)}</p></div>`).join('');
+  $('#acquiredKey').hidden = !DATA.some(c => c.cls === 'acquired');
+  $('#categoryKey').innerHTML = Object.entries(CATEGORIES).filter(([id]) => id !== 'all')
+    .map(([, category]) => `<span style="--category:${esc(category.color)}"><i class="category-dot" aria-hidden="true"></i>${esc(category.name)}</span>`).join('');
+  $('#axisRubrics').innerHTML = [SITE.axes.x, SITE.axes.y, SITE.axes.yAlt].filter(Boolean).map(axis => {
+    const steps = rubricSteps(axis.rubric);
+    const body = steps.length > 1
+      ? `<ol class="rubric-steps">${steps.map(step => `<li><span class="rubric-score">${step.score}</span><span>${esc(step.text)}</span></li>`).join('')}</ol>`
+      : `<p>${esc(axis.rubric)}</p>`;
+    return `<div class="rubric"><strong>${esc(axis.label)}</strong>${body}</div>`;
+  }).join('');
   $('#scopeDetails').innerHTML = `<p>${esc(SITE.scope)}</p><ul>${SITE.inclusion.map(item => `<li>${esc(item)}</li>`).join('')}</ul>${SITE.exclusions.length ? `<p>Outside the target scope: ${esc(SITE.exclusions.join('; '))}.</p>` : ''}`;
   renderExclusions();
 
@@ -143,8 +141,11 @@ function initialize() {
     const target = selectedTrigger?.isConnected ? selectedTrigger : closedId && triggerFor(closedId);
     target?.focus({ preventScroll: true });
   });
+  // A click anywhere on a list row opens its profile; the name stays the
+  // keyboard target. Selecting text in a row does not count as a click.
   for (const selector of ['#tableRows', '#mobileRows']) $(selector).addEventListener('click', event => {
-    const button = event.target.closest('[data-company]');
+    if (String(getSelection?.() ?? '').trim()) return;
+    const button = event.target.closest('[data-company]') || event.target.closest('tr')?.querySelector('[data-company]');
     if (button) openProfile(button.dataset.company, button);
   });
   window.addEventListener('popstate', () => {
@@ -294,7 +295,8 @@ function renderMap(rows) {
   const max = maximums[state.size] || 1;
   const nodes = rows.map(company => ({
     id: company.id, company, name: labelFor(company), value: valueLabel(company, state.size),
-    x: x(company[xKey]), y: y(company[yKey]), r: bubbleRadius(company, state.size, max, maxRadius),
+    x: x(company[xKey]), y: y(company[yKey]), r: markRadius(company, state.size, max, maxRadius),
+    dot: bubbleRadius(company, state.size, max, maxRadius),
   }));
   const ticks = compact ? [0, 50, 100] : [0, 25, 50, 75, 100];
   let grid = `<rect class="region" x="${x(50)}" y="${m.t}" width="${x(100) - x(50)}" height="${y(50) - m.t}"/>`;
@@ -317,13 +319,18 @@ function renderMap(rows) {
   const probe = document.createElementNS(SVG_NS, 'g');
   probe.setAttribute('visibility', 'hidden');
   plot.appendChild(probe);
+  // The layout asks for the same few strings many times, so each is measured once.
+  const widths = new Map();
   const measure = (text, className) => {
+    const key = `${className}|${text}`;
+    if (widths.has(key)) return widths.get(key);
     const node = document.createElementNS(SVG_NS, 'text');
     node.setAttribute('class', className);
     node.textContent = text;
     probe.appendChild(node);
     const width = node.getComputedTextLength() || text.length * 7.2;
     node.remove();
+    widths.set(key, width);
     return width;
   };
 
@@ -344,6 +351,8 @@ function renderMap(rows) {
   const quads = quadrantLabels({ names: SITE.quadrants?.[yKey], W, H, m, compact, measure });
   const quadrants = quads.map(q => `<text class="quadrant-label" x="${q.x}" y="${q.y}" text-anchor="${q.anchor}">${esc(q.text)}</text>`).join('');
   const { labels, hidden } = placeLabels({ nodes, W, H, m, compact, measure, fixed: quads.map(q => q.box) });
+  // Labels that had a figure to show but room only for the name.
+  const nameOnly = nodes.filter(node => node.value && labels.get(node.company.id) && !labels.get(node.company.id).full).length;
   probe.remove();
 
   let markup = '', labelNodes = '';
@@ -351,41 +360,41 @@ function renderMap(rows) {
     const c = node.company, label = labels.get(c.id), missing = state.size !== 'equal' && c[state.size] == null;
     const hue = `style="--c:${esc(color(c))}"`;
     const point = c.cls === 'platform'
-      ? `<rect class="point square" x="${node.x - node.r}" y="${node.y - node.r}" width="${2 * node.r}" height="${2 * node.r}" rx="2" ${hue}/>`
-      : `<circle class="point${missing ? ' hollow' : ''}" cx="${node.x}" cy="${node.y}" r="${node.r}" ${hue}/>`;
-    markup += `<g class="map-node" data-company="${esc(c.id)}" role="button" tabindex="0" aria-label="${esc(c.name)}. ${esc(AXIS_NAMES[xKey])} ${c[xKey]}, ${esc(AXIS_NAMES[yKey])} ${c[yKey]}. ${esc(valueLabel(c, state.size))}. Open profile."><circle class="hit" cx="${node.x}" cy="${node.y}" r="${Math.max(node.r, 12)}"/>${point}</g>`;
+      ? `<rect class="point square" x="${node.x - node.dot}" y="${node.y - node.dot}" width="${2 * node.dot}" height="${2 * node.dot}" rx="2" ${hue}/>`
+      : `<circle class="point${missing ? ' hollow' : ''}" cx="${node.x}" cy="${node.y}" r="${node.dot}" ${hue}/>`
+        + (c.cls === 'acquired' ? `<circle class="ring" cx="${node.x}" cy="${node.y}" r="${node.dot + RING_GAP}" ${hue}/>` : '');
+    markup += `<g class="map-node" data-company="${esc(c.id)}" role="button" tabindex="0" aria-label="${esc(c.name)}. ${esc(AXIS_NAMES[xKey])} ${c[xKey]}, ${esc(AXIS_NAMES[yKey])} ${c[yKey]}. ${esc(valueLabel(c, state.size, { verbose: true }) || `${SIZE_NAMES[state.size]} not disclosed`)}. Open profile."><circle class="hit" cx="${node.x}" cy="${node.y}" r="${Math.max(node.r, 12)}"/>${point}</g>`;
     if (!label) continue;
     const box = label.box, end = leaderEnd(node, box);
-    labelNodes += `${leaderShown(node, box, compact) ? `<line class="leader-line" data-company="${esc(c.id)}" x1="${node.x}" y1="${node.y}" x2="${end.x}" y2="${end.y}" pointer-events="none"/>` : ''}<g class="map-node map-label-group" data-company="${esc(c.id)}" aria-hidden="true"><rect class="label-bg" x="${box.x}" y="${box.y}" width="${box.w}" height="${box.h}" rx="4"/><text class="map-label" x="${box.x + (label.full ? 6 : compact ? 4 : 5)}" y="${box.y + (label.full ? 15 : box.h / 2 + 4)}">${esc(label.name)}</text>${label.full ? `<text class="value-label" x="${box.x + 6}" y="${box.y + 30}">${esc(label.value)}</text>` : ''}</g>`;
+    labelNodes += `${leaderShown(node, box, compact) ? `<line class="leader-line" data-company="${esc(c.id)}" x1="${node.x}" y1="${node.y}" x2="${end.x}" y2="${end.y}" pointer-events="none"/>` : ''}<g class="map-node map-label-group" data-company="${esc(c.id)}" aria-hidden="true"><rect class="label-bg" x="${box.x}" y="${box.y}" width="${box.w}" height="${box.h}" rx="4"/><text class="map-label" x="${box.x + (label.full ? 3 : compact ? 4 : 2)}" y="${box.y + (label.full && !label.inline ? 15 : box.h / 2 + 4)}">${esc(label.name)}</text>${label.full ? `<text class="value-label" x="${box.x + (label.inline ? label.valueDx : 3)}" y="${box.y + (label.inline ? box.h / 2 + 4 : 30)}">${esc(label.value)}</text>` : ''}</g>`;
   }
   plot.setAttribute('aria-label', `Companies by ${AXIS_NAMES[xKey].toLowerCase()} and ${AXIS_NAMES[yKey].toLowerCase()}. Use Tab to focus a company and Enter to open it.`);
   plot.insertAdjacentHTML('beforeend', yAxisText + quadrants + markup + labelNodes);
-  renderLegend(max, maxRadius, compact, hidden);
+  renderLegend(max, maxRadius, compact, hidden, nameOnly);
 }
 
-// Nested reference circles drawn on the map's own scale, chosen from the data's
-// range so the largest bubble on the chart has a reference near its size.
-function renderLegend(max, maxRadius, compact, hiddenLabels = 0) {
+// Reference circles on the map's own log scale, one per tenfold step.
+function renderLegend(max, maxRadius, compact, hiddenLabels = 0, nameOnly = 0) {
   const legend = $('#sizeLegend'), note = $('#chartNote');
-  const labelNote = compact ? 'On small screens labels show names only' + (hiddenLabels ? ` and ${hiddenLabels} are hidden to avoid overlap` : '') + '; tap any mark for its figures. '
-    : hiddenLabels ? `${hiddenLabels} ${hiddenLabels === 1 ? 'label is' : 'labels are'} hidden to avoid overlap; hover or focus a mark for its figures. ` : '';
+  const labelNote = compact ? 'On small screens labels show names only' + (hiddenLabels ? ` and ${hiddenLabels} ${hiddenLabels === 1 ? 'is' : 'are'} hidden to avoid overlap` : '') + '; tap any mark for its figures. '
+    : hiddenLabels ? `${hiddenLabels} ${hiddenLabels === 1 ? 'label is' : 'labels are'} hidden to avoid overlap; hover or focus a mark for its figures. `
+    : nameOnly ? 'Where a figure would not fit beside its mark, the label shows the name only; hover or focus a mark for its figures. ' : '';
   note.innerHTML = labelNote + (state.size === 'valuation'
-    ? '* Manual values have no public source. “est.” marks sourced estimates. Platform values are excluded. <a href="#methodology">Scoring &amp; data notes ↗</a>'
-    : state.size === 'raised' ? 'Total funding is cumulative capital recorded in the dataset, not a company valuation. * Manual values have no public source. Platform parent funding is excluded. <a href="#methodology">Data notes ↗</a>'
+    ? (DATA.some(isDealPrice) ? 'Estimates, rumored figures and announced acquisition prices' : 'Estimates and rumored figures') + ' say so in their tooltips and profiles. Platform values are excluded. <a href="#methodology">Scoring &amp; data notes ↗</a>'
+    : state.size === 'raised' ? 'Total funding is cumulative capital recorded in the dataset, not a company valuation. Platform parent funding is excluded. <a href="#methodology">Data notes ↗</a>'
     : 'Mark size is uniform. Position reflects editorial capability scores; it does not indicate financial scale.');
   if (state.size === 'equal') { legend.textContent = 'Equal marks · compare positions'; return; }
-  const refs = legendReferences(max, maxRadius);
+  const refs = legendReferences(max);
   const radii = refs.map(value => bubbleRadius({ [state.size]: value }, state.size, max, maxRadius));
-  const R = Math.max(...radii), base = 2 * R + 3, labelX = 2 * R + 16;
-  let lastY = Infinity;
-  const items = refs.map((value, index) => {
-    const r = radii[index], top = base - 2 * r;
-    const textY = Math.min(top + 3.5, lastY - 11); lastY = textY;
-    return { value, r, top, textY };
-  }).reverse().map(({ value, r, top, textY }) => `<circle cx="${R + 2}" cy="${base - r}" r="${r}"/><line x1="${R + 2}" y1="${top}" x2="${labelX - 4}" y2="${textY - 3.5}"/><text x="${labelX}" y="${textY}">${money(value)}</text>`).join('');
-  const threshold = roundSignificant(floorThreshold(max, maxRadius));
-  const top = Math.min(0, lastY - 10), width = labelX + 46, height = base + 2 - top;
-  legend.innerHTML = `<span class="legend-title">Bubble area<small>Under ${money(threshold)} drawn at minimum size</small></span><svg width="${width}" height="${height}" viewBox="0 ${top} ${width} ${height}" role="img" aria-label="Reference sizes ${refs.map(money).join(', ')}">${items}</svg>`;
+  const R = Math.max(...radii);
+  let x = 1, items = '';
+  refs.forEach((value, index) => {
+    const r = radii[index], text = money(value), w = Math.max(2 * r, text.length * 6.4);
+    items += `<circle cx="${x + w / 2}" cy="${2 * R + 1 - r}" r="${r}"/><text x="${x + w / 2}" y="${2 * R + 15}" text-anchor="middle">${text}</text>`;
+    x += w + 12;
+  });
+  const width = x - 11, height = 2 * R + 19;
+  legend.innerHTML = `<span class="legend-title">Bubble size · log scale<small>Each step is 10× · ${money(LOG_FLOOR)} or less drawn at minimum size</small></span><svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="Bubble size on a log scale: ${refs.map(money).join(', ')}">${items}</svg>`;
 }
 
 /* ---------- list ----------------------------------------------------------- */
@@ -396,13 +405,15 @@ function renderList(rows) {
     th.setAttribute('aria-sort', col.sort === state.sort ? col.dir : 'none');
   }
   const scoreCell = (c, axis) => `<td class="num"><span class="metric-score">${esc(c[axis])}<span class="mini-track" aria-hidden="true"><i style="width:${Number(c[axis]) || 0}%"></i></span></span></td>`;
-  const roundCell = c => c.cls === 'platform'
-    ? muted() + '<span class="cell-secondary">Parent company product</span>'
-    : `${esc(c.lastSeries || 'Undisclosed')}<span class="cell-secondary">${c.lastDate ? date(c.lastDate) : 'Date undisclosed'}</span>`;
-  $('#tableRows').innerHTML = rows.map(c => `<tr class="${c.cls === 'platform' ? 'is-platform' : ''}"><td><button class="company-button" data-company="${esc(c.id)}">${avatar(c)}<span>${esc(c.name)}${c.company && c.company !== c.name ? `<span class="cell-secondary">${esc(c.company)}</span>` : ''}</span></button></td><td><span class="focus-label" style="--category:${esc(color(c))}">${esc(CATEGORIES[c.cat].name)}</span><span class="cell-secondary">${OWNERSHIP[c.cls]}</span></td>${AXES.all.map(axis => scoreCell(c, axis)).join('')}<td>${valuationMarkup(c)}</td><td>${raisedMarkup(c)}</td><td>${roundCell(c)}</td></tr>`).join('');
+  const roundCell = c => `${esc(c.lastSeries || 'Unknown')}<span class="cell-secondary">${c.lastDate ? date(c.lastDate) : 'Date unknown'}</span>`;
+  const focusCell = c => `<span class="focus-tag" style="--category:${esc(color(c))}" title="${esc(CATEGORIES[c.cat].name)} · ${esc(OWNERSHIP[c.cls])}"><i class="category-dot" aria-hidden="true"></i><span class="visually-hidden">${esc(CATEGORIES[c.cat].name)}, </span><span class="own-tag">${OWNERSHIP_TAG[c.cls]}</span></span>`;
+  const moneyCells = c => c.cls === 'platform'
+    ? `<td colspan="3">${muted('Platform')}</td>`
+    : `<td>${valuationMarkup(c)}</td><td>${raisedMarkup(c)}</td><td>${roundCell(c)}</td>`;
+  $('#tableRows').innerHTML = rows.map(c => `<tr class="${c.cls === 'platform' ? 'is-platform' : ''}"><td><button class="company-button" data-company="${esc(c.id)}">${avatar(c)}<span>${esc(c.name)}${c.company && c.company !== c.name ? `<span class="cell-secondary">${esc(c.company)}</span>` : ''}</span></button></td><td>${focusCell(c)}</td>${AXES.all.map(axis => scoreCell(c, axis)).join('')}${moneyCells(c)}</tr>`).join('');
   // Cards show the horizontal axis and whichever vertical axis the map uses.
   const cardAxes = [AXES.x, state.axis].filter((axis, index, all) => axis && all.indexOf(axis) === index);
-  $('#mobileRows').innerHTML = rows.map(c => `<button class="company-card" data-company="${esc(c.id)}"><div class="card-top">${avatar(c)}<div><h3>${esc(c.name)}</h3><p>${esc(CATEGORIES[c.cat].name)} · ${OWNERSHIP[c.cls]}</p></div><span aria-hidden="true">↗</span></div><dl class="card-metrics">${cardAxes.map(axis => `<div><dt>${esc(AXIS_NAMES[axis])}</dt><dd><span class="card-score">${esc(c[axis])}</span><span class="mini-track" aria-hidden="true"><i style="width:${Number(c[axis]) || 0}%"></i></span></dd></div>`).join('')}<div><dt>Valuation</dt><dd>${c.cls === 'platform' ? '<span class="cell-muted">Platform</span>' : `<span class="card-value">${money(c.valuation)}</span>`}${c.cls !== 'platform' && c.valuation != null ? confidenceChip(c) : ''}</dd></div></dl></button>`).join('');
+  $('#mobileRows').innerHTML = rows.map(c => `<button class="company-card" data-company="${esc(c.id)}"><div class="card-top">${avatar(c)}<div><h3>${esc(c.name)}</h3><p>${esc(CATEGORIES[c.cat].name)} · ${OWNERSHIP[c.cls]}</p></div><span aria-hidden="true">↗</span></div><dl class="card-metrics">${cardAxes.map(axis => `<div><dt>${esc(AXIS_NAMES[axis])}</dt><dd><span class="card-score">${esc(c[axis])}</span><span class="mini-track" aria-hidden="true"><i style="width:${Number(c[axis]) || 0}%"></i></span></dd></div>`).join('')}<div><dt>Valuation</dt><dd>${c.cls === 'platform' ? '<span class="cell-muted">Platform</span>' : `<span class="card-value">${money(c.valuation)}</span>`}${c.cls !== 'platform' && c.valuation != null && isCaveat(valueConfidence(c)) ? confidenceChip(c) : ''}${isDealPrice(c) ? '<span class="card-note">Acquisition price</span>' : ''}</dd></div></dl></button>`).join('');
 }
 
 function renderResearch(rows) {
@@ -411,8 +422,11 @@ function renderResearch(rows) {
   $('#researchSummary').textContent = rows.length === DATA.length ? 'Recent coverage across the landscape, grouped by article.' : `Recent coverage for the ${rows.length} products in this view.`;
   $('#researchItems').innerHTML = articles.map(article => {
     const lead = byId.get(article.companies[0]?.id);
-    return externalLink(article.u, `<div class="article-companies" style="--category:${esc(lead ? color(lead) : CATEGORIES.all.color)}"><span><i class="category-dot" aria-hidden="true"></i>${esc(article.companies.map(labelFor).join(' · '))}</span><span aria-hidden="true">↗</span></div><h3>${esc(article.t)}</h3><div class="article-meta"><span>${esc(article.p)}</span><time datetime="${esc(article.d)}">${date(article.d)}</time></div>`, 'research-card');
-  }).join('') || '<p class="research-empty">No linked research matches the current filters.</p>';
+    const names = article.companies.map(labelFor);
+    const shown = names.slice(0, 2).join(', ') + (names.length > 2 ? ` +${names.length - 2}` : '');
+    const who = names.length > 2 ? `<span aria-hidden="true" title="${esc(names.join(', '))}">${esc(shown)}</span><span class="visually-hidden">${esc(names.join(', '))}</span>` : esc(shown);
+    return externalLink(article.u, `<div class="article-companies" style="--category:${esc(lead ? color(lead) : CATEGORIES.all.color)}"><span><i class="category-dot" aria-hidden="true"></i>${who}</span><span aria-hidden="true">↗</span></div><h3>${esc(article.t)}</h3><div class="article-meta"><span>${esc(article.p)}</span><time datetime="${esc(article.d)}">${date(article.d)}</time></div>`, 'research-card');
+  }).join('') || '<p class="research-empty">No linked news matches the current filters.</p>';
 }
 
 /* ---------- profile drawer ------------------------------------------------ */
@@ -436,7 +450,7 @@ function openProfile(id, trigger, { push = true } = {}) {
   state.selected = id;
   selectedTrigger = triggerFor(id) || trigger || selectedTrigger;
   tooltip.hidden = true;
-  $('#companyContent').innerHTML = renderProfile(company, { variant: 'drawer', profileHref: profileHref(company) });
+  $('#companyContent').innerHTML = renderProfile(company);
   const rows = profileRows(), index = rows.findIndex(c => c.id === id);
   $('#dialogPosition').textContent = index >= 0 ? `${index + 1} of ${rows.length}` : '';
   $('#prevCompany').disabled = $('#nextCompany').disabled = rows.length < 2;

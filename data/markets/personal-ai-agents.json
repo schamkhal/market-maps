@@ -3,13 +3,13 @@
   "schemaVersion": 1,
   "market": {
     "id": "personal-ai-agents",
-    "name": "Personal AI Agents",
+    "name": "Personal AI Agents (USA)",
     "tagline": "Agents that act on your behalf across your personal life.",
     "definition": "Agents that act on behalf of an individual across personal life surfaces — inbox, calendar, bookings, purchases, health, home.",
+    "allDescription": "Compare autonomy, context, and reach across the full landscape.",
     "featured": true,
     "edition": 1,
     "author": "Shamkhal Murtazaaliev",
-    "scopeLabel": "US companies",
     "regions": [
       "US"
     ],
@@ -94,22 +94,47 @@
         "name": "Miso",
         "fails": "two surfaces",
         "why": "Books flights over iMessage with a human team: travel only"
+      },
+      {
+        "name": "Cora",
+        "fails": "two surfaces",
+        "why": "Every's email assistant organizes the inbox and drafts replies, all inside email"
+      },
+      {
+        "name": "Motion",
+        "fails": "on behalf of an individual",
+        "why": "Now sells AI employees to small businesses, with over 10,000 business customers; its personal planner sits inside a business work suite"
+      },
+      {
+        "name": "Superhuman Mail",
+        "fails": "two surfaces",
+        "why": "The Superhuman email client, now part of the Superhuman suite: email only"
+      },
+      {
+        "name": "Dia",
+        "fails": "takes actions",
+        "why": "Atlassian's AI browser summarizes and drafts across your tabs but cannot act on your behalf"
+      },
+      {
+        "name": "DoorDash in Messages",
+        "fails": "two surfaces",
+        "why": "DoorDash's iMessage agent orders food and nothing else"
       }
     ],
     "axes": {
       "x": {
         "key": "autonomy",
         "label": "Autonomy",
-        "low": "Prompted",
+        "low": "Acts when asked",
         "high": "Acts within your guardrails",
-        "rubric": "0 = you must prompt it every time; 50 = executes multi-step tasks you delegate; 100 = acts unprompted inside guardrails you set"
+        "rubric": "0 = takes an action only when asked, one request at a time; 25 = carries out multi-step tasks you start, but stops for approval before anything goes out; 50 = runs a delegated errand end to end on its own; 75 = also works in the background, with routines, watchers or long tasks that follow up and reach out first; 100 = runs around the clock on standing goals, acting for you with minimal oversight"
       },
       "y": {
         "key": "breadth",
         "label": "Context breadth",
-        "low": "One surface",
+        "low": "Two surfaces",
         "high": "Whole life",
-        "rubric": "0 = one surface; 50 = a connected cluster (mail, calendar, docs); 100 = whole-life incl. payments, health, home, travel"
+        "rubric": "0 = two surfaces, such as mail and calendar; 25 = several surfaces within one part of life; 50 = all of one part of life: work (mail, calendar, documents, chat) or home (family calendar, school, chores, groceries); 75 = work and personal life together, including bookings and purchases; 100 = whole life, including payments, health, home and travel"
       },
       "yAlt": {
         "key": "distribution",
@@ -117,7 +142,7 @@
         "short": "Distribution",
         "low": "Own app only",
         "high": "Where you already are",
-        "rubric": "0 = own app only; 100 = embedded in surfaces the user already lives in (WhatsApp, iMessage, the OS)"
+        "rubric": "0 = its own app on one platform, which you have to seek out; 25 = its own apps on the web, desktop and phone, but you still go to it; 50 = also reachable through channels you already use, such as email, phone calls or Slack; 75 = lives inside the messaging apps or work tools you already use, with no new app to install; 100 = built into the operating system or the everyday apps billions already use, such as WhatsApp, Gmail or the phone’s assistant"
       }
     },
     "categories": [
@@ -134,21 +159,7 @@
         "description": "Agents for email, planning, browsing, and recall across the tools you work in."
       }
     ],
-    "quadrants": {
-      "breadth": {
-        "topLeft": "Context giants",
-        "topRight": "Life OS",
-        "bottomLeft": "Smart tools",
-        "bottomRight": "Autonomous wedges"
-      },
-      "distribution": {
-        "topLeft": "Embedded, reactive",
-        "topRight": "Embedded, agentic",
-        "bottomLeft": "Own app, reactive",
-        "bottomRight": "Own app, agentic"
-      }
-    },
-    "asOf": "2026-10-05"
+    "asOf": "2026-10-06"
   },
   "companies": [
     {
@@ -161,7 +172,7 @@
       "region": "US",
       "hq": "United States",
       "website": "https://hark.com",
-      "description": "Secretive AI lab building an end-to-end 'personal intelligence' product — multimodal models, custom hardware and interface designed together, with persistent memory that can listen, see and act in real time. Emerged from eight months of stealth in March 2026.",
+      "description": "AI lab building 'personal intelligence': an app now, its own devices in 2027. Hark Pro, released October 6, 2026 on the web, iOS and Android, is built to be proactive and carries out tasks such as buying groceries, booking a car or building a spreadsheet, with persistent memory. In August Hark showed Handoff, a browser agent for ordering gifts and booking appointments.",
       "founded": 2025,
       "founders": [
         {
@@ -171,17 +182,19 @@
         }
       ],
       "parent": null,
-      "traction": "Launch announced for the week of October 5, 2026: the first 100,000 sign-ups get the paid plan free (Brett Adcock, October 4). In August Hark showed Handoff, a browser agent for tasks such as ordering gifts and booking appointments.",
+      "traction": "Hark Pro launched October 6, 2026: free to try, with $20 and $100 monthly plans, and the paid plan free for the first 100,000 sign-ups. Devices are planned for 2027. Multi-year partnership with NVIDIA announced in August 2026.",
       "axes": {
         "autonomy": {
           "score": 66,
-          "rationale": "Breadth implied by an always-present device with full digital-life scope; autonomy unproven while the product stays unreleased."
+          "rationale": "Hark Pro is built to be proactive and carries out tasks such as buying groceries and booking rides. Scored on its launch materials, since the app is new as of October 6, 2026."
         },
         "breadth": {
-          "score": 78
+          "score": 80,
+          "rationale": "Aimed at the whole of a person's digital life with persistent memory; shopping, rides and documents at launch."
         },
         "distribution": {
-          "score": 30
+          "score": 30,
+          "rationale": "Its own app on the web, iOS and Android; the devices meant to put it everywhere arrive in 2027."
         }
       },
       "lastRound": {
@@ -204,7 +217,7 @@
         ],
         "confidence": "reported",
         "postMoneyConfidence": null,
-        "note": null,
+        "note": "Total funding of about $800M counts the $700M Series A, led by Parkway Venture Capital, and the $100M Brett Adcock put in himself when he launched Hark in late 2025 (TechCrunch).",
         "source": {
           "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
           "publisher": "TechCrunch",
@@ -212,9 +225,27 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": 800000000
+        "totalRaisedUsd": 800000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
+          "publisher": "TechCrunch",
+          "date": "2026-05-21"
+        }
       },
       "news": [
+        {
+          "title": "AI Startup Hark Debuts 'Proactive' Hark Pro App Ahead of 2027 Hardware Launch",
+          "url": "https://www.bloomberg.com/news/articles/2026-10-06/ai-startup-hark-debuts-proactive-hark-pro-app-ahead-of-2027-hardware-launch",
+          "publisher": "Bloomberg",
+          "date": "2026-10-06"
+        },
+        {
+          "title": "Hark releases an AI personal assistant with a focus on privacy",
+          "url": "https://techcrunch.com/2026/10/06/hark-releases-an-ai-personal-assistant-with-a-focus-on-privacy/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-06"
+        },
         {
           "title": "Hark announces a multi-year NVIDIA partnership",
           "url": "https://hark.com/articles/hark-announces-multi-year-partnership-with-nvidia",
@@ -246,10 +277,16 @@
           "url": "https://hark.com/",
           "publisher": "Hark",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Series A report: amount, investors and founder funding",
+          "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-06"
     },
     {
       "id": "instinct",
@@ -275,10 +312,11 @@
       "axes": {
         "autonomy": {
           "score": 88,
-          "rationale": "Proactive, multi-step help across connected applications and real-world errands. Existing editorial score retained; early-access capabilities are not independently benchmarked."
+          "rationale": "Works across connected apps and real-world errands, joins group chats to plan and buy, and follows up on its own. Held a notch below the leaders because the product is invite-only and untested outside early access."
         },
         "breadth": {
-          "score": 85
+          "score": 88,
+          "rationale": "Email, messaging, calendars and other connected apps plus real-world errands such as bookings, tickets and carpools: close to whole-life."
         },
         "distribution": {
           "score": 80,
@@ -298,7 +336,7 @@
         ],
         "confidence": "reported",
         "postMoneyConfidence": null,
-        "note": "$1B Series C at a $10B post-money valuation, announced September 28, 2026; Sequoia Capital, Benchmark and Coatue invested and no lead was named. Total funding of $1.35B adds this round to the $350M TechCrunch reported through the Series B on August 26, 2026.",
+        "note": "$1B Series C at a $10B post-money valuation, announced September 28, 2026; Sequoia Capital, Benchmark and Coatue invested and no lead was named. Total funding of about $1.4B adds this round to the $350M TechCrunch reported through the Series B on August 26, 2026.",
         "source": {
           "url": "https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/",
           "publisher": "TechCrunch",
@@ -306,7 +344,13 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": 1350000000
+        "totalRaisedUsd": 1350000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/",
+          "publisher": "TechCrunch",
+          "date": "2026-09-28"
+        }
       },
       "news": [
         {
@@ -397,14 +441,16 @@
       "traction": "Public product; September updates include voice, presentations, maps and agent-to-agent coordination.",
       "axes": {
         "autonomy": {
-          "score": 78,
-          "rationale": "Recurring routines and cross-tool tasks can run in the background, with email, Slack and phone access. Existing editorial score retained."
+          "score": 80,
+          "rationale": "Runs recurring routines and cross-tool tasks in the background, across email, Slack, the browser and phone, within the permissions you set."
         },
         "breadth": {
-          "score": 78
+          "score": 64,
+          "rationale": "Aimed at professional life: email, calendar, documents, Slack, phone, browser tasks and maps; payments and home are not described."
         },
         "distribution": {
-          "score": 48
+          "score": 48,
+          "rationale": "Reached on the web, by email, in Slack and by phone; mostly through its own surfaces rather than the apps you already live in."
         }
       },
       "lastRound": {
@@ -506,77 +552,88 @@
       "lastVerified": "2026-10-05"
     },
     {
-      "id": "superhuman",
-      "name": "Superhuman Mail",
+      "id": "superhuman-go",
+      "name": "Superhuman Go",
       "company": "Superhuman (formerly Grammarly)",
       "aliases": [
+        "Go",
+        "Grammarly Go",
         "Superhuman"
       ],
-      "class": "acquired",
+      "class": "platform",
       "category": "workflow",
+      "brand": "Superhuman",
       "region": "US",
       "hq": "San Francisco, CA",
-      "website": "https://superhuman.com",
-      "description": "Premium AI email client for inbox triage, drafting and follow-ups. The acquired mail product remains available as Superhuman Mail within the unified Superhuman suite; the former Grammarly parent now uses the Superhuman brand.",
-      "founded": 2014,
-      "founders": [
-        {
-          "name": "Rahul Vohra",
-          "role": "Founder & CEO",
-          "linkedin": "https://www.linkedin.com/in/rahulvohra"
-        }
-      ],
-      "parent": null,
-      "traction": "Active mail product within the Superhuman suite; distinct from the broader Superhuman Go assistant.",
+      "website": "https://superhuman.com/products/go-ai-assistant",
+      "description": "Proactive AI assistant from Superhuman, the company formerly called Grammarly. It runs in the browser, on the desktop and on phones across the apps you already use, offers help without being asked, and through connectors to Gmail, Google Calendar and Jira it drafts replies, sorts the inbox, coordinates meetings and updates documents and tickets. Nothing happens without your approval.",
+      "founded": 2009,
+      "founders": [],
+      "parent": "Superhuman (formerly Grammarly) — private, and valued as a writing and productivity-software business rather than as a personal-agent product. Go is one of four products in its suite, alongside Grammarly, Coda and Superhuman Mail.",
+      "traction": "Launched October 29, 2025 with the rebrand; included in every Superhuman plan, with a free tier. Works as Chrome and Edge extensions, Windows and Mac apps, iOS and Android apps, on the web and in Slack.",
       "axes": {
         "autonomy": {
-          "score": 42,
-          "rationale": "Email-focused triage and drafting, rather than a whole-life assistant. The score describes Mail, not the entire Superhuman suite."
+          "score": 32,
+          "rationale": "Proactive: it looks for chances to help without being prompted, and it can draft, sort, schedule and update across connected apps. But every action waits for your approval (Go suggests, you decide), so it does not act on its own."
         },
         "breadth": {
-          "score": 20
+          "score": 30,
+          "rationale": "A cluster of work tools: email, calendar, documents and tickets through connectors."
         },
         "distribution": {
-          "score": 38
+          "score": 82,
+          "rationale": "Chrome and Edge extensions, Windows and Mac apps, phones, the web and Slack: it shows up inside the tools you already use."
         }
       },
       "lastRound": {
-        "series": "Acquired",
+        "series": "Private — not comparable",
         "amountUsd": null,
-        "postMoneyUsd": 825000000,
-        "date": "2025-07-01",
-        "leads": [
-          "Grammarly"
-        ],
+        "postMoneyUsd": null,
+        "date": "2025-10-29",
+        "leads": [],
         "otherInvestors": [],
-        "confidence": "estimated",
-        "postMoneyConfidence": "reported",
-        "note": "Last private valuation: $825M at the $75M Series C led by IVP (Forbes, August 4, 2021). Not the acquisition price or a current valuation of the combined Superhuman business; the consideration in Grammarly's July 2025 acquisition was not disclosed.",
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
         "source": {
-          "url": "https://www.crunchbase.com/organization/superhuman",
-          "publisher": "Crunchbase",
-          "date": "2026-09-12"
-        },
-        "postMoneySource": {
-          "url": "https://www.forbes.com/sites/alexkonrad/2021/08/04/superhuman-raises-75-million-for-its-waitlist-only-email-productivity-app/",
-          "publisher": "Forbes",
-          "date": "2021-08-04"
+          "url": "https://www.grammarly.com/blog/company/announcing-company-rebrand-to-superhuman/",
+          "publisher": "Grammarly",
+          "date": "2025-10-29"
         }
       },
       "metrics": {
-        "totalRaisedUsd": 113000000
+        "totalRaisedUsd": null
       },
-      "news": [],
+      "news": [
+        {
+          "title": "Grammarly Rebrands Company as Superhuman, Introduces Superhuman Suite and Superhuman Go",
+          "url": "https://www.grammarly.com/blog/company/announcing-company-rebrand-to-superhuman/",
+          "publisher": "Grammarly",
+          "date": "2025-10-29"
+        },
+        {
+          "title": "Grammarly transforms into an AI-enabled productivity suite with Superhuman rebrand",
+          "url": "https://siliconangle.com/2025/10/29/grammarly-transforms-ai-enabled-productivity-suite-superhuman-rebrand/",
+          "publisher": "SiliconANGLE",
+          "date": "2025-10-29"
+        }
+      ],
       "checks": [
         {
-          "title": "Superhuman Mail and parent rebrand",
-          "url": "https://superhuman.com/company/about",
+          "title": "Superhuman Go product page: proactive help, approvals and surfaces",
+          "url": "https://superhuman.com/products/go-ai-assistant",
           "publisher": "Superhuman",
-          "date": "2026-09-26"
+          "date": "2026-10-06"
+        },
+        {
+          "title": "Superhuman Go agents and connectors",
+          "url": "https://help.superhuman.com/hc/en-us/articles/46242137727757-About-Superhuman-Go-agents-and-connectors",
+          "publisher": "Superhuman Help Center",
+          "date": "2026-10-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-28"
+      "lastVerified": "2026-10-06"
     },
     {
       "id": "duckbill",
@@ -601,14 +658,16 @@
       "traction": "Direct app signup is available; execution infrastructure is also offered to other AI products.",
       "axes": {
         "autonomy": {
-          "score": 56,
-          "rationale": "Genuinely broad life scope, but a human is still in the loop on execution, which caps the autonomy score."
+          "score": 40,
+          "rationale": "You hand over an errand, such as a return, an appointment or a gift, and it is done end to end, but a human is still in the loop on execution, so the software’s own autonomy is capped."
         },
         "breadth": {
-          "score": 68
+          "score": 62,
+          "rationale": "Household errands, returns, appointments, gifts and bookings: broad personal life, though not your inbox or calendar."
         },
         "distribution": {
-          "score": 52
+          "score": 52,
+          "rationale": "Its own app, plus an API and MCP that let other AI products hand it errands."
         }
       },
       "lastRound": {
@@ -629,7 +688,7 @@
         ],
         "confidence": "reported",
         "postMoneyConfidence": "manual",
-        "note": "Entered by hand, not from any public source. Duckbill has never disclosed a post-money; this is the editor's working figure and should not be cited as reported.",
+        "note": "The $100M valuation and the $32.7M total funding were entered manually from a source that cannot be disclosed. The latest public round is the 2023 seed and Series A led by Forerunner Ventures.",
         "source": {
           "url": "https://lp.getduckbill.com/blog/introducing-duckbill-the-ultimate-to-do-tackler",
           "publisher": "Duckbill",
@@ -637,7 +696,8 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": 33000000
+        "totalRaisedUsd": 32700000,
+        "totalRaisedConfidence": "manual"
       },
       "news": [
         {
@@ -662,7 +722,8 @@
         }
       ],
       "locked": [
-        "lastRound.postMoneyUsd"
+        "lastRound.postMoneyUsd",
+        "metrics.totalRaisedUsd"
       ],
       "lastVerified": "2026-09-26"
     },
@@ -690,41 +751,32 @@
       "axes": {
         "autonomy": {
           "score": 76,
-          "rationale": "High autonomy on delegated workflows, but scope is deliberately work-shaped — it does not reach into payments, health or home."
+          "rationale": "Runs delegated workflows in the background, started by triggers such as a new email, a meeting or a schedule, within the permissions you set; you still define each workflow."
         },
         "breadth": {
-          "score": 32
+          "score": 15,
+          "rationale": "Work-shaped: email, calendar, meetings and work tools; it does not reach payments, health or home."
         },
         "distribution": {
-          "score": 58
+          "score": 58,
+          "rationale": "Works through email, Slack and phone as well as its own web app."
         }
       },
       "lastRound": {
-        "series": "Series B",
-        "amountUsd": null,
-        "postMoneyUsd": 225000000,
-        "date": "2023-01-05",
-        "leads": [
-          "Battery Ventures"
-        ],
-        "otherInvestors": [
-          "Addition",
-          "Menlo Ventures",
-          "Coatue",
-          "Tiger Global",
-          "SV Angel"
-        ],
-        "confidence": "estimated",
-        "postMoneyConfidence": null,
-        "note": "Caplight secondary-market estimate, not a primary-round post-money. The public page still lists $225M and $99.8M total funding, but the underlying financing records were not independently confirmed.",
-        "source": {
-          "url": "https://www.caplight.com/company/lindy-businessproductivity-software",
-          "publisher": "Caplight",
-          "date": "2026-09-12"
-        }
+        "series": "Venture round",
+        "amountUsd": 4000000,
+        "postMoneyUsd": 235000000,
+        "date": "2023-08-01",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "manual",
+        "note": "Entered manually: total funding of $53.6M, the latest raise of $4M on August 1, 2023, and a $235M valuation after a $35M Series B on July 26, 2021. That Series B is the round reported in July 2021 for Teamflow, the virtual-office company Lindy's founder Flo Crivello ran before Lindy (reported then at a $225M valuation, led by Coatue); funding databases list it under Lindy. No later round has been reported.",
+        "source": null
       },
       "metrics": {
-        "totalRaisedUsd": 99800000
+        "totalRaisedUsd": 53620000,
+        "totalRaisedConfidence": "manual"
       },
       "news": [
         {
@@ -740,10 +792,19 @@
           "url": "https://www.lindy.ai/",
           "publisher": "Lindy",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Funding records: no round after 2023",
+          "url": "https://www.clay.com/dossier/lindy-funding",
+          "publisher": "Clay",
+          "date": "2026-10-06"
         }
       ],
-      "locked": [],
-      "lastVerified": "2026-09-26"
+      "locked": [
+        "lastRound.postMoneyUsd",
+        "metrics.totalRaisedUsd"
+      ],
+      "lastVerified": "2026-10-06"
     },
     {
       "id": "littlebird",
@@ -778,14 +839,16 @@
       "traction": "Free download and mobile companions are advertised; users can pause capture, exclude sources and delete stored context.",
       "axes": {
         "autonomy": {
-          "score": 34,
-          "rationale": "Ambient context, scheduled Routines and connected-app actions now extend beyond recall alone. Existing editorial score retained pending a separate capability reassessment."
+          "score": 12,
+          "rationale": "Reads your screen and meetings for context, drafts work, acts through connected apps and runs scheduled Routines; it acts when asked or on a schedule, not on its own judgement."
         },
         "breadth": {
-          "score": 48
+          "score": 26,
+          "rationale": "Everything on your work screen plus meetings and connected apps; little reach into personal errands."
         },
         "distribution": {
-          "score": 44
+          "score": 28,
+          "rationale": "A desktop app with mobile companions; you go to it."
         }
       },
       "lastRound": {
@@ -810,7 +873,13 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": 11000000
+        "totalRaisedUsd": 11000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://techcrunch.com/2026/03/23/littlebird-raises-11m-to-capture-context-from-your-computer-so-you-can-query-your-data/",
+          "publisher": "TechCrunch",
+          "date": "2026-03-23"
+        }
       },
       "news": [
         {
@@ -860,14 +929,16 @@
       "traction": "Consumer household product remains available with a trial.",
       "axes": {
         "autonomy": {
-          "score": 50,
-          "rationale": "Narrower than the leaders but aimed at the highest-friction personal surface there is: family logistics."
+          "score": 28,
+          "rationale": "Turns forwarded emails, texts and voice requests into schedules, reminders and plans, and coordinates calendars, chores and meals across the family; you start each task."
         },
         "breadth": {
-          "score": 52
+          "score": 44,
+          "rationale": "Family logistics: shared calendars, school information, meal planning, groceries and reminders."
         },
         "distribution": {
-          "score": 50
+          "score": 50,
+          "rationale": "Reached by text, forwarded email and voice as well as its own app, so families can use it from the channels they already have, though it is not built into them."
         }
       },
       "lastRound": {
@@ -892,7 +963,7 @@
         ],
         "confidence": "reported",
         "postMoneyConfidence": "manual",
-        "note": "Latest announced strategic investment has no disclosed amount or valuation. The $25M valuation is the existing locked editorial input, not a reported financing value. Displayed funding retains the $6M seed reported by Axios on January 22, 2024 as a historical minimum. It is not the size of the August 2025 strategic round; the current cumulative total remains unconfirmed.",
+        "note": "The $25M valuation and the $6M total funding were entered manually from a source that cannot be disclosed. The latest public news is a strategic investment led by Muse Capital in August 2025, amount undisclosed.",
         "source": {
           "url": "https://www.prnewswire.com/news-releases/ohaiai-raises-strategic-investment-led-by-muse-capital-celebrity-and-executive-mothers-to-save-parents-hours-of-mental-load-302533511.html",
           "publisher": "Ohai.ai / PR Newswire",
@@ -900,7 +971,8 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": 6000000
+        "totalRaisedUsd": 6000000,
+        "totalRaisedConfidence": "manual"
       },
       "news": [
         {
@@ -931,7 +1003,8 @@
         }
       ],
       "locked": [
-        "lastRound.postMoneyUsd"
+        "lastRound.postMoneyUsd",
+        "metrics.totalRaisedUsd"
       ],
       "lastVerified": "2026-09-26"
     },
@@ -951,26 +1024,28 @@
         {
           "name": "Haz Hubble",
           "role": "Co-founder & CEO",
-          "linkedin": null
+          "linkedin": "https://www.linkedin.com/in/hazhubble/"
         },
         {
           "name": "Wyatt Lansford",
           "role": "Co-founder & CTO",
-          "linkedin": null
+          "linkedin": "https://www.linkedin.com/in/wyattlansford/"
         }
       ],
       "parent": null,
       "traction": "Free plan; Pro $25/month; Max $100/month. Calling allowances and connected-app limits vary by plan.",
       "axes": {
         "autonomy": {
-          "score": 52,
-          "rationale": "Proactive briefs and automations now span messaging, connected apps, calls and approved transactions. Existing editorial score retained; external actions require approval."
+          "score": 36,
+          "rationale": "Runs briefs, reminders and automations on its own, and makes calls, bookings and purchases, but asks for approval before sending messages, paying or creating invitations."
         },
         "breadth": {
-          "score": 38
+          "score": 60,
+          "rationale": "Messaging, email, calendars, files, phone calls, bookings and purchases: broad, though home and health are not covered."
         },
         "distribution": {
-          "score": 80
+          "score": 80,
+          "rationale": "Lives in your text messages; there is no app to install."
         }
       },
       "lastRound": {
@@ -1002,7 +1077,13 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": 5200000
+        "totalRaisedUsd": 5200000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://dealroom.co/news/143591-pally-raises-5-2m-seed-for-an-ai-assistant-that-lives-in-your-texts/",
+          "publisher": "Dealroom",
+          "date": "2026-08-06"
+        }
       },
       "news": [
         {
@@ -1050,83 +1131,6 @@
       "lastVerified": "2026-09-28"
     },
     {
-      "id": "motion",
-      "name": "Motion",
-      "company": "Motion",
-      "aliases": [],
-      "class": "independent",
-      "category": "workflow",
-      "region": "US",
-      "hq": "San Francisco, CA",
-      "website": "https://www.usemotion.com",
-      "description": "Work-planning assistant that prioritizes tasks and automatically rebuilds the calendar as priorities change. Its work suite also includes documents, meeting notes and project management; personal and work calendars can be combined.",
-      "founded": 2019,
-      "founders": [
-        {
-          "name": "Harry Qi",
-          "role": "Co-founder & CEO",
-          "linkedin": null
-        }
-      ],
-      "parent": null,
-      "traction": "Personal calendar and task planning remain available within the broader work suite. Historical user, revenue and headcount estimates were not refreshed.",
-      "axes": {
-        "autonomy": {
-          "score": 62,
-          "rationale": "Automatically reschedules work within the calendar and task domain. Documents and meeting notes add context; the retained score is not a whole-life autonomy benchmark."
-        },
-        "breadth": {
-          "score": 28
-        },
-        "distribution": {
-          "score": 44
-        }
-      },
-      "lastRound": {
-        "series": "Series C2",
-        "amountUsd": null,
-        "postMoneyUsd": 550000000,
-        "date": "2025-09-08",
-        "leads": [],
-        "otherInvestors": [],
-        "confidence": "reported",
-        "postMoneyConfidence": "reported",
-        "note": "Company announcement covers $60M across Series B, C and C2, including a $38M Series C led by Scale Venture Partners. C2 amount and exact closing date are not disclosed separately; September 8 is the announcement date. Total company funding reported as $75M, with latest valuation $550M.",
-        "source": {
-          "url": "https://www.usemotion.com/blog/motion-raises-60m-to-build-the-agentic-work-suite-for-businesses",
-          "publisher": "Motion",
-          "date": "2025-09-08"
-        }
-      },
-      "metrics": {
-        "totalRaisedUsd": 75000000
-      },
-      "news": [
-        {
-          "title": "Motion reports $75M total funding and latest $550M valuation",
-          "url": "https://www.usemotion.com/blog/motion-raises-60m-to-build-the-agentic-work-suite-for-businesses",
-          "publisher": "Motion",
-          "date": "2025-09-08"
-        },
-        {
-          "title": "Motion — revenue, funding and valuation detail",
-          "url": "https://getlatka.com/companies/motion",
-          "publisher": "Latka",
-          "date": "2026-09-12"
-        }
-      ],
-      "checks": [
-        {
-          "title": "Product availability and features",
-          "url": "https://www.usemotion.com/",
-          "publisher": "Motion",
-          "date": "2026-09-26"
-        }
-      ],
-      "locked": [],
-      "lastVerified": "2026-09-26"
-    },
-    {
       "id": "martin",
       "name": "Martin",
       "company": "Martin",
@@ -1146,22 +1150,24 @@
         },
         {
           "name": "Dawson Chen",
-          "role": "Co-founder; former Yale student",
-          "linkedin": null
+          "role": "Co-founder & CEO; former Yale student",
+          "linkedin": "https://www.linkedin.com/in/dawson-chen-martin/"
         }
       ],
       "parent": null,
       "traction": "Basic $35/month or $21/month billed annually; Pro $49/month or $30/month billed annually. Seven-day trial advertised.",
       "axes": {
         "autonomy": {
-          "score": 72,
-          "rationale": "Proactive by design and reachable on every surface the user already uses; breadth limited by shallower integrations than the funded leaders."
+          "score": 66,
+          "rationale": "Proactive by design: it sends daily summaries of what needs attention and acts for you by sending messages or making phone calls; its integrations are shallower than the funded leaders."
         },
         "breadth": {
-          "score": 60
+          "score": 50,
+          "rationale": "Inbox, calendar, to-do lists, calls and texts: the everyday admin cluster."
         },
         "distribution": {
-          "score": 74
+          "score": 74,
+          "rationale": "Reachable by text, phone, email and Slack, with an iOS app."
         }
       },
       "lastRound": {
@@ -1183,7 +1189,13 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": 2000000
+        "totalRaisedUsd": 2000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://venturebeat.com/ai/these-yale-and-berkeley-dropouts-just-raised-2-million-to-build-an-ai-assistant-that-could-rival-openai",
+          "publisher": "VentureBeat",
+          "date": "2025-02-19"
+        }
       },
       "news": [
         {
@@ -1223,71 +1235,6 @@
       "lastVerified": "2026-09-26"
     },
     {
-      "id": "cora",
-      "name": "Cora",
-      "company": "Every",
-      "aliases": [],
-      "class": "independent",
-      "category": "workflow",
-      "region": "US",
-      "hq": "United States",
-      "website": "https://cora.computer",
-      "description": "Every’s email assistant organizes the inbox, prepares replies and delivers briefs. It drafts but cannot send or delete email; the user reviews and sends replies.",
-      "founded": 2025,
-      "founders": [
-        {
-          "name": "Kieran Klaassen",
-          "role": "GM of Cora; EIR at Every",
-          "linkedin": "https://www.linkedin.com/in/kieran-klaassen/"
-        },
-        {
-          "name": "Dan Shipper",
-          "role": "Co-founder & CEO of Every",
-          "linkedin": "https://www.linkedin.com/in/danshipper/"
-        }
-      ],
-      "parent": null,
-      "traction": "Professional: $20/month billed annually; Unlimited: $39/month billed annually, as displayed on the pricing page. Free trial available.",
-      "axes": {
-        "autonomy": {
-          "score": 48,
-          "rationale": "Automated inbox organization and draft preparation within one surface. Cora explicitly cannot send or delete emails; users make the final send decision."
-        },
-        "breadth": {
-          "score": 20
-        },
-        "distribution": {
-          "score": 40
-        }
-      },
-      "lastRound": {
-        "series": "Undisclosed",
-        "amountUsd": null,
-        "postMoneyUsd": null,
-        "date": null,
-        "leads": [],
-        "otherInvestors": [],
-        "confidence": "undisclosed",
-        "postMoneyConfidence": null,
-        "note": null,
-        "source": null
-      },
-      "metrics": {
-        "totalRaisedUsd": null
-      },
-      "news": [],
-      "checks": [
-        {
-          "title": "Product availability and features",
-          "url": "https://cora.computer/",
-          "publisher": "Cora / Every",
-          "date": "2026-09-26"
-        }
-      ],
-      "locked": [],
-      "lastVerified": "2026-09-26"
-    },
-    {
       "id": "comet",
       "name": "Comet (Perplexity)",
       "shortName": "Comet",
@@ -1303,17 +1250,19 @@
       "founded": 2022,
       "founders": [],
       "parent": "Perplexity — private, and valued as an answer engine and search business rather than as a personal-agent product. The June 2026 round was raised specifically to fund Comet, but the company's headline valuation prices everything Perplexity does.",
-      "traction": "$200M raised for Comet in June 2026; total funding ~$1.72B",
+      "traction": "$200M raised for Comet in June 2026; total funding ~$1.7B",
       "axes": {
         "autonomy": {
-          "score": 70,
-          "rationale": "Acts across every site you are signed into, which is the broadest action surface here — but writes like booking and paying still ask before they fire, and you have to adopt a whole new browser."
+          "score": 40,
+          "rationale": "Carries out multi-step errands across every site you are signed into, but writes such as booking and paying ask before they fire."
         },
         "breadth": {
-          "score": 72
+          "score": 74,
+          "rationale": "Anything you can do on a website you are signed into: shopping, travel, forms, email in the browser."
         },
         "distribution": {
-          "score": 58
+          "score": 36,
+          "rationale": "You have to switch to Perplexity's browser to use it."
         }
       },
       "lastRound": {
@@ -1354,9 +1303,11 @@
     },
     {
       "id": "muse",
-      "name": "Meta Muse",
+      "name": "Muse",
       "company": "Meta Platforms",
-      "aliases": [],
+      "aliases": [
+        "Meta Muse"
+      ],
       "class": "platform",
       "category": "executive",
       "brand": "Meta",
@@ -1370,14 +1321,16 @@
       "traction": "Launched September 8, 2026. Meta said on September 23 that Muse is coming to its AI glasses, and on September 30 launched Muse for Small Business. Prior app-chart and pricing claims were not reverified.",
       "axes": {
         "autonomy": {
-          "score": 82,
-          "rationale": "Background work across connected apps and goals, with access controlled by the user. Existing editorial score retained; advertised scope is not an independent reliability benchmark."
+          "score": 90,
+          "rationale": "Works in the background in its own virtual computer, keeps making progress on longer goals after you close the app, and can book, fill forms, negotiate and pay, asking when it needs approval."
         },
         "breadth": {
-          "score": 90
+          "score": 84,
+          "rationale": "Email, travel, forms, shopping and payments across connected apps; health and home are not described."
         },
         "distribution": {
-          "score": 92
+          "score": 92,
+          "rationale": "Inside WhatsApp, which billions already use, and in its own app; coming to Meta's AI glasses."
         }
       },
       "lastRound": {
@@ -1452,7 +1405,7 @@
       "company": "Alphabet",
       "aliases": [],
       "class": "platform",
-      "category": "workflow",
+      "category": "executive",
       "brand": "Google",
       "region": "US",
       "hq": "Mountain View, CA",
@@ -1464,14 +1417,16 @@
       "traction": "Google AI Pro and Ultra access in supported countries; Chrome browsing rollout initially covers the US.",
       "axes": {
         "autonomy": {
-          "score": 80,
-          "rationale": "Runs continuously rather than per-session, and starts from inside the inbox and documents most people already live in."
+          "score": 86,
+          "rationale": "Runs continuously rather than per-session, from inside the inbox and documents most people already live in; payments and other sensitive actions are handed back to you."
         },
         "breadth": {
-          "score": 86
+          "score": 85,
+          "rationale": "Gmail, Docs and other Workspace tools plus the web through Chrome: much of a digital life."
         },
         "distribution": {
-          "score": 88
+          "score": 88,
+          "rationale": "Inside Gmail, Chrome and the Gemini app that most people already have."
         }
       },
       "lastRound": {
@@ -1537,15 +1492,16 @@
       "traction": "Dots rolled out from September 29, 2026 to Pro and Business Premium subscribers in eligible markets, with the first dot included in the plan; text-message access is coming. Tools and access vary by plan, region and workspace settings.",
       "axes": {
         "autonomy": {
-          "score": 82,
-          "rationale": "Dots pursue user-set goals continuously in the background with minimal oversight, on their own cloud computer and browser; a read-only mode keeps them out of your browser or computer while you are away. Rescored October 5, 2026 for dots, from 62."
+          "score": 92,
+          "rationale": "Dots pursue user-set goals continuously in the background with minimal oversight, on their own cloud computer and browser; a read-only mode keeps them out of your browser or computer while you are away."
         },
         "breadth": {
           "score": 72,
-          "rationale": "More than 4,000 app connections cover work tools and everyday tasks such as restaurant bookings; payments, health and home are not described. Rescored from 58."
+          "rationale": "More than 4,000 app connections cover work tools and everyday tasks such as restaurant bookings; payments, health and home are not described."
         },
         "distribution": {
-          "score": 86
+          "score": 86,
+          "rationale": "The ChatGPT app most people already use, on web, desktop and phone; text-message access is coming."
         }
       },
       "lastRound": {
@@ -1594,11 +1550,12 @@
     },
     {
       "id": "cowork",
-      "name": "Claude (Cowork)",
+      "name": "Claude",
       "company": "Anthropic",
       "aliases": [
-        "Claude Cowork",
-        "Cowork"
+        "Cowork",
+        "Claude (Cowork)",
+        "Claude Cowork"
       ],
       "class": "platform",
       "category": "workflow",
@@ -1606,21 +1563,23 @@
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://claude.ai",
-      "description": "Anthropic is merging Cowork and chat into one Claude experience. Multi-step work, files, connectors and skills become available within ordinary conversations; cloud work can continue after the laptop closes.",
+      "description": "Anthropic's assistant. Since September 16, 2026, Cowork's delegated, multi-step work runs inside ordinary Claude conversations, with files, connectors, skills and the new Docs, Slides and Design, and cloud work can continue after the laptop closes. It is built for work rather than personal life.",
       "founded": 2021,
       "founders": [],
       "parent": "Anthropic — private, and valued as a frontier-model company. Cowork is a mode within Claude, scoped deliberately at work rather than personal life.",
-      "traction": "Unified experience rolling out gradually to Pro and Max plans from September 16, 2026; broader plan access is planned.",
+      "traction": "Rolling out to Pro and Max plans on web, desktop and mobile from September 16, 2026; Team and Free plans next, with 30 days notice for Enterprise.",
       "axes": {
         "autonomy": {
-          "score": 80,
-          "rationale": "Delegated work and connected tools now operate within unified conversations. Existing work-focused editorial score retained; not an independent test of every connector."
+          "score": 60,
+          "rationale": "Takes on delegated, multi-step work through connectors and skills and can keep going in the cloud after you close the laptop; you hand it each task."
         },
         "breadth": {
-          "score": 44
+          "score": 20,
+          "rationale": "Work tools (files, documents, and connectors such as email and calendar), deliberately not personal errands, payments or home."
         },
         "distribution": {
-          "score": 52
+          "score": 30,
+          "rationale": "The Claude apps on web, desktop and mobile; it does not live inside messaging or the operating system."
         }
       },
       "lastRound": {
@@ -1657,7 +1616,15 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-06",
+      "checks": [
+        {
+          "title": "Anthropic announcement: Cowork merged into Claude",
+          "url": "https://claude.com/blog/cowork-is-now-claude",
+          "publisher": "Anthropic",
+          "date": "2026-10-06"
+        }
+      ]
     },
     {
       "id": "alexa",
@@ -1677,14 +1644,16 @@
       "traction": "US Prime members get full Alexa+ at no extra charge; non-Prime full access costs $19.99/month, with a limited free text-chat tier.",
       "axes": {
         "autonomy": {
-          "score": 44,
-          "rationale": "Unmatched home and commerce context and an installed base measured in hundreds of millions, but still largely command-and-response."
+          "score": 12,
+          "rationale": "Still largely command-and-response: it shops, books and runs the home when asked, one request at a time."
         },
         "breadth": {
-          "score": 64
+          "score": 66,
+          "rationale": "Smart home, shopping, reservations, rides, home services and family calendars."
         },
         "distribution": {
-          "score": 84
+          "score": 84,
+          "rationale": "Hundreds of millions of Alexa devices plus the app and the web."
         }
       },
       "lastRound": {
@@ -1744,14 +1713,16 @@
       "traction": "English beta in the 27-series operating systems from September 14, 2026. Device, language and regional restrictions apply.",
       "axes": {
         "autonomy": {
-          "score": 42,
-          "rationale": "Reassessed on the shipping beta: Siri looks up personal context across Messages, Mail and Photos and acts in supported apps (WhatsApp and Audible today), chaining a lookup to an action, but only on request and with no background work. Rescored October 5, 2026, from 36."
+          "score": 6,
+          "rationale": "Based on the shipping beta: Siri looks up personal context across Messages, Mail and Photos and acts in supported apps (WhatsApp and Audible today), chaining a lookup to an action, but only on request and with no background work."
         },
         "breadth": {
-          "score": 70
+          "score": 62,
+          "rationale": "Messages, Mail, Photos and supported apps on your devices."
         },
         "distribution": {
-          "score": 90
+          "score": 90,
+          "rationale": "Built into iPhone, iPad and Mac."
         }
       },
       "lastRound": {
@@ -1815,21 +1786,23 @@
         {
           "name": "Shivani Poddar",
           "role": "Founder",
-          "linkedin": null
+          "linkedin": "https://www.linkedin.com/in/shivani-poddar/"
         }
       ],
       "parent": null,
       "traction": "Opened to the public on September 28, 2026 after a month of invite-only alpha: a free Fo Mini plan with a daily task limit, invite-only OG Fo with unlimited tasks, and a Pro plan priced on request. Fo acts with its own phone number, email address and single-use payment cards, and hands a task to a human operator when a business will not deal with AI. Company-wide financing figures are user-provided, not publicly verified.",
       "axes": {
         "autonomy": {
-          "score": 76,
-          "rationale": "Editorial estimate under the existing rubric: multi-step real-world delegation with permission boundaries and human escalation; not an independently measured success rate."
+          "score": 78,
+          "rationale": "Editorial estimate: Fo runs real-world errands end to end with its own email address, phone number and payment card, within permission boundaries, and hands off to a human assistant when it gets stuck; not an independently measured success rate."
         },
         "breadth": {
-          "score": 76
+          "score": 80,
+          "rationale": "Email, phone calls, calendars, errands, bookings and purchases with its own payment cards."
         },
         "distribution": {
-          "score": 72
+          "score": 72,
+          "rationale": "Reached by text, email and phone with its own number and address; it also joins group conversations."
         }
       },
       "lastRound": {
@@ -1841,7 +1814,7 @@
         "otherInvestors": [],
         "confidence": "undisclosed",
         "postMoneyConfidence": "manual",
-        "note": "User-provided company-wide figures: $10M total raised and $40M post-money valuation for Wajo, Inc., entered September 26, 2026. Not independently confirmed from the public sources reviewed and not Fo-only figures. Wajo also markets an agent builder and custom business agents. The $10M is recorded as cumulative funding, not the size of a verified round. Round stage, closing date and investors remain undisclosed.",
+        "note": "The $40M valuation and the $10M total funding for Wajo, Inc. were entered manually from a source that cannot be disclosed. They are company-wide figures, not for Fo alone; round stage, date and investors are not public.",
         "source": null
       },
       "metrics": {
@@ -1904,10 +1877,10 @@
         {
           "name": "Bill Lennon",
           "role": "Co-founder & CEO",
-          "linkedin": null
+          "linkedin": "https://www.linkedin.com/in/blennon/"
         },
         {
-          "name": "Christy Shannon",
+          "name": "Christine Shannon",
           "role": "Co-founder & CMO",
           "linkedin": null
         },
@@ -1921,28 +1894,32 @@
       "traction": "Free entry tier with usage-based paid plans. The earlier meal-planning app also remains available.",
       "axes": {
         "autonomy": {
-          "score": 60,
-          "rationale": "Editorial estimate under the existing rubric: delegated household coordination across calendars, email and meal planning; narrower than a general whole-life operator."
+          "score": 44,
+          "rationale": "Editorial estimate: keeps the family’s calendars, email, lists and meal plans in sync and reports by text; it coordinates more than it executes."
         },
         "breadth": {
-          "score": 64
+          "score": 56,
+          "rationale": "Family calendars and email, shared lists, meal planning, groceries, appointments and payments."
         },
         "distribution": {
-          "score": 80
+          "score": 80,
+          "rationale": "Works by text and in family group chats, with no app to install."
         }
       },
       "lastRound": {
         "series": "Seed",
         "amountUsd": 7500000,
         "postMoneyUsd": null,
-        "date": "2026-09-05",
+        "date": "2026-09-04",
         "leads": [
           "Khosla Ventures"
         ],
-        "otherInvestors": [],
+        "otherInvestors": [
+          "AI House"
+        ],
         "confidence": "reported",
         "postMoneyConfidence": "undisclosed",
-        "note": "Dealroom reports a completed $7.5M seed raise. September 5, 2026 is the report date, not a verified closing date. The displayed $7.5M funding figure retains that disclosed seed financing as a minimum, not a separately verified all-time total. Valuation remains undisclosed. The company lists Khosla Ventures and AI2 as backers.",
+        "note": "A $7.5M seed led by Khosla Ventures, with AI House participating; sources date the announcement between September 3 and 5, 2026. Valuation undisclosed.",
         "source": {
           "url": "https://dealroom.co/news/149015-ollie-lands-7-5m-seed-to-build-a-privacy-first-family-ai-assistant/",
           "publisher": "Dealroom",
@@ -1950,7 +1927,13 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": 7500000
+        "totalRaisedUsd": 7500000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://dealroom.co/news/149015-ollie-lands-7-5m-seed-to-build-a-privacy-first-family-ai-assistant/",
+          "publisher": "Dealroom",
+          "date": "2026-09-05"
+        }
       },
       "news": [
         {
@@ -2002,14 +1985,16 @@
       "traction": "Still available after joining Cognition. Free, Pro $19/month and Ultra $199/month plans are advertised.",
       "axes": {
         "autonomy": {
-          "score": 74,
-          "rationale": "Editorial estimate under the existing rubric: persistent messaging-based help and background recipes across connected services; capability varies with integrations and approvals."
+          "score": 72,
+          "rationale": "Editorial estimate: persistent messaging-based help and background recipes across connected services; capability varies with integrations and approvals."
         },
         "breadth": {
-          "score": 74
+          "score": 76,
+          "rationale": "Email, calendars, planning, health and fitness, smart-home controls and photos through connected services, recipes and reminders."
         },
         "distribution": {
-          "score": 84
+          "score": 84,
+          "rationale": "Lives in Messages, WhatsApp and Telegram."
         }
       },
       "lastRound": {
@@ -2101,14 +2086,16 @@
       "traction": "Beta launched August 11, 2026; access expanded August 26 to SuperGrok and Cursor Pro and Teams plans.",
       "axes": {
         "autonomy": {
-          "score": 80,
-          "rationale": "Editorial estimate under the existing rubric: persistent computer use, scheduled routines and connected apps enable delegated work; access still depends on setup and permission review."
+          "score": 78,
+          "rationale": "Editorial estimate: persistent computer use, scheduled routines and connected apps enable delegated work; access still depends on setup and permission review."
         },
         "breadth": {
-          "score": 66
+          "score": 58,
+          "rationale": "Research, inbox and calendar, shopping comparisons and scheduled routines through connected apps."
         },
         "distribution": {
-          "score": 62
+          "score": 46,
+          "rationale": "Its own Grok surfaces, with access through SuperGrok and Cursor plans; you go to it rather than meeting it in the apps you already use."
         }
       },
       "lastRound": {
@@ -2173,18 +2160,19 @@
         {
           "name": "Arlan Rakhmetzhanov",
           "role": "Founder",
-          "linkedin": null
+          "linkedin": "https://www.linkedin.com/in/arlan-rakhmetzhanov/"
         }
       ],
       "parent": null,
       "traction": "Free plan with unlimited chatting and three background watchers; Pro $9.99 a month (folk.com, October 5, 2026).",
       "axes": {
         "autonomy": {
-          "score": 60,
-          "rationale": "Editorial estimate under the existing rubric: it texts first, runs background watchers on flights and prices, and books tables or handles email when asked; payments and phone calls are not advertised."
+          "score": 58,
+          "rationale": "Editorial estimate: it texts first, runs background watchers on flights and prices, and books tables or handles email when asked; payments and phone calls are not advertised."
         },
         "breadth": {
-          "score": 56
+          "score": 46,
+          "rationale": "Messaging, email, restaurant bookings and flight and price watching; no payments or phone calls."
         },
         "distribution": {
           "score": 82,
@@ -2247,6 +2235,177 @@
       ],
       "locked": [],
       "lastVerified": "2026-10-05"
+    },
+    {
+      "id": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "shortName": "Copilot",
+      "company": "Microsoft",
+      "aliases": [
+        "Copilot",
+        "Copilot Actions",
+        "Copilot Mode",
+        "Copilot Autopilot"
+      ],
+      "class": "platform",
+      "category": "executive",
+      "brand": "Microsoft",
+      "region": "US",
+      "hq": "Redmond, WA",
+      "website": "https://copilot.microsoft.com",
+      "description": "Microsoft's consumer assistant in Windows, Edge, the Copilot apps and the web. With your confirmation it books restaurants, tickets and travel and buys gifts through partner sites, works across open tabs in Edge's Copilot Mode, and reads your Outlook.com, Gmail, Google Calendar, OneDrive and Google Drive through connectors, with long-term memory.",
+      "founded": 1975,
+      "founders": [],
+      "parent": "Microsoft — public (NASDAQ: MSFT). Copilot is one of Microsoft's AI products; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Connectors, memory and proactive suggestions arrived in the fall 2025 release. On September 25, 2026 Microsoft merged its consumer and work Copilot apps and announced Autopilot, an always-on agent, in private preview.",
+      "axes": {
+        "autonomy": {
+          "score": 26,
+          "rationale": "Books and buys on your behalf through partner sites and acts across Edge tabs, but every booking or purchase waits for your confirmation, and the always-on Autopilot is still a private preview."
+        },
+        "breadth": {
+          "score": 70,
+          "rationale": "Email, calendar, contacts and files through connectors, plus dining, travel, tickets and shopping; no home or health."
+        },
+        "distribution": {
+          "score": 88,
+          "rationale": "Built into Windows and Edge, with iOS and Android apps and the web."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2025-11-25",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://www.infoq.com/news/2025/11/microsoft-copilot-fall-release/",
+          "publisher": "InfoQ",
+          "date": "2025-11-25"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Microsoft Copilot Fall Release Includes Collaboration and Personalization Features",
+          "url": "https://www.infoq.com/news/2025/11/microsoft-copilot-fall-release/",
+          "publisher": "InfoQ",
+          "date": "2025-11-25"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Copilot connectors for personal accounts",
+          "url": "https://support.microsoft.com/en-us/microsoft-copilot/connecting-microsoft-copilot-to-other-services",
+          "publisher": "Microsoft Support",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "genspark",
+      "name": "Genspark",
+      "company": "Genspark",
+      "aliases": [
+        "Genspark AI",
+        "Super Agent",
+        "Call For Me",
+        "MainFunc"
+      ],
+      "class": "independent",
+      "category": "workflow",
+      "region": "US",
+      "hq": "Palo Alto, CA",
+      "website": "https://www.genspark.ai",
+      "description": "General-purpose AI agent and workspace. Its Super Agent breaks a request into steps and carries them out: it reads and sends email through Gmail or Outlook, works from your calendar, makes phone calls on your behalf to book appointments and reservations (Call For Me), and produces slides, sheets, documents and research.",
+      "founded": 2023,
+      "founders": [
+        {
+          "name": "Eric Jing",
+          "role": "Co-founder & CEO"
+        },
+        {
+          "name": "Kay Zhu",
+          "role": "Co-founder & CTO",
+          "linkedin": "https://www.linkedin.com/in/kay-zhu-522b275/"
+        },
+        {
+          "name": "Wen Sang",
+          "role": "Co-founder & COO",
+          "linkedin": "https://www.linkedin.com/in/wen-sang/"
+        }
+      ],
+      "parent": null,
+      "traction": "Grew to about $250M in annualized revenue within a year of its April 2025 relaunch as an agent, per reports. Call For Me places calls in more than 40 countries, through Twilio.",
+      "axes": {
+        "autonomy": {
+          "score": 52,
+          "rationale": "Runs multi-step tasks on its own, including outbound phone calls to businesses and people, and sends or schedules email; you start each task."
+        },
+        "breadth": {
+          "score": 54,
+          "rationale": "Email, calendar, phone calls, documents and the web; no payments, home or health."
+        },
+        "distribution": {
+          "score": 36,
+          "rationale": "Its own web app, browser and mobile apps; it reaches other people by phone, but you have to come to Genspark."
+        }
+      },
+      "lastRound": {
+        "series": "Series B extension",
+        "amountUsd": 100000000,
+        "postMoneyUsd": 2600000000,
+        "date": "2026-06-11",
+        "leads": [
+          "Sozo Ventures",
+          "UpHonest Capital",
+          "Mirae Asset"
+        ],
+        "otherInvestors": [],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "The extension follows a $275M Series B at $1.3B in November 2025, led by Emergence Capital. Dealroom reports total funding of more than $645M.",
+        "source": {
+          "url": "https://dealroom.co/news/134547-genspark-raises-100m-series-b-extension-at-2-6b-valuation/",
+          "publisher": "Dealroom",
+          "date": "2026-06-11"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 645000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://dealroom.co/news/134547-genspark-raises-100m-series-b-extension-at-2-6b-valuation/",
+          "publisher": "Dealroom",
+          "date": "2026-06-11"
+        }
+      },
+      "news": [
+        {
+          "title": "Genspark raises $100M Series B extension at $2.6B valuation",
+          "url": "https://dealroom.co/news/134547-genspark-raises-100m-series-b-extension-at-2-6b-valuation/",
+          "publisher": "Dealroom",
+          "date": "2026-06-11"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Funding report: amount, valuation, investors and total",
+          "url": "https://dealroom.co/news/134547-genspark-raises-100m-series-b-extension-at-2-6b-valuation/",
+          "publisher": "Dealroom",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
     }
   ]
 }

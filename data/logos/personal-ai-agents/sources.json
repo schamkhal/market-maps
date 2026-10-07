@@ -1,0 +1,155 @@
+{
+  "alexa": {
+    "page": "https://alexa.amazon.com",
+    "light": "https://m.media-amazon.com/images/G/01/Metis/alexa-wordmark.png",
+    "file": "alexa.png",
+    "fetched": "2026-10-07"
+  },
+  "chatgpt": {
+    "page": "https://apps.apple.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c7/79/89/c77989be-de98-6c64-b2e0-425d52fa86bc/AppIcon-0-0-1x_U007epad-0-0-0-1-0-85-220.png/512x512bb.jpg",
+    "file": "chatgpt.jpg",
+    "fetched": "2026-10-07",
+    "via": "App Store icon, published by OpenAI OpCo, LLC"
+  },
+  "comet": {
+    "page": "https://apps.apple.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ce/5b/19/ce5b1989-c250-9bfc-8a78-936acdaa3fa8/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "file": "comet.jpg",
+    "fetched": "2026-10-07",
+    "via": "App Store icon, published by Perplexity AI, Inc."
+  },
+  "cowork": {
+    "page": "https://assets-proxy.anthropic.com",
+    "light": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-0ZbJsTbu.png",
+    "file": "cowork.png",
+    "fetched": "2026-10-07"
+  },
+  "duckbill": {
+    "page": "https://www.getduckbill.com",
+    "light": "https://getduckbill.com/apple-icon.png",
+    "file": "duckbill.png",
+    "fetched": "2026-10-07"
+  },
+  "folk": {
+    "page": "https://www.folk.com",
+    "light": "https://www.folk.com/icon.png",
+    "file": "folk.png",
+    "fetched": "2026-10-07"
+  },
+  "genspark": {
+    "page": "https://apps.apple.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/69/07/49/69074959-6ab3-187e-90ca-72ace99e20f9/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "file": "genspark.jpg",
+    "fetched": "2026-10-07",
+    "via": "App Store icon, published by GENSPARK INC"
+  },
+  "grok-bot": {
+    "page": "https://apps.apple.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/80/b5/14/80b51452-a8b0-2643-15bc-109ead01bf72/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-0-85-220.png/512x512bb.jpg",
+    "file": "grok-bot.jpg",
+    "fetched": "2026-10-07",
+    "via": "App Store icon, published by X Corp."
+  },
+  "hark": {
+    "page": "https://hark.com",
+    "light": "https://hark.com/apple-touch-icon.png",
+    "file": "hark.png",
+    "fetched": "2026-10-07",
+    "dark": "https://hark.com/images/favicon-light.png",
+    "darkFile": "hark-dark.png"
+  },
+  "instinct": {
+    "page": "https://instinct.com",
+    "light": "https://instinct.com/apple-touch-icon.png",
+    "file": "instinct.png",
+    "fetched": "2026-10-07"
+  },
+  "lindy": {
+    "page": "https://www.lindy.ai",
+    "light": "https://www.lindy.ai/_sherpa/assets/static/lindy/69f7b166e16ce668638e689d_lindy-avatar-favicon.png",
+    "file": "lindy.png",
+    "fetched": "2026-10-07"
+  },
+  "littlebird": {
+    "page": "https://littlebird.ai",
+    "light": "https://cdn.prod.website-files.com/694043d273dceabab479f631/6a55a1a906eabfade48dce1e_69603245cff328dc64a18f61_Base%20Icon%20%5BDO%20NOT%20EDIT%5D%206.png",
+    "file": "littlebird.png",
+    "fetched": "2026-10-07"
+  },
+  "martin": {
+    "page": "https://apps.apple.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/15/7b/af/157baf76-0a3e-dddf-9418-11ee68acbecc/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "file": "martin.jpg",
+    "fetched": "2026-10-07",
+    "via": "App Store icon, published by Martin AI"
+  },
+  "microsoft-copilot": {
+    "page": "https://apps.apple.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c1/d5/3d/c1d53da8-6c85-dacb-bbf5-6922022f1a55/AppIcon-0-0-1x_U007epad-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+    "file": "microsoft-copilot.jpg",
+    "fetched": "2026-10-07",
+    "via": "App Store icon, published by Microsoft Corporation"
+  },
+  "muse": {
+    "page": "https://static.xx.fbcdn.net",
+    "light": "https://static.xx.fbcdn.net/assets/?set=meta_ai_assets&name=meta-ai-orbit-favicon-180px-raster&density=4x&mode=light",
+    "file": "muse.png",
+    "fetched": "2026-10-07"
+  },
+  "ohai": {
+    "page": "https://apps.apple.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c3/fc/dc/c3fcdc50-d45a-aa89-8e24-38530cef1481/AppIcon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+    "file": "ohai.jpg",
+    "fetched": "2026-10-07",
+    "via": "App Store icon, published by ohai.ai Inc."
+  },
+  "ollie": {
+    "page": "https://ollie.ai",
+    "light": "https://ollie.ai/apple-icon.png?apple-icon.3153ary8y48tk.png",
+    "file": "ollie.png",
+    "fetched": "2026-10-07"
+  },
+  "pally": {
+    "page": "https://pally.com",
+    "light": "https://pally.com/brand/app-icon.png?v=2",
+    "file": "pally.png",
+    "fetched": "2026-10-07"
+  },
+  "poke": {
+    "page": "https://poke.com",
+    "light": "https://poke.com/icons/poke-512.png",
+    "file": "poke.png",
+    "fetched": "2026-10-07"
+  },
+  "siri": {
+    "page": "https://www.apple.com",
+    "light": "https://www.apple.com/apple-touch-icon.png",
+    "file": "siri.png",
+    "fetched": "2026-10-07"
+  },
+  "spark": {
+    "page": "https://gemini.google.com",
+    "light": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "file": "spark.png",
+    "fetched": "2026-10-07"
+  },
+  "superhuman-go": {
+    "page": "https://superhuman.com",
+    "light": "https://superhumanstatic.com/super-funnel/main/public/images/v4/favicons/superhuman-apple-touch-icon.png",
+    "file": "superhuman-go.png",
+    "fetched": "2026-10-07"
+  },
+  "town": {
+    "page": "https://www.town.com",
+    "light": "https://www.town.com/favicon.png",
+    "file": "town.png",
+    "fetched": "2026-10-07"
+  },
+  "wajo": {
+    "page": "https://wajo.ai",
+    "light": "https://wajo.ai/apple-touch-icon.png",
+    "file": "wajo.png",
+    "fetched": "2026-10-07"
+  }
+}

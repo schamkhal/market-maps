@@ -18,10 +18,10 @@
         "name": { "type": "string", "minLength": 1 },
         "tagline": { "type": "string" },
         "definition": { "type": "string", "minLength": 10 },
-        "featured": { "type": "boolean", "description": "The map served at the site root. At most one market may be featured; without one, the lowest edition is." },
+        "allDescription": { "type": "string", "minLength": 10, "description": "The line under the map's title when every company is shown, e.g. Compare autonomy, context, and reach across the full landscape." },
+        "featured": { "type": "boolean", "description": "The map that links from before the maps hub (/?company=…) still open. At most one market may be featured; without one, the lowest edition is." },
         "edition": { "type": "integer", "minimum": 1, "description": "Map number shown in the masthead and eyebrow (Market map 01)." },
         "author": { "type": "string", "minLength": 1 },
-        "scopeLabel": { "type": "string", "minLength": 1, "description": "Short scope shown beside the edition, e.g. US companies." },
         "regions": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "description": "Every company's `region` must be one of these." },
         "scope": { "type": "string" },
         "inclusion": { "type": "array", "minItems": 1, "items": { "type": "string" } },
@@ -223,6 +223,11 @@
               "type": ["string", "null"],
               "enum": ["reported", "estimated", "rumored", "manual", "undisclosed", null],
               "description": "Confidence in the valuation specifically. Falls back to `confidence` when absent — a round can be well reported while its post-money is a hand-entered figure."
+            },
+            "postMoneyBasis": {
+              "type": ["string", "null"],
+              "enum": ["round", "acquisition", null],
+              "description": "What the valuation prices: a funding round (the default) or an announced acquisition. An acquisition price must carry a note saying whether the deal has closed."
             },
             "note": { "type": ["string", "null"] },
             "source": { "$ref": "#/$defs/source" },

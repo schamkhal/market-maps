@@ -21,7 +21,7 @@ const test = async (name, fn) => {
 const company = (over = {}) => ({
   id: 'acme', name: 'Acme', company: 'Acme', class: 'independent', category: 'work', region: 'US',
   description: 'A personal agent that does things for you across your life.',
-  axes: { autonomy: { score: 50, rationale: 'Acts on delegated tasks.' }, breadth: { score: 50 } },
+  axes: { autonomy: { score: 50, rationale: 'Acts on delegated tasks.' }, breadth: { score: 50, rationale: 'Mail and calendar.' } },
   lastRound: { series: 'Series A', amountUsd: 1e7, postMoneyUsd: 1e8, date: '2026-01-01',
                leads: ['Old Fund'], otherInvestors: [], confidence: 'reported',
                source: { url: 'https://a.test/1', publisher: 'Old Wire', date: '2026-01-01' } },

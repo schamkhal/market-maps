@@ -30,7 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with: { fetch-depth: 0 }     # full history so the changelog has entries
       - uses: actions/setup-node@v4
         with: { node-version-file: '.node-version', cache: 'npm' }
       - run: npm ci

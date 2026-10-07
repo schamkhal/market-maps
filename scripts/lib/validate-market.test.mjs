@@ -3,13 +3,14 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { validateMarket } from './validate-market.mjs';
 
-const dataset = JSON.parse(fs.readFileSync(new URL('../../data/markets/personal-ai-agents.json', import.meta.url), 'utf8'));
+const MARKETS = new URL('../../data/markets/', import.meta.url);
+const published = fs.readdirSync(MARKETS).filter(f => f.endsWith('.json')).map(f => [f, JSON.parse(fs.readFileSync(new URL(f, MARKETS), 'utf8'))]);
 
 // The smallest document every rule is happy with; each test breaks one thing.
 const company = (over = {}) => ({
   id: 'acme', name: 'Acme', company: 'Acme', class: 'independent', category: 'work', region: 'US',
   description: 'A personal agent that does things for you across your life.',
-  axes: { autonomy: { score: 50, rationale: 'Acts on delegated tasks.' }, breadth: { score: 50 } },
+  axes: { autonomy: { score: 50, rationale: 'Acts on delegated tasks.' }, breadth: { score: 50, rationale: 'Mail and calendar.' } },
   lastRound: {
     series: 'Seed', amountUsd: 5e6, postMoneyUsd: 2e7, date: '2026-01-01', leads: [], otherInvestors: [],
     confidence: 'reported', source: { url: 'https://news.test/acme', publisher: 'Wire', date: '2026-01-01' },
@@ -34,8 +35,8 @@ const doc = (companies = [company()], market = {}) => ({
 const errorsOf = d => validateMarket(d).errors.map(e => e.msg);
 const round = over => ({ ...company().lastRound, ...over });
 
-test('the published dataset passes every rule', () => {
-  assert.deepEqual(validateMarket(dataset).errors, []);
+test('every published dataset passes every rule', () => {
+  for (const [file, doc] of published) assert.deepEqual(validateMarket(doc).errors, [], file);
   assert.deepEqual(errorsOf(doc()), []);
 });
 test('a reported figure without a source fails (rule 1)', () => {
@@ -92,4 +93,16 @@ test('dates after the snapshot fail, including the round source (rule 6)', () =>
 test('a verification visit filed as news fails (rule 10)', () => {
   const check = company({ news: [{ title: 'Pricing page — checked September 26, 2026', url: 'https://acme.test/', publisher: 'Acme', date: '2026-09-26' }] });
   assert.match(errorsOf(doc([check])).join('\n'), /is a verification check/);
+});
+test('an acquisition price must be stated and explained (rule 16)', () => {
+  const deal = over => company({ lastRound: round({ postMoneyBasis: 'acquisition', postMoneyUsd: 8.2e9, ...over }) });
+  assert.match(errorsOf(doc([deal()])).join('\n'), /acquisition price must carry a note/);
+  assert.match(errorsOf(doc([deal({ postMoneyUsd: null, note: 'AMD deal.' })])).join('\n'), /no valuation is stated/);
+  assert.deepEqual(errorsOf(doc([deal({ note: 'AMD agreed to buy it; not yet closed.' })])), []);
+});
+test('every score carries its reasoning (rule 8)', () => {
+  const bare = company({ axes: { ...company().axes, breadth: { score: 50 } } });
+  assert.match(errorsOf(doc([bare])).join('\n'), /no rationale on the breadth score/);
+  const blank = company({ axes: { ...company().axes, autonomy: { score: 50, rationale: '  ' } } });
+  assert.match(errorsOf(doc([blank])).join('\n'), /no rationale on the autonomy score/);
 });

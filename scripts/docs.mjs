@@ -12,7 +12,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const md = fs.readFileSync(path.join(ROOT, 'README.md'), 'utf8');
-const doc = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/markets/personal-ai-agents.json'), 'utf8'));
+const DATA = path.join(ROOT, 'data/markets');
+const docs = fs.readdirSync(DATA).filter(f => f.endsWith('.json')).map(f => JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8')))
+  .sort((a, b) => (a.market.edition ?? Infinity) - (b.market.edition ?? Infinity));
+const companies = docs.reduce((sum, d) => sum + d.companies.length, 0);
+const maps = docs.map(d => (d.market.edition ? String(d.market.edition).padStart(2, '0') + ' ' : '') + d.market.name).join(' · ');
 const tpl = fs.readFileSync(path.join(ROOT, 'docs.html'), 'utf8');
 
 const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -58,6 +62,7 @@ let page = tpl
            (_,a,b)=>a+toc.map(t=>`<li><a href="#${t.id}">${t.t}</a></li>`).join('')+b)
   .replace(/(<main>)[\s\S]*?(<\/main>)/, (_,a,b)=>a+out.join('\n')+b)
   .replace(/(<p class="eyebrow">Project handbook · updated )[^<]*(<\/p>)/, `$1${today}$2`)
-  .replace(/(<div><dt>Companies<\/dt><dd>)\d+(<\/dd><\/div>)/, `$1${doc.companies.length}$2`);
+  .replace(/<div><dt>(?:Map 01|Maps)<\/dt><dd>[^<]*<\/dd><\/div>/, `<div><dt>Maps</dt><dd>${esc(maps)}</dd></div>`)
+  .replace(/(<div><dt>Companies<\/dt><dd>)\d+(<\/dd><\/div>)/, `$1${companies}$2`);
 fs.writeFileSync(path.join(ROOT,'docs.html'), page);
-console.log(`docs.html rebuilt from README — ${toc.length} sections, ${doc.companies.length} companies.`);
+console.log(`docs.html rebuilt from README — ${toc.length} sections, ${docs.length} maps, ${companies} companies.`);

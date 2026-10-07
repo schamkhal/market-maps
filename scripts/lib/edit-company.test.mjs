@@ -26,11 +26,11 @@ test('saving a company unchanged leaves the file valid and the company as it was
   }
 });
 test('a sourceless company never gains a hollow source object', () => {
-  // The bug this module replaced: saving Cora or Wajo wrote { url: null, publisher: null, date: null }.
-  for (const id of ['cora', 'wajo']) assert.equal(save(id).company.lastRound.source, null, id);
+  // The bug this module replaced: saving a company with no source wrote { url: null, publisher: null, date: null }.
+  for (const id of ['lindy', 'wajo']) assert.equal(save(id).company.lastRound.source, null, id);
 });
 test('a valuation typed by hand is marked manual and locked, and needs its note', () => {
-  const { company, notes, errors } = save('hark', { 'lastRound.postMoneyUsd': '7000000000' });
+  const { company, notes, errors } = save('hark', { 'lastRound.postMoneyUsd': '7000000000', 'lastRound.note': '' });
   assert.equal(company.lastRound.postMoneyConfidence, 'manual');
   assert.ok(company.locked.includes('lastRound.postMoneyUsd'));
   assert.match(notes.join('\n'), /marked manual/);
@@ -48,7 +48,7 @@ test('a new figure that arrives with its own source keeps its confidence', () =>
   assert.deepEqual(notes, []);
 });
 test('a hand-typed funding total is manual and locked too', () => {
-  const { company } = save('motion', { 'metrics.totalRaisedUsd': '80000000' });
+  const { company } = save('folk', { 'metrics.totalRaisedUsd': '80000000' });
   assert.equal(company.metrics.totalRaisedConfidence, 'manual');
   assert.ok(company.locked.includes('metrics.totalRaisedUsd'));
 });

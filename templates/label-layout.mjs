@@ -2,10 +2,17 @@
 // The page measures text with its own SVG text engine and passes that in as
 // `measure`; the tests pass a character-width approximation.
 //
+// Labels prefer to sit right beside their marks. A full label shows the
+// value under the name or, where two lines do not fit, beside it on one line.
+// A full label that would need a leader line gives way to a name-only one
+// that does not; a label shown by name only may still win its value by
+// moving a neighbour, as long as the neighbour keeps its own.
+//
 // Guarantees, checked by label-layout.test.mjs:
 //  - a placed label never overlaps another label or a quadrant name (≤ 12px²);
 //  - a placed label never covers another company's mark;
-//  - a leader line never runs through another mark or label;
+//  - a leader line never runs through another mark or label (a mark inside a
+//    bigger bubble may cross that bubble on its way out);
 //  - a label stays within reach of its own mark (a leader shows the way);
 //  - on phone-width charts, leaders never cross and no label sits nearer
 //    another company's mark than its own. Wider charts may relax those two
@@ -30,9 +37,15 @@ function segmentHitsBox(p, q, box) {
   return false;
 }
 const gapTo = (point, box) => { const end = leaderEnd(point, box); return Math.hypot(end.x - point.x, end.y - point.y) - point.r; };
-export const geometry = { overlapArea, segmentsCross, segmentHitsBox, gapTo };
+// A small mark can sit inside a bigger company's bubble (two near-identical
+// scores). Its leader has to cross that bubble to reach any label, so that one
+// crossing is allowed: the leader starts inside it rather than passing through.
+const insideBubble = (point, other) => Math.hypot(point.x - other.x, point.y - other.y) < other.r;
+export const geometry = { overlapArea, segmentsCross, segmentHitsBox, gapTo, insideBubble };
 // A leader is drawn once the label sits clearly away from its mark.
 export const leaderShown = (node, box, compact) => gapTo(node, box) > (compact ? 9 : 17);
+// Space between a name and its value when both share one line.
+export const INLINE_GAP = 6;
 
 // Chart frame for a given pixel width: the map is drawn at the frame's real
 // width, so it re-lays out rather than scrolling sideways.
@@ -77,7 +90,7 @@ export function placeLabels(args) {
     const next = attempt(args, nameOnly);
     if (next.hidden <= result.hidden) result = next;
   }
-  return result;
+  return { ...result, nameOnly };
 }
 
 function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
@@ -92,7 +105,12 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
     let value = 0;
     for (const [id, prior] of placed) if (id !== exclude) value += overlapArea(box, prior) * 20;
     for (const other of fixed) value += overlapArea(box, other) * 20;
-    marks.forEach((mark, index) => { if (!(box.onMark && nodes[index] === node)) value += overlapArea(box, mark) * 12; });
+    // Other companies' marks keep a 3px clearance; a label may sit right
+    // against its own (2px away on desktop), so its own mark is measured bare.
+    marks.forEach((mark, index) => {
+      if (nodes[index] !== node) value += overlapArea(box, mark) * 12;
+      else if (!box.onMark) value += overlapArea(box, { x: node.x - node.r, y: node.y - node.r, w: 2 * node.r, h: 2 * node.r }) * 12;
+    });
     const end = leaderEnd(node, box);
     const length = Math.hypot(end.x - node.x, end.y - node.y);
     value += Math.max(0, length - node.r - 7) * .35;
@@ -106,7 +124,7 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
   function leaderConflicts(box, node, exclude, crossings = true) {
     const end = leaderEnd(node, box), long = Math.hypot(end.x - node.x, end.y - node.y) > node.r + 9;
     let count = 0;
-    if (long) marks.forEach((mark, index) => { if (nodes[index] !== node && segmentHitsBox(node, end, mark)) count++; });
+    if (long) marks.forEach((mark, index) => { if (nodes[index] !== node && !insideBubble(node, nodes[index]) && segmentHitsBox(node, end, mark)) count++; });
     for (const [id, prior] of placed) {
       if (id === exclude) continue;
       if (long && segmentHitsBox(node, end, prior)) count++;
@@ -138,7 +156,7 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
   const farReach = compact ? [44, 58, 74] : [124, 156, 190];
   const nearLimit = compact ? 30 : 110, farLimit = compact ? 84 : 200;
   const candidatesFor = (node, w, h, steps) => {
-    const gap = Math.max(node.r, 6) + (compact ? 4 : 7), list = [];
+    const gap = Math.max(node.r, 6) + (compact ? 4 : 2), list = [];
     for (const extra of steps) {
       const offsets = [[gap + extra, -h / 2], [-w - gap - extra, -h / 2], [-w / 2, -h - gap - extra], [-w / 2, gap + extra], [gap + extra, -h - gap - extra], [-w - gap - extra, -h - gap - extra], [gap + extra, gap + extra], [-w - gap - extra, gap + extra]];
       offsets.forEach(([dx, dy], index) => {
@@ -156,7 +174,7 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
   // The far pass also looks between the eight compass directions: sixteen
   // bearings, each box turned so its nearest edge faces the mark.
   const bearingsFor = (node, w, h, steps) => {
-    const gap = Math.max(node.r, 6) + (compact ? 4 : 7), list = [];
+    const gap = Math.max(node.r, 6) + (compact ? 4 : 2), list = [];
     for (const extra of steps) for (let i = 0; i < 16; i++) {
       if (i % 2 === 0) continue;   // the compass directions are already covered
       const angle = i * Math.PI / 8, d = gap + extra, px = node.x + d * Math.cos(angle), py = node.y + d * Math.sin(angle);
@@ -207,13 +225,23 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
   const choose = (node, far = false) => {
     const { name, value } = node;
     const nameWidth = measure(name, 'map-label');
-    const compactForm = best(node, nameWidth + (compact ? 8 : 10), compact ? 17 : 20, far);
+    const compactForm = best(node, nameWidth + (compact ? 8 : 4), compact ? 17 : 20, far);
     let chosen = { ...compactForm, full: false };
-    if (!compact && !nameOnly.has(node.id)) {
-      const fullForm = best(node, Math.max(nameWidth, measure(value, 'value-label')) + 12, 36, far);
-      if (!fullForm.collides && (compactForm.collides || fullForm.score <= compactForm.score + 40)) chosen = { ...fullForm, full: true };
+    if (!compact && !nameOnly.has(node.id) && value) {
+      const valueWidth = measure(value, 'value-label');
+      // The value sits under the name or, where two lines do not fit, beside it.
+      const stacked = { ...best(node, Math.max(nameWidth, valueWidth) + 6, 36, far), full: true };
+      const inline = { ...best(node, nameWidth + INLINE_GAP + valueWidth + 6, 20, far), full: true, valueDx: 3 + nameWidth + INLINE_GAP };
+      // A value is worth showing only where it still sits beside its mark: a
+      // name-only label next to the mark beats a full one at the end of a
+      // leader line. The value stays in the tooltip and the profile.
+      const needsLeader = form => leaderShown(node, form.box, compact);
+      const worth = form => !form.collides && !(!compactForm.collides && needsLeader(form) && !needsLeader(compactForm))
+        && (compactForm.collides || form.score <= compactForm.score + (needsLeader(compactForm) ? 80 : 40));
+      const options = [stacked, inline].filter(worth);
+      chosen = options.find(form => !needsLeader(form)) ?? options[0] ?? chosen;
     }
-    return chosen.collides ? null : { box: chosen.box, full: chosen.full, score: chosen.score, name, value };
+    return chosen.collides ? null : { box: chosen.box, full: chosen.full, inline: chosen.valueDx != null, valueDx: chosen.valueDx, score: chosen.score, name, value };
   };
   for (const node of ordered) {
     const label = choose(node);
@@ -258,6 +286,27 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
         put(node.id, null);
       }
       put(other.id, theirs);
+    }
+  }
+  // Figures: a label showing only its name may borrow a neighbour's spot for
+  // its value, as long as the neighbour finds another spot that costs it
+  // neither its own value nor a leader it did not need. Either both labels
+  // keep what they had, plus this one's value, or nothing moves.
+  if (!compact) for (const node of ordered) {
+    const mine = labels.get(node.id);
+    if (!mine || mine.full || !node.value || nameOnly.has(node.id)) continue;
+    const neighbours = nodes.filter(other => other !== node && labels.get(other.id) && Math.hypot(other.x - node.x, other.y - node.y) < 160)
+      .sort((a, b) => Math.hypot(a.x - node.x, a.y - node.y) - Math.hypot(b.x - node.x, b.y - node.y));
+    for (const other of neighbours) {
+      const theirs = labels.get(other.id);
+      put(other.id, null); put(node.id, null);
+      const next = choose(node);
+      if (next?.full) {
+        put(node.id, next);
+        const moved = choose(other);
+        if (moved && (moved.full || !theirs.full) && (leaderShown(other, theirs.box, compact) || !leaderShown(other, moved.box, compact))) { put(other.id, moved); break; }
+      }
+      put(node.id, mine); put(other.id, theirs);
     }
   }
   const hidden = [...labels.values()].filter(label => !label).length;

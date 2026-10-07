@@ -27,8 +27,8 @@ export const CHECK_TITLE = /\bchecked\s+[A-Z][a-z]+\s+\d{1,2},\s+\d{4}\s*$/;
 // Axis scores travel to the page as flat fields named after the axis, so an
 // axis may not take a name the page payload already uses (scripts/lib/site.mjs).
 export const RESERVED_AXIS_KEYS = ['id', 'name', 'shortName', 'company', 'brand', 'cls', 'cat', 'hq', 'site', 'desc', 'founded', 'aliases',
-  'verified', 'founders', 'parent', 'traction', 'valuation', 'raised', 'raisedConf', 'raisedSrc', 'lastAmount', 'lastSeries', 'lastDate',
-  'leads', 'others', 'conf', 'valConf', 'valNote', 'src', 'valSrc', 'why', 'rationales', 'news', 'checks'];
+  'founders', 'parent', 'traction', 'valuation', 'raised', 'raisedConf', 'raisedSrc', 'lastAmount', 'lastSeries', 'lastDate',
+  'leads', 'others', 'conf', 'valConf', 'valNote', 'src', 'valSrc', 'valBasis', 'rationales', 'news', 'checks', 'logo', 'logoDark'];
 export const axisKeys = market => ['x', 'y', 'yAlt'].map(k => market.axes?.[k]?.key).filter(Boolean);
 export const valuationConfidence = round => round.postMoneyConfidence ?? round.confidence;
 // The valuation may carry its own citation; otherwise it shares the round's.
@@ -126,8 +126,8 @@ export function validateMarket(doc) {
     if (c.class === 'platform' && !c.parent) fail(at, 'platform must carry a `parent` description');
     if (c.class !== 'platform' && c.parent) warn(at, 'non-platform carries a parent description');
 
-    // Rule 8: the primary axis needs a rationale at least.
-    if (axes[0] && c.axes[axes[0]] && !c.axes[axes[0]].rationale) warn(at, `no rationale on the ${axes[0]} score`);
+    // Rule 8: every score carries its reasoning; the profile shows it under the score.
+    for (const key of axes) if (c.axes[key] && !String(c.axes[key].rationale ?? '').trim()) fail(at, `no rationale on the ${key} score`);
 
     // Rule 9: categories are data, so a typo would silently drop a company
     // from every filter tab. Membership is checked, not assumed.
@@ -173,6 +173,13 @@ export function validateMarket(doc) {
       fail(at, 'manual total funding must be locked against the refresh agent');
     }
     if (totalRaised != null && !totalConf && !c.metrics.totalRaisedSource) unsourcedTotals.push(c.id);
+
+    // Rule 16: an acquisition price is a different kind of figure from a round's
+    // valuation, so it must say what it is: a stated price, explained in the note.
+    if (round.postMoneyBasis === 'acquisition') {
+      if (round.postMoneyUsd == null) fail(at, 'postMoneyBasis is "acquisition" but no valuation is stated');
+      if (!round.note) fail(at, 'an acquisition price must carry a note saying whose deal it is and whether it has closed');
+    }
 
     // Staleness is a warning, not an error — it is what the agent exists to fix.
     // Two thresholds: long-unverified, and lagging the snapshot date the site shows,

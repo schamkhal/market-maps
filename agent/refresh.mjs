@@ -118,7 +118,13 @@ async function claude(model, system, user, { schema, maxTokens = 4000 } = {}) {
 // RSS, company blogs and EDGAR are free. Every URL that reaches the extractor
 // comes from here, so the web-search line stays at zero.
 
-async function fetchText(url, ms = 15000) {
+// One fetch per URL per run: every market polls the same feeds.
+const fetched = new Map();
+function fetchText(url, ms = 15000) {
+  if (!fetched.has(url)) fetched.set(url, fetchOnce(url, ms));
+  return fetched.get(url);
+}
+async function fetchOnce(url, ms) {
   const ctl = AbortController ? new AbortController() : null;
   const t = ctl && setTimeout(() => ctl.abort(), ms);
   try {
@@ -148,7 +154,7 @@ function parseFeed(xml) {
   return items;
 }
 
-async function discover(companies) {
+async function discover(companies, market = null) {
   const blogs = Object.entries(SOURCES.companyBlogs ?? {})
     .map(([id, url]) => ({ id, url, company: companies.find(c => c.id === id) }))
     .filter(b => b.company);
@@ -200,7 +206,7 @@ async function discover(companies) {
   // Haiku decides which items plausibly concern a company on the map.
   const names = companies.map(c => `${c.id}: ${c.name} (${c.company})`).join('\n');
   const out = await claude(MODELS.discover,
-    `You triage news headlines for a market map of US personal AI agent companies.
+    `You triage news headlines for a market map of ${market ? `${market.name}: ${market.definition}` : 'US personal AI agent companies.'}
 Companies on the map:
 ${names}
 
@@ -463,7 +469,7 @@ function prBody(doc, { conflicts, skipped, escalations }, { applied, cleared }, 
       ...skipped.map(s => `- \`${s.claim.companyId}.${s.claim.field}\` — ${s.reason}`), '', '</details>', ''] : []),
     '---',
     'Proposed by the weekly refresh agent. Every figure above carries its source.',
-    'Merging deploys the site and adds these lines to the public changelog.',
+    'Merging deploys the site.',
   ].join('\n');
 }
 
@@ -471,10 +477,9 @@ function applyAndWritePR(file, doc, result, filings = []) {
   const outcome = applyProposals(doc, result);
   const pr = prBody(doc, result, outcome, filings);
   fs.mkdirSync(CACHE, { recursive: true });
-  fs.writeFileSync(path.join(CACHE, 'pr-body.md'), pr);
   if (DRY) {
-    fs.writeFileSync(path.join(CACHE, 'proposed.json'), JSON.stringify(doc, null, 2) + '\n');
-    log(`dry run — wrote .agent-cache/proposed.json and .agent-cache/pr-body.md, data/ untouched`);
+    fs.writeFileSync(path.join(CACHE, `proposed-${file}`), JSON.stringify(doc, null, 2) + '\n');
+    log(`dry run — wrote .agent-cache/proposed-${file}, data/ untouched`);
   } else {
     fs.writeFileSync(path.join(ROOT, 'data/markets', file), JSON.stringify(doc, null, 2) + '\n');
     log(`applied ${outcome.applied.length} changes to data/markets/${file}`);
@@ -487,16 +492,26 @@ function applyAndWritePR(file, doc, result, filings = []) {
 export { discover, extract, reconcile, applyProposals, prBody, applyAndWritePR, parseFeed };
 
 async function main() {
-  const file = process.env.MARKET_FILE || 'personal-ai-agents.json';
-  const doc = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/markets', file), 'utf8'));
-
-  log(`refreshing ${file} — ${doc.companies.length} companies${DRY ? ' (dry run)' : ''}`);
-  const { candidates, filings } = await discover(doc.companies);
-  const claims = candidates.length ? await extract(candidates) : [];
-  const result = reconcile(doc, claims);
-  const { applied, pr } = applyAndWritePR(file, doc, result, filings);
+  // Every map is refreshed in one run and one pull request; MARKET_FILE limits
+  // the run to a single file.
+  const files = process.env.MARKET_FILE ? [process.env.MARKET_FILE]
+    : fs.readdirSync(path.join(ROOT, 'data/markets')).filter(f => f.endsWith('.json')).sort();
+  const bodies = [];
+  let applied = 0;
+  for (const file of files) {
+    const doc = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/markets', file), 'utf8'));
+    log(`refreshing ${file} — ${doc.companies.length} companies${DRY ? ' (dry run)' : ''}`);
+    const { candidates, filings } = await discover(doc.companies, doc.market);
+    const claims = candidates.length ? await extract(candidates) : [];
+    const result = reconcile(doc, claims);
+    const outcome = applyAndWritePR(file, doc, result, filings);
+    bodies.push(files.length > 1 ? outcome.pr.replace(/^## /, `## ${doc.market.name} · `) : outcome.pr);
+    applied += outcome.applied;
+  }
+  const pr = bodies.join('\n\n');
+  fs.writeFileSync(path.join(CACHE, 'pr-body.md'), pr);
   console.log('\n' + pr);
-  console.log(`\nDone. ${applied} change${applied === 1 ? '' : 's'}${DRY ? ' proposed (nothing written to data/)' : ' applied'}.`);
+  console.log(`\nDone. ${applied} change${applied === 1 ? '' : 's'}${DRY ? ' proposed (nothing written to data/)' : ' applied'} across ${files.length} map${files.length === 1 ? '' : 's'}.`);
 }
 
 // Only run when invoked directly, so the guardrails can be unit-tested.

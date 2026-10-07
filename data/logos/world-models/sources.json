@@ -1,0 +1,107 @@
+{
+  "black-forest-labs": {
+    "page": "https://bfl.ai",
+    "light": "https://bfl.ai/apple-icon.png?f3e2842f59013de0",
+    "file": "black-forest-labs.png",
+    "fetched": "2026-10-07"
+  },
+  "cosmos": {
+    "page": "https://www.nvidia.com",
+    "light": "https://www.nvidia.com/favicon.ico",
+    "file": "cosmos.ico",
+    "fetched": "2026-10-07"
+  },
+  "decart": {
+    "page": "https://decart.ai",
+    "light": "https://cdn.prod.website-files.com/69a974f0b1fffb03644ecf2c/69b7eec046f48ce787bbaaf1_webclip.png",
+    "file": "decart.png",
+    "fetched": "2026-10-07"
+  },
+  "general-intuition": {
+    "page": "https://www.generalintuition.com",
+    "light": "https://cdn.prod.website-files.com/68b73cd966b9c097c35f357b/68d31bc35b8d5b398f8aa81a_256x256_webclip_general_intuition.png",
+    "file": "general-intuition.png",
+    "fetched": "2026-10-07"
+  },
+  "genie": {
+    "page": "https://deepmind.google",
+    "light": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/icons/google_deepmind_2x_96dp.png",
+    "file": "genie.png",
+    "fetched": "2026-10-07"
+  },
+  "gigaai": {
+    "page": "https://gigaai.cc",
+    "light": "https://gigaai.cc/assets/favicon-hKtW4-r9.ico",
+    "file": "gigaai.ico",
+    "fetched": "2026-10-07"
+  },
+  "happy-oyster": {
+    "page": "https://www.alibabagroup.com",
+    "light": "https://static.alibabagroup.com/static/favicon.ico",
+    "file": "happy-oyster.jpg",
+    "fetched": "2026-10-07"
+  },
+  "hy-world": {
+    "page": "https://hunyuan.tencent.com",
+    "light": "https://hunyuan-blog-web-prod-1258344703.cos.ap-guangzhou.myqcloud.com/logo.svg",
+    "file": "hy-world.svg",
+    "fetched": "2026-10-07"
+  },
+  "matrix-game": {
+    "page": "https://apps.apple.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/5a/34/f55a3422-429d-7491-8745-d70fc0a4b356/AppIcon-Global-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+    "file": "matrix-game.jpg",
+    "fetched": "2026-10-07",
+    "via": "App Store icon, published by SKYWORK AI PTE LTD"
+  },
+  "microsoft-muse": {
+    "page": "https://www.microsoft.com",
+    "light": "https://www.microsoft.com/apple-touch-icon.png",
+    "file": "microsoft-muse.jpg",
+    "fetched": "2026-10-07"
+  },
+  "moonlake": {
+    "page": "https://moonlakeai.com",
+    "light": "https://moonlakeai.com/apple-icon.png?apple-icon.33g01nbl2d653.png?dpl=dpl_22MJUZpfuhPDsY9VG6CvNBetdAHL",
+    "file": "moonlake.png",
+    "fetched": "2026-10-07"
+  },
+  "odyssey": {
+    "page": "https://odyssey.systems",
+    "light": "https://framerusercontent.com/images/ifiJSCW36zuZNKAmr6lfmkJslw.svg",
+    "file": "odyssey.svg",
+    "fetched": "2026-10-07",
+    "dark": "https://framerusercontent.com/images/1nUaed6pBqpQTsHRMYsJWyOKdLo.svg",
+    "darkFile": "odyssey-dark.svg"
+  },
+  "overworld": {
+    "page": "https://over.world",
+    "light": "https://over.world/favicon/apple-icon.png",
+    "file": "overworld.png",
+    "fetched": "2026-10-07"
+  },
+  "runway": {
+    "page": "https://runway.com",
+    "light": "https://runway.com/icon.png?icon.35ps9bmugbe1e.png",
+    "file": "runway.png",
+    "fetched": "2026-10-07"
+  },
+  "spaitial": {
+    "page": "https://www.spaitial.ai",
+    "light": "https://spaitial.ai/apple-touch-icon.png",
+    "file": "spaitial.png",
+    "fetched": "2026-10-07"
+  },
+  "v-jepa": {
+    "page": "https://static.xx.fbcdn.net",
+    "light": "https://static.xx.fbcdn.net/rsrc.php/yQ/r/0eWKxz9kEoF.webp",
+    "file": "v-jepa.webp",
+    "fetched": "2026-10-07"
+  },
+  "world-labs": {
+    "page": "https://www.worldlabs.ai",
+    "light": "https://www.worldlabs.ai/icon.svg?c2d73e0ba1b9eccd",
+    "file": "world-labs.svg",
+    "fetched": "2026-10-07"
+  }
+}

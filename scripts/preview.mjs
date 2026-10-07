@@ -51,10 +51,10 @@ http.createServer((req, res) => {
   });
   fs.createReadStream(file).pipe(res);
 }).listen(PORT, '127.0.0.1', () => {
-  // Company pages live at <market>/<company>/index.html, for every market.
+  // Company addresses (<market>/<company>/) forward to their map profile.
   const dirs = p => fs.readdirSync(p, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name);
-  const n = dirs(DIST).filter(d => !['assets', 'changelog'].includes(d)).flatMap(d => dirs(path.join(DIST, d))).length;
+  const n = dirs(DIST).filter(d => d !== 'assets').flatMap(d => dirs(path.join(DIST, d))).length;
   console.log(`\n  Preview  →  http://127.0.0.1:${PORT}`);
-  console.log(`  ${n} company pages · changelog at /changelog/`);
+  console.log(`  ${n} company links, each opening its profile on the map`);
   console.log(`  Nothing is published. Ctrl-C to stop.\n`);
 });

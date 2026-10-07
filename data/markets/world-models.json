@@ -1,0 +1,1702 @@
+{
+  "$schema": "../../schema/market.schema.json",
+  "schemaVersion": 1,
+  "market": {
+    "id": "world-models",
+    "name": "World Models (Global)",
+    "tagline": "AI that generates worlds you can move through, and predicts how they respond when you act.",
+    "definition": "Companies building world models: AI that generates an environment and predicts how it evolves and responds to actions, for games, media, robots and AI agents.",
+    "allDescription": "Compare interactivity, generality and access across the full landscape.",
+    "edition": 2,
+    "author": "Shamkhal Murtazaaliev",
+    "regions": [
+      "US",
+      "UK",
+      "Germany",
+      "China",
+      "Singapore"
+    ],
+    "scope": "Companies worldwide, judged on the same criteria; each profile gives the headquarters.",
+    "inclusion": [
+      "Builds a world model: a learned model that generates an environment or predicts how one evolves",
+      "Responds to actions: camera moves, controls or an agent's actions, not only a text prompt",
+      "The model is the product: offered to users, developers or customers, not only used in-house"
+    ],
+    "exclusions": [
+      "Video generators without camera or action control",
+      "Robot and self-driving companies whose world models stay in-house",
+      "Robot policy models that output actions without predicting the world",
+      "3D asset generators and game engines without a learned world model"
+    ],
+    "judgedExcluded": [
+      {
+        "name": "Sora",
+        "fails": "responds to actions",
+        "why": "OpenAI's video generator makes clips from a prompt; nothing can be steered while a clip plays"
+      },
+      {
+        "name": "Luma AI",
+        "fails": "responds to actions",
+        "why": "Ray3 generates clips from prompts; Luma is hiring to turn its video models into world models but has not released an interactive one"
+      },
+      {
+        "name": "Physical Intelligence",
+        "fails": "builds a world model",
+        "why": "Its π0 models turn camera images and instructions into robot actions; they do not predict how the world will look or respond"
+      },
+      {
+        "name": "Rhoda AI",
+        "fails": "the model is the product",
+        "why": "FutureVision predicts video to steer Rhoda's own industrial robots; customers buy robot deployments, not the model"
+      },
+      {
+        "name": "Tesla",
+        "fails": "the model is the product",
+        "why": "Trains and tests its self-driving software in an in-house neural world simulator that is not offered to others"
+      },
+      {
+        "name": "AMI Labs",
+        "fails": "the model is the product",
+        "why": "Paris; raised a $1B seed in March 2026 to build JEPA world models but has not released a model yet"
+      },
+      {
+        "name": "Wayve",
+        "fails": "the model is the product",
+        "why": "London; its GAIA-3 world model generates and scores driving scenarios to validate Wayve's own driving software, which is what automakers buy"
+      },
+      {
+        "name": "Veeda AI",
+        "fails": "the model is the product",
+        "why": "Toronto; launched in August 2026 with a $90M seed and is still building its first models"
+      }
+    ],
+    "axes": {
+      "x": {
+        "key": "interactivity",
+        "label": "Interactivity",
+        "low": "Renders ahead of time",
+        "high": "Responds live to actions",
+        "rubric": "0 = predicts or renders the result of actions ahead of time, such as video of what a robot’s move will do or a scripted camera path; 25 = a persistent world you can move through and edit, but it does not react to you; 50 = reacts to actions frame by frame, but slowly or only inside a simulator; 75 = reacts in real time (about 20 frames a second or more) for sessions of a minute or two; 100 = reacts to any action in real time and stays consistent for many minutes"
+      },
+      "y": {
+        "key": "generality",
+        "label": "Generality",
+        "low": "One game or scene",
+        "high": "Any world from a prompt",
+        "rubric": "0 = one game, scene or environment; 25 = a few games or scenes of one kind, or one robot’s tasks; 50 = one domain, such as driving, tabletop robotics or a game genre; 75 = open-ended worlds across many domains from a prompt, with some limits on style or physics; 100 = any world, real or imagined, from text, an image or video"
+      },
+      "yAlt": {
+        "key": "access",
+        "label": "Access",
+        "low": "Lab demo",
+        "high": "Open weights",
+        "rubric": "0 = a paper or private demo; 25 = a waitlist, invite-only preview or sales demo; 50 = a paid consumer app or open beta; 75 = a self-serve API or commercial license; 100 = open weights anyone can run and build on"
+      }
+    },
+    "categories": [
+      {
+        "id": "interactive",
+        "name": "Interactive worlds",
+        "color": "#456cd3",
+        "description": "World models people explore, play and create with: real-time video, playable worlds and 3D scenes."
+      },
+      {
+        "id": "physical",
+        "name": "Physical AI",
+        "color": "#25806a",
+        "description": "World models that train, test and plan for robots, vehicles and AI agents."
+      }
+    ],
+    "asOf": "2026-10-06"
+  },
+  "companies": [
+    {
+      "id": "world-labs",
+      "name": "World Labs",
+      "company": "World Labs / AMD",
+      "aliases": [
+        "Marble",
+        "World API"
+      ],
+      "class": "acquired",
+      "category": "interactive",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://www.worldlabs.ai",
+      "description": "Spatial-intelligence lab behind Marble, which turns text, images or video into persistent 3D worlds you can walk through, edit and export. Developers build on it through the World API, launched in January 2026. AMD agreed on September 28, 2026 to acquire the company.",
+      "founded": 2024,
+      "founders": [
+        {
+          "name": "Fei-Fei Li",
+          "role": "Co-founder & CEO; Stanford computer science professor",
+          "linkedin": "https://www.linkedin.com/in/fei-fei-li-4541247/"
+        },
+        {
+          "name": "Justin Johnson",
+          "role": "Co-founder",
+          "linkedin": "https://www.linkedin.com/in/justin-johnson-41b43664/"
+        },
+        {
+          "name": "Christoph Lassner",
+          "role": "Co-founder; stepped back in 2026 and now advises the company",
+          "linkedin": "https://www.linkedin.com/in/christoph-lassner-475a669b/"
+        },
+        {
+          "name": "Ben Mildenhall",
+          "role": "Co-founder",
+          "linkedin": "https://www.linkedin.com/in/ben-mildenhall-86b4739b/"
+        }
+      ],
+      "parent": null,
+      "traction": "AMD agreed to buy World Labs in an all-stock deal valued at about $8.2B, expected to close by the end of 2026; Fei-Fei Li is to become AMD's executive vice president and chief scientist.",
+      "axes": {
+        "interactivity": {
+          "score": 26,
+          "rationale": "Marble builds a persistent 3D world that you can walk through, edit and export, but the world itself does not react to what you do: it is generated first, then explored."
+        },
+        "generality": {
+          "score": 82,
+          "rationale": "Any scene, real or imagined, from text, images, video or a rough 3D layout."
+        },
+        "access": {
+          "score": 76,
+          "rationale": "A web app with free and paid tiers, and a self-serve World API since January 2026."
+        }
+      },
+      "lastRound": {
+        "series": "Venture round",
+        "amountUsd": 1000000000,
+        "postMoneyUsd": 8200000000,
+        "postMoneyBasis": "acquisition",
+        "date": "2026-02-18",
+        "leads": [],
+        "otherInvestors": [
+          "AMD",
+          "Autodesk",
+          "Emerson Collective",
+          "Fidelity",
+          "NVIDIA",
+          "Sea"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "$8.2B is the value of AMD's all-stock agreement to acquire World Labs, announced on September 28, 2026 and expected to close by the end of 2026, subject to regulatory approvals. It is an acquisition price, not the price of a funding round: World Labs did not disclose a valuation for its $1B round in February 2026, which Bloomberg reported in January was being discussed at about $5B. Total funding of about $1.2B counts the $230M raised in 2024 and the $1B round.",
+        "source": {
+          "url": "https://worldlabs.ai/blog/funding-2026",
+          "publisher": "World Labs",
+          "date": "2026-02-18"
+        },
+        "postMoneySource": {
+          "url": "https://newsroom.amd.com/news/amd-acquire-world-labs/",
+          "publisher": "AMD",
+          "date": "2026-09-28"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 1230000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://worldlabs.ai/blog/funding-2026",
+          "publisher": "World Labs",
+          "date": "2026-02-18"
+        }
+      },
+      "news": [
+        {
+          "title": "AMD to Acquire World Labs to Advance the Future of AI",
+          "url": "https://newsroom.amd.com/news/amd-acquire-world-labs/",
+          "publisher": "AMD",
+          "date": "2026-09-28"
+        },
+        {
+          "title": "AMD acquiring Fei-Fei Li's World Labs AI firm in deal worth $8.2 billion",
+          "url": "https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html",
+          "publisher": "CNBC",
+          "date": "2026-09-28"
+        },
+        {
+          "title": "AI Pioneer Fei-Fei Li's Startup World Labs Raises $1 Billion",
+          "url": "https://www.bloomberg.com/news/articles/2026-02-18/ai-pioneer-fei-fei-li-s-startup-world-labs-raises-1-billion",
+          "publisher": "Bloomberg",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Fei-Fei Li's World Labs reportedly raising funding at $5B valuation",
+          "url": "https://siliconangle.com/2026/01/23/fei-fei-lis-world-labs-reportedly-raising-funding-5b-valuation/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-01-23"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Funding announcement: investors and Marble status",
+          "url": "https://worldlabs.ai/blog/funding-2026",
+          "publisher": "World Labs",
+          "date": "2026-10-06"
+        },
+        {
+          "title": "AMD announcement: deal value, structure and expected close",
+          "url": "https://newsroom.amd.com/news/amd-acquire-world-labs/",
+          "publisher": "AMD",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [
+        "lastRound.postMoneyUsd"
+      ],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "odyssey",
+      "name": "Odyssey",
+      "company": "Odyssey",
+      "aliases": [
+        "Odyssey-2",
+        "Odyssey-3",
+        "Agora-2"
+      ],
+      "class": "independent",
+      "category": "interactive",
+      "region": "US",
+      "hq": "Menlo Park, CA",
+      "website": "https://odyssey.systems",
+      "description": "AI lab building general-purpose world models, best known for interactive video generated from text prompts. Its models include Odyssey-3, Odyssey-2 Max and Agora-2, a multi-agent world model with real-time interaction that can be tried online; target uses run from video games and film to robotics and defense.",
+      "founded": 2023,
+      "founders": [
+        {
+          "name": "Oliver Cameron",
+          "role": "Co-founder & CEO; co-founded Voyage, later VP of product at Cruise",
+          "linkedin": "https://www.linkedin.com/in/olivercameron/"
+        },
+        {
+          "name": "Jeff Hawke",
+          "role": "Co-founder & CTO; formerly at Wayve"
+        }
+      ],
+      "parent": null,
+      "traction": "Series B investors include Amazon, GV, AMD Ventures and IQT. Its early models were trained on real-world footage captured with its own backpack camera rigs.",
+      "axes": {
+        "interactivity": {
+          "score": 70,
+          "rationale": "Streams interactive video that responds as it plays, and Agora-2 adds real-time interaction between several agents. Frame rates and session limits are not published, so it sits below Genie 3."
+        },
+        "generality": {
+          "score": 70,
+          "rationale": "General-purpose by design, trained on real-world video, with uses from game creation to robotics."
+        },
+        "access": {
+          "score": 44,
+          "rationale": "Agora-2 can be tried online; the other models are not openly available to developers."
+        }
+      },
+      "lastRound": {
+        "series": "Series B",
+        "amountUsd": 310000000,
+        "postMoneyUsd": 1450000000,
+        "date": "2026-06-17",
+        "leads": [
+          "Natural Capital"
+        ],
+        "otherInvestors": [
+          "Amazon",
+          "GV",
+          "AMD Ventures",
+          "EQT",
+          "IQT"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": null,
+        "source": {
+          "url": "https://odyssey.systems/our-series-b",
+          "publisher": "Odyssey",
+          "date": "2026-06-17"
+        },
+        "postMoneySource": {
+          "url": "https://techcrunch.com/2026/06/17/world-model-maker-odyssey-nabs-1-45b-valuation-backed-by-amazon-and-other-big-names/",
+          "publisher": "TechCrunch",
+          "date": "2026-06-17"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 337000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://techcrunch.com/2026/06/17/world-model-maker-odyssey-nabs-1-45b-valuation-backed-by-amazon-and-other-big-names/",
+          "publisher": "TechCrunch",
+          "date": "2026-06-17"
+        }
+      },
+      "news": [
+        {
+          "title": "World model maker Odyssey nabs $1.45B valuation backed by Amazon and other big names",
+          "url": "https://techcrunch.com/2026/06/17/world-model-maker-odyssey-nabs-1-45b-valuation-backed-by-amazon-and-other-big-names/",
+          "publisher": "TechCrunch",
+          "date": "2026-06-17"
+        },
+        {
+          "title": "Odyssey's new AI model streams 3D interactive worlds",
+          "url": "https://techcrunch.com/2025/05/28/odysseys-new-ai-model-streams-3d-interactive-worlds",
+          "publisher": "TechCrunch",
+          "date": "2025-05-28"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Series B announcement: investors and current models",
+          "url": "https://odyssey.systems/our-series-b",
+          "publisher": "Odyssey",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "decart",
+      "name": "Decart",
+      "company": "Decart",
+      "aliases": [
+        "Lucy",
+        "Oasis",
+        "MirageLSD"
+      ],
+      "class": "independent",
+      "category": "interactive",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://decart.ai",
+      "description": "Real-time world-model lab based in San Francisco and Tel Aviv. Lucy turns live video into a world you can edit as it streams, responding to input in under 30 milliseconds, and Oasis generates 3D environments; developers use the models through Decart's API. It also licenses DOS, software that helps AI chips run models faster.",
+      "founded": 2023,
+      "founders": [
+        {
+          "name": "Dean Leitersdorf",
+          "role": "Co-founder & CEO",
+          "linkedin": "https://www.linkedin.com/in/dean-leitersdorf/"
+        },
+        {
+          "name": "Moshe Shalev",
+          "role": "Co-founder",
+          "linkedin": "https://www.linkedin.com/in/moshe-shalev/"
+        }
+      ],
+      "parent": null,
+      "traction": "Amazon is a commercial partner, running Lucy 2 on its Trainium chips. Anthropic held talks in August 2026 to buy Decart for about $6B and walked away on September 8.",
+      "axes": {
+        "interactivity": {
+          "score": 80,
+          "rationale": "Built for live interaction: Lucy edits a video stream as it plays and responds to input in under 30 ms, and Oasis renders a playable world frame by frame."
+        },
+        "generality": {
+          "score": 56,
+          "rationale": "Lucy restyles and edits any video you feed it, but it transforms an existing stream rather than inventing a world from nothing; Oasis worlds are game-like."
+        },
+        "access": {
+          "score": 78,
+          "rationale": "Models are sold through Decart's API, alongside enterprise deployments."
+        }
+      },
+      "lastRound": {
+        "series": "Series C",
+        "amountUsd": 300000000,
+        "postMoneyUsd": 4000000000,
+        "date": "2026-05-18",
+        "leads": [
+          "Radical Ventures"
+        ],
+        "otherInvestors": [
+          "NVIDIA",
+          "Adobe Ventures",
+          "Toyota Ventures",
+          "eBay Ventures",
+          "Atreides Management",
+          "Valor Equity Partners",
+          "Sequoia Capital",
+          "Benchmark",
+          "Zeev Ventures"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "Reported as a valuation of nearly $4B. In August 2026 Bloomberg reported that Anthropic was in talks to buy Decart for about $6B; on September 8 it reported that Anthropic had walked away. That price was never agreed, so it is not used. Total funding of $453M counts the $153M raised through the August 2025 Series B (Fortune) and this $300M round; The Next Web puts the total past $450M.",
+        "source": {
+          "url": "https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-05-18"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 453000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://thenextweb.com/news/decart-300-million-radical-ventures-world-models",
+          "publisher": "The Next Web",
+          "date": "2026-05-18"
+        }
+      },
+      "news": [
+        {
+          "title": "Anthropic Said to Walk Away From $6 Billion Decart Purchase",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-08/anthropic-said-to-walk-away-from-6-billion-decart-acquisition",
+          "publisher": "Bloomberg",
+          "date": "2026-09-08"
+        },
+        {
+          "title": "Anthropic in Talks to Buy AI Startup Decart for $6 Billion",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion",
+          "publisher": "Bloomberg",
+          "date": "2026-08-13"
+        },
+        {
+          "title": "Decart raises $300M to put a real-time world model in front of Amazon's chips",
+          "url": "https://thenextweb.com/news/decart-300-million-radical-ventures-world-models",
+          "publisher": "The Next Web",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Decart raises $300M for its AI optimization software, world models",
+          "url": "https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Exclusive: Decart raises $100 million at a $3.1 billion valuation, chasing the future of real-time creative AI",
+          "url": "https://fortune.com/2025/08/07/exclusive-decart-raises-100-million-at-a-3-1-billion-valuation-chasing-the-future-of-real-time-creative-ai/",
+          "publisher": "Fortune",
+          "date": "2025-08-07"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "general-intuition",
+      "name": "General Intuition",
+      "company": "General Intuition",
+      "aliases": [
+        "MIRA",
+        "Medal"
+      ],
+      "class": "independent",
+      "category": "physical",
+      "region": "US",
+      "hq": "New York, NY",
+      "website": "https://www.generalintuition.com",
+      "description": "Lab spun out of the gaming-clip platform Medal that trains world models and action models on billions of gameplay videos labeled with the player's inputs. Its MIRA world model, built with Kyutai and Epic Games on 10,000 hours of Rocket League, runs in real time at 20 fps and has a public demo; a commercial API has a waitlist.",
+      "founded": 2025,
+      "founders": [
+        {
+          "name": "Pim de Witte",
+          "role": "Co-founder & CEO; founder of Medal",
+          "linkedin": "https://www.linkedin.com/in/pimdw/"
+        },
+        {
+          "name": "Moritz Baier-Lentz",
+          "role": "Founding member; former partner at Lightspeed Venture Partners",
+          "linkedin": "https://www.linkedin.com/in/moritzbaierlentz/"
+        }
+      ],
+      "parent": null,
+      "traction": "Commercial models in limited testing with robotics, simulation and entertainment customers (September 2026). Medal, its sister platform, has 17 million monthly active users.",
+      "axes": {
+        "interactivity": {
+          "score": 84,
+          "rationale": "MIRA generates game footage at 20 fps in response to players' actions, on a single B200 GPU, and the company says it runs indefinitely without diverging."
+        },
+        "generality": {
+          "score": 20,
+          "rationale": "MIRA covers a single game, Rocket League; the action models trained on the same data span many games and have steered a quadruped robot."
+        },
+        "access": {
+          "score": 50,
+          "rationale": "A public demo and open-source code; the commercial API has a waitlist."
+        }
+      },
+      "lastRound": {
+        "series": "Venture round",
+        "amountUsd": 220000000,
+        "postMoneyUsd": 6200000000,
+        "date": "2026-09-29",
+        "leads": [],
+        "otherInvestors": [
+          "Valor Equity Partners",
+          "Atreides Management",
+          "Seven Seven Six",
+          "Point72",
+          "Khosla Ventures",
+          "General Catalyst"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "TechCrunch reported talks at a $6B pre-money valuation in August 2026. The June 2026 Series A raised $320M at $2.3B, led by Khosla Ventures. Total funding of $674M counts the $134M seed (October 2025), that Series A and this $220M round; the company says it raised over $650M in the past year.",
+        "source": {
+          "url": "https://siliconangle.com/2026/09/29/world-model-startup-general-intuition-closes-220m-investment/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-09-29"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 674000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://siliconangle.com/2026/09/29/world-model-startup-general-intuition-closes-220m-investment/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-09-29"
+        }
+      },
+      "news": [
+        {
+          "title": "World model startup General Intuition closes $220M investment",
+          "url": "https://siliconangle.com/2026/09/29/world-model-startup-general-intuition-closes-220m-investment/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "Valor, Point72 back General Intuition at $6B valuation as AI startup pushes into robotics",
+          "url": "https://techcrunch.com/?p=3155937",
+          "publisher": "TechCrunch",
+          "date": "2026-08-24"
+        },
+        {
+          "title": "General Intuition raises $320M Series A at $2.3B valuation",
+          "url": "https://dealroom.co/news/136129-general-intuition-raises-320m-series-a-at-2-3b-valuation/",
+          "publisher": "Dealroom",
+          "date": "2026-06-26"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Company site: MIRA demo, open-source code and API waitlist",
+          "url": "https://www.generalintuition.com",
+          "publisher": "General Intuition",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "company": "Runway AI",
+      "aliases": [
+        "GWM-1",
+        "GWM Worlds",
+        "Runway Characters"
+      ],
+      "class": "independent",
+      "category": "interactive",
+      "region": "US",
+      "hq": "New York, NY",
+      "website": "https://runway.com",
+      "description": "AI video company now building general world models. GWM-1 (December 2025) comes in three variants: Worlds generates explorable 720p scenes in real time as you move through them, Robotics is an action-conditioned model for training and testing robots, and Avatars powers real-time conversational characters.",
+      "founded": 2018,
+      "founders": [
+        {
+          "name": "Cristóbal Valenzuela",
+          "role": "Co-founder & CEO",
+          "linkedin": "https://www.linkedin.com/in/cvalenzuelab/"
+        },
+        {
+          "name": "Alejandro Matamala",
+          "role": "Co-founder & Chief Innovation Officer",
+          "linkedin": "https://www.linkedin.com/in/amatamala/"
+        },
+        {
+          "name": "Anastasis Germanidis",
+          "role": "Co-founder & CTO",
+          "linkedin": "https://www.linkedin.com/in/agermanidis/"
+        }
+      ],
+      "parent": null,
+      "traction": "Raised its Series E to pre-train the next generation of world models; a member of NVIDIA's Cosmos Coalition since June 2026.",
+      "axes": {
+        "interactivity": {
+          "score": 74,
+          "rationale": "GWM Worlds generates the scene as you move, with controls for the camera, the agent (a person, drone or robot) and physics, for up to two minutes at 720p; GWM Robotics takes robot poses and camera moves as actions."
+        },
+        "generality": {
+          "score": 74,
+          "rationale": "Worlds from any text or image prompt, plus robotics and avatar variants."
+        },
+        "access": {
+          "score": 48,
+          "rationale": "Avatars ship in the API and web app; Worlds and Robotics are in early access by request."
+        }
+      },
+      "lastRound": {
+        "series": "Series E",
+        "amountUsd": 315000000,
+        "postMoneyUsd": 5300000000,
+        "date": "2026-02-10",
+        "leads": [
+          "General Atlantic"
+        ],
+        "otherInvestors": [
+          "NVIDIA",
+          "Adobe Ventures",
+          "AllianceBernstein",
+          "AMD Ventures",
+          "Fidelity",
+          "Mirae Asset",
+          "Emphatic Capital",
+          "Felicis",
+          "Premji Invest"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": null,
+        "source": {
+          "url": "https://runway.com/news/runway-series-e-funding",
+          "publisher": "Runway",
+          "date": "2026-02-10"
+        },
+        "postMoneySource": {
+          "url": "https://siliconangle.com/2026/02/10/world-model-startup-runway-closes-315m-funding-round/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-02-10"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 860000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://bridgemena.com/news/runway-raises-315m-boosting-valuation-to-5-3b",
+          "publisher": "Bridge Middle East",
+          "date": "2026-02-12"
+        }
+      },
+      "news": [
+        {
+          "title": "World model startup Runway closes $315M funding round",
+          "url": "https://siliconangle.com/2026/02/10/world-model-startup-runway-closes-315m-funding-round/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-02-10"
+        },
+        {
+          "title": "New Funding to Scale World Simulation",
+          "url": "https://runway.com/news/runway-series-e-funding",
+          "publisher": "Runway",
+          "date": "2026-02-10"
+        },
+        {
+          "title": "Introducing GWM-1",
+          "url": "https://runway.com/research/introducing-runway-gwm-1",
+          "publisher": "Runway",
+          "date": "2025-12-11"
+        }
+      ],
+      "checks": [
+        {
+          "title": "GWM-1 availability: early access, API and SDK",
+          "url": "https://runway.com/research/introducing-runway-gwm-1",
+          "publisher": "Runway",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "moonlake",
+      "name": "Moonlake AI",
+      "shortName": "Moonlake",
+      "company": "Moonlake AI",
+      "aliases": [
+        "Reverie"
+      ],
+      "class": "independent",
+      "category": "physical",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://moonlakeai.com",
+      "description": "Builds world models and simulation for robots: its stack turns an image, a video or a text description into a simulation-ready scene for training and evaluating robot policies. Its generative game engine opened in beta in February 2026; the company now leads with robotics, and customers book a demo.",
+      "founded": 2025,
+      "founders": [
+        {
+          "name": "Fan-Yun Sun",
+          "role": "Co-founder; Stanford PhD, former NVIDIA researcher",
+          "linkedin": "https://www.linkedin.com/in/sunfanyun/"
+        },
+        {
+          "name": "Sharon Lee",
+          "role": "Co-founder; Stanford PhD",
+          "linkedin": "https://www.linkedin.com/in/sharonleeyen/"
+        }
+      ],
+      "parent": null,
+      "traction": "Named to CB Insights' 2026 AI 100. Recent work covers robot policy evaluation in its world-model simulator and simulation-ready 3D assets for robotics.",
+      "axes": {
+        "interactivity": {
+          "score": 44,
+          "rationale": "Produces simulations a robot can act in, where objects respond under physics, but the world is built ahead of time rather than generated live as actions arrive."
+        },
+        "generality": {
+          "score": 54,
+          "rationale": "Reconstructs real scenes and objects from images, video or text, within what a physics simulator can represent."
+        },
+        "access": {
+          "score": 24,
+          "rationale": "Sales-led: customers book a demo."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 28000000,
+        "postMoneyUsd": null,
+        "date": "2025-10-01",
+        "leads": [
+          "AIX Ventures",
+          "Threshold Ventures",
+          "NVentures"
+        ],
+        "otherInvestors": [
+          "Jeff Dean",
+          "Steve Chen",
+          "Naval Ravikant",
+          "Ian Goodfellow",
+          "Guillermo Rauch"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://www.enterpriseaiworld.com/Articles/News/News/Moonlake-AI-Emerges-from-Stealth-with-%2428M-Seed-to-Support-Vibe-Coding-Interactive-Worlds-171928.aspx",
+          "publisher": "Enterprise AI World",
+          "date": "2025-10-15"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 28000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.enterpriseaiworld.com/Articles/News/News/Moonlake-AI-Emerges-from-Stealth-with-%2428M-Seed-to-Support-Vibe-Coding-Interactive-Worlds-171928.aspx",
+          "publisher": "Enterprise AI World",
+          "date": "2025-10-15"
+        }
+      },
+      "news": [
+        {
+          "title": "Moonlake AI Launches Open Beta for Its World Modeling Agent",
+          "url": "https://www.enterpriseaiworld.com/Articles/News/News/Moonlake-AI-Launches-Open-Beta-for-Its-World-Modeling-Agent-173532.aspx",
+          "publisher": "Enterprise AI World",
+          "date": "2026-02-18"
+        },
+        {
+          "title": "Moonlake AI Emerges from Stealth with $28M Seed to Support Vibe Coding Interactive Worlds",
+          "url": "https://www.enterpriseaiworld.com/Articles/News/News/Moonlake-AI-Emerges-from-Stealth-with-%2428M-Seed-to-Support-Vibe-Coding-Interactive-Worlds-171928.aspx",
+          "publisher": "Enterprise AI World",
+          "date": "2025-10-15"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Company site and blog: robotics focus and demo-only access",
+          "url": "https://moonlakeai.com/articles",
+          "publisher": "Moonlake AI",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "overworld",
+      "name": "Overworld",
+      "company": "Overworld",
+      "aliases": [
+        "Waypoint",
+        "Wayfarer Labs",
+        "Terraformer"
+      ],
+      "class": "independent",
+      "category": "interactive",
+      "region": "US",
+      "hq": "Providence, RI",
+      "website": "https://over.world",
+      "description": "Open research lab, formerly Wayfarer Labs, building real-time world models that run on your own computer. Waypoint-1.5 (April 2026) generates game-like worlds that respond to keyboard and mouse input at up to 720p and 60 fps on high-end consumer GPUs, with Apache 2.0 weights; Waypoint 2 is in beta.",
+      "founded": null,
+      "founders": [
+        {
+          "name": "Louis Castricato",
+          "role": "Co-founder & CEO",
+          "linkedin": "https://www.linkedin.com/in/louis-castricato-8b79383a/"
+        },
+        {
+          "name": "Shahbuland Matiana",
+          "role": "Co-founder & Chief Science Officer",
+          "linkedin": "https://www.linkedin.com/in/shahbuland/"
+        }
+      ],
+      "parent": null,
+      "traction": "Waypoint 2 runs locally on a PC or by streaming; Terraformer, built on it, turns a single prompt into a first-person game.",
+      "axes": {
+        "interactivity": {
+          "score": 78,
+          "rationale": "Responds to keyboard and mouse input frame by frame: 56 fps at 720p on an RTX 5090 and 30 fps on an RTX 3090, per the Waypoint-1.5 model card."
+        },
+        "generality": {
+          "score": 40,
+          "rationale": "Trained on video-game footage, so its worlds look and behave like games; Waypoint 2 takes text and image prompts."
+        },
+        "access": {
+          "score": 94,
+          "rationale": "Waypoint-1.5 weights are on Hugging Face under Apache 2.0; Waypoint 2 is in an invite-based beta."
+        }
+      },
+      "lastRound": {
+        "series": "Pre-seed",
+        "amountUsd": 4500000,
+        "postMoneyUsd": null,
+        "date": "2026-01-20",
+        "leads": [
+          "Kindred Ventures"
+        ],
+        "otherInvestors": [
+          "Amplify.LA",
+          "Garage Capital",
+          "Logan Kilpatrick"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://kindredventures.com/announcement/overworld-building-real-time-world-models/",
+          "publisher": "Kindred Ventures",
+          "date": "2026-01-20"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 4500000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://kindredventures.com/announcement/overworld-building-real-time-world-models/",
+          "publisher": "Kindred Ventures",
+          "date": "2026-01-20"
+        }
+      },
+      "news": [
+        {
+          "title": "Top developers are pivoting from chatbots to physical AI",
+          "url": "https://apnews.com/article/ai-world-models-physical-embodied-ai-9bab5a3febad9832f55f8ada33de57b4",
+          "publisher": "Associated Press",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Our Investment in Overworld",
+          "url": "https://kindredventures.com/announcement/overworld-building-real-time-world-models/",
+          "publisher": "Kindred Ventures",
+          "date": "2026-01-20"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Waypoint-1.5 model card: license, frame rates and hardware",
+          "url": "https://huggingface.co/Overworld/Waypoint-1.5-1B",
+          "publisher": "Hugging Face",
+          "date": "2026-10-06"
+        },
+        {
+          "title": "Overworld site: Waypoint 2 beta and Terraformer",
+          "url": "https://over.world",
+          "publisher": "Overworld",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "genie",
+      "name": "Genie 3 (Google DeepMind)",
+      "shortName": "Genie 3",
+      "company": "Alphabet",
+      "aliases": [
+        "Project Genie",
+        "Google DeepMind"
+      ],
+      "class": "platform",
+      "category": "interactive",
+      "brand": "Google",
+      "region": "US",
+      "hq": "Mountain View, CA",
+      "website": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie/",
+      "description": "Google DeepMind's general-purpose world model. Project Genie, an experimental web app built on it, turns a text prompt or an image into a world you explore in real time at about 720p and 24 fps, for up to 60 seconds per world; since May 2026 it can also start from real places in Street View.",
+      "founded": 1998,
+      "founders": [],
+      "parent": "Alphabet — public (NASDAQ: GOOGL). Genie 3 is a Google DeepMind research model; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Project Genie opened to Google AI Ultra subscribers in the US on January 29, 2026, and has been rolling out to eligible subscribers worldwide (18+) since May 19, 2026.",
+      "axes": {
+        "interactivity": {
+          "score": 80,
+          "rationale": "Generates the path ahead in real time as you move, at about 24 fps, and simulates physics and interactions; each world is capped at 60 seconds."
+        },
+        "generality": {
+          "score": 88,
+          "rationale": "Any world from text or an image, real or imagined; Street View grounding adds real places."
+        },
+        "access": {
+          "score": 38,
+          "rationale": "An experimental prototype for Google AI Ultra subscribers only, with no developer API."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-01-29",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie/",
+          "publisher": "Google",
+          "date": "2026-01-29"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Google pairs its Genie world model with Street View to create explorable AI worlds based on real places",
+          "url": "https://the-decoder.com/google-pairs-its-genie-world-model-with-street-view-to-create-explorable-ai-worlds-based-on-real-places/",
+          "publisher": "The Decoder",
+          "date": "2026-05-20"
+        },
+        {
+          "title": "Project Genie: Experimenting with infinite, interactive worlds",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie/",
+          "publisher": "Google",
+          "date": "2026-01-29"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "cosmos",
+      "name": "Cosmos (NVIDIA)",
+      "shortName": "Cosmos",
+      "company": "NVIDIA",
+      "aliases": [
+        "Cosmos 3"
+      ],
+      "class": "platform",
+      "category": "physical",
+      "brand": "NVIDIA",
+      "region": "US",
+      "hq": "Santa Clara, CA",
+      "website": "https://www.nvidia.com/en-us/ai/cosmos/",
+      "description": "NVIDIA's open world foundation models for physical AI. Cosmos 3 (June 2026) combines vision reasoning, world generation and action prediction in one model, used to generate training data and to train and evaluate robots and autonomous vehicles.",
+      "founded": 1993,
+      "founders": [],
+      "parent": "NVIDIA — public (NASDAQ: NVDA). Cosmos is released as open models; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Cosmos 3 Super and Nano are on Hugging Face and GitHub; a real-time Edge model is announced as coming soon. Cosmos Coalition members include Runway, Skild AI and Black Forest Labs.",
+      "axes": {
+        "interactivity": {
+          "score": 8,
+          "rationale": "Predicts future world states, including from robot actions, for training and evaluation; it generates ahead of time rather than reacting live. The real-time Edge model is announced, not shipped."
+        },
+        "generality": {
+          "score": 64,
+          "rationale": "Physical-world video across robotics, driving and vision-agent domains; not built for imagined or game worlds."
+        },
+        "access": {
+          "score": 95,
+          "rationale": "Open models on Hugging Face and GitHub."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-06-01",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Cosmos-3-the-Open-Frontier-Foundation-Model-for-Physical-AI/default.aspx",
+          "publisher": "NVIDIA",
+          "date": "2026-06-01"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "NVIDIA Launches Cosmos 3, the Open Frontier Foundation Model for Physical AI",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Cosmos-3-the-Open-Frontier-Foundation-Model-for-Physical-AI/default.aspx",
+          "publisher": "NVIDIA",
+          "date": "2026-06-01"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "microsoft-muse",
+      "name": "Muse (Microsoft)",
+      "shortName": "Muse",
+      "company": "Microsoft",
+      "aliases": [
+        "WHAM",
+        "WHAMM",
+        "Xbox"
+      ],
+      "class": "platform",
+      "category": "interactive",
+      "brand": "Microsoft",
+      "region": "US",
+      "hq": "Redmond, WA",
+      "website": "https://news.xbox.com/en-us/2025/02/19/muse-ai-xbox-empowering-creators-and-players/",
+      "description": "Microsoft's World and Human Action Model for game development, built with Xbox studio Ninja Theory and trained on its game Bleeding Edge. It generates gameplay from a few frames and controller inputs; a faster variant, WHAMM, powered a playable AI-generated Quake II demo in Copilot Labs.",
+      "founded": 1975,
+      "founders": [],
+      "parent": "Microsoft — public (NASDAQ: MSFT). Muse comes from Microsoft Research and Xbox; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Weights for the 200M and 1.6B-parameter models are on Hugging Face and Azure AI Foundry under the Microsoft Research License (February 2025); the Quake II demo followed in April 2025.",
+      "axes": {
+        "interactivity": {
+          "score": 50,
+          "rationale": "Responds to controller input frame by frame, but slowly: the original model ran at about one frame per second, and WHAMM's Quake II demo at a little over 10 fps."
+        },
+        "generality": {
+          "score": 8,
+          "rationale": "Each model learns one game: Bleeding Edge for Muse, a single Quake II level for WHAMM."
+        },
+        "access": {
+          "score": 64,
+          "rationale": "Weights are downloadable for research under the Microsoft Research License."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2025-02-19",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://news.xbox.com/en-us/2025/02/19/muse-ai-xbox-empowering-creators-and-players/",
+          "publisher": "Xbox Wire",
+          "date": "2025-02-19"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Empowering Creators and Players With Muse, a Generative AI Model for Gameplay",
+          "url": "https://news.xbox.com/en-us/2025/02/19/muse-ai-xbox-empowering-creators-and-players/",
+          "publisher": "Xbox Wire",
+          "date": "2025-02-19"
+        }
+      ],
+      "checks": [
+        {
+          "title": "WHAM model card: license, training data and downloadable weights",
+          "url": "https://huggingface.co/microsoft/wham",
+          "publisher": "Hugging Face",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "v-jepa",
+      "name": "V-JEPA 2 (Meta)",
+      "shortName": "V-JEPA 2",
+      "company": "Meta Platforms",
+      "aliases": [
+        "V-JEPA 2-AC",
+        "FAIR"
+      ],
+      "class": "platform",
+      "category": "physical",
+      "brand": "Meta",
+      "region": "US",
+      "hq": "Menlo Park, CA",
+      "website": "https://ai.meta.com/vjepa/",
+      "description": "Meta's open video world model. Rather than rendering pixels, it predicts how a scene will evolve in an abstract representation. An action-conditioned version, trained on 62 hours of robot video, plans pick-and-place moves for robot arms in environments it has never seen.",
+      "founded": 2004,
+      "founders": [],
+      "parent": "Meta Platforms — public (NASDAQ: META). V-JEPA 2 is a FAIR research release; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Code and weights on GitHub and Hugging Face since June 2025. Yann LeCun, who led the JEPA research, has since left Meta and founded AMI Labs.",
+      "axes": {
+        "interactivity": {
+          "score": 4,
+          "rationale": "Action-conditioned: it predicts what a robot's move will do and plans toward a goal image, but it neither renders a world nor responds live."
+        },
+        "generality": {
+          "score": 54,
+          "rationale": "Learned from over a million hours of internet video; its robot planning is shown on tabletop manipulation."
+        },
+        "access": {
+          "score": 92,
+          "rationale": "Code and weights on GitHub and Hugging Face."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2025-06-11",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://ai.meta.com/vjepa/",
+          "publisher": "Meta",
+          "date": "2025-06-11"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Introducing the V-JEPA 2 world model and new benchmarks for physical reasoning",
+          "url": "https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/",
+          "publisher": "Meta",
+          "date": "2025-06-11"
+        }
+      ],
+      "checks": [
+        {
+          "title": "V-JEPA 2 page: capabilities, code and weights",
+          "url": "https://ai.meta.com/vjepa/",
+          "publisher": "Meta",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "spaitial",
+      "name": "SpAItial",
+      "company": "SpAItial",
+      "aliases": [
+        "Echo",
+        "Echo-2"
+      ],
+      "class": "independent",
+      "category": "interactive",
+      "region": "UK",
+      "hq": "London, UK",
+      "website": "https://www.spaitial.ai",
+      "description": "Builds physically grounded world models. Echo-2 (April 2026) turns a single image or a text prompt into a persistent 3D world, stored as Gaussian splats, that you can explore in real time and edit object by object; it is available in SpAItial's studio app and through an API.",
+      "founded": 2025,
+      "founders": [
+        {
+          "name": "Matthias Niessner",
+          "role": "Co-founder; Technical University of Munich professor and Synthesia co-founder",
+          "linkedin": "https://www.linkedin.com/in/matthias-niessner-a0a43a48/"
+        },
+        {
+          "name": "Luke Rogers",
+          "role": "Co-founder; formerly at McKinsey and Cazoo",
+          "linkedin": "https://www.linkedin.com/in/lukerog/"
+        },
+        {
+          "name": "Ricardo Martin-Brualla",
+          "role": "Co-founder; formerly at Google",
+          "linkedin": "https://www.linkedin.com/in/ricardo-martin-brualla-b179867/"
+        },
+        {
+          "name": "David Novotny",
+          "role": "Co-founder; formerly at Meta",
+          "linkedin": "https://www.linkedin.com/in/david-novotn%C3%BD-332085178/"
+        }
+      ],
+      "parent": null,
+      "traction": "Creative partners and startups can apply for credits and early access. SpAItial says later versions will add change over time and physics.",
+      "axes": {
+        "interactivity": {
+          "score": 24,
+          "rationale": "Echo-2 builds a persistent 3D scene you can explore in real time and edit object by object, but the world does not yet move or react; SpAItial plans change over time and physics for later versions."
+        },
+        "generality": {
+          "score": 72,
+          "rationale": "Any scene from a single image or a text prompt, from real rooms and buildings to imagined settings."
+        },
+        "access": {
+          "score": 72,
+          "rationale": "A studio app and a developer API; partner programs offer credits and early access."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 14380000,
+        "postMoneyUsd": 59720000,
+        "date": "2025-05-26",
+        "leads": [
+          "Earlybird Venture Capital"
+        ],
+        "otherInvestors": [
+          "Speedinvest"
+        ],
+        "confidence": "manual",
+        "postMoneyConfidence": "manual",
+        "note": "Entered manually from a source that is not public: the $14.4M seed on May 26, 2025 and its $59.7M post-money valuation. Tech.eu reported the round on May 27, 2025 as €11.4M ($13M), led by Earlybird Venture Capital.",
+        "source": {
+          "url": "https://tech.eu/2025/05/27/spaitial-emerges-from-stealth-with-13m-seed-for-ai-native-3d-applications/",
+          "publisher": "Tech.eu",
+          "date": "2025-05-27"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 14380000,
+        "totalRaisedConfidence": "manual"
+      },
+      "news": [
+        {
+          "title": "SpAItial emerges from stealth with $13M Seed for AI-native 3D applications",
+          "url": "https://tech.eu/2025/05/27/spaitial-emerges-from-stealth-with-13m-seed-for-ai-native-3d-applications/",
+          "publisher": "Tech.eu",
+          "date": "2025-05-27"
+        }
+      ],
+      "checks": [
+        {
+          "title": "SpAItial site: Echo-2, studio app and API",
+          "url": "https://www.spaitial.ai",
+          "publisher": "SpAItial",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [
+        "lastRound.amountUsd",
+        "lastRound.postMoneyUsd",
+        "lastRound.date",
+        "metrics.totalRaisedUsd"
+      ],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "gigaai",
+      "name": "GigaAI",
+      "company": "GigaAI",
+      "aliases": [
+        "GigaWorld",
+        "GigaBrain",
+        "DriveDreamer",
+        "极佳科技"
+      ],
+      "class": "independent",
+      "category": "physical",
+      "region": "China",
+      "hq": "Beijing, China",
+      "website": "https://gigaai.cc",
+      "description": "Beijing world-model company. GigaWorld generates scenes and training data for robots and self-driving cars, and its GigaWorld-0 framework is open source; GigaBrain is its robot-control model. It sells them in integrated software and hardware projects for factories and carmakers, alongside its own robots.",
+      "founded": 2023,
+      "founders": [
+        {
+          "name": "Huang Guan",
+          "role": "Founder & CEO; formerly led visual perception at Horizon Robotics"
+        }
+      ],
+      "parent": null,
+      "traction": "Raised CNY3.5B ($518M) across three rounds from March to June 2026, and Bloomberg reports it is preparing a Hong Kong listing. GigaBrain models are deployed with clients including Li Auto and ECARX.",
+      "axes": {
+        "interactivity": {
+          "score": 12,
+          "rationale": "GigaWorld generates video and 3D scenes under control of camera, action and appearance, to make training data for robots; it renders ahead of time rather than reacting live."
+        },
+        "generality": {
+          "score": 52,
+          "rationale": "The physical world across several domains: driving, factory and household robotics."
+        },
+        "access": {
+          "score": 56,
+          "rationale": "The GigaWorld-0 framework is open source on GitHub; the full models are sold in integrated projects."
+        }
+      },
+      "lastRound": {
+        "series": "Series B2",
+        "amountUsd": 148000000,
+        "postMoneyUsd": 1500000000,
+        "date": "2026-06-15",
+        "leads": [],
+        "otherInvestors": [
+          "Lion Partners Capital",
+          "China-Belgium Direct Equity Investment Fund",
+          "Wanxiang Qianchao"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "The round was CNY1B. Yicai reported a post-money valuation above CNY10B ($1.5B), the figure shown. Total funding counts the CNY3.5B ($518M) raised in three rounds from March to June 2026; earlier rounds were not disclosed, so the true total is higher.",
+        "source": {
+          "url": "https://www2.yicaiglobal.com/news/chinas-gigaai-completes-a-funding-round-of-usd5179-million-within-three-months",
+          "publisher": "Yicai Global",
+          "date": "2026-06-15"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 518000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www2.yicaiglobal.com/news/chinas-gigaai-completes-a-funding-round-of-usd5179-million-within-three-months",
+          "publisher": "Yicai Global",
+          "date": "2026-06-15"
+        }
+      },
+      "news": [
+        {
+          "title": "Chinese Embodied AI, Robotics Developer GigaAI Raises USD518 Million Over Three Months",
+          "url": "https://www2.yicaiglobal.com/news/chinas-gigaai-completes-a-funding-round-of-usd5179-million-within-three-months",
+          "publisher": "Yicai Global",
+          "date": "2026-06-15"
+        },
+        {
+          "title": "With 1 billion yuan invested, Gigaai aims to become the \"OpenAI of the physical world\"",
+          "url": "https://autonews.gasgoo.com/articles/news/with-1-billion-yuan-invested-gigaai-aims-to-become-the-openai-of-the-physical-world-2030133640946626561",
+          "publisher": "Gasgoo",
+          "date": "2026-03-05"
+        }
+      ],
+      "checks": [
+        {
+          "title": "GigaWorld-0 repository: open-source framework",
+          "url": "https://github.com/open-gigaai/giga-world-0",
+          "publisher": "GitHub",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "black-forest-labs",
+      "name": "Black Forest Labs",
+      "company": "Black Forest Labs",
+      "aliases": [
+        "FLUX",
+        "FLUX 3 Action",
+        "BFL"
+      ],
+      "class": "independent",
+      "category": "physical",
+      "region": "Germany",
+      "hq": "Freiburg, Germany",
+      "website": "https://bfl.ai",
+      "description": "The lab behind the FLUX image models, now building world models. FLUX 3 Action (September 2026) is an open-weight world action model: from camera images and a robot's joint positions it predicts the next motor commands together with video of how the scene will unfold, shown on a Franka arm and the low-cost SO-101.",
+      "founded": 2024,
+      "founders": [
+        {
+          "name": "Robin Rombach",
+          "role": "Co-founder & CEO; co-creator of Stable Diffusion"
+        },
+        {
+          "name": "Andreas Blattmann",
+          "role": "Co-founder"
+        },
+        {
+          "name": "Patrick Esser",
+          "role": "Co-founder"
+        }
+      ],
+      "parent": null,
+      "traction": "FLUX image models power image generation for partners including Mistral's Le Chat, Adobe and Meta. FLUX 3 Action tops NVIDIA's RoboLab-120 simulation benchmark, per the company.",
+      "axes": {
+        "interactivity": {
+          "score": 18,
+          "rationale": "Predicts video of what each chunk of motor commands will do, inside a robot's control loop; it is not a world you explore, and it does not yet run game worlds in real time."
+        },
+        "generality": {
+          "score": 30,
+          "rationale": "Robot manipulation, shown on a Franka arm and the SO-101, built on the general FLUX 3 multimodal backbone."
+        },
+        "access": {
+          "score": 84,
+          "rationale": "Open weights on Hugging Face, under non-commercial and self-hosted commercial licenses."
+        }
+      },
+      "lastRound": {
+        "series": "Series B",
+        "amountUsd": 300000000,
+        "postMoneyUsd": 3250000000,
+        "date": "2025-12-01",
+        "leads": [
+          "AMP",
+          "Salesforce Ventures"
+        ],
+        "otherInvestors": [
+          "Andreessen Horowitz",
+          "NVIDIA",
+          "General Catalyst",
+          "Northzone",
+          "Creandum",
+          "Temasek",
+          "Air Street Capital"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": null,
+        "source": {
+          "url": "https://sifted.eu/articles/black-forest-labs-300m-series-b",
+          "publisher": "Sifted",
+          "date": "2025-12-01"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 450000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://sifted.eu/articles/black-forest-labs-300m-series-b",
+          "publisher": "Sifted",
+          "date": "2025-12-01"
+        }
+      },
+      "news": [
+        {
+          "title": "FLUX 3 Action",
+          "url": "https://bfl.ai/blog/flux-3-action",
+          "publisher": "Black Forest Labs",
+          "date": "2026-09-23"
+        },
+        {
+          "title": "German AI startup Black Forest Labs raises $300m Series B",
+          "url": "https://sifted.eu/articles/black-forest-labs-300m-series-b",
+          "publisher": "Sifted",
+          "date": "2025-12-01"
+        }
+      ],
+      "checks": [
+        {
+          "title": "FLUX 3 Action post: inputs, outputs, licenses and robots",
+          "url": "https://bfl.ai/blog/flux-3-action",
+          "publisher": "Black Forest Labs",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "hy-world",
+      "name": "HY-World (Tencent)",
+      "shortName": "HY-World",
+      "company": "Tencent",
+      "aliases": [
+        "HunyuanWorld",
+        "WorldPlay",
+        "Hunyuan"
+      ],
+      "class": "platform",
+      "category": "interactive",
+      "brand": "Tencent",
+      "region": "China",
+      "hq": "Shenzhen, China",
+      "website": "https://huggingface.co/tencent/HY-World-2.0",
+      "description": "Tencent's open world models. HY-World 1.5 (December 2025) generates worlds you walk through in real time at 24 fps with keyboard and mouse, keeping their geometry consistent; HY-World 2.0 (April 2026) turns text, images or video into editable 3D scenes, as meshes and Gaussian splats, for game engines.",
+      "founded": 1998,
+      "founders": [],
+      "parent": "Tencent — public (HKEX: 0700). HY-World comes from Tencent's Hunyuan team; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Code and weights on GitHub and Hugging Face under Tencent community licenses. Tencent says HY-World 2.0 ranks first among open models on the WorldScore benchmark.",
+      "axes": {
+        "interactivity": {
+          "score": 82,
+          "rationale": "HY-World 1.5 responds to keyboard and mouse in real time at 24 fps with long-range geometric consistency; 2.0's 3D scenes are explored rather than simulated."
+        },
+        "generality": {
+          "score": 80,
+          "rationale": "Any scene from text, images or video, as interactive video or as 3D assets."
+        },
+        "access": {
+          "score": 92,
+          "rationale": "Code and weights on GitHub and Hugging Face under Tencent's community licenses."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-04-16",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://huggingface.co/tencent/HY-World-2.0",
+          "publisher": "Tencent",
+          "date": "2026-04-16"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Tencent's HY-World 2.0 moves AI beyond video into editable 3D worlds",
+          "url": "https://amp.kr-asia.com/tencents-hy-world-2-0-moves-ai-beyond-video-into-editable-3d-worlds",
+          "publisher": "KrASIA",
+          "date": "2026-04-16"
+        }
+      ],
+      "checks": [
+        {
+          "title": "HY-World 2.0 model page: license, inputs and outputs",
+          "url": "https://huggingface.co/tencent/HY-World-2.0",
+          "publisher": "Hugging Face",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "matrix-game",
+      "name": "Matrix-Game (Skywork AI)",
+      "shortName": "Matrix-Game",
+      "company": "Kunlun Tech",
+      "aliases": [
+        "Matrix-Game 3.0",
+        "Skywork AI",
+        "Kunlun"
+      ],
+      "class": "platform",
+      "category": "interactive",
+      "brand": "Skywork",
+      "region": "Singapore",
+      "hq": "Singapore",
+      "website": "https://github.com/SkyworkAI/Matrix-Game",
+      "description": "Skywork AI's open interactive world model. Matrix-Game 3.0 (March 2026) streams 720p video at 40 fps that responds to a player's actions, with a camera-aware memory that keeps the world consistent over minute-long sessions; a 28B mixture-of-experts version trades speed for quality.",
+      "founded": 2008,
+      "founders": [],
+      "parent": "Kunlun Tech — public (SZSE: 300418). Skywork AI, Kunlun's Singapore-based AI subsidiary, builds Matrix-Game; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Apache 2.0 code and weights on GitHub and Hugging Face; trained on Unreal Engine scenes, game recordings and real-world video.",
+      "axes": {
+        "interactivity": {
+          "score": 86,
+          "rationale": "Responds to actions frame by frame at 40 fps in 720p, with a memory that holds the world together over minute-long sessions."
+        },
+        "generality": {
+          "score": 52,
+          "rationale": "Game-like and real-world scenes from an image and a text prompt, trained largely on game and engine footage."
+        },
+        "access": {
+          "score": 96,
+          "rationale": "Apache 2.0 code and weights on GitHub and Hugging Face."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-03-27",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://huggingface.co/Skywork/Matrix-Game-3.0",
+          "publisher": "Skywork",
+          "date": "2026-03-27"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [],
+      "checks": [
+        {
+          "title": "Matrix-Game 3.0 model page: license, frame rate and memory",
+          "url": "https://huggingface.co/Skywork/Matrix-Game-3.0",
+          "publisher": "Hugging Face",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    },
+    {
+      "id": "happy-oyster",
+      "name": "Happy Oyster (Alibaba)",
+      "shortName": "Happy Oyster",
+      "company": "Alibaba Group",
+      "aliases": [
+        "HappyOyster",
+        "Alibaba Token Hub"
+      ],
+      "class": "platform",
+      "category": "interactive",
+      "brand": "Alibaba",
+      "region": "China",
+      "hq": "Hangzhou, China",
+      "website": "https://fal.ai/happy-oyster",
+      "description": "Alibaba's interactive world model for games, film and drama. It generates a world as continuous video with sound that you steer while it plays: Directing mode takes text, voice or image input for up to three minutes at 480p or 720p, and Wandering mode lets you walk through it with WASD controls for up to a minute.",
+      "founded": 1999,
+      "founders": [],
+      "parent": "Alibaba Group — public (NYSE: BABA; HKEX: 9988). Happy Oyster comes from Alibaba Token Hub, its new AI unit; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Launched April 16, 2026 to an invitation-only early-access pool; developers can use it through fal, priced per second of generated world.",
+      "axes": {
+        "interactivity": {
+          "score": 80,
+          "rationale": "Generates while you steer, adding elements, redirecting characters or moving the camera mid-scene, for sessions of up to three minutes."
+        },
+        "generality": {
+          "score": 76,
+          "rationale": "Open-ended worlds for games, film and drama from text and image prompts."
+        },
+        "access": {
+          "score": 60,
+          "rationale": "A pay-per-second API through fal; the consumer product is invitation-only."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-04-16",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": null,
+        "source": {
+          "url": "https://www.bloomberg.com/news/articles/2026-04-16/alibaba-releases-new-ai-model-for-gaming-development",
+          "publisher": "Bloomberg",
+          "date": "2026-04-16"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Alibaba Releases New AI Model for Gaming Development",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-16/alibaba-releases-new-ai-model-for-gaming-development",
+          "publisher": "Bloomberg",
+          "date": "2026-04-16"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Happy Oyster on fal: modes, session length and pricing",
+          "url": "https://fal.ai/happy-oyster",
+          "publisher": "fal",
+          "date": "2026-10-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-10-06"
+    }
+  ]
+}
