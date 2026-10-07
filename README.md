@@ -131,7 +131,7 @@ company brings its mark, label and leader forward and dims the rest; a mark keep
 its white border on hover, and keyboard focus adds a ring. Keyboard focus shows the
 same figures a mouse hover does.
 
-The mobile default is still the sortable company list; `?view=map` opens the map.
+The map is the default view on every screen, phones included; the sortable company list is one tap away (`?view=table`).
 The list has one column per axis plus valuation and total funding, and its headers
 sort. A click anywhere on a row opens its profile. A coloured dot marks each company's focus beside a short ownership tag, and a
 platform row shows one muted "Platform" across the money columns; the table fits

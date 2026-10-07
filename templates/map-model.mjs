@@ -183,14 +183,15 @@ export function heroStats(companies, asOf) {
 
 export const SIZES = ['valuation', 'raised', 'equal'];
 export const sortKeys = () => [...AXES.all, 'valuation', 'raised', 'name'];
-export function readState(search, mobile = false) {
+// The map is the default view on every screen; the list is one tap away.
+export function readState(search) {
   const params = new URLSearchParams(search);
   const valid = (key, choices, fallback) => choices.includes(params.get(key)) ? params.get(key) : fallback;
   return {
     category: valid('cat', Object.keys(CATEGORIES), 'all'),
     ownership: valid('owner', ['all', ...Object.keys(OWNERSHIP)], 'all'),
     query: params.get('q') || '',
-    view: valid('view', ['map', 'table'], mobile ? 'table' : 'map'),
+    view: valid('view', ['map', 'table'], 'map'),
     axis: valid('axis', AXES.y, AXES.y[0]),
     size: valid('size', SIZES, 'valuation'),
     sort: valid('sort', sortKeys(), AXES.x),

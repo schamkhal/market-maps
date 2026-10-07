@@ -72,7 +72,7 @@ export function renderHub(docs, { link }) {
   return `<section class="hero hub-hero" aria-labelledby="hubTitle">
     <div class="hero-copy">
       <p class="eyebrow">Independent research</p>
-      <h1 id="hubTitle">Market maps</h1>
+      <h1 id="hubTitle" class="visually-hidden">Market maps</h1>
       <p class="lede">Sourced, scored maps of emerging AI markets. Every valuation and funding figure cites its source, or says plainly that it has none.</p>
       ${authors.length === 1 ? `<p class="byline">By <strong>${esc(authors[0])}</strong></p>` : ''}
     </div>

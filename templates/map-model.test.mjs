@@ -113,10 +113,11 @@ test('hero stats sum latest rounds in the snapshot year, count recent ones, and 
   assert.deepEqual(heroStats(rows, '2026-09-26'), { tracked: 6, year: 2026, raisedThisYear: 15, roundsThisYear: 2, recentRounds: 1, platforms: 1 });
 });
 test('explicit views and all chart options survive a link opened on another device', () => {
-  const state = readState('?view=map&cat=workflow&owner=independent&q=calendar&axis=distribution&size=raised&sort=valuation&company=motion', true);
-  assert.deepEqual(readState('?' + stateQuery(state), false), state);
-  assert.equal(readState('?' + stateQuery(state), true).view, 'map');
-  assert.equal(readState('', true).view, 'table');
+  const state = readState('?view=table&cat=workflow&owner=independent&q=calendar&axis=distribution&size=raised&sort=valuation&company=motion');
+  assert.deepEqual(readState('?' + stateQuery(state)), state);
+  assert.equal(readState('?' + stateQuery(state)).view, 'table', 'a shared list link stays a list');
+  // With no view in the link, every screen, phones included, opens the map.
+  assert.equal(readState('').view, 'map');
 });
 test('invalid URL settings recover to visible defaults', () => {
   const state = readState('?view=bad&axis=constructor&size=bad&cat=bad&owner=bad&sort=bad');

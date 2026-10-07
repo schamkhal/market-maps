@@ -68,6 +68,8 @@ test('the hub owns the root and every market gets its own map', () => {
   const cards = [...hub.matchAll(/<h3><a href="([^"]+)">([^<]+)<\/a><\/h3>/g)].map(m => [m[1], m[2]]);
   assert.deepEqual(cards, [['third-map/index.html', 'Third map'], ['world-models/index.html', 'World Models (Global)'], ['personal-ai-agents/index.html', 'Personal AI Agents (USA)']]);
   assert.match(hub, /<p class="eyebrow">Independent research<\/p>/, 'the label above the title carries no count');
+  // The wordmark already says "Market maps"; the page title is for screen readers only.
+  assert.match(hub, /<h1 id="hubTitle" class="visually-hidden">Market maps<\/h1>/);
   // The cards follow the introduction directly: no stats block, no visible section heading.
   assert.doesNotMatch(hub, /snapshot|companies tracked|Each map places one market/);
   // Its footer keeps the disclaimer only, without the "Market maps" label.

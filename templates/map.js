@@ -7,7 +7,7 @@ const color = categoryColor;
 // Fixed dataset-wide maxima: a filter never rescales the bubbles.
 const maximums = { valuation: Math.max(0, ...DATA.filter(c => c.cls !== 'platform').map(c => c.valuation || 0)), raised: Math.max(0, ...DATA.filter(c => c.cls !== 'platform').map(c => c.raised || 0)) };
 const SIZE_NAMES = { valuation: 'Post-money valuation', raised: 'Total funding', equal: 'Equal size' };
-let state = readState(location.search, matchMedia(MOBILE).matches);
+let state = readState(location.search);
 let currentRows = [];
 let selectedTrigger = null;
 let mapSignature = '';
@@ -149,7 +149,7 @@ function initialize() {
     if (button) openProfile(button.dataset.company, button);
   });
   window.addEventListener('popstate', () => {
-    const next = readState(location.search, matchMedia(MOBILE).matches);
+    const next = readState(location.search);
     const wanted = next.selected && DATA.some(c => c.id === next.selected) ? next.selected : null;
     state = { ...next, selected: null };
     // The dialog's close event fires later; the flag tells it the history
