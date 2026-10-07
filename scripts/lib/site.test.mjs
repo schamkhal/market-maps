@@ -6,6 +6,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { buildSite, loadTemplates, loadLogos, orderMarkets, toPagePayload } from './site.mjs';
+import { loadPreviews, previewHashes } from './previews.mjs';
 import { RESERVED_AXIS_KEYS, axisKeys } from './validate-market.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -205,4 +206,37 @@ test('every company has a logo, and every logo the pages link to is emitted', ()
       assert.equal(data.filter(c => c.logo).length, doc.companies.length);
     }
   }
+});
+
+test('shared links preview as an image, and every page names the site icon', () => {
+  const previews = loadPreviews(ROOT);
+  const { files } = buildSite(published, { templates, siteUrl: 'https://maps.test', previews });
+  const ogImage = html => (html.match(/<meta property="og:image" content="([^"]+)">/) || [])[1];
+  const pages = {
+    'index.html': 'index', '404.html': 'index',
+    'personal-ai-agents/index.html': 'personal-ai-agents', 'world-models/index.html': 'world-models',
+    'personal-ai-agents/hark/index.html': 'personal-ai-agents', 'world-models/world-labs/index.html': 'world-models',
+  };
+  for (const [page, image] of Object.entries(pages)) {
+    const html = files.get(page);
+    assert.equal(ogImage(html), `https://maps.test/assets/previews/${image}.png`, page);
+    assert.match(html, /<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="627">/, page);
+    assert.match(html, /<meta name="twitter:card" content="summary_large_image">/, page);
+    assert.ok(Buffer.isBuffer(files.get(`assets/previews/${image}.png`)), `${image}.png is emitted`);
+    assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml">/, page);
+    assert.match(html, /<link rel="apple-touch-icon" href="\/apple-touch-icon\.png">/, page);
+  }
+  for (const icon of ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png']) assert.ok(files.has(icon), icon);
+  // A company link previews as its map, with the company's own title.
+  assert.match(files.get('personal-ai-agents/hark/index.html'), /<meta property="og:title" content="Hark — Personal AI Agents \(USA\)">/);
+  // Every icon and image link resolves in both link modes.
+  for (const relative of [true, false]) assert.deepEqual(brokenLinks(buildSite(all, { templates, relative, previews }).files, relative), []);
+  // Without preview images a page still builds, with a plain summary card.
+  assert.match(buildSite(published, { templates }).files.get('index.html'), /<meta name="twitter:card" content="summary">/);
+});
+
+test('each preview image records what it was made from', () => {
+  const hashes = previewHashes(ROOT);
+  assert.deepEqual(Object.keys(hashes).sort(), ['brand', 'index', ...published.map(d => d.market.id)].sort());
+  assert.deepEqual(previewHashes(ROOT), hashes, 'the same inputs give the same hashes');
 });

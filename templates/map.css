@@ -334,3 +334,31 @@ th[aria-sort=descending],th[aria-sort=ascending]{color:var(--ink)}
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important}
 }
+
+/* link-preview cards: ?card lays a page out at 1200×627 for its og:image
+   (scripts/previews.mjs). Visitors never see these rules. */
+html.card body{overflow:hidden}
+html.card .page{padding:0 34px}
+html.card .masthead{height:52px;border-bottom:0}
+html.card .masthead nav,html.card .map-switch,html.card .skip-link{display:none}
+html.card .hero{padding:0 0 12px;align-items:flex-end}
+html.card .hero h1{font-size:40px;margin:0}
+html.card .hero .lede,html.card .hero .snapshot{display:none}
+html.card .hero .byline{margin:0 0 4px;font-size:14px}
+html.card .hero-copy{display:flex;align-items:baseline;justify-content:space-between;gap:24px;width:100%}
+html.card .category-tabs,html.card .filter-bar,html.card .workspace-heading,html.card .chart-options,html.card .list-controls,html.card .list-view,html.card .empty-state,html.card .chart-note,html.card .tooltip,html.card main>section:not(.hero):not(#landscape):not(.hub-maps),html.card .site-footer{display:none!important}
+html.card .workspace{padding-top:10px}
+html.card .map-view{display:block!important}
+html.card .plot-frame svg{height:432px;width:auto;margin:0 auto}
+html.card .map-footer{padding:8px 0 10px}
+/* the front page: the introduction and each map's preview and name */
+html.card .hub-hero{padding:4px 0 20px}
+html.card .hub-hero .eyebrow{display:none}
+html.card .hub-hero .lede{display:block;max-width:62ch;font-size:16px}
+html.card .hub-hero .byline{margin:0;white-space:nowrap}
+html.card .hub-maps{padding-top:0}
+html.card .map-card:hover{transform:none}
+html.card .map-card-body{padding:16px 24px 20px}
+html.card .map-card-tagline{margin:6px 0 0}
+html.card .map-card-body>:not(.map-card-heading):not(.map-card-tagline),html.card .map-card-new,html.card .hub-method{display:none}
+html.card .hub-hero{padding:10px 0 24px}

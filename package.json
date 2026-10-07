@@ -14,7 +14,8 @@
     "preview": "node scripts/preview.mjs",
     "build:relative": "RELATIVE=1 node scripts/build.mjs",
     "docs": "node scripts/docs.mjs",
-    "logos": "node scripts/fetch-logos.mjs"
+    "logos": "node scripts/fetch-logos.mjs",
+    "previews": "node scripts/previews.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

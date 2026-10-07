@@ -13,6 +13,7 @@ npm run preview      # → http://127.0.0.1:5173  see the whole site locally
 npm run admin        # → http://127.0.0.1:4321  edit data by hand
 npm run refresh:dry  # agent proposes, writes nothing
 npm run logos        # fetch logos for companies that lack one
+npm run previews     # link-preview images and the site icon (on a Mac)
 ```
 
 ## Seeing it before you push
@@ -158,6 +159,27 @@ records where each logo came from. A logo shows on a white tile in both themes;
 a company that publishes a dark-page icon (Hark, Odyssey) gets it, on a dark
 tile, in dark mode. A company without a logo file keeps its initials.
 
+### Link previews and the site icon
+
+A link to the site, pasted into LinkedIn, X, Slack or iMessage, previews as a
+1200×627 picture (`og:image`). The front page shows both maps; each map shows
+itself, with its title, labels and key; a company link (`/<map>/<company>/`)
+previews as its map. `npm run previews` takes these pictures: it builds the
+site, lays each page out alone (`?card`) and screenshots it with macOS's own
+WebKit through `scripts/snapshot.swift`, so no browser needs installing (set
+`CHROME_PATH` to use Chrome elsewhere). The images live in `data/previews/`
+with a manifest of what each was made from, and the build names any that a
+data or template change has since made out of date. Run the command before
+sharing a link after the data changes.
+
+The site icon is `data/brand/icon.svg`, the same mark as the masthead's. To
+change the logo, replace that file and run `npm run previews`, which also
+makes `favicon.ico` and the opaque `apple-touch-icon.png` from it.
+
+LinkedIn keeps a link's preview for about a week. After an update, paste the
+link into LinkedIn's Post Inspector (linkedin.com/post-inspector) to refresh
+it; posts already published keep the picture they had.
+
 Every colour is a token with a light and a dark value; the site follows the
 reader's system setting, or a `data-theme` on the root element.
 
@@ -179,6 +201,7 @@ data/markets/*.json   ← the only source of truth
       ├── scripts/preview.mjs    local server, see it before you push
       ├── scripts/admin.mjs      local form editor, writes back to the JSON
       ├── scripts/fetch-logos.mjs  company logos → data/logos/<market>/
+      ├── scripts/previews.mjs   link-preview images → data/previews/, icons → data/brand/
       └── agent/refresh.mjs      weekly: proposes changes as a PR you approve
 
 scripts/lib/   the logic those commands share, each with its own tests

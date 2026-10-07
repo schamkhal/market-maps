@@ -8,6 +8,7 @@
  *   dist/404.html                          not-found page (production builds)
  *   dist/assets/site.css                   the shared stylesheet (map.css)
  *   dist/assets/logos/<market>/…           company logos (data/logos)
+ *   dist/assets/previews/…, dist/favicon.*  link-preview images and the site icon (npm run previews)
  *
  * Rendering lives in scripts/lib/site.mjs, which returns every file as data;
  * this script only reads inputs and writes the result.
@@ -20,6 +21,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildSite, loadTemplates, loadLogos } from './lib/site.mjs';
+import { loadPreviews, stalePreviews } from './lib/previews.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -29,6 +31,7 @@ const markets = marketFiles.map(f => JSON.parse(fs.readFileSync(path.join(ROOT, 
 const { files, pageCount } = buildSite(markets, {
   templates: loadTemplates(ROOT),
   logos: loadLogos(ROOT),
+  previews: loadPreviews(ROOT),
   siteUrl: process.env.SITE_URL || 'https://example.com',
   // RELATIVE=1 emits relative links with explicit index.html, so the built site
   // works from a file:// path, inside a subdirectory, or in a preview host that
@@ -43,3 +46,6 @@ for (const [file, contents] of files) {
   fs.writeFileSync(target, contents);
 }
 console.log(`Built dist/ — ${markets.length} map${markets.length === 1 ? '' : 's'}, ${pageCount} company links.`);
+// Link previews are made on a Mac, not here; say which no longer match their map.
+const stale = stalePreviews(ROOT);
+if (stale.length) console.warn(`  warn  link-preview images out of date (${stale.join(', ')}): run npm run previews`);

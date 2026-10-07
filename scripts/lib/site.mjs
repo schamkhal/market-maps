@@ -10,6 +10,8 @@
  *   404.html                            not-found page (production builds only)
  *   assets/site.css                     the shared stylesheet (map.css)
  *   assets/logos/<market>/<file>        company logos for the list and profiles
+ *   assets/previews/<name>.png          link-preview images (og:image), see scripts/lib/previews.mjs
+ *   favicon.svg, favicon.ico, apple-touch-icon.png   the site icon
  *
  * A company's profile lives in its map's drawer (templates/profile.mjs). Its
  * own address forwards there, so links shared before the drawer was the only
@@ -19,6 +21,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { configureCategories, configureAxes, esc } from '../../templates/map-model.mjs';
 import { renderHub } from './hub.mjs';
+import { PREVIEW } from './previews.mjs';
 
 export const FONTS_URL = 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap';
 
@@ -100,6 +103,7 @@ function linker(relative) {
     home: n => relative ? (up(n) || './') + 'index.html' : '/',
     map: (n, id) => relative ? `${up(n)}${id}/index.html` : `/${id}/`,
     asset: (n, file) => relative ? `${up(n)}assets/${file}` : `/assets/${file}`,
+    root: (n, file) => relative ? `${up(n)}${file}` : `/${file}`,
   };
 }
 
@@ -107,7 +111,19 @@ const stripImports = source => source.replace(/^import\s[^;]+;\s*$/gm, '');
 const inlineJSON = value => JSON.stringify(value).replace(/</g, '\\u003c');
 const BRAND_ICON = '<span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
 
-export function wrapDoc(body, { title, desc, url, head = '' }) {
+// A shared link previews as `image` ({ url, alt }, an absolute URL) when the
+// page has one: LinkedIn, Slack and iMessage read og:image, X twitter:image.
+export const previewTags = image => image
+  ? `<meta property="og:image" content="${esc(image.url)}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="${PREVIEW.width}">
+<meta property="og:image:height" content="${PREVIEW.height}">
+<meta property="og:image:alt" content="${esc(image.alt)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${esc(image.url)}">`
+  : '<meta name="twitter:card" content="summary">';
+
+export function wrapDoc(body, { title, desc, url, head = '', image = null }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -120,7 +136,8 @@ export function wrapDoc(body, { title, desc, url, head = '' }) {
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${esc(url)}">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="Market Maps">
+${previewTags(image)}
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f5f5f1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121614" media="(prefers-color-scheme: dark)">
@@ -141,12 +158,25 @@ ${body}
  * @param options   { templates, siteUrl, relative }
  * @returns {{ files: Map<string, string>, pageCount: number, legacy: object }}
  */
-export function buildSite(markets, { templates, siteUrl = 'https://example.com', relative = false, logos = {} }) {
+export function buildSite(markets, { templates, siteUrl = 'https://example.com', relative = false, logos = {}, previews = {} }) {
   const maps = byEdition(markets);
   const legacy = orderMarkets(markets)[0];
   const link = linker(relative);
   const files = new Map();
   files.set('assets/site.css', templates.styles);
+  // Link-preview images and the site icon, where scripts/previews.mjs has made them.
+  const { previews: images = {}, brand = {} } = previews;
+  for (const [name, bytes] of Object.entries(images)) files.set(`assets/previews/${name}.png`, bytes);
+  const preview = (name, alt) => images[name] ? { url: `${siteUrl}/assets/previews/${name}.png`, alt } : null;
+  const mapAlt = m => `${m.market.name} market map: ${m.companies.length} companies placed by ${m.market.axes.x.label.toLowerCase()} and ${m.market.axes.y.label.toLowerCase()}`;
+  const hubAlt = `Market maps: ${maps.map(m => m.market.name).join(' and ')}`;
+  const ICON_FILES = { 'icon.svg': 'favicon.svg', 'favicon.ico': 'favicon.ico', 'apple-touch-icon.png': 'apple-touch-icon.png' };
+  for (const [source, target] of Object.entries(ICON_FILES)) if (brand[source]) files.set(target, brand[source]);
+  const icons = depth => [
+    brand['icon.svg'] ? `<link rel="icon" href="${link.root(depth, 'favicon.svg')}" type="image/svg+xml">` : '',
+    brand['favicon.ico'] ? `<link rel="icon" href="${link.root(depth, 'favicon.ico')}" sizes="32x32">` : '',
+    brand['apple-touch-icon.png'] ? `<link rel="apple-touch-icon" href="${link.root(depth, 'apple-touch-icon.png')}">` : '',
+  ].filter(Boolean).map(tag => tag + '\n').join('');
   // Logos: a light file, and a dark one where the company publishes one. The
   // map page links them from one level down (<market>/index.html).
   const logoHrefs = {};
@@ -161,7 +191,7 @@ export function buildSite(markets, { templates, siteUrl = 'https://example.com',
   // Static pages share the map's stylesheet, masthead and footer, so a visitor
   // arriving from search sees the same product as one arriving from the map.
   // The wordmark always leads to the hub.
-  const shell = (inner, { depth, title, desc, url, nav = '', mainClass = 'doc-page', head = '' }) => wrapDoc(`<link rel="stylesheet" href="${link.asset(depth, 'site.css')}">
+  const shell = (inner, { depth, title, desc, url, nav = '', mainClass = 'doc-page', head = '', image = null }) => wrapDoc(`<link rel="stylesheet" href="${link.asset(depth, 'site.css')}">
 <div class="page">
   <header class="masthead">
     <a class="wordmark" href="${link.home(depth)}">${BRAND_ICON}Market maps</a>
@@ -169,7 +199,7 @@ export function buildSite(markets, { templates, siteUrl = 'https://example.com',
   </header>
   <main class="${mainClass}">${inner}</main>
   <footer class="site-footer"><span>Educational use only · not investment advice</span></footer>
-</div>`, { title, desc, url, head });
+</div>`, { title, desc, url, head: icons(depth) + head, image });
   const backToMaps = depth => `<a href="${link.home(depth)}">← All maps</a>`;
 
   /* ---------- 1. the hub ------------------------------------------------- */
@@ -179,6 +209,7 @@ export function buildSite(markets, { templates, siteUrl = 'https://example.com',
 (function () {
   var state = /[?&](view|cat|owner|q|axis|size|sort|company)=/, section = /^#(landscape|research|methodology)$/;
   if (state.test(location.search) || section.test(location.hash)) location.replace(${inlineJSON(link.map(0, legacy.market.id))} + location.search + location.hash);
+  if (/[?&]card(=|&|$)/.test(location.search)) document.documentElement.className += ' card';
 })();
 </script>
 `;
@@ -189,6 +220,7 @@ export function buildSite(markets, { templates, siteUrl = 'https://example.com',
     url: `${siteUrl}/`,
     mainClass: 'hub-page',
     head: forward,
+    image: preview('index', hubAlt),
   }));
 
   /* ---------- 2. one interactive map per market -------------------------- */
@@ -228,25 +260,36 @@ export function buildSite(markets, { templates, siteUrl = 'https://example.com',
       title: `${m.market.name} Market Map`,
       desc: m.market.definition,
       url: `${siteUrl}/${m.market.id}/`,
+      head: icons(1),
+      image: preview(m.market.id, mapAlt(m)),
     }));
   }
 
   /* ---------- 3. company addresses forward to their profile --------------- */
   // A company's profile is its map's drawer. Its old address, already shared
   // and indexed, opens that drawer; the forward itself stays out of search.
+  // Shared, it previews as its map.
   let pageCount = 0;
   for (const m of maps) {
     for (const c of m.companies) {
       const target = `${link.map(2, m.market.id)}?company=${encodeURIComponent(c.id)}`;
+      const title = `${c.name} — ${m.market.name}`, canonical = `${siteUrl}/${m.market.id}/?company=${encodeURIComponent(c.id)}`;
       files.set(`${m.market.id}/${c.id}/index.html`, `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>${esc(c.name)} — ${esc(m.market.name)}</title>
+<title>${esc(title)}</title>
 <meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url=${esc(target)}">
-<link rel="canonical" href="${esc(`${siteUrl}/${m.market.id}/?company=${encodeURIComponent(c.id)}`)}">
-</head>
+<link rel="canonical" href="${esc(canonical)}">
+<meta name="description" content="${esc(c.description)}">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(c.description)}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${esc(canonical)}">
+<meta property="og:site_name" content="Market Maps">
+${previewTags(preview(m.market.id, mapAlt(m)))}
+${icons(2)}</head>
 <body>
 <p><a href="${esc(target)}">${esc(c.name)} on the ${esc(m.market.name)} map</a></p>
 </body>
@@ -270,7 +313,7 @@ export function buildSite(markets, { templates, siteUrl = 'https://example.com',
   </article>`;
     files.set('404.html', shell(notFound, {
       depth: 0, title: 'Page not found — Market Maps', desc: 'This page does not exist.', url: `${siteUrl}/`,
-      nav: backToMaps(0),
+      nav: backToMaps(0), image: preview('index', hubAlt),
     }));
   }
 

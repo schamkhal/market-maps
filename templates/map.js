@@ -460,4 +460,7 @@ function openProfile(id, trigger, { push = true } = {}) {
   if (push && !wasOpen) profilePushed = syncUrl(true); else syncUrl();
 }
 
+// ?card lays the map out alone at 1200×627 for its link-preview image
+// (scripts/previews.mjs); visitors never see it.
+if (new URLSearchParams(location.search).has('card')) document.documentElement.classList.add('card');
 initialize();

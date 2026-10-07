@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- The site's mark: the same tile as the masthead's (templates/map.css .brand-icon).
+       Replace this file to change the logo, then run `npm run previews`. -->
+  <g transform="rotate(-5 16 16)">
+    <rect x="1.5" y="1.5" width="29" height="29" rx="7" fill="#30634b"/>
+    <g fill="#eaf0e7">
+      <rect x="9.5" y="9.5" width="5" height="5" rx="1"/>
+      <rect x="17.5" y="9.5" width="5" height="5" rx="1"/>
+      <rect x="9.5" y="17.5" width="5" height="5" rx="1"/>
+      <rect x="17.5" y="17.5" width="5" height="5" rx="1" opacity=".45"/>
+    </g>
+  </g>
+</svg>
