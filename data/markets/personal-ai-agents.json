@@ -88,7 +88,7 @@
       {
         "name": "Fambot",
         "fails": "takes actions",
-        "why": "Family reminders and calendar summaries; no bookings, purchases or other transactions"
+        "why": "Family reminders and calendar summaries; no bookings, purchases or other transactions. Has raised a $3.5M pre-seed, so it is funded but still fails the criterion."
       },
       {
         "name": "Miso",
@@ -119,6 +119,51 @@
         "name": "DoorDash in Messages",
         "fails": "two surfaces",
         "why": "DoorDash's iMessage agent orders food and nothing else"
+      },
+      {
+        "name": "Caddy",
+        "fails": "funding",
+        "why": "No disclosed funding; small unfunded products are left off. Turns phone information into calendar events and reminders over iMessage and RCS."
+      },
+      {
+        "name": "Comma",
+        "fails": "funding",
+        "why": "No disclosed funding; small unfunded products are left off. Open-source task agent reached through Signal, Telegram and WeChat."
+      },
+      {
+        "name": "Iris",
+        "fails": "funding",
+        "why": "No disclosed funding; small unfunded products are left off. iMessage assistant built on Hermes Agent."
+      },
+      {
+        "name": "Rene",
+        "fails": "funding",
+        "why": "No disclosed funding; small unfunded products are left off. Text assistant on iMessage, Telegram and WhatsApp."
+      },
+      {
+        "name": "Tomo",
+        "fails": "funding",
+        "why": "No disclosed funding; small unfunded products are left off. iMessage assistant that joins group chats, from $19.99 a month."
+      },
+      {
+        "name": "Underdog",
+        "fails": "funding",
+        "why": "No disclosed funding; small unfunded products are left off. On-device assistant for Mac and Windows, invite-only beta since October 2026."
+      },
+      {
+        "name": "Stanley",
+        "fails": "scope",
+        "why": "Content assistant for creators: ideas, scripts and scheduled posts, not personal life admin"
+      },
+      {
+        "name": "Szn",
+        "fails": "on behalf of an individual",
+        "why": "Coordinates calls, emails and follow-ups for businesses (7,500+ served), not for a person"
+      },
+      {
+        "name": "Skye",
+        "fails": "takes actions",
+        "why": "Signull Labs' iPhone home screen surfaces cards and briefings rather than acting for you; $3.6M seed in 2025"
       }
     ],
     "axes": {
@@ -159,7 +204,7 @@
         "description": "Agents for email, planning, browsing, and recall across the tools you work in."
       }
     ],
-    "asOf": "2026-10-06"
+    "asOf": "2026-10-12"
   },
   "companies": [
     {
@@ -286,7 +331,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "instinct",
@@ -411,7 +456,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "town",
@@ -549,7 +594,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "superhuman-go",
@@ -633,7 +678,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "duckbill",
@@ -725,7 +770,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "lindy",
@@ -804,7 +849,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "littlebird",
@@ -904,7 +949,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "ohai",
@@ -1006,7 +1051,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "pally",
@@ -1128,7 +1173,7 @@
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-09-28"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "martin",
@@ -1232,7 +1277,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "comet",
@@ -1299,7 +1344,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-12"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "muse",
@@ -1397,7 +1442,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "spark",
@@ -1469,7 +1514,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "chatgpt",
@@ -1546,7 +1591,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "cowork",
@@ -1616,7 +1661,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-06",
+      "lastVerified": "2026-10-12",
       "checks": [
         {
           "title": "Anthropic announcement: Cowork merged into Claude",
@@ -1690,7 +1735,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "siri",
@@ -1765,7 +1810,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "wajo",
@@ -1835,10 +1880,10 @@
           "date": "2026-08-25"
         },
         {
-          "title": "All the AI agents that can live in your text messages",
-          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "title": "All the AI agents that can live in your text messages (Fo listed as publicly launched in September 2026)",
+          "url": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
           "publisher": "TechCrunch",
-          "date": "2026-10-03"
+          "date": "2026-10-10"
         }
       ],
       "checks": [
@@ -1859,7 +1904,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "ollie",
@@ -1964,7 +2009,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "poke",
@@ -2064,7 +2109,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-28"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "grok-bot",
@@ -2083,15 +2128,15 @@
       "founded": null,
       "founders": [],
       "parent": "SpaceXAI — US-based provider of Grok and related products. Grok Bot has no separately disclosed financing or product valuation; parent-company financing is not a comparable market-map value.",
-      "traction": "Beta launched August 11, 2026; access expanded August 26 to SuperGrok and Cursor Pro and Teams plans.",
+      "traction": "Beta launched August 11, 2026; access expanded August 26 to SuperGrok and Cursor Pro and Teams plans. Online purchases through Stripe Link for US users from August 28, 2026; each purchase needs your approval.",
       "axes": {
         "autonomy": {
           "score": 78,
           "rationale": "Editorial estimate: persistent computer use, scheduled routines and connected apps enable delegated work; access still depends on setup and permission review."
         },
         "breadth": {
-          "score": 58,
-          "rationale": "Research, inbox and calendar, shopping comparisons and scheduled routines through connected apps."
+          "score": 64,
+          "rationale": "Research, inbox and calendar, scheduled routines and completed purchases: since August 28, 2026 it buys online for US users through Stripe Link single-use cards, with your approval for each purchase. Bots can also have their own email address."
         },
         "distribution": {
           "score": 46,
@@ -2129,6 +2174,18 @@
           "url": "https://x.ai/bot/guides/grok-bot-101",
           "publisher": "SpaceXAI",
           "date": "2026-09-11"
+        },
+        {
+          "title": "Grok Bot enables online purchases with Stripe Link integration in the US",
+          "url": "https://cryptobriefing.com/grok-bot-online-purchases-stripe-link/",
+          "publisher": "Crypto Briefing",
+          "date": "2026-08-28"
+        },
+        {
+          "title": "Grok Bot agent email",
+          "url": "https://cursor.com/help/grok-bot/agent-email",
+          "publisher": "Cursor",
+          "date": "2026-10-09"
         }
       ],
       "checks": [
@@ -2140,7 +2197,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-09-26"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "folk",
@@ -2234,7 +2291,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "microsoft-copilot",
@@ -2297,6 +2354,12 @@
           "url": "https://www.infoq.com/news/2025/11/microsoft-copilot-fall-release/",
           "publisher": "InfoQ",
           "date": "2025-11-25"
+        },
+        {
+          "title": "Microsoft redesigns its Copilot desktop app with new Home, Code, and Autopilot tabs",
+          "url": "https://alternativeto.net/news/2026/9/microsoft-redesigns-its-copilot-desktop-app-with-new-home-code-and-autopilot-tabs/",
+          "publisher": "AlternativeTo",
+          "date": "2026-09-25"
         }
       ],
       "checks": [
@@ -2308,7 +2371,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-12"
     },
     {
       "id": "genspark",
@@ -2405,7 +2468,184 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-06"
+      "lastVerified": "2026-10-12"
+    },
+    {
+      "id": "tab",
+      "name": "Tab",
+      "company": "Tab",
+      "aliases": [],
+      "class": "independent",
+      "category": "executive",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://tab.bot",
+      "description": "Personal agent you text on iMessage or WhatsApp. Tab has its own phone number, computing environment and digital wallet, so it can book flights, order groceries, place calls, draft emails or turn a PDF into a spreadsheet; spending needs your approval.",
+      "founded": 2026,
+      "founders": [
+        {
+          "name": "Brennan Erbz",
+          "role": "Co-founder; early machine-learning engineer at Snap",
+          "linkedin": null
+        },
+        {
+          "name": "Stafford Schlitt",
+          "role": "Co-founder",
+          "linkedin": null
+        },
+        {
+          "name": "Ammar Amdani",
+          "role": "Co-founder; co-founded Adapt Ventures",
+          "linkedin": null
+        }
+      ],
+      "parent": null,
+      "traction": "Came out of stealth on October 6, 2026. Private beta behind a waitlist, growing mostly by word of mouth; user numbers and revenue not disclosed.",
+      "axes": {
+        "autonomy": {
+          "score": 60,
+          "rationale": "Editorial estimate: runs errands end to end with its own phone number, computer and wallet, asking approval before it spends; no background routines or standing watchers described yet."
+        },
+        "breadth": {
+          "score": 72,
+          "rationale": "Flights, groceries, calls, email drafts and documents: work and personal tasks including bookings and purchases."
+        },
+        "distribution": {
+          "score": 78,
+          "rationale": "Lives in iMessage and WhatsApp with no app to install; still a waitlisted private beta."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": null,
+        "postMoneyUsd": 300000000,
+        "date": "2026-10-06",
+        "leads": [],
+        "otherInvestors": [
+          "SV Angel",
+          "Valar Ventures",
+          "American Spirit"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "Tab came out of stealth at a $300M valuation and declined to say how much it raised. Dealroom calls the round a seed; other outlets call it a pre-seed.",
+        "source": {
+          "url": "https://dealroom.co/news/160851-tab-exits-stealth-at-300m-valuation-in-crowded-ai-assistant-race/",
+          "publisher": "Dealroom",
+          "date": "2026-10-06"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Tab exits stealth at $300M valuation in crowded AI assistant race",
+          "url": "https://dealroom.co/news/160851-tab-exits-stealth-at-300m-valuation-in-crowded-ai-assistant-race/",
+          "publisher": "Dealroom",
+          "date": "2026-10-06"
+        },
+        {
+          "title": "Tab exits stealth at a $300 million valuation with an AI agent that lives in your texts",
+          "url": "https://cryptobriefing.com/tab-ai-assistant-300m-valuation-stealth/",
+          "publisher": "Crypto Briefing",
+          "date": "2026-10-06"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-10"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-10-12"
+    },
+    {
+      "id": "persona",
+      "name": "Persona",
+      "company": "Persona",
+      "aliases": [],
+      "class": "independent",
+      "category": "executive",
+      "region": "US",
+      "hq": "Miami, FL",
+      "website": "https://yourpersona.com",
+      "description": "Proactive personal assistant from Cal AI co-founder Zach Yadegari, in free beta over iMessage. It books flights, schedules and replies to email, with purchases requiring approval; a $179 wristband that summons it with a button or a flick of the wrist ships in December. It plans to earn from sponsored product recommendations rather than subscriptions.",
+      "founded": 2026,
+      "founders": [
+        {
+          "name": "Zach Yadegari",
+          "role": "Founder; co-founded Cal AI (acquired by MyFitnessPal)",
+          "linkedin": null
+        }
+      ],
+      "parent": null,
+      "traction": "Free iMessage beta with \"a few thousand\" users; wristband preorders in the five figures of revenue, shipping in December 2026. An app is in development.",
+      "axes": {
+        "autonomy": {
+          "score": 56,
+          "rationale": "Editorial estimate: pitched as proactive and runs errands such as flight bookings end to end, asking approval before purchases; how far it acts unprompted is not yet shown."
+        },
+        "breadth": {
+          "score": 66,
+          "rationale": "Travel, scheduling, email and shopping across work and personal life."
+        },
+        "distribution": {
+          "score": 76,
+          "rationale": "Lives in iMessage with no app to install; a wristband adds a second way in from December."
+        }
+      },
+      "lastRound": {
+        "series": "Venture round",
+        "amountUsd": 10000000,
+        "postMoneyUsd": null,
+        "date": "2026-10-08",
+        "leads": [
+          "Vine Ventures"
+        ],
+        "otherInvestors": [
+          "Cory Levy",
+          "Collective Global",
+          "WHOOP",
+          "Eight Sleep"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "A $10M round led by Vine Ventures; stage, valuation and terms were not disclosed.",
+        "source": {
+          "url": "https://dealroom.co/news/160991-cal-ai-teen-founder-raises-10m-for-new-ai-assistant-persona/",
+          "publisher": "Dealroom",
+          "date": "2026-10-08"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 10000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://dealroom.co/news/160991-cal-ai-teen-founder-raises-10m-for-new-ai-assistant-persona/",
+          "publisher": "Dealroom",
+          "date": "2026-10-08"
+        }
+      },
+      "news": [
+        {
+          "title": "Cal AI teen founder raises $10M for new AI assistant Persona",
+          "url": "https://dealroom.co/news/160991-cal-ai-teen-founder-raises-10m-for-new-ai-assistant-persona/",
+          "publisher": "Dealroom",
+          "date": "2026-10-08"
+        },
+        {
+          "title": "Persona raises $10M to put its personal AI agent on a wristband",
+          "url": "https://runtimewire.com/article/persona-zach-yadegari-10m-ai-wristband",
+          "publisher": "Runtime Wire",
+          "date": "2026-10-08"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-10-12"
     }
   ]
 }

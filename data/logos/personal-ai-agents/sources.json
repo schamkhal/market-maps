@@ -116,6 +116,12 @@
     "file": "pally.png",
     "fetched": "2026-10-07"
   },
+  "persona": {
+    "page": "https://yourpersona.com",
+    "light": "https://yourpersona.com/apple-icon.png?apple-icon.2t-4z5-1l-xze.png",
+    "file": "persona.png",
+    "fetched": "2026-10-12"
+  },
   "poke": {
     "page": "https://poke.com",
     "light": "https://poke.com/icons/poke-512.png",
@@ -139,6 +145,12 @@
     "light": "https://superhumanstatic.com/super-funnel/main/public/images/v4/favicons/superhuman-apple-touch-icon.png",
     "file": "superhuman-go.png",
     "fetched": "2026-10-07"
+  },
+  "tab": {
+    "page": "https://tab.bot",
+    "light": "https://tab.bot/app-icon.png",
+    "file": "tab.png",
+    "fetched": "2026-10-12"
   },
   "town": {
     "page": "https://www.town.com",
