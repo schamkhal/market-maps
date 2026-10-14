@@ -107,7 +107,7 @@
         "description": "World models that train, test and plan for robots, vehicles and AI agents."
       }
     ],
-    "asOf": "2026-10-12"
+    "asOf": "2026-10-13"
   },
   "companies": [
     {
@@ -123,7 +123,7 @@
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://www.worldlabs.ai",
-      "description": "Spatial-intelligence lab behind Marble, which turns text, images or video into persistent 3D worlds you can walk through, edit and export. Developers build on it through the World API, launched in January 2026. AMD agreed on September 28, 2026 to acquire the company.",
+      "description": "Spatial-intelligence lab behind Marble, which turns text, images or video into persistent 3D worlds you can walk through, edit and export. Developers build on it through the World API, launched in January 2026. Atlas (September 2026), an omni world model trained on text, images, video and 3D, generates camera-controlled video, reconstructs real scenes and simulates them for robots. AMD agreed on September 28, 2026 to acquire the company.",
       "founded": 2024,
       "founders": [
         {
@@ -148,15 +148,15 @@
         }
       ],
       "parent": null,
-      "traction": "AMD agreed to buy World Labs in an all-stock deal valued at about $8.2B, expected to close by the end of 2026; Fei-Fei Li is to become AMD's executive vice president and chief scientist.",
+      "traction": "AMD agreed to buy World Labs in an all-stock deal valued at about $8.2B, expected to close by the end of 2026; Fei-Fei Li is to become AMD's executive vice president and chief scientist. Atlas is in early access with select partners and will power future versions of Marble.",
       "axes": {
         "interactivity": {
-          "score": 26,
-          "rationale": "Marble builds a persistent 3D world that you can walk through, edit and export, but the world itself does not react to what you do: it is generated first, then explored."
+          "score": 32,
+          "rationale": "Marble builds a persistent 3D world that you can walk through, edit and export, but the world itself does not react to what you do. Atlas adds simulation, rendering a scene as a simulated robot moves through it, though not live interaction."
         },
         "generality": {
-          "score": 82,
-          "rationale": "Any scene, real or imagined, from text, images, video or a rough 3D layout."
+          "score": 86,
+          "rationale": "Any scene, real or imagined, from text, images, video or a rough 3D layout; Atlas extends this to reconstruction of real places and robot simulation."
         },
         "access": {
           "score": 76,
@@ -215,6 +215,12 @@
           "date": "2026-09-28"
         },
         {
+          "title": "Atlas: A World Model for Spatial Intelligence",
+          "url": "https://www.worldlabs.ai/blog/atlas",
+          "publisher": "World Labs",
+          "date": "2026-09-01"
+        },
+        {
           "title": "AI Pioneer Fei-Fei Li's Startup World Labs Raises $1 Billion",
           "url": "https://www.bloomberg.com/news/articles/2026-02-18/ai-pioneer-fei-fei-li-s-startup-world-labs-raises-1-billion",
           "publisher": "Bloomberg",
@@ -244,7 +250,7 @@
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "odyssey",
@@ -362,7 +368,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "decart",
@@ -393,7 +399,7 @@
         }
       ],
       "parent": null,
-      "traction": "Amazon is a commercial partner, running Lucy 2 on its Trainium chips. Anthropic held talks in August 2026 to buy Decart for about $6B and walked away on September 8.",
+      "traction": "Amazon is a commercial partner, running Lucy 2 on its Trainium chips. Anthropic held talks in August 2026 to buy Decart for about $6B and walked away on September 8. On October 11 the Wall Street Journal reported that Amazon is in talks to buy it for about $7B; neither company has confirmed.",
       "axes": {
         "interactivity": {
           "score": 80,
@@ -429,7 +435,7 @@
         ],
         "confidence": "reported",
         "postMoneyConfidence": "reported",
-        "note": "Reported as a valuation of nearly $4B. In August 2026 Bloomberg reported that Anthropic was in talks to buy Decart for about $6B; on September 8 it reported that Anthropic had walked away. That price was never agreed, so it is not used. Total funding of $453M counts the $153M raised through the August 2025 Series B (Fortune) and this $300M round; The Next Web puts the total past $450M.",
+        "note": "Reported as a valuation of nearly $4B. In August 2026 Bloomberg reported that Anthropic was in talks to buy Decart for about $6B; on September 8 it reported that Anthropic had walked away. That price was never agreed, so it is not used. Total funding of $453M counts the $153M raised through the August 2025 Series B (Fortune) and this $300M round; The Next Web puts the total past $450M. On October 11, 2026 the Wall Street Journal reported Amazon in talks to buy Decart for about $7B; unconfirmed, so not used either.",
         "source": {
           "url": "https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/",
           "publisher": "SiliconANGLE",
@@ -447,6 +453,12 @@
       },
       "news": [
         {
+          "title": "Amazon in talks to buy AI startup Decart for around $7 billion, WSJ reports",
+          "url": "https://kfgo.com/2026/10/11/amazon-in-talks-to-buy-ai-startup-decart-for-around-7-billion-wsj-reports/",
+          "publisher": "Reuters via KFGO",
+          "date": "2026-10-11"
+        },
+        {
           "title": "Anthropic Said to Walk Away From $6 Billion Decart Purchase",
           "url": "https://www.bloomberg.com/news/articles/2026-09-08/anthropic-said-to-walk-away-from-6-billion-decart-acquisition",
           "publisher": "Bloomberg",
@@ -457,6 +469,12 @@
           "url": "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion",
           "publisher": "Bloomberg",
           "date": "2026-08-13"
+        },
+        {
+          "title": "Decart founders weigh $6 billion-$7 billion sale after Nvidia talks",
+          "url": "https://runtimewire.com/article/decart-sale-talks-nvidia-bid-dean-leitersdorf-moshe-shalev",
+          "publisher": "Runtime Wire",
+          "date": "2026-08-10"
         },
         {
           "title": "Decart raises $300M to put a real-time world model in front of Amazon's chips",
@@ -479,7 +497,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "general-intuition",
@@ -585,7 +603,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "runway",
@@ -601,7 +619,7 @@
       "region": "US",
       "hq": "New York, NY",
       "website": "https://runway.com",
-      "description": "AI video company now building general world models. GWM-1 (December 2025) comes in three variants: Worlds generates explorable 720p scenes in real time as you move through them, Robotics is an action-conditioned model for training and testing robots, and Avatars powers real-time conversational characters.",
+      "description": "AI video company now building general world models. GWM-1 (December 2025) comes in three variants: Worlds generates explorable 720p scenes in real time as you move through them, Robotics is an action-conditioned model for training and testing robots, and Avatars powers real-time conversational characters. GWM Worlds 2 (September 2026) adds generated audio and text actions for characters and the scene; Solaris generates software interfaces frame by frame; Praxis-1 is a world action model for real robots.",
       "founded": 2018,
       "founders": [
         {
@@ -621,19 +639,19 @@
         }
       ],
       "parent": null,
-      "traction": "Raised its Series E to pre-train the next generation of world models; a member of NVIDIA's Cosmos Coalition since June 2026.",
+      "traction": "Raised its Series E to pre-train the next generation of world models; a member of NVIDIA's Cosmos Coalition since June 2026. GWM Worlds 2 and Solaris are research previews; Praxis-1 is being tested with early robotics partners and will be released publicly with open weights in the coming months.",
       "axes": {
         "interactivity": {
-          "score": 74,
-          "rationale": "GWM Worlds generates the scene as you move, with controls for the camera, the agent (a person, drone or robot) and physics, for up to two minutes at 720p; GWM Robotics takes robot poses and camera moves as actions."
+          "score": 82,
+          "rationale": "GWM Worlds 2 generates 720p video at 24 fps with audio in real time, steered by camera moves and typed actions for characters and the scene, with no fixed session length and several players at once; still a research preview, and long-session consistency is not published."
         },
         "generality": {
-          "score": 74,
-          "rationale": "Worlds from any text or image prompt, plus robotics and avatar variants."
+          "score": 80,
+          "rationale": "Worlds from any text or image prompt with generated audio and characters, plus robot control (GWM Robotics, Praxis-1), conversational avatars and generated software interfaces (Solaris)."
         },
         "access": {
           "score": 48,
-          "rationale": "Avatars ship in the API and web app; Worlds and Robotics are in early access by request."
+          "rationale": "Avatars ship in the API and web app; Worlds, Worlds 2, Robotics and Solaris are research previews or early access by request. Praxis-1 is promised with open weights but not yet released."
         }
       },
       "lastRound": {
@@ -680,6 +698,24 @@
       },
       "news": [
         {
+          "title": "Introducing Praxis-1",
+          "url": "https://runwayml.com/research/introducing-praxis-1",
+          "publisher": "Runway",
+          "date": "2026-09-30"
+        },
+        {
+          "title": "Introducing GWM Worlds 2",
+          "url": "https://runwayml.com/research/introducing-gwm-worlds-2",
+          "publisher": "Runway",
+          "date": "2026-09-03"
+        },
+        {
+          "title": "Runway's Solaris generates software interfaces in real time with no code underneath",
+          "url": "https://www.cmswire.com/ai-platforms/runways-solaris-generates-software-interfaces-in-real-time-with-no-code-underneath/",
+          "publisher": "CMSWire",
+          "date": "2026-09-01"
+        },
+        {
           "title": "World model startup Runway closes $315M funding round",
           "url": "https://siliconangle.com/2026/02/10/world-model-startup-runway-closes-315m-funding-round/",
           "publisher": "SiliconANGLE",
@@ -707,7 +743,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "moonlake",
@@ -810,7 +846,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "overworld",
@@ -916,7 +952,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "genie",
@@ -987,7 +1023,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "cosmos",
@@ -1003,15 +1039,15 @@
       "region": "US",
       "hq": "Santa Clara, CA",
       "website": "https://www.nvidia.com/en-us/ai/cosmos/",
-      "description": "NVIDIA's open world foundation models for physical AI. Cosmos 3 (June 2026) combines vision reasoning, world generation and action prediction in one model, used to generate training data and to train and evaluate robots and autonomous vehicles.",
+      "description": "NVIDIA's open world foundation models for physical AI. Cosmos 3 (June 2026) combines vision reasoning, world generation and action prediction in one model, used to generate training data and to train and evaluate robots and autonomous vehicles. Cosmos 3 Edge (July 2026) is a 4B world action model that controls robots in real time on edge hardware.",
       "founded": 1993,
       "founders": [],
       "parent": "NVIDIA — public (NASDAQ: NVDA). Cosmos is released as open models; the parent's market capitalization is not a standalone product valuation.",
-      "traction": "Cosmos 3 Super and Nano are on Hugging Face and GitHub; a real-time Edge model is announced as coming soon. Cosmos Coalition members include Runway, Skild AI and Black Forest Labs.",
+      "traction": "Cosmos 3 Super, Nano and Edge are open on Hugging Face and GitHub; Edge runs on RTX, DGX and Jetson hardware. Cosmos Coalition members include Runway, Skild AI and Black Forest Labs.",
       "axes": {
         "interactivity": {
-          "score": 8,
-          "rationale": "Predicts future world states, including from robot actions, for training and evaluation; it generates ahead of time rather than reacting live. The real-time Edge model is announced, not shipped."
+          "score": 20,
+          "rationale": "Mostly predicts future world states for training and evaluation, ahead of time. Cosmos 3 Edge runs inside a robot's control loop at 15 Hz on Jetson Thor, but it drives a robot rather than rendering a world you explore."
         },
         "generality": {
           "score": 64,
@@ -1043,6 +1079,12 @@
       },
       "news": [
         {
+          "title": "NVIDIA unveils Cosmos 3 Edge",
+          "url": "https://pureai.com/articles/2026/07/16/nvidia-unveils-cosmos-3-edge.aspx",
+          "publisher": "PureAI",
+          "date": "2026-07-16"
+        },
+        {
           "title": "NVIDIA Launches Cosmos 3, the Open Frontier Foundation Model for Physical AI",
           "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Cosmos-3-the-Open-Frontier-Foundation-Model-for-Physical-AI/default.aspx",
           "publisher": "NVIDIA",
@@ -1051,7 +1093,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "microsoft-muse",
@@ -1124,7 +1166,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "v-jepa",
@@ -1196,7 +1238,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "spaitial",
@@ -1297,7 +1339,7 @@
         "lastRound.date",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "gigaai",
@@ -1323,7 +1365,7 @@
         }
       ],
       "parent": null,
-      "traction": "Raised CNY3.5B ($518M) across three rounds from March to June 2026, and Bloomberg reports it is preparing a Hong Kong listing. GigaBrain models are deployed with clients including Li Auto and ECARX.",
+      "traction": "Raised CNY3.5B ($518M) across three rounds from March to June 2026. It has converted into a joint-stock company ahead of a planned Hong Kong listing, with an application reported as early as the end of 2026. GigaBrain models are deployed with clients including Li Auto and ECARX.",
       "axes": {
         "interactivity": {
           "score": 12,
@@ -1369,6 +1411,12 @@
       },
       "news": [
         {
+          "title": "GigaAI completes joint-stock reform, IPO on the agenda?",
+          "url": "https://autonews.gasgoo.com/articles/news/gigaai-completes-joint-stock-reform-ipo-on-the-agenda-2100848073491525633",
+          "publisher": "Gasgoo",
+          "date": "2026-09-18"
+        },
+        {
           "title": "Chinese Embodied AI, Robotics Developer GigaAI Raises USD518 Million Over Three Months",
           "url": "https://www2.yicaiglobal.com/news/chinas-gigaai-completes-a-funding-round-of-usd5179-million-within-three-months",
           "publisher": "Yicai Global",
@@ -1390,7 +1438,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "black-forest-labs",
@@ -1482,6 +1530,18 @@
           "date": "2026-09-23"
         },
         {
+          "title": "FLUX Video Upscale: 2K and 4K",
+          "url": "https://bfl.ai/blog/flux-video-upscale",
+          "publisher": "Black Forest Labs",
+          "date": "2026-08-20"
+        },
+        {
+          "title": "FLUX 3 Video, Part 1: Generation",
+          "url": "https://bfl.ai/blog/flux-3-video",
+          "publisher": "Black Forest Labs",
+          "date": "2026-08-04"
+        },
+        {
           "title": "German AI startup Black Forest Labs raises $300m Series B",
           "url": "https://sifted.eu/articles/black-forest-labs-300m-series-b",
           "publisher": "Sifted",
@@ -1497,7 +1557,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "hy-world",
@@ -1570,7 +1630,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "matrix-game",
@@ -1636,7 +1696,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     },
     {
       "id": "happy-oyster",
@@ -1708,7 +1768,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-12"
+      "lastVerified": "2026-10-13"
     }
   ]
 }
