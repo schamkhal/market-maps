@@ -30,7 +30,7 @@
         "name": "Manus",
         "company": "Butterfly Effect",
         "hq": "Singapore",
-        "note": "Meta acquisition unwound; independent operations resumed in September 2026. Still outside the US-only scope."
+        "note": "Meta acquisition unwound; independent operations resumed in September 2026, and in October it raised more than $500M led by Boyu Capital and IDG Capital (CNBC). Still outside the US-only scope."
       },
       {
         "name": "Today AI",
@@ -204,7 +204,7 @@
         "description": "Agents for email, planning, browsing, and recall across the tools you work in."
       }
     ],
-    "asOf": "2026-10-13"
+    "asOf": "2026-10-26"
   },
   "companies": [
     {
@@ -331,7 +331,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "instinct",
@@ -456,7 +456,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "town",
@@ -483,7 +483,7 @@
         }
       ],
       "parent": null,
-      "traction": "Public product; September updates include voice, presentations, maps and agent-to-agent coordination.",
+      "traction": "Public product. With the Series B (October 19, 2026), Townies can ask each other questions and hand off work across a team, each still working for its own person and sharing only what that person would share; they can also deal with customers, partners and candidates outside the company over email and text.",
       "axes": {
         "autonomy": {
           "score": 80,
@@ -499,54 +499,65 @@
         }
       },
       "lastRound": {
-        "series": "Series A",
-        "amountUsd": 55000000,
+        "series": "Series B",
+        "amountUsd": 108000000,
         "postMoneyUsd": 1000000000,
-        "date": "2026-06-03",
+        "date": "2026-10-19",
         "leads": [
-          "Andreessen Horowitz"
+          "Forerunner Ventures",
+          "Menlo Ventures"
         ],
         "otherInvestors": [
-          "Forerunner Ventures",
-          "First Round",
-          "Alt Capital",
-          "Conviction"
+          "Andreessen Horowitz",
+          "First Round Capital",
+          "Better Tomorrow Ventures",
+          "Precedent.vc",
+          "Scribble Ventures",
+          "Serena Ventures",
+          "Sparked Ventures"
         ],
         "confidence": "reported",
-        "postMoneyConfidence": "rumored",
-        "note": "The $1B is the latest reported valuation: Upstarts Media reported on September 3, 2026 that Town is raising a $90M Series B at a $1B valuation, co-led by Forerunner Ventures and Menlo Ventures, with a16z and First Round participating (Newcomer reported talks near $1B on August 28). Town has not announced the round as of October 5, 2026, and the report does not say whether $1B is pre- or post-money. Total funding of $163M counts the $18M seed led by First Round Capital (March 2025, when Town launched as a small-business tax service), the $55M Series A (June 3, 2026) and that $90M Series B; confirmed funding is $73M. The Series A did not disclose a valuation.",
+        "postMoneyConfidence": "reported",
+        "note": "Town announced the $108M Series B on October 19, 2026, saying it is now valued at more than $1B; whether that is pre- or post-money was not stated. Total funding of $181M counts the $18M seed led by First Round Capital (March 2025), the $55M Series A led by a16z (June 2026) and this round.",
         "source": {
-          "url": "https://www.town.com/press/series-a",
+          "url": "https://www.town.com/press/series-b",
           "publisher": "Town",
-          "date": "2026-06-03"
-        },
-        "postMoneySource": {
-          "url": "https://www.upstartsmedia.com/p/scoop-town-fundraise-vc-reshuffle",
-          "publisher": "Upstarts Media",
-          "date": "2026-09-03"
+          "date": "2026-10-19"
         }
       },
       "metrics": {
-        "totalRaisedUsd": 163000000,
-        "totalRaisedConfidence": "rumored",
+        "totalRaisedUsd": 181000000,
+        "totalRaisedConfidence": "reported",
         "totalRaisedSource": {
-          "url": "https://www.upstartsmedia.com/p/scoop-town-fundraise-vc-reshuffle",
-          "publisher": "Upstarts Media",
-          "date": "2026-09-03"
+          "url": "https://dealroom.co/news/163936-town-raises-108m-at-1b-valuation-to-make-ai-assistants-work-as-a-team/",
+          "publisher": "Dealroom",
+          "date": "2026-10-19"
         }
       },
       "news": [
+        {
+          "title": "Town Raises $108M at a $1B Valuation to Bring AI Assistants to Whole Teams",
+          "url": "https://www.town.com/press/series-b",
+          "publisher": "Town",
+          "date": "2026-10-19"
+        },
+        {
+          "title": "Town raises $108M at a $1B valuation so AI assistants can work as a team",
+          "url": "https://thenextweb.com/news/town-108m-series-b-1b-valuation-ai-assistants",
+          "publisher": "The Next Web",
+          "date": "2026-10-19"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-03"
+        },
         {
           "title": "Town updates: voice, presentations, maps and coordination",
           "url": "https://www.town.com/updates",
           "publisher": "Town",
           "date": "2026-09-10"
-        },
-        {
-          "title": "Town announces $55M Series A",
-          "url": "https://www.town.com/press/series-a",
-          "publisher": "Town",
-          "date": "2026-06-03"
         },
         {
           "title": "Scoop: Conflict with Instinct knocks Index out of Town's buzzy new raise",
@@ -561,6 +572,12 @@
           "date": "2026-08-28"
         },
         {
+          "title": "Town announces $55M Series A",
+          "url": "https://www.town.com/press/series-a",
+          "publisher": "Town",
+          "date": "2026-06-03"
+        },
+        {
           "title": "a16z and Forerunner are betting $55 million on Town's deeply personal AI assistants",
           "url": "https://fortune.com/2026/06/03/towns-ai-assistants-andreessen-horowitz-forerunner-55-million/",
           "publisher": "Fortune",
@@ -571,12 +588,6 @@
           "url": "https://fintech.global/2025/03/17/town-secures-18m-to-revolutionise-tax-support-for-small-businesses/",
           "publisher": "FinTech Global",
           "date": "2025-03-17"
-        },
-        {
-          "title": "All the AI agents that can live in your text messages",
-          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
-          "publisher": "TechCrunch",
-          "date": "2026-10-03"
         }
       ],
       "checks": [
@@ -587,14 +598,14 @@
           "date": "2026-09-26"
         },
         {
-          "title": "Town press page: no Series B announcement yet",
-          "url": "https://www.town.com/press",
+          "title": "Town press page: Series B announcement",
+          "url": "https://www.town.com/press/series-b",
           "publisher": "Town",
-          "date": "2026-10-05"
+          "date": "2026-10-26"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "superhuman-go",
@@ -678,7 +689,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "duckbill",
@@ -770,7 +781,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "lindy",
@@ -849,7 +860,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "littlebird",
@@ -949,7 +960,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "ohai",
@@ -1051,7 +1062,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "pally",
@@ -1173,7 +1184,7 @@
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "martin",
@@ -1277,7 +1288,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "comet",
@@ -1344,7 +1355,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "muse",
@@ -1454,7 +1465,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "spark",
@@ -1526,7 +1537,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "chatgpt",
@@ -1603,7 +1614,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "cowork",
@@ -1612,7 +1623,9 @@
       "aliases": [
         "Cowork",
         "Claude (Cowork)",
-        "Claude Cowork"
+        "Claude Cowork",
+        "Claude Duet",
+        "Duet"
       ],
       "class": "platform",
       "category": "workflow",
@@ -1620,23 +1633,23 @@
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://claude.ai",
-      "description": "Anthropic's assistant. Since September 16, 2026, Cowork's delegated, multi-step work runs inside ordinary Claude conversations, with files, connectors, skills and the new Docs, Slides and Design, and cloud work can continue after the laptop closes. It is built for work rather than personal life.",
+      "description": "Anthropic's assistant. Since September 16, 2026, Cowork's delegated, multi-step work runs inside ordinary Claude conversations, with files, connectors, skills and the new Docs, Slides and Design, and cloud work can continue after the laptop closes. It is built for work rather than personal life. Claude Duet (October 21, 2026) is a separate proactive app on iOS, Android and claude.ai: it sends a morning brief, watches your connected apps through the day, messages you when something needs attention and checks with you before it acts.",
       "founded": 2021,
       "founders": [],
       "parent": "Anthropic — private, and valued as a frontier-model company. Cowork is a mode within Claude, scoped deliberately at work rather than personal life.",
-      "traction": "Rolling out to Pro and Max plans on web, desktop and mobile from September 16, 2026; Team and Free plans next, with 30 days notice for Enterprise.",
+      "traction": "Rolling out to Pro and Max plans on web, desktop and mobile from September 16, 2026; Team and Free plans next, with 30 days notice for Enterprise. Claude Duet opened as a research preview by waitlist on October 21, 2026, starting with US Pro and Max subscribers; its background checks count against normal Claude usage limits.",
       "axes": {
         "autonomy": {
-          "score": 60,
-          "rationale": "Takes on delegated, multi-step work through connectors and skills and can keep going in the cloud after you close the laptop; you hand it each task."
+          "score": 74,
+          "rationale": "Claude Duet watches your connected apps, follows up and reaches out first, and keeps working while you are away; it checks with you before acting on your behalf, and it is a waitlisted research preview."
         },
         "breadth": {
-          "score": 20,
-          "rationale": "Work tools (files, documents, and connectors such as email and calendar), deliberately not personal errands, payments or home."
+          "score": 46,
+          "rationale": "Work and business life through 6,000+ connectors: email, Slack, calendar, documents, and finance tools such as QuickBooks and Stripe; deliberately not personal errands, home or health."
         },
         "distribution": {
           "score": 30,
-          "rationale": "The Claude apps on web, desktop and mobile; it does not live inside messaging or the operating system."
+          "rationale": "The Claude apps and the standalone Claude Duet app on iOS, Android and the web; Duet messages you inside its own app, not in messaging apps or the operating system."
         }
       },
       "lastRound": {
@@ -1660,6 +1673,18 @@
       },
       "news": [
         {
+          "title": "Anthropic joins Meta and OpenAI's personal AI assistant race with Claude Duet",
+          "url": "https://fortune.com/2026/10/23/anthropic-joins-meta-and-openais-personal-ai-assistant-race-with-duet/",
+          "publisher": "Fortune",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "Introducing Claude Duet",
+          "url": "https://claude.com/blog/claude-duet",
+          "publisher": "Anthropic",
+          "date": "2026-10-21"
+        },
+        {
           "title": "Claude Cowork and chat merge into one Claude",
           "url": "https://claude.com/blog/cowork-is-now-claude",
           "publisher": "Anthropic",
@@ -1673,7 +1698,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13",
+      "lastVerified": "2026-10-26",
       "checks": [
         {
           "title": "Anthropic announcement: Cowork merged into Claude",
@@ -1747,7 +1772,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "siri",
@@ -1822,7 +1847,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "wajo",
@@ -1922,7 +1947,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "ollie",
@@ -2027,7 +2052,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "poke",
@@ -2127,7 +2152,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "grok-bot",
@@ -2221,7 +2246,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "folk",
@@ -2315,7 +2340,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "microsoft-copilot",
@@ -2395,7 +2420,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "genspark",
@@ -2492,7 +2517,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "tab",
@@ -2590,7 +2615,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "persona",
@@ -2681,7 +2706,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     }
   ]
 }

@@ -68,6 +68,11 @@
         "name": "Veeda AI",
         "fails": "the model is the product",
         "why": "Toronto; launched in August 2026 with a $90M seed and is still building its first models"
+      },
+      {
+        "name": "Reactor",
+        "fails": "builds a world model",
+        "why": "Runs other companies' world models in real time through its SDK, API and GPU cloud rather than building its own; $74M raised, with NVIDIA joining its Lightspeed-led Series A in October 2026"
       }
     ],
     "axes": {
@@ -107,7 +112,7 @@
         "description": "World models that train, test and plan for robots, vehicles and AI agents."
       }
     ],
-    "asOf": "2026-10-13"
+    "asOf": "2026-10-26"
   },
   "companies": [
     {
@@ -250,7 +255,7 @@
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "odyssey",
@@ -280,19 +285,19 @@
         }
       ],
       "parent": null,
-      "traction": "Odyssey-3, a 14-billion-parameter world model, opened as a free public preview with an API on October 8, 2026. Series B investors include Amazon, GV, AMD Ventures and IQT. Its early models were trained on real-world footage captured with its own backpack camera rigs.",
+      "traction": "Odyssey-3 opened as a free research preview on October 8, 2026, with developer access by request. Series B investors include Amazon, GV, AMD Ventures and IQT. Its early models were trained on real-world footage captured with its own backpack camera rigs.",
       "axes": {
         "interactivity": {
           "score": 74,
-          "rationale": "Odyssey-3 (October 8, 2026) builds worlds from text and responds to your actions in real time, first or third person, at up to 1280×720 in the Pro version; Agora-2 adds real-time interaction between several agents. Session limits are not published, so it sits below Genie 3."
+          "rationale": "Odyssey-3 (October 8, 2026) builds worlds from a prompt and predicts how they change as you act or introduce events; its distilled Flash variant runs in real time, and Pro generates at 1280×720. Agora-2 adds real-time interaction between several agents. Session limits are not published, so it sits below Genie 3."
         },
         "generality": {
           "score": 70,
           "rationale": "General-purpose by design, trained on real-world video, with uses from game creation to robotics."
         },
         "access": {
-          "score": 60,
-          "rationale": "Odyssey-3 is a free public preview in the browser with an API for developers; the weights are not open."
+          "score": 50,
+          "rationale": "Odyssey-3 and Agora-2 are research previews anyone can try free in the browser; developers building with Odyssey-3 have to get in touch, as there is no self-serve API or open weights."
         }
       },
       "lastRound": {
@@ -335,15 +340,9 @@
       },
       "news": [
         {
-          "title": "Odyssey opens free preview of its 14-billion-parameter world model",
-          "url": "https://mlq.ai/news/odyssey-opens-free-preview-of-its-14-billion-parameter-world-model",
-          "publisher": "MLQ",
-          "date": "2026-10-08"
-        },
-        {
-          "title": "Odyssey-3 launches as free generative world model preview",
-          "url": "https://techaimag.com/ai-news/odyssey-3-launches-as-free-generative-world-model-preview",
-          "publisher": "Tech AI Magazine",
+          "title": "Meet Odyssey-3: Our Most Powerful Foundation World Model",
+          "url": "https://odyssey.systems/meet-odyssey-3",
+          "publisher": "Odyssey",
           "date": "2026-10-08"
         },
         {
@@ -368,7 +367,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "decart",
@@ -497,7 +496,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "general-intuition",
@@ -603,7 +602,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "runway",
@@ -743,7 +742,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "moonlake",
@@ -846,7 +845,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "overworld",
@@ -952,7 +951,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "genie",
@@ -1023,7 +1022,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "cosmos",
@@ -1093,7 +1092,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "microsoft-muse",
@@ -1166,7 +1165,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "v-jepa",
@@ -1238,7 +1237,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "spaitial",
@@ -1339,7 +1338,7 @@
         "lastRound.date",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "gigaai",
@@ -1438,7 +1437,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "black-forest-labs",
@@ -1557,7 +1556,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "hy-world",
@@ -1630,7 +1629,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "matrix-game",
@@ -1696,7 +1695,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     },
     {
       "id": "happy-oyster",
@@ -1768,7 +1767,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-13"
+      "lastVerified": "2026-10-26"
     }
   ]
 }
