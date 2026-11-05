@@ -1,0 +1,845 @@
+{
+  "$schema": "../../schema/market.schema.json",
+  "schemaVersion": 1,
+  "market": {
+    "id": "ai-wearables",
+    "name": "AI Wearables (Global)",
+    "tagline": "Devices you wear that listen, see and act through a personal AI.",
+    "definition": "Body-worn devices whose main job is a personal AI: glasses, pendants, wristbands, clips and rings that capture what you say or see and turn it into answers, notes, reminders or actions.",
+    "allDescription": "Compare capture, agency and availability across the full landscape.",
+    "edition": 5,
+    "author": "Shamkhal Murtazaaliev",
+    "regions": [
+      "US",
+      "China"
+    ],
+    "scope": "Companies worldwide, judged on the same criteria; each profile gives the headquarters.",
+    "inclusion": [
+      "Worn on the body: glasses, pendant, wristband, clip or ring",
+      "The AI is the point: an assistant or memory, not a health tracker, display or camera with AI added",
+      "For a person's own use, on sale or open for preorder"
+    ],
+    "exclusions": [
+      "Fitness and health trackers without a conversational AI",
+      "Display or XR glasses built mainly for screens and media",
+      "Handheld AI gadgets and phones",
+      "Devices announced but not yet open for orders"
+    ],
+    "judgedExcluded": [
+      {
+        "name": "OpenAI device",
+        "fails": "on sale or open for preorder",
+        "why": "OpenAI bought Jony Ive's io in 2025 to build AI devices; none has been released or put on preorder"
+      },
+      {
+        "name": "Hark device",
+        "fails": "on sale or open for preorder",
+        "why": "Hark (on the Personal AI Agents map) plans its first devices for 2027"
+      },
+      {
+        "name": "Limitless Pendant",
+        "fails": "on sale or open for preorder",
+        "why": "Meta acquired Limitless in December 2025 and the pendant is no longer sold; Meta is reported to be testing its own AI pendant"
+      },
+      {
+        "name": "Humane Ai Pin",
+        "fails": "on sale or open for preorder",
+        "why": "Discontinued in 2025 after HP bought Humane's team and technology"
+      },
+      {
+        "name": "Rabbit r1",
+        "fails": "worn on the body",
+        "why": "A handheld AI device, not worn"
+      },
+      {
+        "name": "Mentra",
+        "fails": "for a person's own use",
+        "why": "San Francisco ($8M seed, 2025); its Mentra Live camera glasses and open MentraOS are now sold mainly to enterprise frontline workers"
+      },
+      {
+        "name": "Samsung Android XR glasses",
+        "fails": "on sale or open for preorder",
+        "why": "Samsung's first Gemini glasses on Google's Android XR were shown in May and July 2026 and are due in November 2026, with no price or orders yet"
+      },
+      {
+        "name": "XREAL",
+        "fails": "the AI is the point",
+        "why": "Raised $100M at a valuation above $1B in 2026 for display glasses built mainly around screens and media"
+      }
+    ],
+    "axes": {
+      "x": {
+        "key": "capture",
+        "label": "Always-on capture",
+        "short": "Capture",
+        "low": "Only when pressed",
+        "high": "Always sensing",
+        "rubric": "0 = listens or sees only while you press or hold it; 25 = wakes on a word, tap or gesture for short exchanges; 50 = records whole conversations or meetings when you switch it on; 75 = listens all day by default, with filtering or pausing; 100 = always-on audio and camera throughout the day"
+      },
+      "y": {
+        "key": "agency",
+        "label": "Agency",
+        "short": "Agency",
+        "low": "Records only",
+        "high": "Acts for you",
+        "rubric": "0 = records or transcribes only; 25 = summarizes and answers questions about what it captured; 50 = proactive reminders, to-dos and insights pushed to you; 75 = takes actions in connected apps, such as sending messages or managing a calendar, with approval; 100 = runs errands and transactions on your behalf"
+      },
+      "yAlt": {
+        "key": "availability",
+        "label": "Availability",
+        "short": "Availability",
+        "low": "Announced",
+        "high": "Mainstream retail",
+        "rubric": "0 = announced with no way to order; 25 = open for preorder; 50 = shipping in limited quantities or one market; 75 = on sale broadly in at least one major market; 100 = in mainstream retail across many countries"
+      }
+    },
+    "categories": [
+      {
+        "id": "audio",
+        "name": "Pendants, bands & rings",
+        "color": "#456cd3",
+        "description": "Audio-first wearables without a camera: pendants, wristbands, clips and rings that listen and remember."
+      },
+      {
+        "id": "glasses",
+        "name": "AI glasses",
+        "color": "#25806a",
+        "description": "Glasses with an AI assistant, some with cameras or a small display."
+      }
+    ],
+    "defaultSize": "raised",
+    "asOf": "2026-11-05"
+  },
+  "companies": [
+    {
+      "id": "persona",
+      "name": "Persona",
+      "company": "Persona",
+      "aliases": [],
+      "class": "independent",
+      "category": "audio",
+      "region": "US",
+      "hq": "Miami, FL",
+      "website": "https://yourpersona.com",
+      "description": "Personal AI agent from Cal AI co-founder Zach Yadegari, in free beta over iMessage, with a $179 screenless wristband that summons it with a button or a flick of the wrist. The agent books flights, schedules, replies to email and makes purchases with approval.",
+      "founded": 2026,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Zach Yadegari",
+          "role": "Founder; co-founded Cal AI"
+        }
+      ],
+      "parent": null,
+      "traction": "Free iMessage beta with \"a few thousand\" users; wristband preorders reported in the five figures of revenue, shipping in December 2026. Also on the Personal AI Agents map.",
+      "axes": {
+        "capture": {
+          "score": 10,
+          "rationale": "Activated by a button press or a flick of the wrist; it does not listen all the time."
+        },
+        "agency": {
+          "score": 78,
+          "rationale": "Runs errands such as flight bookings, scheduling and email, and makes purchases with approval."
+        },
+        "availability": {
+          "score": 25,
+          "rationale": "The band is on preorder for December 2026; the agent itself is in free beta."
+        }
+      },
+      "lastRound": {
+        "series": "Venture round",
+        "amountUsd": 10000000,
+        "postMoneyUsd": null,
+        "date": "2026-10-08",
+        "leads": [
+          "Vine Ventures"
+        ],
+        "otherInvestors": [
+          "Cory Levy",
+          "Collective Global",
+          "WHOOP",
+          "Eight Sleep"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Stage, valuation and terms were not disclosed.",
+        "source": {
+          "url": "https://dealroom.co/news/160991-cal-ai-teen-founder-raises-10m-for-new-ai-assistant-persona/",
+          "publisher": "Dealroom",
+          "date": "2026-10-08"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 10000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://dealroom.co/news/160991-cal-ai-teen-founder-raises-10m-for-new-ai-assistant-persona/",
+          "publisher": "Dealroom",
+          "date": "2026-10-08"
+        }
+      },
+      "news": [
+        {
+          "title": "Persona raises $10M to put its personal AI agent on a wristband",
+          "url": "https://runtimewire.com/article/persona-zach-yadegari-10m-ai-wristband",
+          "publisher": "RuntimeWire",
+          "date": "2026-10-08"
+        },
+        {
+          "title": "Zach Yadegari opens $179 preorders for Persona's AI assistant wristband",
+          "url": "https://runtimewire.com/article/zach-yadegari-persona-ai-band-launch",
+          "publisher": "RuntimeWire",
+          "date": "2026-09-15"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "nirva",
+      "name": "Nirva",
+      "company": "Nirva Labs",
+      "aliases": [],
+      "class": "independent",
+      "category": "audio",
+      "region": "US",
+      "hq": "California",
+      "website": "https://www.nirva.life",
+      "description": "Eight-gram AI pendant, also worn as a bracelet, that passively listens all day but only to its wearer's voice, filtering out others, and turns it into a journal with mood and relationship patterns in a companion app.",
+      "founded": 2025,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Wei Lyu",
+          "role": "Co-founder & CEO; former Meta Reality Labs product leader"
+        },
+        {
+          "linkedin": null,
+          "name": "Jason Chen",
+          "role": "Co-founder; former Meta Reality Labs"
+        },
+        {
+          "linkedin": null,
+          "name": "Hanying Hu",
+          "role": "Co-founder; founded a fashion and jewelry brand"
+        }
+      ],
+      "parent": null,
+      "traction": "Orders open in November 2026 at $249, with first shipments expected by year end; battery lasts up to three days.",
+      "axes": {
+        "capture": {
+          "score": 82,
+          "rationale": "Always on, listening to the wearer's own speech and filtering out other voices."
+        },
+        "agency": {
+          "score": 30,
+          "rationale": "Journals the day and surfaces mood and relationship insights; it does not act in other apps."
+        },
+        "availability": {
+          "score": 25,
+          "rationale": "Preorders open in November 2026."
+        }
+      },
+      "lastRound": {
+        "series": "Pre-Series A",
+        "amountUsd": 25000000,
+        "postMoneyUsd": null,
+        "date": "2026-10-22",
+        "leads": [],
+        "otherInvestors": [
+          "Lightspeed Venture Partners",
+          "South Park Commons"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Follows an $8M seed earlier in 2026 from investors including Lightspeed and South Park Commons; sources differ on the new round's lead. Valuation not disclosed.",
+        "source": {
+          "url": "https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-22"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 33000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-22"
+        }
+      },
+      "news": [
+        {
+          "title": "Nirva raises $33M for a pendant that only listens to you",
+          "url": "https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-22"
+        },
+        {
+          "title": "Nirva raises $8M seed for AI jewellery that tracks your mind",
+          "url": "https://dealroom.co/news/142480-nirva-raises-8m-seed-for-ai-jewellery-that-tracks-your-mind/",
+          "publisher": "Dealroom",
+          "date": "2026-07-31"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "plaud",
+      "name": "Plaud",
+      "company": "Plaud Inc.",
+      "aliases": [
+        "Plaud NotePin",
+        "Plaud Note"
+      ],
+      "class": "independent",
+      "category": "audio",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://www.plaud.ai",
+      "description": "AI note-takers: the card-sized Plaud Note and the wearable NotePin record meetings, calls and conversations when switched on, then transcribe, summarize and pull out to-dos in its app, sold with transcription subscriptions.",
+      "founded": null,
+      "founders": [],
+      "parent": null,
+      "traction": "More than 3 million users (company); Bloomberg reported in June 2026 that it had passed $250M in annual recurring revenue and is targeting $500M in 2026 sales. Offices from San Francisco to Shenzhen and Tokyo.",
+      "axes": {
+        "capture": {
+          "score": 50,
+          "rationale": "Records whole meetings and conversations when you switch it on."
+        },
+        "agency": {
+          "score": 30,
+          "rationale": "Transcribes, summarizes and extracts to-dos; answers questions about recordings."
+        },
+        "availability": {
+          "score": 95,
+          "rationale": "Sold online and in retail across the US, Japan, Europe and elsewhere."
+        }
+      },
+      "lastRound": {
+        "series": "Convertible note",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": null,
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": "Largely bootstrapped: trackers list about $6M of outside funding, the latest a convertible note in April 2025, and reports of a mid-2025 valuation near $1B are unconfirmed.",
+        "source": null
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Plaud reached $250 million in recurring revenue without a single venture dollar and is now targeting $500 million in 2026 sales",
+          "url": "https://startupfortune.com/plaud-reached-250-million-in-recurring-revenue-without-a-single-venture-dollar-and-is-now-targeting-500-million-in-2026-sales/",
+          "publisher": "Startup Fortune",
+          "date": "2026-07-28"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Headquarters and user count",
+          "url": "https://www.plaud.ai/pages/about-us",
+          "publisher": "Plaud",
+          "date": "2026-11-05"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "sandbar",
+      "name": "Sandbar",
+      "company": "Sandbar",
+      "aliases": [
+        "Stream ring"
+      ],
+      "class": "independent",
+      "category": "audio",
+      "region": "US",
+      "hq": "United States",
+      "website": "https://www.sandbar.com",
+      "description": "Maker of Stream, a voice ring for note-taking rather than health tracking: touch it and whisper to capture thoughts, which its app organizes into notes, chats and dictation and can read back in your own voice.",
+      "founded": 2024,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Mina Fahmi",
+          "role": "Co-founder & CEO; former Meta"
+        },
+        {
+          "linkedin": null,
+          "name": "Kirak Hong",
+          "role": "Co-founder; former Meta"
+        }
+      ],
+      "parent": null,
+      "traction": "First preorder batch sold out in 2025; a second batch was scheduled to ship in summer 2026 at $249 (silver) and $299 (gold), iOS first.",
+      "axes": {
+        "capture": {
+          "score": 5,
+          "rationale": "Records only while you touch and talk to it."
+        },
+        "agency": {
+          "score": 30,
+          "rationale": "Organizes voice notes and answers about them; it does not act in other apps."
+        },
+        "availability": {
+          "score": 35,
+          "rationale": "Preorders with a summer 2026 shipping window; deliveries have not been independently confirmed."
+        }
+      },
+      "lastRound": {
+        "series": "Series A",
+        "amountUsd": 23000000,
+        "postMoneyUsd": null,
+        "date": "2026-03-10",
+        "leads": [
+          "Adjacent",
+          "Kindred Ventures"
+        ],
+        "otherInvestors": [],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Reported to bring total funding to $36M after a $13M earlier round. Valuation not disclosed.",
+        "source": {
+          "url": "https://techcrunch.com/2026/03/10/sandbar-secures-23m-series-a-for-its-ai-note-taking-ring/",
+          "publisher": "TechCrunch",
+          "date": "2026-03-10"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 36000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://techcrunch.com/2026/03/10/sandbar-secures-23m-series-a-for-its-ai-note-taking-ring/",
+          "publisher": "TechCrunch",
+          "date": "2026-03-10"
+        }
+      },
+      "news": [
+        {
+          "title": "Sandbar secures $23M Series A for its AI note-taking ring",
+          "url": "https://techcrunch.com/2026/03/10/sandbar-secures-23m-series-a-for-its-ai-note-taking-ring/",
+          "publisher": "TechCrunch",
+          "date": "2026-03-10"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "omi",
+      "name": "Omi",
+      "company": "Based Hardware",
+      "aliases": [
+        "Based Hardware"
+      ],
+      "class": "independent",
+      "category": "audio",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://www.omi.me",
+      "description": "Open-source AI pendant that is always listening, turning conversations into notes, memories and summaries, with an app store of integrations that can act on what it hears; first launched on Kickstarter under the name Friend.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Nik Shevchenko",
+          "role": "Founder & CEO"
+        }
+      ],
+      "parent": null,
+      "traction": "Sold online with a free plan and no required subscription; launched on Product Hunt again in September 2026.",
+      "axes": {
+        "capture": {
+          "score": 75,
+          "rationale": "Listens all day by default."
+        },
+        "agency": {
+          "score": 45,
+          "rationale": "Summaries and memories plus third-party apps that send reminders or push to other tools."
+        },
+        "availability": {
+          "score": 62,
+          "rationale": "On sale online worldwide."
+        }
+      },
+      "lastRound": {
+        "series": "Pre-seed",
+        "amountUsd": 2000000,
+        "postMoneyUsd": null,
+        "date": "2025-01-30",
+        "leads": [],
+        "otherInvestors": [
+          "Tim Draper",
+          "468 Capital",
+          "5Y Capital"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Valuation not disclosed; trackers disagree on any later amounts.",
+        "source": {
+          "url": "https://www.omi.me/blogs/news/omi-raises-2m",
+          "publisher": "Omi",
+          "date": "2025-01-30"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 2000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.omi.me/blogs/news/omi-raises-2m",
+          "publisher": "Omi",
+          "date": "2025-01-30"
+        }
+      },
+      "news": [
+        {
+          "title": "Omi, a competitor to Friend, wants to boost your productivity using AI and a brain interface",
+          "url": "https://techcrunch.com/2025/01/08/omi-a-competitor-to-friend-wants-to-boost-your-productivity-using-ai-and-a-brain-interface",
+          "publisher": "TechCrunch",
+          "date": "2025-01-08"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "friend",
+      "name": "Friend",
+      "company": "Friend",
+      "aliases": [],
+      "class": "independent",
+      "category": "audio",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://friend.com",
+      "description": "Always-listening AI companion pendant that hears your day and texts you its thoughts, built to keep you company rather than to take notes or do tasks.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Avi Schiffmann",
+          "role": "Founder & CEO"
+        }
+      ],
+      "parent": null,
+      "traction": "On sale in the US; the company paid $1.8M for the friend.com domain.",
+      "axes": {
+        "capture": {
+          "score": 75,
+          "rationale": "Listens all day by default."
+        },
+        "agency": {
+          "score": 10,
+          "rationale": "Companion conversation by text; it does not organize information or take actions."
+        },
+        "availability": {
+          "score": 58,
+          "rationale": "On sale in the US."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 2500000,
+        "postMoneyUsd": 50000000,
+        "date": "2024-07-30",
+        "leads": [],
+        "otherInvestors": [
+          "Founders of Solana and Perplexity",
+          "Z Fellows"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "No later round has been reported.",
+        "source": {
+          "url": "https://techcrunch.com/2024/07/30/friend-is-an-ai-companion-backed-by-founders-of-solana-perplexity-and-zfellows/",
+          "publisher": "TechCrunch",
+          "date": "2024-07-30"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 2500000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://techcrunch.com/2024/07/30/friend-is-an-ai-companion-backed-by-founders-of-solana-perplexity-and-zfellows/",
+          "publisher": "TechCrunch",
+          "date": "2024-07-30"
+        }
+      },
+      "news": [
+        {
+          "title": "Friend is an AI companion backed by founders of Solana, Perplexity and Z Fellows",
+          "url": "https://techcrunch.com/2024/07/30/friend-is-an-ai-companion-backed-by-founders-of-solana-perplexity-and-zfellows/",
+          "publisher": "TechCrunch",
+          "date": "2024-07-30"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "even-realities",
+      "name": "Even Realities",
+      "company": "Even Realities",
+      "aliases": [
+        "Even G2"
+      ],
+      "class": "independent",
+      "category": "glasses",
+      "region": "China",
+      "hq": "Shenzhen, China",
+      "website": "https://www.evenrealities.com",
+      "description": "Maker of the Even G2, camera-free smart glasses with a small display: an AI assistant answers questions, translates, prompts you during talks and shows navigation and notifications, controlled with a companion ring.",
+      "founded": null,
+      "founders": [],
+      "parent": null,
+      "traction": "G2 launched in November 2025 at $599 and is sold internationally.",
+      "axes": {
+        "capture": {
+          "score": 30,
+          "rationale": "No camera; microphones work on demand and during conversation features."
+        },
+        "agency": {
+          "score": 35,
+          "rationale": "Answers, translation, teleprompting and navigation; limited actions in other apps."
+        },
+        "availability": {
+          "score": 85,
+          "rationale": "On sale internationally."
+        }
+      },
+      "lastRound": {
+        "series": "Pre-Series B",
+        "amountUsd": 150000000,
+        "postMoneyUsd": 1000000000,
+        "date": "2026-07-06",
+        "leads": [
+          "Meituan"
+        ],
+        "otherInvestors": [
+          "Tencent",
+          "Sequoia China"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "Reported at a $1B valuation ($850M pre-money). Total funding of $159M includes an earlier $9M Series A.",
+        "source": {
+          "url": "https://the-gadgeteer.com/2026/07/06/even-realities-raises-150m-funding-2026/",
+          "publisher": "The Gadgeteer",
+          "date": "2026-07-06"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 159000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.roadtovr.com/smart-glasses-even-realities-unicorn-150m-funding/",
+          "publisher": "Road to VR",
+          "date": "2026-07-06"
+        }
+      },
+      "news": [
+        {
+          "title": "Even Realities raises $150M in new funding",
+          "url": "https://the-gadgeteer.com/2026/07/06/even-realities-raises-150m-funding-2026/",
+          "publisher": "The Gadgeteer",
+          "date": "2026-07-06"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "rokid",
+      "name": "Rokid",
+      "company": "Rokid",
+      "aliases": [
+        "Rokid Glasses"
+      ],
+      "class": "independent",
+      "category": "glasses",
+      "region": "China",
+      "hq": "Hangzhou, China",
+      "website": "https://global.rokid.com",
+      "description": "Hangzhou maker of Rokid Glasses, lightweight AI and AR glasses with a camera and display: an assistant answers what you see and hear, translates, records and prompts.",
+      "founded": 2014,
+      "founders": [],
+      "parent": null,
+      "traction": "Sold in China and internationally after a Kickstarter that raised more than $4M; partnered with optician chain Krys in France in June 2026. Reported to be preparing a Hong Kong listing.",
+      "axes": {
+        "capture": {
+          "score": 32,
+          "rationale": "Camera and microphones on demand, through voice or touch."
+        },
+        "agency": {
+          "score": 38,
+          "rationale": "Visual answers, translation, recording and teleprompting."
+        },
+        "availability": {
+          "score": 85,
+          "rationale": "On sale in China and in international markets."
+        }
+      },
+      "lastRound": {
+        "series": "Series C",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": null,
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": "Recent rounds are reported inconsistently: trackers list a Series C in February 2026, and SCMP reported a RMB 180M (about $26M) investment from Conant Optical. Valuation not confirmed.",
+        "source": null
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Rokid comes to Paris VivaTech 2026 and partners with Krys to expand smart glasses availability in France",
+          "url": "https://www.prnewswire.com/news-releases/rokid-comes-to-paris-vivatech-2026-and-partners-with-krys-to-expand-smart-glasses-availability-in-france-302806223.html",
+          "publisher": "Rokid / PR Newswire",
+          "date": "2026-06-22"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "bee",
+      "name": "Bee",
+      "company": "Bee / Amazon",
+      "aliases": [],
+      "class": "acquired",
+      "category": "audio",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://bee.computer",
+      "description": "Always-listening wearable AI that turns your conversations into daily insights, reminders and to-dos; bought by Amazon, which launched the lighter, water-resistant Bee Frontier band-and-clip and the phone-mounted Bee Eclipse in October 2026.",
+      "founded": null,
+      "founders": [],
+      "parent": null,
+      "traction": "Bee Pro ($11.99 a month) connects it to Alexa+, Amazon shopping, Gmail, Google Calendar, Outlook and Apple Health, so Echo devices can answer questions about past conversations.",
+      "axes": {
+        "capture": {
+          "score": 75,
+          "rationale": "Listens all day by default, with conversations processed into summaries."
+        },
+        "agency": {
+          "score": 52,
+          "rationale": "Proactive insights and to-dos, with connections to email, calendar and Alexa+ on the paid tier."
+        },
+        "availability": {
+          "score": 75,
+          "rationale": "On sale in the US through Amazon."
+        }
+      },
+      "lastRound": {
+        "series": "Acquired by Amazon",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": null,
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": "Amazon acquired Bee in 2025; the price was not disclosed.",
+        "source": null
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Amazon launches Bee Frontier and Bee Eclipse AI wearables",
+          "url": "https://americanbazaaronline.com/2026/10/15/amazon-ai-wearables-bee-frontier-eclipse-490146/",
+          "publisher": "American Bazaar",
+          "date": "2026-10-15"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "meta-ai-glasses",
+      "name": "Meta AI glasses",
+      "shortName": "AI glasses",
+      "company": "Meta Platforms",
+      "aliases": [
+        "Ray-Ban Meta",
+        "Meta Ray-Ban Display",
+        "Oakley Meta"
+      ],
+      "class": "platform",
+      "category": "glasses",
+      "brand": "Meta",
+      "region": "US",
+      "hq": "Menlo Park, CA",
+      "website": "https://www.meta.com/ai-glasses/",
+      "description": "Ray-Ban Meta and Oakley Meta camera glasses and the Meta Ray-Ban Display with an in-lens screen and neural wristband. Meta AI answers about what you see, takes photos and video, sends messages and calls, and runs live sessions; Meta has said its Muse agent is coming to the glasses.",
+      "founded": null,
+      "founders": [],
+      "parent": "Meta Platforms — public (NASDAQ: META). The glasses are made with EssilorLuxottica; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Ray-Ban Display sold in the US at $799 and from September 2026 in the UK, Canada, Germany, France and Italy; a camera-free Ray-Ban Meta Audio ($349) shipped October 13, 2026.",
+      "axes": {
+        "capture": {
+          "score": 40,
+          "rationale": "Wakes on \"Hey Meta\" with the camera on request; live sessions can watch continuously when started."
+        },
+        "agency": {
+          "score": 60,
+          "rationale": "Sends messages, makes calls and sets reminders through Meta's apps; the Muse agent is announced for the glasses but not yet live."
+        },
+        "availability": {
+          "score": 100,
+          "rationale": "In mainstream retail across many countries."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-09-24",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+          "publisher": "Meta",
+          "date": "2026-09-24"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "The Biggest News From Connect 2026",
+          "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+          "publisher": "Meta",
+          "date": "2026-09-24"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    }
+  ]
+}

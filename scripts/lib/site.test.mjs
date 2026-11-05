@@ -237,6 +237,8 @@ test('shared links preview as an image, and every page names the site icon', () 
 
 test('each preview image records what it was made from', () => {
   const hashes = previewHashes(ROOT);
-  assert.deepEqual(Object.keys(hashes).sort(), ['brand', 'index', ...published.map(d => d.market.id)].sort());
+  // One image per market file on disk, so adding a map adds an image.
+  const onDisk = fs.readdirSync(path.join(ROOT, 'data/markets')).filter(f => f.endsWith('.json')).map(f => load(f).market.id);
+  assert.deepEqual(Object.keys(hashes).sort(), ['brand', 'index', ...onDisk].sort());
   assert.deepEqual(previewHashes(ROOT), hashes, 'the same inputs give the same hashes');
 });

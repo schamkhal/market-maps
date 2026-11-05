@@ -182,6 +182,13 @@ export function heroStats(companies, asOf) {
 }
 
 export const SIZES = ['valuation', 'raised', 'equal'];
+// What the bubbles show before a reader picks: valuation unless the market says
+// otherwise (early-stage maps, where few valuations are public, use funding).
+export const DEFAULTS = { size: 'valuation' };
+export function configureDefaults({ size } = {}) {
+  DEFAULTS.size = SIZES.includes(size) ? size : 'valuation';
+  return DEFAULTS;
+}
 export const sortKeys = () => [...AXES.all, 'valuation', 'raised', 'name'];
 // The map is the default view on every screen; the list is one tap away.
 export function readState(search) {
@@ -193,7 +200,7 @@ export function readState(search) {
     query: params.get('q') || '',
     view: valid('view', ['map', 'table'], 'map'),
     axis: valid('axis', AXES.y, AXES.y[0]),
-    size: valid('size', SIZES, 'valuation'),
+    size: valid('size', SIZES, DEFAULTS.size),
     sort: valid('sort', sortKeys(), AXES.x),
     selected: params.get('company') || null,
   };
@@ -206,7 +213,7 @@ export function stateQuery(state) {
   if (state.ownership !== 'all') params.set('owner', state.ownership);
   if (state.query.trim()) params.set('q', state.query.trim());
   if (state.axis !== AXES.y[0]) params.set('axis', state.axis);
-  if (state.size !== 'valuation') params.set('size', state.size);
+  if (state.size !== DEFAULTS.size) params.set('size', state.size);
   if (state.sort !== AXES.x) params.set('sort', state.sort);
   if (state.selected) params.set('company', state.selected);
   return params.toString();

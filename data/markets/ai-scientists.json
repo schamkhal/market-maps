@@ -1,0 +1,848 @@
+{
+  "$schema": "../../schema/market.schema.json",
+  "schemaVersion": 1,
+  "market": {
+    "id": "ai-scientists",
+    "name": "AI Scientists (Global)",
+    "tagline": "AI systems that run the research loop: hypothesis, experiment, result, repeat.",
+    "definition": "Companies building AI that conducts scientific research itself, from proposing hypotheses and running computational or robotic lab experiments to analysing results and deciding what to try next.",
+    "allDescription": "Compare research autonomy, scientific range and access across the full landscape.",
+    "edition": 6,
+    "author": "Shamkhal Murtazaaliev",
+    "regions": [
+      "US",
+      "UK",
+      "Singapore",
+      "Japan"
+    ],
+    "scope": "Companies worldwide, judged on the same criteria; each profile gives the headquarters.",
+    "inclusion": [
+      "Runs research steps itself: proposes, runs and learns from experiments, computational or physical",
+      "Aimed at discovery: new findings in science or AI research, not writing help or search",
+      "A company or product line pursuing it, not a one-off paper"
+    ],
+    "exclusions": [
+      "Literature search and research-writing assistants",
+      "AI design tools that propose candidates but leave the experiments to people",
+      "Lab-automation hardware without an AI that plans experiments",
+      "Non-profit research labs"
+    ],
+    "judgedExcluded": [
+      {
+        "name": "CuspAI",
+        "fails": "runs research steps itself",
+        "why": "Cambridge (UK) AI materials-design platform, reported to have raised about $450M in 2026; it proposes candidate materials, with validation through partners rather than its own experimental loop"
+      },
+      {
+        "name": "FutureHouse",
+        "fails": "a company",
+        "why": "Non-profit lab whose AI scientist work, including Kosmos, moved to its for-profit spinout Edison Scientific"
+      },
+      {
+        "name": "Elicit",
+        "fails": "aimed at discovery",
+        "why": "Research assistant that searches and summarizes papers for people; it does not run experiments"
+      },
+      {
+        "name": "Harmonic",
+        "fails": "runs research steps itself",
+        "why": "Builds Aristotle, an AI mathematician that proves theorems; it works on formal proofs, not experiments"
+      },
+      {
+        "name": "NeoCognition",
+        "fails": "aimed at discovery",
+        "why": "Raised a $40M seed in April 2026 for general agents that learn like humans, not scientific research"
+      },
+      {
+        "name": "Tetsuwan Scientific",
+        "fails": "runs research steps itself",
+        "why": "San Francisco robotic-lab startup ($2.7M pre-seed, 2024) still building toward AI that plans experiments; too early to place"
+      }
+    ],
+    "axes": {
+      "x": {
+        "key": "autonomy",
+        "label": "Research autonomy",
+        "short": "Autonomy",
+        "low": "Helps with one step",
+        "high": "Runs research end to end",
+        "rubric": "0 = helps a person with one research step, such as searching the literature or analysing data; 25 = runs several steps, such as reviewing literature, proposing hypotheses and analysing results, that a scientist directs; 50 = runs a full computational research cycle, from hypothesis through in-silico experiments to a written report, for people to review; 75 = closes the loop with physical experiments in automated labs, choosing the next experiment from the last result while people set goals; 100 = runs open-ended research programs on its own, choosing problems, running lab experiments and reporting validated discoveries"
+      },
+      "y": {
+        "key": "range",
+        "label": "Scientific range",
+        "short": "Range",
+        "low": "One problem type",
+        "high": "Any science",
+        "rubric": "0 = one assay, problem type or dataset; 25 = one subfield, such as machine-learning research, protein design or battery materials; 50 = one science, such as biology, chemistry or materials; 75 = several sciences; 100 = any science, from physics to medicine"
+      },
+      "yAlt": {
+        "key": "access",
+        "label": "Access",
+        "short": "Access",
+        "low": "In-house only",
+        "high": "Open source",
+        "rubric": "0 = used only for the company's own discoveries; 25 = partnerships and pilots by arrangement; 50 = a product researchers can apply for or use in preview; 75 = a generally available paid product or API; 100 = open source that anyone can run"
+      }
+    },
+    "categories": [
+      {
+        "id": "lab",
+        "name": "Lab in the loop",
+        "color": "#456cd3",
+        "description": "AI scientists that run physical experiments in automated or robotic labs."
+      },
+      {
+        "id": "computational",
+        "name": "Computational",
+        "color": "#25806a",
+        "description": "AI scientists that work in code and data: hypotheses, analyses and in-silico experiments."
+      }
+    ],
+    "defaultSize": "raised",
+    "asOf": "2026-11-05"
+  },
+  "companies": [
+    {
+      "id": "lila-sciences",
+      "name": "Lila Sciences",
+      "company": "Lila Sciences",
+      "aliases": [
+        "LILA"
+      ],
+      "class": "independent",
+      "category": "lab",
+      "region": "US",
+      "hq": "Cambridge, MA",
+      "website": "https://www.lila.ai",
+      "description": "Flagship Pioneering company building what it calls scientific superintelligence: AI that generates hypotheses, designs and runs experiments in its own autonomous labs, and learns from the new data in real time, across life sciences, chemistry and materials.",
+      "founded": 2023,
+      "founders": [],
+      "parent": null,
+      "traction": "Offers enterprise access to its platform and co-creation partnerships across therapeutics, advanced materials, chemicals, energy and other industries.",
+      "axes": {
+        "autonomy": {
+          "score": 80,
+          "rationale": "AI agents propose experiments that run in its robotic labs, with results feeding back into the models."
+        },
+        "range": {
+          "score": 78,
+          "rationale": "Life sciences, chemistry, materials and energy."
+        },
+        "access": {
+          "score": 30,
+          "rationale": "Enterprise access and partnerships by arrangement."
+        }
+      },
+      "lastRound": {
+        "series": "Series A extension",
+        "amountUsd": 115000000,
+        "postMoneyUsd": 1300000000,
+        "date": "2025-10-14",
+        "leads": [],
+        "otherInvestors": [
+          "NVentures (NVIDIA)"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "The extension valued Lila at more than $1.3B. Bloomberg reported in June 2026 that it was in talks to raise about $2B at roughly $8.5B before the new money; no close has been announced.",
+        "source": {
+          "url": "https://finance.yahoo.com/news/exclusive-ai-lab-lila-sciences-101645837.html",
+          "publisher": "Reuters via Yahoo Finance",
+          "date": "2025-10-14"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 550000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://finance.yahoo.com/news/exclusive-ai-lab-lila-sciences-101645837.html",
+          "publisher": "Reuters via Yahoo Finance",
+          "date": "2025-10-14"
+        }
+      },
+      "news": [
+        {
+          "title": "Lila Sciences said in talks for funds at $8.5 billion valuation",
+          "url": "https://news.bloomberglaw.com/private-equity/lila-sciences-said-in-talks-for-funds-at-8-5-billion-valuation",
+          "publisher": "Bloomberg",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "AI lab Lila Sciences tops $1.3 billion valuation with new Nvidia backing",
+          "url": "https://finance.yahoo.com/news/exclusive-ai-lab-lila-sciences-101645837.html",
+          "publisher": "Reuters",
+          "date": "2025-10-14"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "periodic-labs",
+      "name": "Periodic Labs",
+      "company": "Periodic Labs",
+      "aliases": [],
+      "class": "independent",
+      "category": "lab",
+      "region": "US",
+      "hq": "Menlo Park, CA",
+      "website": "https://periodic.com",
+      "description": "AI research company building AI scientists and the autonomous labs for them to work in, starting with materials: robots mix and heat candidate materials, instruments measure the results, and those measurements become training data that internet text cannot provide.",
+      "founded": 2025,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Liam Fedus",
+          "role": "Co-founder; former OpenAI research leader"
+        },
+        {
+          "linkedin": null,
+          "name": "Ekin Dogus Cubuk",
+          "role": "Co-founder; led Google DeepMind's GNoME materials project"
+        }
+      ],
+      "parent": null,
+      "traction": "Its $300M seed was reported as the largest of 2025.",
+      "axes": {
+        "autonomy": {
+          "score": 76,
+          "rationale": "Autonomous labs run and measure experiments whose results train its models."
+        },
+        "range": {
+          "score": 45,
+          "rationale": "Materials science, with chemistry and physics around it."
+        },
+        "access": {
+          "score": 15,
+          "rationale": "Used for its own research; partners by arrangement."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 300000000,
+        "postMoneyUsd": 7500000000,
+        "date": "2025-10-01",
+        "leads": [
+          "Andreessen Horowitz"
+        ],
+        "otherInvestors": [
+          "NVIDIA",
+          "Accel",
+          "DST Global",
+          "Felicis"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "rumored",
+        "note": "The $7.5B is from Forbes, which reported in May 2026 that Periodic was in advanced talks to raise at least $500M at that valuation; the close has not been confirmed. Sources differ on whether a16z or Felicis led the seed.",
+        "source": {
+          "url": "https://www.maginative.com/article/periodic-labs-launches-with-300m-to-build-an-ai-scientist/",
+          "publisher": "Maginative",
+          "date": "2025-10-01"
+        },
+        "postMoneySource": {
+          "url": "https://www.forbes.com/sites/iainmartin/2026/05/07/former-openai-researcher-to-raise-500-million-for-ai-science-startup/",
+          "publisher": "Forbes",
+          "date": "2026-05-07"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 300000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.maginative.com/article/periodic-labs-launches-with-300m-to-build-an-ai-scientist/",
+          "publisher": "Maginative",
+          "date": "2025-10-01"
+        }
+      },
+      "news": [
+        {
+          "title": "Former OpenAI researcher to raise $500 million for AI science startup",
+          "url": "https://www.forbes.com/sites/iainmartin/2026/05/07/former-openai-researcher-to-raise-500-million-for-ai-science-startup/",
+          "publisher": "Forbes",
+          "date": "2026-05-07"
+        },
+        {
+          "title": "Periodic Labs launches with $300M to build an \"AI scientist\"",
+          "url": "https://www.maginative.com/article/periodic-labs-launches-with-300m-to-build-an-ai-scientist/",
+          "publisher": "Maginative",
+          "date": "2025-10-01"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "medra",
+      "name": "Medra",
+      "company": "Medra",
+      "aliases": [],
+      "class": "independent",
+      "category": "lab",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://www.medra.ai",
+      "description": "Builds the Physical AI Scientist: robotic workcells that run a lab's own protocols on its own instruments, with AI that turns text into protocols, detects and recovers from errors with computer vision, and optimizes experiments in a closed loop.",
+      "founded": null,
+      "founders": [],
+      "parent": null,
+      "traction": "The Series A funds a fully autonomous lab in San Francisco opening in 2026.",
+      "axes": {
+        "autonomy": {
+          "score": 68,
+          "rationale": "Runs protocols autonomously and optimizes them in a closed loop; scientists still choose the questions."
+        },
+        "range": {
+          "score": 40,
+          "rationale": "Biology and biotech lab work."
+        },
+        "access": {
+          "score": 35,
+          "rationale": "Deployed with biotech customers by arrangement."
+        }
+      },
+      "lastRound": {
+        "series": "Series A",
+        "amountUsd": 52000000,
+        "postMoneyUsd": null,
+        "date": "2026-02-23",
+        "leads": [
+          "Human Capital"
+        ],
+        "otherInvestors": [
+          "Lux Capital",
+          "Menlo Ventures",
+          "Cataglio"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "One list dates the round to December 2025. Valuation not disclosed.",
+        "source": {
+          "url": "https://www.tbpndigest.com/story/2026-02-23/medra-raises-52m-series-a-to-build-autonomous-ai-scientists-that-run-lab-experiments-at-scale",
+          "publisher": "TBPN Digest",
+          "date": "2026-02-23"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Medra raises $52M Series A to build autonomous AI scientists that run lab experiments at scale",
+          "url": "https://www.tbpndigest.com/story/2026-02-23/medra-raises-52m-series-a-to-build-autonomous-ai-scientists-that-run-lab-experiments-at-scale",
+          "publisher": "TBPN Digest",
+          "date": "2026-02-23"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "radical-ai",
+      "name": "Radical AI",
+      "company": "Radical AI",
+      "aliases": [],
+      "class": "independent",
+      "category": "lab",
+      "region": "US",
+      "hq": "New York, NY",
+      "website": "https://www.radical-ai.com",
+      "description": "Autonomous materials discovery: scientists enter performance goals, AI generates experiments that go straight to its self-driving lab, and results feed back into the models until the material meets the goals.",
+      "founded": 2024,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Joseph Krause",
+          "role": "Co-founder & CEO"
+        }
+      ],
+      "parent": null,
+      "traction": "Opened New York's first fully autonomous materials science lab at the Brooklyn Navy Yard in January 2026.",
+      "axes": {
+        "autonomy": {
+          "score": 72,
+          "rationale": "AI-generated experiments run in its self-driving lab and iterate until goals are met."
+        },
+        "range": {
+          "score": 30,
+          "rationale": "Materials science."
+        },
+        "access": {
+          "score": 20,
+          "rationale": "Discovery work with industrial partners."
+        }
+      },
+      "lastRound": {
+        "series": "Seed+",
+        "amountUsd": 55000000,
+        "postMoneyUsd": null,
+        "date": "2025-07-21",
+        "leads": [
+          "RTX Ventures"
+        ],
+        "otherInvestors": [
+          "NVentures (NVIDIA)",
+          "Noa",
+          "Infinite Capital",
+          "Eni",
+          "AlleyCorp"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "A later Series A of about $60M has been reported but not confirmed. Valuation not disclosed.",
+        "source": {
+          "url": "https://pulse2.com/radical-ai-55-million-series-seed-raised-for-advancing-materials-research",
+          "publisher": "Pulse 2.0",
+          "date": "2025-07-21"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 55000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://pulse2.com/radical-ai-55-million-series-seed-raised-for-advancing-materials-research",
+          "publisher": "Pulse 2.0",
+          "date": "2025-07-21"
+        }
+      },
+      "news": [
+        {
+          "title": "Governor Hochul celebrates Radical AI establishing New York's first fully autonomous materials science labs at the Brooklyn Navy Yard",
+          "url": "https://www.longisland.com/news/01-27-26/governor-hochul-celebrates-radical-ai-establishing-new-yorks-first-fully-autonomous-materials-science-labs-at-the-brooklyn-navy-yard.html",
+          "publisher": "LongIsland.com",
+          "date": "2026-01-27"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "chemify",
+      "name": "Chemify",
+      "company": "Chemify",
+      "aliases": [],
+      "class": "independent",
+      "category": "lab",
+      "region": "UK",
+      "hq": "Glasgow, UK",
+      "website": "https://www.chemify.io",
+      "description": "Chemputation: programmable chemistry that combines robotic synthesis, computation, machine learning and its own chemical programming language to discover and make new molecules and materials, in a research centre and production \"Chemifarm\" in Glasgow.",
+      "founded": 2022,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Lee Cronin",
+          "role": "Founder & CEO; Regius Professor of Chemistry, University of Glasgow"
+        }
+      ],
+      "parent": null,
+      "traction": "Reported in September 2026 to have raised more than £100M from investors, and secured about £22M in Scottish and UK government grants to triple its Glasgow workforce to about 450.",
+      "axes": {
+        "autonomy": {
+          "score": 62,
+          "rationale": "Robotic synthesis driven by code and machine learning closes the loop on making molecules."
+        },
+        "range": {
+          "score": 30,
+          "rationale": "Chemistry: molecules and materials."
+        },
+        "access": {
+          "score": 35,
+          "rationale": "Partnerships with companies by arrangement."
+        }
+      },
+      "lastRound": {
+        "series": "Undisclosed",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": null,
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": "Total private funding is reported only as \"more than £100M\"; round details are not public.",
+        "source": null
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [],
+      "checks": [
+        {
+          "title": "Chemputation technology and Glasgow facilities",
+          "url": "https://www.chemify.io/",
+          "publisher": "Chemify",
+          "date": "2026-11-05"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "edison-scientific",
+      "name": "Edison Scientific",
+      "company": "Edison Scientific",
+      "aliases": [
+        "Kosmos",
+        "Edison"
+      ],
+      "class": "independent",
+      "category": "computational",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://edisonscientific.com",
+      "description": "For-profit spinout of the non-profit FutureHouse. Its Kosmos AI scientist reads literature, analyses data, generates and branches hypotheses and steers investigations mid-run, running hundreds of research tasks in parallel, deployed across biopharma R&D.",
+      "founded": 2025,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Sam Rodriques",
+          "role": "Co-founder & CEO; co-founded FutureHouse"
+        }
+      ],
+      "parent": null,
+      "traction": "Announced a partnership with Incyte; customers include biopharma companies and academic institutions. Kosmos can be tried on its platform.",
+      "axes": {
+        "autonomy": {
+          "score": 58,
+          "rationale": "Runs full computational investigations, from literature and data analysis to hypotheses and reports, for scientists to review."
+        },
+        "range": {
+          "score": 62,
+          "rationale": "Biology and medicine first, with work across other data-rich sciences."
+        },
+        "access": {
+          "score": 70,
+          "rationale": "Kosmos is a paid product researchers can use, plus enterprise deployments."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 70000000,
+        "postMoneyUsd": 250000000,
+        "date": "2025-12-18",
+        "leads": [
+          "Spark Capital",
+          "Triatomic Capital"
+        ],
+        "otherInvestors": [
+          "Jeff Dean"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "Some outlets call the round a Series A. A biotech investor co-led alongside the two named firms.",
+        "source": {
+          "url": "https://siliconangle.com/2025/12/18/edison-scientific-raises-70m-build-autonomous-ai-scientists-research",
+          "publisher": "SiliconANGLE",
+          "date": "2025-12-18"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 70000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://siliconangle.com/2025/12/18/edison-scientific-raises-70m-build-autonomous-ai-scientists-research",
+          "publisher": "SiliconANGLE",
+          "date": "2025-12-18"
+        }
+      },
+      "news": [
+        {
+          "title": "Edison Scientific raises $70M to build autonomous AI scientists for research",
+          "url": "https://siliconangle.com/2025/12/18/edison-scientific-raises-70m-build-autonomous-ai-scientists-research",
+          "publisher": "SiliconANGLE",
+          "date": "2025-12-18"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "autoscience",
+      "name": "Autoscience",
+      "company": "Autoscience",
+      "aliases": [
+        "Carl"
+      ],
+      "class": "independent",
+      "category": "computational",
+      "region": "US",
+      "hq": "San Mateo, CA",
+      "website": "https://www.autoscience.ai",
+      "description": "Automated AI research lab: its AI scientists, led by the agent Carl, design, run and write up machine-learning research, and it deploys them as managed services to improve enterprise models.",
+      "founded": null,
+      "founders": [],
+      "parent": null,
+      "traction": "Says Carl authored the first largely AI-written paper accepted through academic peer review, at an ICLR 2025 workshop.",
+      "axes": {
+        "autonomy": {
+          "score": 58,
+          "rationale": "Runs computational research cycles end to end, from ideas to experiments and papers."
+        },
+        "range": {
+          "score": 20,
+          "rationale": "Machine-learning research."
+        },
+        "access": {
+          "score": 35,
+          "rationale": "Managed services for selected large companies."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 14000000,
+        "postMoneyUsd": null,
+        "date": "2026-03-19",
+        "leads": [
+          "General Catalyst"
+        ],
+        "otherInvestors": [
+          "Toyota Ventures",
+          "Perplexity Fund",
+          "S32",
+          "MaC Ventures"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Valuation not disclosed.",
+        "source": {
+          "url": "https://siliconangle.com/2026/03/19/autoscience-builds-automated-research-lab-machine-learning-models-14m/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-03-19"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 14000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://siliconangle.com/2026/03/19/autoscience-builds-automated-research-lab-machine-learning-models-14m/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-03-19"
+        }
+      },
+      "news": [
+        {
+          "title": "Autoscience builds automated research lab for machine learning models with $14M",
+          "url": "https://siliconangle.com/2026/03/19/autoscience-builds-automated-research-lab-machine-learning-models-14m/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-03-19"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "drylab",
+      "name": "Drylab",
+      "company": "Drylab AI",
+      "aliases": [
+        "Drylab AI"
+      ],
+      "class": "independent",
+      "category": "computational",
+      "region": "Singapore",
+      "hq": "Singapore",
+      "website": "https://thedrylab.com",
+      "description": "Singapore startup founded by a Vietnamese team, building an AI research platform for biomedical scientists: autonomous agents that carry out computational analyses from start to finish and capture each lab's workflows and decisions so every analysis improves the next.",
+      "founded": 2025,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "John Phan",
+          "role": "Co-founder & CEO"
+        }
+      ],
+      "parent": null,
+      "traction": "Operates in Singapore and San Francisco. PatSnap joined the seed and will support its life sciences work.",
+      "axes": {
+        "autonomy": {
+          "score": 50,
+          "rationale": "Runs computational research from start to finish for pharma teams to review."
+        },
+        "range": {
+          "score": 25,
+          "rationale": "Biopharma research."
+        },
+        "access": {
+          "score": 28,
+          "rationale": "Deployments with pharma customers."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 3000000,
+        "postMoneyUsd": null,
+        "date": "2026-10-13",
+        "leads": [
+          "Vertex Ventures Southeast Asia & India"
+        ],
+        "otherInvestors": [
+          "PatSnap"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Valuation not disclosed.",
+        "source": {
+          "url": "https://e27.co/vietnamese-founded-drylab-bags-us3m-to-put-autonomous-ai-scientists-inside-pharma-labs-20261013/",
+          "publisher": "e27",
+          "date": "2026-10-13"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 3000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://e27.co/vietnamese-founded-drylab-bags-us3m-to-put-autonomous-ai-scientists-inside-pharma-labs-20261013/",
+          "publisher": "e27",
+          "date": "2026-10-13"
+        }
+      },
+      "news": [
+        {
+          "title": "Vietnamese-founded Drylab bags US$3M to put autonomous AI scientists inside pharma labs",
+          "url": "https://e27.co/vietnamese-founded-drylab-bags-us3m-to-put-autonomous-ai-scientists-inside-pharma-labs-20261013/",
+          "publisher": "e27",
+          "date": "2026-10-13"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "google-co-scientist",
+      "name": "Google AI co-scientist",
+      "shortName": "Co-Scientist",
+      "company": "Alphabet",
+      "aliases": [
+        "Co-Scientist",
+        "Hypothesis Generation"
+      ],
+      "class": "platform",
+      "category": "computational",
+      "brand": "Google",
+      "region": "US",
+      "hq": "Mountain View, CA",
+      "website": "https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/",
+      "description": "Multi-agent Gemini system from Google DeepMind that generates, debates and evolves research hypotheses with a scientist, described in Nature; available as an experimental Hypothesis Generation tool and through Gemini for Science.",
+      "founded": null,
+      "founders": [],
+      "parent": "Alphabet — public (NASDAQ: GOOGL). Co-Scientist is a Google DeepMind research product; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "Opened to individual researchers in May 2026; scientists at all 17 US Department of Energy national laboratories get accelerated access.",
+      "axes": {
+        "autonomy": {
+          "score": 32,
+          "rationale": "Generates and ranks hypotheses for a scientist to test; it does not run the experiments."
+        },
+        "range": {
+          "score": 75,
+          "rationale": "Biomedicine and other sciences."
+        },
+        "access": {
+          "score": 45,
+          "rationale": "Experimental tool for registered researchers and partners, with no public pricing."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-05-19",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/",
+          "publisher": "Google DeepMind",
+          "date": "2026-05-19"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Co-Scientist: A multi-agent AI partner to accelerate research",
+          "url": "https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/",
+          "publisher": "Google DeepMind",
+          "date": "2026-05-19"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "sakana-ai-scientist",
+      "name": "The AI Scientist (Sakana AI)",
+      "shortName": "AI Scientist",
+      "company": "Sakana AI",
+      "aliases": [
+        "The AI Scientist"
+      ],
+      "class": "platform",
+      "category": "computational",
+      "brand": "Sakana AI",
+      "region": "Japan",
+      "hq": "Tokyo, Japan",
+      "website": "https://sakana.ai/ai-scientist/",
+      "description": "Open-source system from Tokyo's Sakana AI that automates machine-learning research end to end: it generates ideas, writes and runs experiment code, evaluates results and drafts papers with minimal human direction; a second version followed.",
+      "founded": null,
+      "founders": [],
+      "parent": "Sakana AI — private Tokyo AI company, valued at about $2.6B after a $135M Series B in November 2025. The AI Scientist is one open-source research system; the company's valuation is not a standalone figure for it.",
+      "traction": "Code released openly on GitHub; a paper written by its second version passed peer review at an ICLR 2025 workshop.",
+      "axes": {
+        "autonomy": {
+          "score": 52,
+          "rationale": "Runs a full computational research cycle, from idea to paper."
+        },
+        "range": {
+          "score": 20,
+          "rationale": "Machine-learning research."
+        },
+        "access": {
+          "score": 100,
+          "rationale": "Open source that anyone can run."
+        }
+      },
+      "lastRound": {
+        "series": "Private — not comparable",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2024-08-13",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://sakana.ai/ai-scientist/",
+          "publisher": "Sakana AI",
+          "date": "2024-08-13"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "The AI Scientist: Towards fully automated open-ended scientific discovery",
+          "url": "https://sakana.ai/ai-scientist/",
+          "publisher": "Sakana AI",
+          "date": "2024-08-13"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    }
+  ]
+}

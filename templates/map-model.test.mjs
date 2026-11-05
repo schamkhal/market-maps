@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { CATEGORIES, configureCategories, configureAxes, AXES, AXIS_NAMES, bubbleRadius, legendReferences, MIN_RADIUS, MAX_RADIUS, UNDISCLOSED_RADIUS, LOG_FLOOR, valueLabel, valueConfidence, raisedConfidence, tooltipLines, readState, stateQuery, filterCompanies, sortCompanies, researchArticles, money, initials, labelFor, heroStats, safeUrl, rubricSteps, isCaveat, markRadius, RING_GAP } from './map-model.mjs';
+import { CATEGORIES, configureCategories, configureAxes, AXES, AXIS_NAMES, bubbleRadius, legendReferences, MIN_RADIUS, MAX_RADIUS, UNDISCLOSED_RADIUS, LOG_FLOOR, valueLabel, valueConfidence, raisedConfidence, tooltipLines, readState, stateQuery, configureDefaults, filterCompanies, sortCompanies, researchArticles, money, initials, labelFor, heroStats, safeUrl, rubricSteps, isCaveat, markRadius, RING_GAP } from './map-model.mjs';
 
 // The same categories the dataset declares, so tests read like the live map.
 const dataset = JSON.parse(fs.readFileSync(new URL('../data/markets/personal-ai-agents.json', import.meta.url), 'utf8'));
@@ -124,6 +124,18 @@ test('invalid URL settings recover to visible defaults', () => {
   assert.deepEqual([state.view, state.axis, state.size, state.category, state.ownership, state.sort], ['map', 'breadth', 'valuation', 'all', 'all', 'autonomy']);
   // A category retired from the dataset falls back to "all" rather than an empty view.
   assert.equal(readState('?cat=knowledge').category, 'all');
+});
+test('a market can size bubbles by funding by default, and links only record a change from it', () => {
+  configureDefaults({ size: 'raised' });
+  try {
+    assert.equal(readState('').size, 'raised');
+    assert.equal(readState('?size=bad').size, 'raised');
+    assert.ok(!stateQuery(readState('')).includes('size='), 'the default is not written into links');
+    assert.match(stateQuery({ ...readState(''), size: 'valuation' }), /size=valuation/);
+  } finally {
+    configureDefaults({});
+  }
+  assert.equal(readState('').size, 'valuation', 'without a setting, valuation stays the default');
 });
 test('search supports aliases, brands and short names, combined with ownership and category', () => {
   const c = { id: 'c', name: 'Agent', company: 'Agent Co', brand: 'Brandly', shortName: 'Ag', desc: 'Memory and calendar', aliases: ['Old Name'], cls: 'independent', cat: 'workflow' };

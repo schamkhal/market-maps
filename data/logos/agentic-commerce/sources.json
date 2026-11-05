@@ -1,0 +1,123 @@
+{
+  "catena-labs": {
+    "page": "https://catena.com",
+    "light": "https://catena.com/apple-touch-icon.png",
+    "file": "catena-labs.png",
+    "fetched": "2026-11-05"
+  },
+  "channel3": {
+    "page": "https://trychannel3.com",
+    "light": "https://trychannel3.com/logos/channel3/channel3-logo-small-dark.svg",
+    "file": "channel3.svg",
+    "fetched": "2026-11-05"
+  },
+  "coinbase-x402": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6e/7b/83/6e7b834d-d196-ec1d-bcef-623700f5e787/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+    "file": "coinbase-x402.jpg",
+    "fetched": "2026-11-05"
+  },
+  "crossmint": {
+    "page": "https://www.crossmint.com/solutions/ai-agents",
+    "light": "https://www.crossmint.com/v16/apple-icon.png",
+    "file": "crossmint.png",
+    "fetched": "2026-11-05"
+  },
+  "firmly": {
+    "page": "https://www.firmly.ai",
+    "light": "https://www.firmly.ai/favicon.svg",
+    "file": "firmly.svg",
+    "fetched": "2026-11-05"
+  },
+  "google-ucp": {
+    "page": "https://www.google.com",
+    "light": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+    "file": "google-ucp.png",
+    "fetched": "2026-11-05"
+  },
+  "henry-labs": {
+    "page": "https://www.henrylabs.ai",
+    "light": "https://cdn.prod.website-files.com/69882ae03a830270d798aa5e/6a1684d07020ddb25cc8a498_hl-icon.png",
+    "file": "henry-labs.png",
+    "fetched": "2026-11-05"
+  },
+  "kite": {
+    "page": "https://gokite.ai",
+    "light": "https://gokite.ai/favicon.svg",
+    "file": "kite.svg",
+    "fetched": "2026-11-05"
+  },
+  "mastercard": {
+    "page": "https://www.mastercard.com",
+    "light": "https://www.mastercard.com/etc.clientlibs/marts/clientlibs/clientlib-site/resources/icons/mastercard-icon-512.png",
+    "file": "mastercard.png",
+    "fetched": "2026-11-05"
+  },
+  "monid": {
+    "page": "https://monid.ai",
+    "light": "https://monid.ai/android-icon-192x192.png",
+    "file": "monid.png",
+    "fetched": "2026-11-05"
+  },
+  "natural": {
+    "page": "https://www.natural.com",
+    "light": "https://www.natural.com/favicon-512.png",
+    "file": "natural.png",
+    "fetched": "2026-11-05"
+  },
+  "nekuda": {
+    "page": "https://nekuda.ai",
+    "light": "https://nekuda.ai/assets/images/apple-touch-icon.png",
+    "file": "nekuda.png",
+    "fetched": "2026-11-05"
+  },
+  "paypal": {
+    "page": "https://www.paypal.com",
+    "light": "https://www.paypalobjects.com/marketing/web/icons/monogram/pp258.png",
+    "file": "paypal.png",
+    "fetched": "2026-11-05"
+  },
+  "prava": {
+    "page": "https://www.prava.space",
+    "light": "https://framerusercontent.com/images/1Lgb16Xnv0za4crviPafzfQM.png",
+    "file": "prava.png",
+    "fetched": "2026-11-05"
+  },
+  "rye": {
+    "page": "https://rye.com",
+    "light": "https://framerusercontent.com/images/U3WkckO773tUJMzI0Fu9vXQpg.png",
+    "file": "rye.png",
+    "fetched": "2026-11-05"
+  },
+  "sapiom": {
+    "page": "https://www.sapiom.ai",
+    "light": "https://www.sapiom.ai/favicon.svg",
+    "file": "sapiom.svg",
+    "fetched": "2026-11-05"
+  },
+  "shopify": {
+    "page": "https://www.shopify.com",
+    "light": "https://cdn.shopify.com/b/shopify-brochure2-assets/8734d76c98437c8ae8a628bbeed3750a.png",
+    "file": "shopify.webp",
+    "fetched": "2026-11-05"
+  },
+  "skyfire": {
+    "page": "https://skyfire.xyz",
+    "light": "https://skyfire.xyz (symbol cropped from the site header wordmark)",
+    "file": "skyfire.svg",
+    "fetched": "2026-11-05",
+    "via": "Symbol from Skyfire's own header logo; the site blocks automated icon reads"
+  },
+  "stripe": {
+    "page": "https://stripe.com",
+    "light": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+    "file": "stripe.png",
+    "fetched": "2026-11-05"
+  },
+  "visa": {
+    "page": "https://usa.visa.com",
+    "light": "https://www.visa.com/vcom-assets/content/dam/visa/favicon.ico",
+    "file": "visa.ico",
+    "fetched": "2026-11-05"
+  }
+}

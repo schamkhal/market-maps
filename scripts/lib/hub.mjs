@@ -16,7 +16,9 @@ export function mapPreview({ market, companies }, { width = 360, height = 210 } 
   const x = s => m.l + s / 100 * (width - m.l - m.r);
   const y = s => height - m.b - s / 100 * (height - m.t - m.b);
   const colors = Object.fromEntries((market.categories ?? []).map(c => [c.id, c.color]));
-  const value = c => c.class === 'platform' ? 0 : c.lastRound.postMoneyUsd || 0;
+  // Marks follow the map's own default sizing: valuation, or funding on early-stage maps.
+  const value = c => c.class === 'platform' || market.defaultSize === 'equal' ? 0
+    : (market.defaultSize === 'raised' ? c.metrics?.totalRaisedUsd : c.lastRound.postMoneyUsd) || 0;
   const max = Math.max(0, ...companies.map(value));
   const decades = Math.log10(max / LOG_FLOOR);
   const step = c => decades > 0 ? Math.min(1, Math.max(0, Math.log10(value(c) / LOG_FLOOR) / decades)) : 1;

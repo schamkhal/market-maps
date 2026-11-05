@@ -82,6 +82,11 @@
             }
           }
         },
+        "defaultSize": {
+          "type": "string",
+          "enum": ["valuation", "raised", "equal"],
+          "description": "What the bubbles show before a reader picks: post-money valuation (the default), total funding, or equal size. Early-stage maps with few public valuations use total funding."
+        },
         "quadrants": {
           "type": "object",
           "description": "Corner labels per vertical-axis key, e.g. quadrants.breadth.topRight.",

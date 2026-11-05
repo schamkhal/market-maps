@@ -253,6 +253,7 @@ export function buildSite(markets, { templates, siteUrl = 'https://example.com',
       axes: m.market.axes,
       categories: m.market.categories ?? [],
       quadrants: m.market.quadrants ?? {},
+      defaultSize: m.market.defaultSize ?? 'valuation',
       home: link.home(1),
       maps: maps.length > 1 ? mapsFor(1) : [],
     }));

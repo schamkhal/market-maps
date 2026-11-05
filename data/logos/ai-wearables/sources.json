@@ -1,0 +1,64 @@
+{
+  "bee": {
+    "page": "https://bee.computer",
+    "light": "https://cdn.prod.website-files.com/69dd7236d0d093258455ae93/69dd7236d0d093258455af18_webclip.png",
+    "file": "bee.png",
+    "fetched": "2026-11-05"
+  },
+  "even-realities": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4e/ab/44/4eab4453-991b-d3d8-fccd-bd264aeb5218/appicon-0-0-1x_U007ephone-0-1-0-P3-85-220.png/512x512bb.jpg",
+    "file": "even-realities.jpg",
+    "fetched": "2026-11-05"
+  },
+  "friend": {
+    "page": "https://friend.com",
+    "light": "https://friend.com/android-chrome-512x512.png",
+    "file": "friend.png",
+    "fetched": "2026-11-05"
+  },
+  "meta-ai-glasses": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ad/c2/8b/adc28bb9-f169-d015-3317-b8b134fc3499/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-0-85-220.png/512x512bb.jpg",
+    "file": "meta-ai-glasses.jpg",
+    "fetched": "2026-11-05"
+  },
+  "nirva": {
+    "page": "https://www.nirva.life",
+    "light": "https://framerusercontent.com/images/BZTBMm5QDC3cT2WLJqJH4oGirG8.png",
+    "file": "nirva.png",
+    "dark": "https://framerusercontent.com/images/bbLRR3YGBTwawRnRhCqoBw5cHDQ.png",
+    "darkFile": "nirva-dark.png",
+    "fetched": "2026-11-05"
+  },
+  "omi": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/06/13/c4/0613c438-bae0-2bb9-264c-19ab28367036/prodAppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "file": "omi.jpg",
+    "fetched": "2026-11-05"
+  },
+  "persona": {
+    "page": "https://yourpersona.com",
+    "light": "https://yourpersona.com/apple-icon.png?apple-icon.2t-4z5-1l-xze.png",
+    "file": "persona.png",
+    "fetched": "2026-11-05"
+  },
+  "plaud": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8d/07/2a/8d072a91-924a-596f-e9f7-021e2428c48f/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/512x512bb.jpg",
+    "file": "plaud.jpg",
+    "fetched": "2026-11-05"
+  },
+  "rokid": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/98/d0/9d/98d09d7c-2c6b-4349-521a-9130d9c02f7f/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+    "file": "rokid.jpg",
+    "fetched": "2026-11-05"
+  },
+  "sandbar": {
+    "page": "https://www.sandbar.com",
+    "light": "https://cdn.prod.website-files.com/688ce18b1758f3ea44331657/68c4441cb725b9101c12ffb0_webclip.png",
+    "file": "sandbar.png",
+    "fetched": "2026-11-05"
+  }
+}

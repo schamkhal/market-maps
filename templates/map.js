@@ -3,6 +3,7 @@ const SVG_NS = 'http://www.w3.org/2000/svg';
 const MOBILE = '(max-width:700px)';
 configureCategories(SITE.categories, SITE.allDescription);
 configureAxes(SITE.axes);
+configureDefaults({ size: SITE.defaultSize });
 const color = categoryColor;
 // Fixed dataset-wide maxima: a filter never rescales the bubbles.
 const maximums = { valuation: Math.max(0, ...DATA.filter(c => c.cls !== 'platform').map(c => c.valuation || 0)), raised: Math.max(0, ...DATA.filter(c => c.cls !== 'platform').map(c => c.raised || 0)) };

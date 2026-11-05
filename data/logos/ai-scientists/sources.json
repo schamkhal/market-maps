@@ -1,0 +1,64 @@
+{
+  "autoscience": {
+    "page": "https://www.autoscience.ai",
+    "light": "https://www.autoscience.ai/assets/apple-touch-icon.png",
+    "file": "autoscience.png",
+    "fetched": "2026-11-05"
+  },
+  "chemify": {
+    "page": "https://www.chemify.io",
+    "light": "https://cdn.prod.website-files.com/68e42181973c7c8a774a8be9/6905222fee6fed8a244a8a7f_webclip.png",
+    "file": "chemify.png",
+    "fetched": "2026-11-05"
+  },
+  "drylab": {
+    "page": "https://thedrylab.com",
+    "light": "https://framerusercontent.com/images/uK7xiSRuBTr1Y7qeGfAIJ7tDtZk.png",
+    "file": "drylab.png",
+    "fetched": "2026-11-05"
+  },
+  "edison-scientific": {
+    "page": "https://edisonscientific.com",
+    "light": "https://cdn.prod.website-files.com/6a05ae6a3f0a6ce150583845/6a0b19333184f0ef28b53aef_android-chrome-512x512.png",
+    "file": "edison-scientific.png",
+    "fetched": "2026-11-05"
+  },
+  "google-co-scientist": {
+    "page": "https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/",
+    "light": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/icons/google_deepmind_2x_96dp.png",
+    "file": "google-co-scientist.png",
+    "fetched": "2026-11-05"
+  },
+  "lila-sciences": {
+    "page": "https://www.lila.ai",
+    "light": "https://cdn.prod.website-files.com/691b0352c971a4b94f493c44/693bfab338ddb8637840c152_Lila%20Webclip.png",
+    "file": "lila-sciences.png",
+    "fetched": "2026-11-05"
+  },
+  "medra": {
+    "page": "https://www.medra.ai",
+    "light": "https://cdn.prod.website-files.com/68bf1d91684fd08a07b0d8e3/68bf1d91684fd08a07b0d94d_webclip.png",
+    "file": "medra.png",
+    "fetched": "2026-11-05"
+  },
+  "periodic-labs": {
+    "page": "https://periodic.com",
+    "light": "https://framerusercontent.com/images/YQP9pmvqJp9zbLVAiY4KdsHfIs.png",
+    "file": "periodic-labs.png",
+    "dark": "https://framerusercontent.com/images/cOeuHXRZxDwOwINvkbtErxkr4.png",
+    "darkFile": "periodic-labs-dark.png",
+    "fetched": "2026-11-05"
+  },
+  "radical-ai": {
+    "page": "https://www.radical-ai.com",
+    "light": "https://www.radical-ai.com/favicon.svg",
+    "file": "radical-ai.svg",
+    "fetched": "2026-11-05"
+  },
+  "sakana-ai-scientist": {
+    "page": "https://sakana.ai/ai-scientist/",
+    "light": "https://sakana.ai/favicon.ico",
+    "file": "sakana-ai-scientist.ico",
+    "fetched": "2026-11-05"
+  }
+}

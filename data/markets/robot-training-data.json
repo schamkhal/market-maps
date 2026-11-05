@@ -1,0 +1,1135 @@
+{
+  "$schema": "../../schema/market.schema.json",
+  "schemaVersion": 1,
+  "market": {
+    "id": "robot-training-data",
+    "name": "Robot Training Data (Global)",
+    "tagline": "The companies collecting and generating the data robots learn from.",
+    "definition": "Companies whose product is training data for robot foundation models: teleoperated robot runs, recordings of people doing physical work, and simulated or generated data, sold or licensed to the labs and companies that train robots.",
+    "allDescription": "Compare real-world grounding, breadth and openness across the full landscape.",
+    "edition": 4,
+    "author": "Shamkhal Murtazaaliev",
+    "regions": [
+      "US",
+      "China",
+      "South Korea",
+      "Germany",
+      "Singapore"
+    ],
+    "scope": "Companies worldwide, judged on the same criteria; each profile gives the headquarters.",
+    "inclusion": [
+      "Produces training data for robots: robot runs, recorded human work, or simulation",
+      "The data is the product: sold, licensed or released to others, not only used to train its own robots",
+      "Built for physical AI rather than for language or image models"
+    ],
+    "exclusions": [
+      "Robot makers whose data feeds only their own robots",
+      "Robot foundation-model labs that buy or collect data for themselves",
+      "Annotation and data-management software that does not collect data",
+      "General human-data vendors whose robotics work is not a distinct offering"
+    ],
+    "judgedExcluded": [
+      {
+        "name": "Sunday Robotics",
+        "fails": "the data is the product",
+        "why": "Its Skill Capture Glove has collected millions of household demonstrations, but they train Sunday's own home robot; it raised at a $1.15B valuation in March 2026"
+      },
+      {
+        "name": "Tacta Systems",
+        "fails": "the data is the product",
+        "why": "Palo Alto; $75M raised. Its sensorized glove records factory workers to train Tacta's own Dexterous Intelligence model and robot hands, which are what it sells"
+      },
+      {
+        "name": "Proception",
+        "fails": "the data is the product",
+        "why": "Ex-Tesla Optimus founders ($11M seed, June 2026) sell the ProHand robot hand; the ProGlove captures data for hand buyers rather than selling datasets"
+      },
+      {
+        "name": "Avatar Robotics",
+        "fails": "the data is the product",
+        "why": "Deploys teleoperated semi-humanoid robots for logistics labor ($6.5M seed, July 2026); the data it collects feeds its own models"
+      },
+      {
+        "name": "Genesis AI",
+        "fails": "the data is the product",
+        "why": "Raised a $105M seed for a physics simulation engine and its own robot foundation models; the simulated data serves its models"
+      },
+      {
+        "name": "Encord",
+        "fails": "produces training data",
+        "why": "Raised a $60M Series C in February 2026 for data management and annotation software used by robotics teams; it does not collect data itself"
+      }
+    ],
+    "axes": {
+      "x": {
+        "key": "grounding",
+        "label": "Real-world grounding",
+        "short": "Grounding",
+        "low": "Simulated",
+        "high": "Real robots at work",
+        "rubric": "0 = fully simulated or generated data; 25 = simulation built from measured real-world objects and scenes, or real recordings expanded synthetically; 50 = video of people doing tasks, first- or third-person, without measured actions; 75 = human demonstrations with measured hand and body motion (gloves, motion sensors, handheld grippers) that map onto robot actions; 100 = teleoperated or autonomous runs on real robots doing real work, with synchronized actions, forces and sensor streams"
+      },
+      "y": {
+        "key": "breadth",
+        "label": "Breadth",
+        "short": "Breadth",
+        "low": "One robot, one task",
+        "high": "Any body, any setting",
+        "rubric": "0 = one robot, one task, one setting; 25 = one task family or robot type in one kind of setting, such as tabletop arms in a lab; 50 = many tasks in one kind of setting, such as factories or homes; 75 = many tasks across several kinds of settings, or several embodiments from hands to whole body; 100 = whole-body and manipulation data across homes, workplaces and outdoors, in many countries and for many embodiments"
+      },
+      "yAlt": {
+        "key": "openness",
+        "label": "Openness",
+        "short": "Openness",
+        "low": "Private contracts",
+        "high": "Openly licensed",
+        "rubric": "0 = collected only for named customers under contract; 25 = custom collection programs on contract, with samples on request; 50 = catalog datasets or a platform that buyers can license from directly; 75 = a large public dataset alongside paid programs; 100 = its main corpus openly licensed for commercial use"
+      }
+    },
+    "categories": [
+      {
+        "id": "human",
+        "name": "Human capture",
+        "color": "#456cd3",
+        "description": "Recordings of people at work and at home, from head-mounted cameras to sensor gloves and body suits."
+      },
+      {
+        "id": "robot",
+        "name": "Robot teleoperation",
+        "color": "#25806a",
+        "description": "Data from real robots driven by human operators or running on their own."
+      },
+      {
+        "id": "sim",
+        "name": "Simulation",
+        "color": "#b8743a",
+        "description": "Simulated scenes, assets and generated trajectories for training and evaluating robots."
+      }
+    ],
+    "defaultSize": "raised",
+    "asOf": "2026-11-05"
+  },
+  "companies": [
+    {
+      "id": "xdof",
+      "name": "XDOF",
+      "company": "XDOF",
+      "aliases": [],
+      "class": "independent",
+      "category": "robot",
+      "region": "US",
+      "hq": "Berkeley, CA",
+      "website": "https://www.xdof.ai",
+      "description": "UC Berkeley spinout from the team behind GELLO, a low-cost teleoperation rig used by many academic labs. It collects data across a three-tier pyramid: teleoperation on the exact robot being deployed, generalized teleoperation on its own rigs, and first-person capture of people doing everyday tasks.",
+      "founded": 2024,
+      "founders": [
+        {
+          "name": "Philipp Wu",
+          "role": null,
+          "linkedin": null
+        },
+        {
+          "name": "Fred Shentu",
+          "role": null,
+          "linkedin": null
+        },
+        {
+          "name": "Nemo Jin",
+          "role": null,
+          "linkedin": null
+        }
+      ],
+      "parent": null,
+      "traction": "About 20 customers including several frontier AI labs at launch. Released ABC-130K, more than 130,000 teleoperated episodes (about 3,600 hours) across roughly 195 bimanual tasks, under Apache 2.0.",
+      "axes": {
+        "grounding": {
+          "score": 88,
+          "rationale": "Mostly teleoperation on real robots, including the customer's own deployed robot, with an egocentric tier underneath."
+        },
+        "breadth": {
+          "score": 52,
+          "rationale": "Bimanual manipulation across many tasks, concentrated in warehouse and household-style settings."
+        },
+        "openness": {
+          "score": 72,
+          "rationale": "A large open dataset (ABC-130K, Apache 2.0) alongside paid collection programs."
+        }
+      },
+      "lastRound": {
+        "series": "Series A",
+        "amountUsd": 70000000,
+        "postMoneyUsd": null,
+        "date": "2026-06-17",
+        "leads": [],
+        "otherInvestors": [
+          "Thrive Capital",
+          "Spark Capital",
+          "Andreessen Horowitz",
+          "Lux Capital",
+          "WndrCo"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Launched from stealth with the round; no valuation disclosed. A September 2026 report said XDOF was in talks for a Series B at about $1.2B; no close has been confirmed.",
+        "source": {
+          "url": "https://siliconangle.com/2026/06/17/robotic-teleoperation-data-startup-xdof-launches-70m-funding/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-06-17"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 70000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://siliconangle.com/2026/06/17/robotic-teleoperation-data-startup-xdof-launches-70m-funding/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-06-17"
+        }
+      },
+      "news": [
+        {
+          "title": "Robotics Training Data: The Companies Feeding Physical AI (2026)",
+          "url": "https://www.teahose.com/guides/robotics-training-data",
+          "publisher": "Teahose",
+          "date": "2026-08-24"
+        },
+        {
+          "title": "Robotic teleoperation data startup XDOF launches with $70M in funding",
+          "url": "https://siliconangle.com/2026/06/17/robotic-teleoperation-data-startup-xdof-launches-70m-funding/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-06-17"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "config",
+      "name": "Config",
+      "company": "Config",
+      "aliases": [],
+      "class": "independent",
+      "category": "human",
+      "region": "South Korea",
+      "hq": "Seoul, South Korea",
+      "website": "https://config.inc",
+      "description": "Data infrastructure for two-armed robots. Its Loop platform turns real-world demonstrations into deployable, task-specific robot policies, converting human motion data before training; it trains and tests policies with customers and ships its own bimanual model.",
+      "founded": 2025,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Minjoon Seo",
+          "role": "Co-founder & CEO; former Meta researcher and Twelve Labs chief scientist"
+        },
+        {
+          "linkedin": null,
+          "name": "Hyungmok Son",
+          "role": "Co-founder & CTO"
+        },
+        {
+          "linkedin": null,
+          "name": "Jack Bang",
+          "role": "Co-founder & COO"
+        }
+      ],
+      "parent": null,
+      "traction": "Data operations in Seoul and Hanoi with nearly 300 people; reported to hold more than 100,000 hours of human motion data. Its investors are Korea's largest manufacturers, which are also its customers. Offices in Seoul and San Jose.",
+      "axes": {
+        "grounding": {
+          "score": 78,
+          "rationale": "Human bimanual demonstrations converted into robot actions and validated by training and testing policies on real robots."
+        },
+        "breadth": {
+          "score": 35,
+          "rationale": "Bimanual manipulation, mainly in Korean industrial settings."
+        },
+        "openness": {
+          "score": 30,
+          "rationale": "Custom data programs and a Robot-as-a-Service cloud, with a catalog offered to customers."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 27000000,
+        "postMoneyUsd": 200000000,
+        "date": "2026-05-12",
+        "leads": [
+          "Samsung Venture Investment"
+        ],
+        "otherInvestors": [
+          "ZER01NE (Hyundai)",
+          "LG Technology Ventures",
+          "SKT America",
+          "Pieter Abbeel"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "Reported at a valuation above $200M; total funding is reported as $34M to $35M.",
+        "source": {
+          "url": "https://en.wowtale.net/2026/05/12/234053/",
+          "publisher": "WOWTALE",
+          "date": "2026-05-12"
+        },
+        "postMoneySource": {
+          "url": "https://www.teahose.com/guides/robotics-training-data",
+          "publisher": "Teahose",
+          "date": "2026-08-24"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 35000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.teahose.com/guides/robotics-training-data",
+          "publisher": "Teahose",
+          "date": "2026-08-24"
+        }
+      },
+      "news": [
+        {
+          "title": "Robotics Training Data: The Companies Feeding Physical AI (2026)",
+          "url": "https://www.teahose.com/guides/robotics-training-data",
+          "publisher": "Teahose",
+          "date": "2026-08-24"
+        },
+        {
+          "title": "Samsung, Hyundai and LG just showed you where robotics is heading, and it's all about data",
+          "url": "https://techround.co.uk/artificial-intelligence/samsung-hyundai-and-lg-just-showed-you-where-robotics-is-heading-and-its-all-about-data/",
+          "publisher": "TechRound",
+          "date": "2026-05-12"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "prismax",
+      "name": "PrismaX",
+      "company": "PrismaX",
+      "aliases": [],
+      "class": "independent",
+      "category": "robot",
+      "region": "US",
+      "hq": "United States",
+      "website": "https://prismax.ai",
+      "description": "Network that pays operators to teleoperate robot arms and capture egocentric episodes, then sells the resulting teleoperation and first-person data, searchable and downloadable or collected to a buyer's specification, to physical AI builders; contributors are rewarded with crypto tokens.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Bayley Wang",
+          "role": "Co-founder & CEO"
+        }
+      ],
+      "parent": null,
+      "traction": "Launched at a16z's crypto accelerator demo day in June 2025.",
+      "axes": {
+        "grounding": {
+          "score": 80,
+          "rationale": "Teleoperation of real robot arms by a paid operator network, plus egocentric episodes."
+        },
+        "breadth": {
+          "score": 32,
+          "rationale": "Arm manipulation across tasks and scenes, without whole-body or deployment data."
+        },
+        "openness": {
+          "score": 50,
+          "rationale": "A searchable data console and plans that buyers can license from directly."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 11000000,
+        "postMoneyUsd": null,
+        "date": "2025-06-16",
+        "leads": [
+          "a16z CSX"
+        ],
+        "otherInvestors": [
+          "Stanford Blockchain Accelerator",
+          "Symbolic",
+          "Volt Capital",
+          "Virtuals Protocol"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "a16z invested $7M of the $11M. Valuation not disclosed.",
+        "source": {
+          "url": "https://www.prismax.ai/blog/prismax-raises-11m-a16z-robotics-funding",
+          "publisher": "PrismaX",
+          "date": "2025-06-16"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 11000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.prismax.ai/blog/prismax-raises-11m-a16z-robotics-funding",
+          "publisher": "PrismaX",
+          "date": "2025-06-16"
+        }
+      },
+      "news": [
+        {
+          "title": "Robotics Training Data: The Companies Feeding Physical AI (2026)",
+          "url": "https://www.teahose.com/guides/robotics-training-data",
+          "publisher": "Teahose",
+          "date": "2026-08-24"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "mecka",
+      "name": "Mecka",
+      "company": "Mecka AI",
+      "aliases": [
+        "Mecka AI"
+      ],
+      "class": "independent",
+      "category": "human",
+      "region": "US",
+      "hq": "New York, NY",
+      "website": "https://www.mecka.ai",
+      "description": "Collects human motion data for humanoid and other robots through custom body-worn sensors and iPhones, capturing hand gestures, walking gaits and full-body kinematics, and positions itself as the data and deployment layer for physical AI rather than a robot maker.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Josh Gao",
+          "role": "Co-founder & CEO"
+        }
+      ],
+      "parent": null,
+      "traction": "Company-reported run rate above $100M in June 2026, targeting $300M by year end. 1X Technologies is its one publicly named customer. Offices in New York and Toronto; acquired Docula.",
+      "axes": {
+        "grounding": {
+          "score": 70,
+          "rationale": "Measured hand and full-body motion from wearable sensors, paired with phone video."
+        },
+        "breadth": {
+          "score": 72,
+          "rationale": "Hands, gait and whole-body motion across household and work settings."
+        },
+        "openness": {
+          "score": 15,
+          "rationale": "Data sold under contract; no public dataset."
+        }
+      },
+      "lastRound": {
+        "series": "Series B",
+        "amountUsd": 60000000,
+        "postMoneyUsd": 500000000,
+        "date": "2026-10-07",
+        "leads": [
+          "Sequoia Capital"
+        ],
+        "otherInvestors": [
+          "NVIDIA",
+          "Microsoft (M12)",
+          "Qualcomm Ventures",
+          "Samsung",
+          "Kindred Ventures",
+          "Framework Ventures",
+          "Neo"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "TechCrunch reported in September that the Sequoia-led round would value Mecka at about $500M; Mecka did not disclose a valuation. Total funding of about $128M counts an $8M seed, a $60M Series A in two parts, and this round.",
+        "source": {
+          "url": "https://betakit.com/mecka-ai-reveals-60-million-usd-series-b-round-backed-by-sequoia-nvidia/",
+          "publisher": "BetaKit",
+          "date": "2026-10-07"
+        },
+        "postMoneySource": {
+          "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
+          "publisher": "TechCrunch",
+          "date": "2026-09-11"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 128000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://betakit.com/mecka-ai-reveals-60-million-usd-series-b-round-backed-by-sequoia-nvidia/",
+          "publisher": "BetaKit",
+          "date": "2026-10-07"
+        }
+      },
+      "news": [
+        {
+          "title": "Mecka AI reveals $60-million USD Series B round backed by Sequoia, Nvidia",
+          "url": "https://betakit.com/mecka-ai-reveals-60-million-usd-series-b-round-backed-by-sequoia-nvidia/",
+          "publisher": "BetaKit",
+          "date": "2026-10-07"
+        },
+        {
+          "title": "Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data",
+          "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
+          "publisher": "TechCrunch",
+          "date": "2026-09-11"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "microagi",
+      "name": "microagi",
+      "company": "microagi",
+      "aliases": [],
+      "class": "independent",
+      "category": "human",
+      "region": "Germany",
+      "hq": "Munich, Germany",
+      "website": "https://www.microagi.ai",
+      "description": "Records workers through cameras and sensor-equipped gloves, sells the data to robotics labs, and uses it to teach existing robot models a specific job inside a specific customer's factory; it builds neither robots nor models. Its shift program filmed people cleaning apartments in exchange for free cleanings.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Bercan Kilic",
+          "role": "Co-founder & CEO; former Red Bull Racing aerodynamicist"
+        },
+        {
+          "linkedin": null,
+          "name": "Nico Nussbaum",
+          "role": "Co-founder & CTO"
+        }
+      ],
+      "parent": null,
+      "traction": "Five companies collecting data through the platform and one preparing a line deployment at the seed, across automotive, logistics and food.",
+      "axes": {
+        "grounding": {
+          "score": 70,
+          "rationale": "Video plus sensor-glove recordings of real workers, then fine-tuning on customers' robots."
+        },
+        "breadth": {
+          "score": 45,
+          "rationale": "Factory jobs across automotive, logistics and food, plus household tasks."
+        },
+        "openness": {
+          "score": 20,
+          "rationale": "Customer programs and data supplied to labs under agreement."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 55000000,
+        "postMoneyUsd": null,
+        "date": "2026-07-16",
+        "leads": [
+          "Hummingbird"
+        ],
+        "otherInvestors": [
+          "Northzone",
+          "LocalGlobe",
+          "Village Global",
+          "redalpine"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Reported as the largest seed round raised by a German company. Valuation not disclosed.",
+        "source": {
+          "url": "https://thenextweb.com/news/microagi-55m-seed-robot-training-data-shift",
+          "publisher": "The Next Web",
+          "date": "2026-07-16"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 55000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://thenextweb.com/news/microagi-55m-seed-robot-training-data-shift",
+          "publisher": "The Next Web",
+          "date": "2026-07-16"
+        }
+      },
+      "news": [
+        {
+          "title": "An F1 aerodynamicist just raised $55m to teach factory robots, using footage of people doing chores",
+          "url": "https://thenextweb.com/news/microagi-55m-seed-robot-training-data-shift",
+          "publisher": "The Next Web",
+          "date": "2026-07-16"
+        },
+        {
+          "title": "Robot-data startup raises largest seed round ever in Germany",
+          "url": "https://semafor.com/article/07/16/2026/robot-data-startup-microagi-raises-largest-seed-round-ever-in-germany",
+          "publisher": "Semafor",
+          "date": "2026-07-16"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "ropedia",
+      "name": "Ropedia",
+      "company": "Ropedia",
+      "aliases": [],
+      "class": "independent",
+      "category": "human",
+      "region": "Singapore",
+      "hq": "Singapore",
+      "website": "https://ropedia.com",
+      "description": "Makes HOMIE, a crown-like head-mounted rig with four cameras that records first-person video, audio, depth, hand tracking, gaze, body motion and camera pose at once, and uses it to collect human interaction data for robot training across Southeast Asia and North America.",
+      "founded": null,
+      "founders": [],
+      "parent": null,
+      "traction": "Launched HOMIE Gen2 and, in September 2026, an academic partner program giving universities research kits. Says its approach cuts collection costs by up to 50 times.",
+      "axes": {
+        "grounding": {
+          "score": 62,
+          "rationale": "Multi-sensor first-person capture with hand tracking and body motion, though no gloves or robot actions."
+        },
+        "breadth": {
+          "score": 55,
+          "rationale": "Everyday tasks in homes and workplaces across Southeast Asia and North America."
+        },
+        "openness": {
+          "score": 32,
+          "rationale": "Custom collection for labs, with research kits for academics."
+        }
+      },
+      "lastRound": {
+        "series": "Pre-Series A",
+        "amountUsd": 22000000,
+        "postMoneyUsd": null,
+        "date": "2026-07-23",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "No institutional lead was named. Follows an $8M raise in March 2026, for $30M across the pre-Series A. Valuation not disclosed.",
+        "source": {
+          "url": "https://siliconangle.com/2026/07/23/ropedia-raises-22m-scale-human-centric-data-collection-embodied-ai/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-07-23"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 30000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://technode.global/2026/07/24/singapores-ai-facilitator-ropedia-raises-22m-pre-series-a-for-physical-ai-data-infrastructure-30m-in-total/",
+          "publisher": "TechNode Global",
+          "date": "2026-07-24"
+        }
+      },
+      "news": [
+        {
+          "title": "Singapore's Ropedia opens physical AI data platform to academic researchers worldwide",
+          "url": "https://technode.global/2026/09/29/singapores-ropedia-opens-physical-ai-data-platform-to-academic-researchers-worldwide/",
+          "publisher": "TechNode Global",
+          "date": "2026-09-29"
+        },
+        {
+          "title": "Ropedia raises $22M to scale data collection for training robots",
+          "url": "https://www.therobotreport.com/ropedia-raises-22m-scale-data-collection-training-robots/",
+          "publisher": "The Robot Report",
+          "date": "2026-07-23"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "build-ai",
+      "name": "Build AI",
+      "company": "Build AI",
+      "aliases": [],
+      "class": "independent",
+      "category": "human",
+      "region": "US",
+      "hq": "United States",
+      "website": "https://www.build.ai",
+      "description": "Public benefit corporation that pays factory workers to wear camera glasses and releases the footage as open datasets of physical labor; it is vertically integrated from hardware and manufacturing to collection logistics and model training, and calls itself the data hyperscaler for physical AI.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Eddy Xu",
+          "role": "Founder & CEO"
+        }
+      ],
+      "parent": null,
+      "traction": "Egocentric-100K (December 2025): 100,405 hours from more than 14,000 factory workers, Apache 2.0 on Hugging Face; Egocentric-1M listed as pending. Acquired Egolab.AI.",
+      "axes": {
+        "grounding": {
+          "score": 50,
+          "rationale": "First-person video of real work, without measured hand or robot actions."
+        },
+        "breadth": {
+          "score": 40,
+          "rationale": "Factory-floor tasks, mostly in Southeast Asia."
+        },
+        "openness": {
+          "score": 95,
+          "rationale": "Its main corpus is openly licensed under Apache 2.0, with sign-up to download."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": null,
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": null,
+        "note": "Reported total of about $15M from investors including Abstract Ventures, Pear VC and HF0, after a $5M seed announced in 2025; the founder corrected the figure to $15M on X.",
+        "source": null
+      },
+      "metrics": {
+        "totalRaisedUsd": 15000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.humanoidsdaily.com/news/build-ai-scales-to-100-000-hours-as-data-scaling-becomes-robotics-new-frontier",
+          "publisher": "Humanoids Daily",
+          "date": "2025-12-19"
+        }
+      },
+      "news": [
+        {
+          "title": "Build AI scales to 100,000 hours as data scaling becomes robotics' new frontier",
+          "url": "https://www.humanoidsdaily.com/news/build-ai-scales-to-100-000-hours-as-data-scaling-becomes-robotics-new-frontier",
+          "publisher": "Humanoids Daily",
+          "date": "2025-12-19"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Egocentric-100K dataset licence and size",
+          "url": "https://huggingface.co/datasets/builddotai/egocentric-100k",
+          "publisher": "Hugging Face",
+          "date": "2026-11-05"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "human-archive",
+      "name": "Human Archive",
+      "company": "Human Archive",
+      "aliases": [],
+      "class": "independent",
+      "category": "human",
+      "region": "US",
+      "hq": "United States",
+      "website": "https://www.humanarchive.ai",
+      "description": "Puts multimodal headsets on gig workers, mainly in India, to record video and sensor data of people working, and sells off-the-shelf and custom datasets plus robot deployments to AI labs; gloves, motion-capture suits and wrist cameras are in development.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Raj Patel",
+          "role": "Co-founder & CEO"
+        }
+      ],
+      "parent": null,
+      "traction": "More than 1,000 active headsets in India, company-reported, expanding to Southeast Asia and the US. Indian regulators are examining consent practices; Urban Company and Pronto declined to partner over privacy.",
+      "axes": {
+        "grounding": {
+          "score": 56,
+          "rationale": "Headset video with depth and other sensors from real work; measured hand data is still being added."
+        },
+        "breadth": {
+          "score": 55,
+          "rationale": "Homes and workplaces across India, expanding to other regions."
+        },
+        "openness": {
+          "score": 40,
+          "rationale": "An off-the-shelf catalog alongside custom collection."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 8200000,
+        "postMoneyUsd": null,
+        "date": "2026-05-26",
+        "leads": [
+          "Wing Venture Capital",
+          "NVP Capital"
+        ],
+        "otherInvestors": [
+          "Y Combinator"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Angels from OpenAI, NVIDIA and Meta also invested. Valuation not disclosed.",
+        "source": {
+          "url": "https://siliconangle.com/2026/05/26/ai-training-data-provider-human-archive-raises-8-2m/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-05-26"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 8200000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://siliconangle.com/2026/05/26/ai-training-data-provider-human-archive-raises-8-2m/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-05-26"
+        }
+      },
+      "news": [
+        {
+          "title": "AI training data provider Human Archive raises $8.2M",
+          "url": "https://siliconangle.com/2026/05/26/ai-training-data-provider-human-archive-raises-8-2m/",
+          "publisher": "SiliconANGLE",
+          "date": "2026-05-26"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "lightwheel",
+      "name": "Lightwheel",
+      "company": "Lightwheel",
+      "aliases": [],
+      "class": "independent",
+      "category": "sim",
+      "region": "China",
+      "hq": "China",
+      "website": "https://www.lightwheel.ai",
+      "description": "Simulation-first robot data company founded by NVIDIA's former simulation lead. It builds SimReady assets with measured physical properties for Isaac Sim, sells EgoSuite egocentric human data and the RoboFinals evaluation platform, and generates simulated training corpora.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Xie Chen",
+          "role": "Founder & CEO; formerly led simulation at NVIDIA"
+        }
+      ],
+      "parent": null,
+      "traction": "Names Google DeepMind, Figure, AgiBot, ByteDance, Geely and BYD among teams using its assets; reported RMB 550M (about $77M) of new orders in Q1 2026.",
+      "axes": {
+        "grounding": {
+          "score": 28,
+          "rationale": "Simulation built from measured real-world physical properties, plus an egocentric human-data line."
+        },
+        "breadth": {
+          "score": 75,
+          "rationale": "Manipulation and scenes across manufacturing, automotive, healthcare and homes, for many robot makers."
+        },
+        "openness": {
+          "score": 50,
+          "rationale": "Asset library and evaluation platform that customers license."
+        }
+      },
+      "lastRound": {
+        "series": "Strategic round",
+        "amountUsd": null,
+        "postMoneyUsd": 2000000000,
+        "date": "2026-06-23",
+        "leads": [],
+        "otherInvestors": [
+          "Zhongguancun Science City Capital",
+          "Sichuan Development Securities Investment Fund",
+          "Shandong Development Investment Holding Group"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "reported",
+        "note": "A RMB 1B (about $138M) strategic round in June 2026, after RMB 1B in March and a May round reported as led by Ant Group (some outlets say Matrix Partners China). The roughly $2B valuation is from Chinese tech press for the May round; totals of about $280M are reported, not audited.",
+        "source": {
+          "url": "https://autonews.gasgoo.com/articles/news/seeds-lightwheel-secures-another-1-billion-yuan-in-strategic-financing-2069405877394952193",
+          "publisher": "Gasgoo",
+          "date": "2026-06-23"
+        },
+        "postMoneySource": {
+          "url": "https://www.teahose.com/guides/robotics-training-data",
+          "publisher": "Teahose",
+          "date": "2026-08-24"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 280000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.teahose.com/guides/robotics-training-data",
+          "publisher": "Teahose",
+          "date": "2026-08-24"
+        }
+      },
+      "news": [
+        {
+          "title": "Lightwheel secures another 1 billion yuan in strategic financing",
+          "url": "https://autonews.gasgoo.com/articles/news/seeds-lightwheel-secures-another-1-billion-yuan-in-strategic-financing-2069405877394952193",
+          "publisher": "Gasgoo",
+          "date": "2026-06-23"
+        },
+        {
+          "title": "Lightwheel completes new funding round",
+          "url": "https://autonews.gasgoo.com/articles/news/seeds-lightwheel-completes-new-funding-round-2059652092774633473",
+          "publisher": "Gasgoo",
+          "date": "2026-05-27"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "scale-physical-ai",
+      "name": "Scale AI Physical AI",
+      "shortName": "Physical AI",
+      "company": "Scale AI",
+      "aliases": [],
+      "class": "platform",
+      "category": "robot",
+      "brand": "Scale AI",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://scale.com/physical-ai",
+      "description": "Scale AI's robotics data engine, extended from its autonomous-vehicle work: data factories, residential and commercial collection, human demonstrations and teleoperation, plus annotation; with Universal Robots it built the UR AI Trainer to capture data on production arms.",
+      "founded": null,
+      "founders": [],
+      "parent": "Scale AI — private; Meta owns 49% after a $14.3B investment in June 2025. Physical AI is one product line inside a broader data company, so the company's valuation is not a standalone figure for it.",
+      "traction": "Named robotics customers include Physical Intelligence, Generalist, Cobot and Dyna. The UR AI Trainer launched at NVIDIA GTC in March 2026, with a large industrial dataset from UR robots planned for later in the year.",
+      "axes": {
+        "grounding": {
+          "score": 84,
+          "rationale": "Teleoperated and demonstrated runs on real robots, including production arms, with multimodal capture."
+        },
+        "breadth": {
+          "score": 70,
+          "rationale": "Data factories, homes and commercial deployments, with experience from driving data."
+        },
+        "openness": {
+          "score": 28,
+          "rationale": "Managed programs for named customers; the UR dataset is planned but not yet released."
+        }
+      },
+      "lastRound": {
+        "series": "Private — not comparable",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-03-16",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://www.universal-robots.com/news-and-media/news-center/universal-robots-scale-ai-launch-imitation-learning-system-accelerate-ai-training-lab-to-factory/",
+          "publisher": "Universal Robots",
+          "date": "2026-03-16"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Universal Robots and Scale AI launch imitation learning system to accelerate AI model training",
+          "url": "https://www.universal-robots.com/news-and-media/news-center/universal-robots-scale-ai-launch-imitation-learning-system-accelerate-ai-training-lab-to-factory/",
+          "publisher": "Universal Robots",
+          "date": "2026-03-16"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "micro1-robotics",
+      "name": "micro1 robotics data",
+      "shortName": "Robotics data",
+      "company": "micro1",
+      "aliases": [],
+      "class": "platform",
+      "category": "human",
+      "brand": "micro1",
+      "region": "US",
+      "hq": "Palo Alto, CA",
+      "website": "https://www.micro1.ai",
+      "description": "micro1's robotics data line pays thousands of contract videographers in dozens of countries to record household tasks, and sells the footage to robotics labs; its larger business supplies expert human data for language-model training.",
+      "founded": null,
+      "founders": [],
+      "parent": "micro1 — private AI data company, reported in September 2026 to have raised more than $100M at a $4B valuation (Forbes). Robotics data is one line of the business, so that valuation is not a standalone figure for it.",
+      "traction": "About 4,000 remote videographers in 71 countries; its contributors submit more than 160,000 hours of video a month, the largest publicly reported collection volume.",
+      "axes": {
+        "grounding": {
+          "score": 45,
+          "rationale": "Video of people doing household tasks, without measured actions."
+        },
+        "breadth": {
+          "score": 68,
+          "rationale": "Homes across 71 countries."
+        },
+        "openness": {
+          "score": 22,
+          "rationale": "Collected for customers under contract."
+        }
+      },
+      "lastRound": {
+        "series": "Private — not comparable",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-09-24",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://forbes.cl/negocios/2026-09-24/este-joven-de-25-anos-recaudo-mas-de-us-100-millones-para-su-startup-de-datos-de-ia-con-valoracion-de-us-4-000-millones",
+          "publisher": "Forbes Chile",
+          "date": "2026-09-24"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Robotics Training Data: The Companies Feeding Physical AI (2026)",
+          "url": "https://www.teahose.com/guides/robotics-training-data",
+          "publisher": "Teahose",
+          "date": "2026-08-24"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "doordash-tasks",
+      "name": "DoorDash Tasks",
+      "shortName": "Tasks",
+      "company": "DoorDash",
+      "aliases": [],
+      "class": "platform",
+      "category": "human",
+      "brand": "DoorDash",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://www.doordash.com",
+      "description": "Standalone app that pays DoorDash couriers for short physical and digital assignments, such as filming themselves doing chores or recording conversations in other languages, to produce data that helps AI and robotic systems understand the physical world; couriers also capture data at commercial locations.",
+      "founded": null,
+      "founders": [],
+      "parent": "DoorDash — public (NASDAQ: DASH). Tasks is one program inside a delivery company; the parent's market capitalization is not a standalone figure for it.",
+      "traction": "Launched March 19, 2026, drawing on DoorDash's US courier network; a Waymo pilot pays couriers to close robotaxi doors under the same Tasks umbrella.",
+      "axes": {
+        "grounding": {
+          "score": 45,
+          "rationale": "Hands-visible video of real chores, without measured actions."
+        },
+        "breadth": {
+          "score": 58,
+          "rationale": "Homes and commercial locations across the US."
+        },
+        "openness": {
+          "score": 12,
+          "rationale": "Data goes to AI and robotics developers privately."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-03-19",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://techcrunch.com/2026/03/19/doordash-launches-a-new-tasks-app-that-pays-couriers-to-submit-videos-to-train-ai/",
+          "publisher": "TechCrunch",
+          "date": "2026-03-19"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "DoorDash launches a new Tasks app that pays couriers to submit videos to train AI",
+          "url": "https://techcrunch.com/2026/03/19/doordash-launches-a-new-tasks-app-that-pays-couriers-to-submit-videos-to-train-ai/",
+          "publisher": "TechCrunch",
+          "date": "2026-03-19"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "nvidia-gr00t-dreams",
+      "name": "NVIDIA Isaac GR00T-Dreams",
+      "shortName": "GR00T-Dreams",
+      "company": "NVIDIA",
+      "aliases": [
+        "GR00T-Dreams",
+        "GR00T-Mimic",
+        "Physical AI Dataset"
+      ],
+      "class": "platform",
+      "category": "sim",
+      "brand": "NVIDIA",
+      "region": "US",
+      "hq": "Santa Clara, CA",
+      "website": "https://developer.nvidia.com/isaac",
+      "description": "NVIDIA's synthetic robot-data workflows: GR00T-Dreams uses Cosmos world models to turn a small amount of real robot data into large volumes of synthetic trajectories, alongside GR00T-Mimic, Isaac Sim and the open NVIDIA Physical AI Dataset on Hugging Face.",
+      "founded": null,
+      "founders": [],
+      "parent": "NVIDIA — public (NASDAQ: NVDA). The workflows and datasets are released openly; the parent's market capitalization is not a standalone product valuation.",
+      "traction": "NVIDIA says GR00T-Dreams generated the training data for GR00T N1.5 in 36 hours, against about three months of manual collection; Foxlink and Lightwheel were early users.",
+      "axes": {
+        "grounding": {
+          "score": 20,
+          "rationale": "Synthetic trajectories generated by world models, seeded from real robot data."
+        },
+        "breadth": {
+          "score": 70,
+          "rationale": "Humanoids and arms across many tasks and scenes."
+        },
+        "openness": {
+          "score": 90,
+          "rationale": "Open blueprints and an open dataset on Hugging Face."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2025-06-16",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://developer.nvidia.com/blog/enhance-robot-learning-with-synthetic-trajectory-data-generated-by-world-foundation-models",
+          "publisher": "NVIDIA",
+          "date": "2025-06-16"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Enhance robot learning with synthetic trajectory data generated by world foundation models",
+          "url": "https://developer.nvidia.com/blog/enhance-robot-learning-with-synthetic-trajectory-data-generated-by-world-foundation-models",
+          "publisher": "NVIDIA",
+          "date": "2025-06-16"
+        }
+      ],
+      "checks": [],
+      "locked": [],
+      "lastVerified": "2026-11-05"
+    }
+  ]
+}

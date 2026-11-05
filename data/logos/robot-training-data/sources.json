@@ -1,0 +1,82 @@
+{
+  "build-ai": {
+    "page": "https://www.build.ai",
+    "light": "https://www.build.ai/favicon.ico?favicon.1n6vr4wiqs-ld.ico?dpl=dpl_AP8ukesmWFfESGEtA2ZV6oe3Luf1",
+    "file": "build-ai.ico",
+    "fetched": "2026-11-05"
+  },
+  "config": {
+    "page": "https://config.inc",
+    "light": "https://config.inc/favicon.ico?favicon.0bfrw977efpzb.ico?dpl=dpl_F33jYmC2DjhF7J9GnmP4ZQFjKd3m",
+    "file": "config.ico",
+    "fetched": "2026-11-05"
+  },
+  "doordash-tasks": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/95/54/97/955497a1-1378-e059-3fa7-379028fb3dd9/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
+    "file": "doordash-tasks.jpg",
+    "fetched": "2026-11-05"
+  },
+  "human-archive": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5b/99/63/5b99639a-c9ec-8e39-d1f5-fd815696be49/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+    "file": "human-archive.jpg",
+    "fetched": "2026-11-05"
+  },
+  "lightwheel": {
+    "page": "https://www.lightwheel.ai",
+    "light": "https://www.lightwheel.ai/favicon.png",
+    "file": "lightwheel.png",
+    "fetched": "2026-11-05"
+  },
+  "mecka": {
+    "page": "https://www.mecka.ai",
+    "light": "https://www.mecka.ai/icon-512.png",
+    "file": "mecka.png",
+    "fetched": "2026-11-05"
+  },
+  "micro1-robotics": {
+    "page": "https://www.micro1.ai",
+    "light": "https://cdn.prod.website-files.com/6a04bd23eb9d40f76dac1249/6a04bd23eb9d40f76dac1ebd_favicon%20(1).png",
+    "file": "micro1-robotics.png",
+    "fetched": "2026-11-05"
+  },
+  "microagi": {
+    "page": "https://www.microagi.ai",
+    "light": "https://www.microagi.ai/brand/microagi-symbol-dark.svg",
+    "file": "microagi.svg",
+    "fetched": "2026-11-05"
+  },
+  "nvidia-gr00t-dreams": {
+    "page": "https://developer.nvidia.com/isaac",
+    "light": "https://developer.nvidia.com/assets/favicon-81bff16cada05fcff11e5711f7e6212bdc2e0a32ee57cd640a8cf66c87a6cbe6.ico",
+    "file": "nvidia-gr00t-dreams.ico",
+    "fetched": "2026-11-05"
+  },
+  "prismax": {
+    "page": "https://prismax.ai",
+    "light": "https://prismax.ai/assets/home/logos/apple-touch-icon.png",
+    "file": "prismax.png",
+    "fetched": "2026-11-05"
+  },
+  "ropedia": {
+    "page": "https://ropedia.com",
+    "light": "https://ropedia.com/logomark_light.png",
+    "file": "ropedia.png",
+    "fetched": "2026-11-05"
+  },
+  "scale-physical-ai": {
+    "page": "https://scale.com/physical-ai",
+    "light": "https://scale.com/static/global/favicon/v3/android-chrome-384x384.png",
+    "file": "scale-physical-ai.png",
+    "fetched": "2026-11-05"
+  },
+  "xdof": {
+    "page": "https://www.xdof.ai",
+    "light": "https://www.xdof.ai/favicon-light.svg",
+    "file": "xdof.svg",
+    "fetched": "2026-11-05",
+    "dark": "https://www.xdof.ai/favicon-dark.svg",
+    "darkFile": "xdof-dark.svg"
+  }
+}
