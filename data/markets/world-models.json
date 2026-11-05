@@ -73,6 +73,11 @@
         "name": "Reactor",
         "fails": "builds a world model",
         "why": "Runs other companies' world models in real time through its SDK, API and GPU cloud rather than building its own; $74M raised, with NVIDIA joining its Lightspeed-led Series A in October 2026"
+      },
+      {
+        "name": "Third Dimension",
+        "fails": "the model is the product",
+        "why": "UK startup turning road footage into 3D driving simulations; Rivian bought it in October 2026 to build self-driving test worlds in-house"
       }
     ],
     "axes": {
@@ -112,7 +117,7 @@
         "description": "World models that train, test and plan for robots, vehicles and AI agents."
       }
     ],
-    "asOf": "2026-10-26"
+    "asOf": "2026-11-05"
   },
   "companies": [
     {
@@ -153,11 +158,11 @@
         }
       ],
       "parent": null,
-      "traction": "AMD agreed to buy World Labs in an all-stock deal valued at about $8.2B, expected to close by the end of 2026; Fei-Fei Li is to become AMD's executive vice president and chief scientist. Atlas is in early access with select partners and will power future versions of Marble.",
+      "traction": "AMD agreed to buy World Labs in an all-stock deal valued at about $8.2B, expected to close by the end of 2026; Fei-Fei Li is to become AMD's executive vice president and chief scientist. Atlas is in early access with select partners and will power future versions of Marble. Frameboy, a research preview of real-time exploration with Atlas, and the Viewfinder web app opened on November 5, 2026.",
       "axes": {
         "interactivity": {
-          "score": 32,
-          "rationale": "Marble builds a persistent 3D world that you can walk through, edit and export, but the world itself does not react to what you do. Atlas adds simulation, rendering a scene as a simulated robot moves through it, though not live interaction."
+          "score": 40,
+          "rationale": "Frameboy (November 2026) streams new Atlas frames to your browser at up to 15 fps as you steer the camera through a generated or real scene, so the view is generated live as you move; only the camera responds, the world itself does not react, and 15 fps is below real time."
         },
         "generality": {
           "score": 86,
@@ -208,6 +213,12 @@
       },
       "news": [
         {
+          "title": "Frameboy: Atlas in Real-time",
+          "url": "https://www.worldlabs.ai/blog/atlas-realtime",
+          "publisher": "World Labs",
+          "date": "2026-11-05"
+        },
+        {
           "title": "AMD to Acquire World Labs to Advance the Future of AI",
           "url": "https://newsroom.amd.com/news/amd-acquire-world-labs/",
           "publisher": "AMD",
@@ -255,7 +266,7 @@
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "odyssey",
@@ -367,7 +378,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "decart",
@@ -452,6 +463,12 @@
       },
       "news": [
         {
+          "title": "Lucy 2.6: Ready for Live Commerce and Engagement",
+          "url": "https://decart.ai/publications/introducing-lucy-2-6",
+          "publisher": "Decart",
+          "date": "2026-11-05"
+        },
+        {
           "title": "Amazon in talks to buy AI startup Decart for around $7 billion, WSJ reports",
           "url": "https://kfgo.com/2026/10/11/amazon-in-talks-to-buy-ai-startup-decart-for-around-7-billion-wsj-reports/",
           "publisher": "Reuters via KFGO",
@@ -496,7 +513,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "general-intuition",
@@ -602,7 +619,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "runway",
@@ -742,7 +759,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "moonlake",
@@ -845,7 +862,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "overworld",
@@ -951,7 +968,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "genie",
@@ -968,23 +985,23 @@
       "region": "US",
       "hq": "Mountain View, CA",
       "website": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie/",
-      "description": "Google DeepMind's general-purpose world model. Project Genie, an experimental web app built on it, turns a text prompt or an image into a world you explore in real time at about 720p and 24 fps, for up to 60 seconds per world; since May 2026 it can also start from real places in Street View.",
+      "description": "Google DeepMind's general-purpose world model. Project Genie, an experimental web app built on Genie 3, turns a text prompt or an image into a world you explore in real time at about 720p and 24 fps, for up to 60 seconds per world; since May 2026 it can also start from real places in Street View. Genie 4 (October 27, 2026) lets you reshape a world live in plain language, adding characters, events or weather, generates sound and dialogue natively, and holds a session for a few minutes.",
       "founded": 1998,
       "founders": [],
       "parent": "Alphabet — public (NASDAQ: GOOGL). Genie 3 is a Google DeepMind research model; the parent's market capitalization is not a standalone product valuation.",
-      "traction": "Project Genie opened to Google AI Ultra subscribers in the US on January 29, 2026, and has been rolling out to eligible subscribers worldwide (18+) since May 19, 2026.",
+      "traction": "Project Genie opened to Google AI Ultra subscribers in the US on January 29, 2026, and has been rolling out to eligible subscribers worldwide (18+) since May 19, 2026. Genie 4 is a research preview for trusted testers, coming next to AI Ultra subscribers in Project Genie and early-access partners of the Gemini API and Google AI Studio.",
       "axes": {
         "interactivity": {
-          "score": 80,
-          "rationale": "Generates the path ahead in real time as you move, at about 24 fps, and simulates physics and interactions; each world is capped at 60 seconds."
+          "score": 86,
+          "rationale": "Generates the world ahead in real time as you move, and Genie 4 responds to typed events, new characters and weather changes mid-session, for a few minutes of continuous interaction rather than Genie 3's 60 seconds; details can drift over longer sessions."
         },
         "generality": {
-          "score": 88,
-          "rationale": "Any world from text or an image, real or imagined; Street View grounding adds real places."
+          "score": 90,
+          "rationale": "Any world from text or an image, real or imagined, with Street View grounding for real places; Genie 4 adds native sound, talking characters and simulations used for robot planning."
         },
         "access": {
           "score": 38,
-          "rationale": "An experimental prototype for Google AI Ultra subscribers only, with no developer API."
+          "rationale": "Genie 3 is an experimental prototype for Google AI Ultra subscribers only; Genie 4 is limited to trusted testers so far, with no developer API yet."
         }
       },
       "lastRound": {
@@ -1008,6 +1025,18 @@
       },
       "news": [
         {
+          "title": "Genie 4",
+          "url": "https://deepmind.google/models/genie/",
+          "publisher": "Google DeepMind",
+          "date": "2026-10-27"
+        },
+        {
+          "title": "Google DeepMind's Genie 4 builds AI worlds that talk and change on command",
+          "url": "https://thenextweb.com/news/google-deepmind-genie-4-world-model",
+          "publisher": "The Next Web",
+          "date": "2026-10-27"
+        },
+        {
           "title": "Google pairs its Genie world model with Street View to create explorable AI worlds based on real places",
           "url": "https://the-decoder.com/google-pairs-its-genie-world-model-with-street-view-to-create-explorable-ai-worlds-based-on-real-places/",
           "publisher": "The Decoder",
@@ -1022,7 +1051,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "cosmos",
@@ -1092,7 +1121,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "microsoft-muse",
@@ -1165,7 +1194,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "v-jepa",
@@ -1237,7 +1266,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "spaitial",
@@ -1338,7 +1367,7 @@
         "lastRound.date",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "gigaai",
@@ -1437,7 +1466,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "black-forest-labs",
@@ -1556,7 +1585,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "hy-world",
@@ -1629,7 +1658,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "matrix-game",
@@ -1647,7 +1676,7 @@
       "region": "Singapore",
       "hq": "Singapore",
       "website": "https://github.com/SkyworkAI/Matrix-Game",
-      "description": "Skywork AI's open interactive world model. Matrix-Game 3.0 (March 2026) streams 720p video at 40 fps that responds to a player's actions, with a camera-aware memory that keeps the world consistent over minute-long sessions; a 28B mixture-of-experts version trades speed for quality.",
+      "description": "Skywork AI's open interactive world model. Matrix-Game 3.0 (March 2026) streams 720p video at 40 fps that responds to a player's actions, with a camera-aware memory that keeps the world consistent over minute-long sessions; a 28B mixture-of-experts version trades speed for quality. Matrix-Game 4.0 (October 2026) takes a different approach: a conventional game engine runs gameplay, physics and input while the model renders the picture, at up to 67 fps on an RTX 5080, across three bundled games.",
       "founded": 2008,
       "founders": [],
       "parent": "Kunlun Tech — public (SZSE: 300418). Skywork AI, Kunlun's Singapore-based AI subsidiary, builds Matrix-Game; the parent's market capitalization is not a standalone product valuation.",
@@ -1685,7 +1714,14 @@
       "metrics": {
         "totalRaisedUsd": null
       },
-      "news": [],
+      "news": [
+        {
+          "title": "Matrix-Game 4.0 release",
+          "url": "https://github.com/SkyworkAI/Matrix-Game",
+          "publisher": "Skywork AI",
+          "date": "2026-10-15"
+        }
+      ],
       "checks": [
         {
           "title": "Matrix-Game 3.0 model page: license, frame rate and memory",
@@ -1695,7 +1731,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "happy-oyster",
@@ -1767,7 +1803,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     }
   ]
 }

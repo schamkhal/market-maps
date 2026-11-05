@@ -204,7 +204,7 @@
         "description": "Agents for email, planning, browsing, and recall across the tools you work in."
       }
     ],
-    "asOf": "2026-10-26"
+    "asOf": "2026-11-05"
   },
   "companies": [
     {
@@ -331,7 +331,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "instinct",
@@ -456,7 +456,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "town",
@@ -605,7 +605,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "superhuman-go",
@@ -689,7 +689,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "duckbill",
@@ -781,7 +781,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "lindy",
@@ -860,7 +860,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "littlebird",
@@ -960,7 +960,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "ohai",
@@ -1062,7 +1062,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "pally",
@@ -1184,7 +1184,7 @@
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "martin",
@@ -1288,7 +1288,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "comet",
@@ -1355,7 +1355,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "muse",
@@ -1374,7 +1374,7 @@
       "founded": 2004,
       "founders": [],
       "parent": "Meta Platforms — public (NASDAQ: META). Muse is a first-party personal agent, available through its own app and WhatsApp; the parent’s market capitalization is not a standalone product valuation.",
-      "traction": "Launched September 8, 2026. Meta said on September 23 that Muse is coming to its AI glasses, and on September 30 launched Muse for Small Business. Prior app-chart and pricing claims were not reverified. On October 12 Meta introduced Muse Wonder models for agentic tasks, which it says will soon power Muse, starting with subscribers.",
+      "traction": "Launched September 8, 2026. Meta said on September 23 that Muse is coming to its AI glasses, and on September 30 launched Muse for Small Business. Prior app-chart and pricing claims were not reverified. On October 12 Meta introduced Muse Wonder models for agentic tasks, which it says will soon power Muse, starting with subscribers. Muse reached Canada in September, Japan on October 23 and Singapore on October 27, 2026; voice and expressive avatars arrived in the Muse app on November 5.",
       "axes": {
         "autonomy": {
           "score": 90,
@@ -1409,6 +1409,24 @@
         "totalRaisedUsd": null
       },
       "news": [
+        {
+          "title": "Give Your Muse a Voice",
+          "url": "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+          "publisher": "Meta",
+          "date": "2026-11-05"
+        },
+        {
+          "title": "Muse Is Now Available in Singapore: The World's First Personal AI Agent Built for Everyone",
+          "url": "https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/",
+          "publisher": "Meta",
+          "date": "2026-10-27"
+        },
+        {
+          "title": "Meta、パーソナルAIエージェント「Muse」を日本で提供開始",
+          "url": "https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/",
+          "publisher": "Meta",
+          "date": "2026-10-23"
+        },
         {
           "title": "Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agents",
           "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
@@ -1465,7 +1483,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "spark",
@@ -1537,7 +1555,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "chatgpt",
@@ -1557,7 +1575,7 @@
       "founded": 2015,
       "founders": [],
       "parent": "OpenAI — private. ChatGPT is a product within the broader company, not a separately valued personal-agent business.",
-      "traction": "Dots rolled out from September 29, 2026 to Pro and Business Premium subscribers in eligible markets, with the first dot included in the plan; text-message access is coming. Tools and access vary by plan, region and workspace settings.",
+      "traction": "Dots rolled out from September 29, 2026 to Pro and Business Premium subscribers in eligible markets, with the first dot included in the plan. Since late October 2026, US Pro users can text their dot over iMessage or RCS in beta, and the dot can text them first. Tools and access vary by plan, region and workspace settings.",
       "axes": {
         "autonomy": {
           "score": 92,
@@ -1568,8 +1586,8 @@
           "rationale": "More than 4,000 app connections cover work tools and everyday tasks such as restaurant bookings; payments, health and home are not described."
         },
         "distribution": {
-          "score": 86,
-          "rationale": "The ChatGPT app most people already use, on web, desktop and phone; text-message access is coming."
+          "score": 90,
+          "rationale": "The ChatGPT app most people already use, on web, desktop and phone; US Pro users can also text their dot over iMessage or RCS, a beta for now."
         }
       },
       "lastRound": {
@@ -1593,16 +1611,22 @@
       },
       "news": [
         {
-          "title": "OpenAI launches Dots, its bubbly agentic avatar",
-          "url": "https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/",
-          "publisher": "TechCrunch",
-          "date": "2026-09-29"
+          "title": "Text your dot",
+          "url": "https://learn.chatgpt.com/docs/whats-new/dots-october-28-2026",
+          "publisher": "OpenAI",
+          "date": "2026-10-28"
         },
         {
           "title": "OpenAI launches ‘dots,’ personal AI assistant ‘built to handle everything’",
           "url": "https://www.aljazeera.com/economy/2026/9/30/openai-launches-dots-personal-ai-assistant-built-to-handle-everything",
           "publisher": "Al Jazeera",
           "date": "2026-09-30"
+        },
+        {
+          "title": "OpenAI launches Dots, its bubbly agentic avatar",
+          "url": "https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/",
+          "publisher": "TechCrunch",
+          "date": "2026-09-29"
         }
       ],
       "checks": [
@@ -1614,7 +1638,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "cowork",
@@ -1637,15 +1661,15 @@
       "founded": 2021,
       "founders": [],
       "parent": "Anthropic — private, and valued as a frontier-model company. Cowork is a mode within Claude, scoped deliberately at work rather than personal life.",
-      "traction": "Rolling out to Pro and Max plans on web, desktop and mobile from September 16, 2026; Team and Free plans next, with 30 days notice for Enterprise. Claude Duet opened as a research preview by waitlist on October 21, 2026, starting with US Pro and Max subscribers; its background checks count against normal Claude usage limits.",
+      "traction": "Rolling out to Pro and Max plans on web, desktop and mobile from September 16, 2026; Team and Free plans next, with 30 days notice for Enterprise. Claude Duet opened as a research preview by waitlist on October 21, 2026, for US Pro, Max and Ultra subscribers; its background checks count against normal Claude usage limits. Personal Finance, read-only access to connected bank and card accounts, began rolling out in beta to US Pro, Max and Ultra users on November 5, 2026.",
       "axes": {
         "autonomy": {
           "score": 74,
           "rationale": "Claude Duet watches your connected apps, follows up and reaches out first, and keeps working while you are away; it checks with you before acting on your behalf, and it is a waitlisted research preview."
         },
         "breadth": {
-          "score": 46,
-          "rationale": "Work and business life through 6,000+ connectors: email, Slack, calendar, documents, and finance tools such as QuickBooks and Stripe; deliberately not personal errands, home or health."
+          "score": 52,
+          "rationale": "Work and business life through 6,000+ connectors: email, Slack, calendar, documents and finance tools such as QuickBooks and Stripe. Personal Finance (November 2026) adds read-only access to your own bank and card accounts; still no personal errands, home or health."
         },
         "distribution": {
           "score": 30,
@@ -1673,6 +1697,12 @@
       },
       "news": [
         {
+          "title": "Introducing Personal Finance in Claude",
+          "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
+          "publisher": "Anthropic",
+          "date": "2026-11-05"
+        },
+        {
           "title": "Anthropic joins Meta and OpenAI's personal AI assistant race with Claude Duet",
           "url": "https://fortune.com/2026/10/23/anthropic-joins-meta-and-openais-personal-ai-assistant-race-with-duet/",
           "publisher": "Fortune",
@@ -1698,7 +1728,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26",
+      "lastVerified": "2026-11-05",
       "checks": [
         {
           "title": "Anthropic announcement: Cowork merged into Claude",
@@ -1772,7 +1802,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "siri",
@@ -1847,7 +1877,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "wajo",
@@ -1947,7 +1977,7 @@
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "ollie",
@@ -2052,7 +2082,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "poke",
@@ -2152,26 +2182,27 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "grok-bot",
       "name": "Grok Bot",
-      "company": "SpaceXAI",
+      "company": "SpaceXSI",
       "aliases": [
-        "xAI Grok Bot"
+        "xAI Grok Bot",
+        "SpaceXAI Grok Bot"
       ],
       "class": "platform",
       "category": "executive",
-      "brand": "SpaceXAI",
+      "brand": "SpaceXSI",
       "region": "US",
       "hq": "United States",
       "website": "https://x.ai/bot",
       "description": "Personal agents with persistent cloud computers, browsers and connected apps. Bots can carry out research, inbox and calendar work, shopping comparisons and scheduled routines, with permission rules governing actions. Since October 2026 it can route a task to whichever back-end model suits it best, starting with Anthropic's Claude Opus 5.5.",
       "founded": null,
       "founders": [],
-      "parent": "SpaceXAI — US-based provider of Grok and related products. Grok Bot has no separately disclosed financing or product valuation; parent-company financing is not a comparable market-map value.",
-      "traction": "Beta launched August 11, 2026; access expanded August 26 to SuperGrok and Cursor Pro and Teams plans. Online purchases through Stripe Link for US users from August 28, 2026; each purchase needs your approval.",
+      "parent": "SpaceXSI (formerly SpaceXAI) — US-based provider of Grok and related products. Grok Bot has no separately disclosed financing or product valuation; parent-company financing is not a comparable market-map value.",
+      "traction": "Beta launched August 11, 2026; access expanded August 26 to SuperGrok and Cursor Pro and Teams plans. Online purchases through Stripe Link for US users from August 28, 2026; each purchase needs your approval. Since October 12, 2026 it is included in the Premium ($30 a month), Super and Ultra tiers of the X Subscription, which bundles Grok, Grok Bot, Cursor and X Premium.",
       "axes": {
         "autonomy": {
           "score": 78,
@@ -2182,8 +2213,8 @@
           "rationale": "Research, inbox and calendar, scheduled routines and completed purchases: since August 28, 2026 it buys online for US users through Stripe Link single-use cards, with your approval for each purchase. Bots can also have their own email address."
         },
         "distribution": {
-          "score": 46,
-          "rationale": "Its own Grok surfaces, with access through SuperGrok and Cursor plans; you go to it rather than meeting it in the apps you already use."
+          "score": 50,
+          "rationale": "Its own Grok surfaces, now included with X Premium and higher X Subscription tiers; bots can be reached at their own email address, but you still go to it rather than meeting it inside the apps you already use."
         }
       },
       "lastRound": {
@@ -2198,7 +2229,7 @@
         "note": "Product launch date, not a financing round. No standalone valuation assigned.",
         "source": {
           "url": "https://x.ai/news/introducing-grok-bot",
-          "publisher": "SpaceXAI",
+          "publisher": "SpaceXSI",
           "date": "2026-08-11"
         }
       },
@@ -2207,9 +2238,21 @@
       },
       "news": [
         {
+          "title": "X bundles Premium, Grok and Cursor under a single monthly subscription",
+          "url": "https://www.engadget.com/2284943/x-subscription-bundles-premium-grok-cursor/",
+          "publisher": "Engadget",
+          "date": "2026-10-13"
+        },
+        {
           "title": "Grok Bot explained: features, pricing, and the Claude update",
           "url": "https://www.lindy.ai/blog/grok-bot",
           "publisher": "Lindy",
+          "date": "2026-10-12"
+        },
+        {
+          "title": "Grok Bot on The X Subscription",
+          "url": "https://docs.x.ai/x-subscription/grok-bot",
+          "publisher": "SpaceXSI",
           "date": "2026-10-12"
         },
         {
@@ -2221,7 +2264,7 @@
         {
           "title": "Grok Bot guide: personal tasks, routines and permissions",
           "url": "https://x.ai/bot/guides/grok-bot-101",
-          "publisher": "SpaceXAI",
+          "publisher": "SpaceXSI",
           "date": "2026-09-11"
         },
         {
@@ -2233,20 +2276,20 @@
         {
           "title": "Grok Bot expands subscription-plan availability",
           "url": "https://x.ai/news/grok-bot-more-plans",
-          "publisher": "SpaceXAI",
+          "publisher": "SpaceXSI",
           "date": "2026-08-26"
         }
       ],
       "checks": [
         {
-          "title": "SpaceXAI US company details",
+          "title": "SpaceXSI US company details",
           "url": "https://x.ai/legal/faq",
-          "publisher": "SpaceXAI",
+          "publisher": "SpaceXSI",
           "date": "2026-09-26"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "folk",
@@ -2340,7 +2383,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "microsoft-copilot",
@@ -2420,7 +2463,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "genspark",
@@ -2517,7 +2560,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "tab",
@@ -2615,7 +2658,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     },
     {
       "id": "persona",
@@ -2706,7 +2749,7 @@
       ],
       "checks": [],
       "locked": [],
-      "lastVerified": "2026-10-26"
+      "lastVerified": "2026-11-05"
     }
   ]
 }
