@@ -141,11 +141,6 @@
         "why": "No disclosed funding; small unfunded products are left off. Text assistant on iMessage, Telegram and WhatsApp."
       },
       {
-        "name": "Tomo",
-        "fails": "funding",
-        "why": "No disclosed funding; small unfunded products are left off. iMessage assistant that joins group chats, from $19.99 a month."
-      },
-      {
         "name": "Underdog",
         "fails": "funding",
         "why": "No disclosed funding; small unfunded products are left off. On-device assistant for Mac and Windows, invite-only beta since October 2026."
@@ -2752,6 +2747,119 @@
         "lastRound.amountUsd",
         "lastRound.postMoneyUsd"
       ],
+      "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "tomo",
+      "name": "Tomo",
+      "company": "Tomo",
+      "aliases": [
+        "Tomo AI"
+      ],
+      "class": "independent",
+      "category": "executive",
+      "region": "US",
+      "hq": "San Francisco, CA",
+      "website": "https://tomo.ai",
+      "description": "Personal AI that lives in your text messages: a number you text for motivation, reminders, accountability and everyday help, from food-photo tracking and budgeting from bank screenshots to reminders, calendar and shopping. It remembers your goals, checks in on its own, joins group chats, and connects to calendar, email, Notion and Google Drive.",
+      "founded": null,
+      "founders": [
+        {
+          "name": "Justin Quan",
+          "role": "Co-founder & CEO",
+          "linkedin": null
+        },
+        {
+          "name": "Raymond Chen",
+          "role": "Co-founder & CTO",
+          "linkedin": null
+        }
+      ],
+      "parent": null,
+      "traction": "Grew by word of mouth to more than 10,000 paying subscribers in about 3.5 months while in stealth; users text it on average 20 days a month. Plans from $19.99 a month. A companion app for its most active users generates personalized trackers. Named to Newcomer and Felicis’s Emergent list in November 2026.",
+      "axes": {
+        "autonomy": {
+          "score": 52,
+          "rationale": "Plans and checks in on its own to keep goals and streaks on track, and handles reminders, calendar and shopping when asked; fewer end-to-end errands than the leading agents."
+        },
+        "breadth": {
+          "score": 60,
+          "rationale": "Fitness and food tracking, budgeting, screen time, reminders, calendar, email, Notion and Drive: much of personal life plus some work tools."
+        },
+        "distribution": {
+          "score": 80,
+          "rationale": "Lives in iMessage and group chats with no app to install; the companion app is optional."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 5000000,
+        "postMoneyUsd": null,
+        "date": "2026-06-25",
+        "leads": [
+          "Bain Capital Ventures"
+        ],
+        "otherInvestors": [
+          "Accel",
+          "The Aligned Fund",
+          "Basis Set Ventures",
+          "Conviction Partners",
+          "Pear",
+          "Collaborative Fund"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Tomo emerged from stealth with the $5M seed; angel investors also took part. Valuation not disclosed.",
+        "source": {
+          "url": "https://secure.businesswire.com/news/home/20260625645270/en/Tomo-is-the-AI-Champion-Helping-People-Bet-on-Themselves-Emerging-from-Stealth-with-%245-Million",
+          "publisher": "Tomo / Business Wire",
+          "date": "2026-06-25"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 5000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://secure.businesswire.com/news/home/20260625645270/en/Tomo-is-the-AI-Champion-Helping-People-Bet-on-Themselves-Emerging-from-Stealth-with-%245-Million",
+          "publisher": "Tomo / Business Wire",
+          "date": "2026-06-25"
+        }
+      },
+      "news": [
+        {
+          "title": "Introducing Emergent: The Founder-Generated Startup List",
+          "url": "https://www.newcomer.co/p/emergent-2026",
+          "publisher": "Newcomer",
+          "date": "2026-11-05"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "publisher": "TechCrunch",
+          "date": "2026-10-10"
+        },
+        {
+          "title": "Tomo Raises $5 Million Seed Round Led By Bain Capital Ventures",
+          "url": "https://pulse2.com/tomo-raises-5-million-seed-round-led-by-bain-capital-ventures/",
+          "publisher": "Pulse 2.0",
+          "date": "2026-06-26"
+        },
+        {
+          "title": "Tomo is the AI Champion Helping People Bet on Themselves, Emerging from Stealth with $5 Million",
+          "url": "https://secure.businesswire.com/news/home/20260625645270/en/Tomo-is-the-AI-Champion-Helping-People-Bet-on-Themselves-Emerging-from-Stealth-with-%245-Million",
+          "publisher": "Tomo / Business Wire",
+          "date": "2026-06-25"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Product and features",
+          "url": "https://tomo.ai",
+          "publisher": "Tomo",
+          "date": "2026-11-05"
+        }
+      ],
+      "locked": [],
       "lastVerified": "2026-11-05"
     }
   ]

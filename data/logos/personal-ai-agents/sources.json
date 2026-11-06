@@ -152,6 +152,12 @@
     "file": "tab.png",
     "fetched": "2026-10-12"
   },
+  "tomo": {
+    "page": "https://tomo.ai",
+    "light": "https://www.tomo.ai/apple-icon.png?apple-icon.3i0nfbg5498-3.png",
+    "file": "tomo.png",
+    "fetched": "2026-11-06"
+  },
   "town": {
     "page": "https://www.town.com",
     "light": "https://www.town.com/favicon.png",

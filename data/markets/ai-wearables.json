@@ -65,6 +65,11 @@
         "name": "XREAL",
         "fails": "the AI is the point",
         "why": "Raised $100M at a valuation above $1B in 2026 for display glasses built mainly around screens and media"
+      },
+      {
+        "name": "Legato",
+        "fails": "the AI is the point",
+        "why": "Boston ($12M from Neotribe Ventures, Listen and Village Global, August 2026); Legato Frames are over-the-counter hearing-aid glasses, on sale from $999, whose on-device AI separates speech from background noise, with no assistant, cameras or recording"
       }
     ],
     "axes": {
@@ -108,7 +113,7 @@
       }
     ],
     "defaultSize": "raised",
-    "asOf": "2026-11-05"
+    "asOf": "2026-11-06"
   },
   "companies": [
     {
@@ -437,6 +442,99 @@
       "checks": [],
       "locked": [],
       "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "taya",
+      "name": "Taya",
+      "company": "Taya",
+      "aliases": [
+        "TAYA",
+        "Taya necklace"
+      ],
+      "class": "independent",
+      "category": "audio",
+      "region": "US",
+      "hq": "San Francisco, United States",
+      "website": "https://tayanecklace.com",
+      "description": "Maker of TAYA, an AI necklace for capturing passing thoughts: press its button and speak, and directional microphones pick up only the wearer’s voice, which the app turns into lists and cues to revisit.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Elena Wagenmans",
+          "role": "Founder & CEO; Stanford-trained product designer and mechanical engineer, formerly building hardware at Apple"
+        }
+      ],
+      "parent": null,
+      "traction": "Initial preorder batch sold out before the seed round; preorders are open with an $89 refundable deposit, shipping is set for fall 2026, and the final price has not been announced.",
+      "axes": {
+        "capture": {
+          "score": 5,
+          "rationale": "Records only between two presses of its button; the company says there is no passive mode."
+        },
+        "agency": {
+          "score": 25,
+          "rationale": "Its app organizes captured thoughts into lists and cues to revisit; it does not act in other apps."
+        },
+        "availability": {
+          "score": 25,
+          "rationale": "Open for preorder with a refundable deposit; shipping is planned for fall 2026 and has not been confirmed."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 5000000,
+        "postMoneyUsd": null,
+        "date": "2026-03-12",
+        "leads": [
+          "MaC Venture Capital",
+          "Female Founders Fund"
+        ],
+        "otherInvestors": [
+          "a16z speedrun"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Announced March 12, 2026. Valuation not disclosed.",
+        "source": {
+          "url": "https://www.vcaonline.com/news/2026031205/taya-raises-5m-for-ai-jewelry-designed-to-capture-your-thoughts-not-the-room/",
+          "publisher": "Venture Capital Access Online (press release)",
+          "date": "2026-03-12"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 5000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.vcaonline.com/news/2026031205/taya-raises-5m-for-ai-jewelry-designed-to-capture-your-thoughts-not-the-room/",
+          "publisher": "Venture Capital Access Online (press release)",
+          "date": "2026-03-12"
+        }
+      },
+      "news": [
+        {
+          "title": "Taya raises $5M for AI jewelry designed to capture your thoughts, not the room",
+          "url": "https://www.vcaonline.com/news/2026031205/taya-raises-5m-for-ai-jewelry-designed-to-capture-your-thoughts-not-the-room/",
+          "publisher": "Venture Capital Access Online (press release)",
+          "date": "2026-03-12"
+        },
+        {
+          "title": "Taya: $5 million raised for AI jewelry designed to capture personal thoughts",
+          "url": "https://pulse2.com/taya-5-million-seed-funding/",
+          "publisher": "Pulse 2.0",
+          "date": "2026-03-11"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Taya FAQ: press-to-record, $89 deposit, ships fall 2026 — checked November 6, 2026",
+          "url": "https://tayanecklace.com/faq",
+          "publisher": "Taya",
+          "date": "2026-11-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "omi",

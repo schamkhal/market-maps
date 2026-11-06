@@ -60,5 +60,13 @@
     "light": "https://cdn.prod.website-files.com/688ce18b1758f3ea44331657/68c4441cb725b9101c12ffb0_webclip.png",
     "file": "sandbar.png",
     "fetched": "2026-11-05"
+  },
+  "taya": {
+    "page": "https://tayanecklace.com",
+    "light": "https://framerusercontent.com/images/cU48INpWCREXX8U8LZyurzGWjN8.png",
+    "file": "taya.png",
+    "dark": "https://framerusercontent.com/images/Db8hHTxtKKkCG4Y0qr8ug0SI.png",
+    "darkFile": "taya-dark.png",
+    "fetched": "2026-11-06"
   }
 }
