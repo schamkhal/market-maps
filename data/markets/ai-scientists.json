@@ -307,18 +307,24 @@
         "series": "Series A",
         "amountUsd": 52000000,
         "postMoneyUsd": null,
-        "date": "2026-02-23",
+        "date": "2025-12-11",
         "leads": [
           "Human Capital"
         ],
         "otherInvestors": [
-          "Lux Capital",
+          "NFDG",
+          "Catalio Capital Management",
+          "FDVC Management",
           "Menlo Ventures",
-          "Cataglio"
+          "Fusion Fund",
+          "Seven Seven Six",
+          "Lux Capital",
+          "Neo",
+          "Carbon Silicon Ventures"
         ],
         "confidence": "reported",
         "postMoneyConfidence": "undisclosed",
-        "note": "One list dates the round to December 2025. Valuation not disclosed.",
+        "note": "The $52M Series A was publicly reported; its December 11, 2025 date, the investor list and the $63M total funding were entered manually from a source that is not public. Some participants were not named. Valuation not disclosed.",
         "source": {
           "url": "https://www.tbpndigest.com/story/2026-02-23/medra-raises-52m-series-a-to-build-autonomous-ai-scientists-that-run-lab-experiments-at-scale",
           "publisher": "TBPN Digest",
@@ -326,7 +332,8 @@
         }
       },
       "metrics": {
-        "totalRaisedUsd": null
+        "totalRaisedUsd": 63000000,
+        "totalRaisedConfidence": "manual"
       },
       "news": [
         {
@@ -337,7 +344,11 @@
         }
       ],
       "checks": [],
-      "locked": [],
+      "locked": [
+        "lastRound.date",
+        "lastRound.otherInvestors",
+        "metrics.totalRaisedUsd"
+      ],
       "lastVerified": "2026-11-05"
     },
     {
@@ -440,7 +451,7 @@
         }
       ],
       "parent": null,
-      "traction": "Reported in September 2026 to have raised more than £100M from investors, and secured about £22M in Scottish and UK government grants to triple its Glasgow workforce to about 450.",
+      "traction": "Secured about £22M in Scottish and UK government grants in September 2026 to triple its Glasgow workforce to about 450.",
       "axes": {
         "autonomy": {
           "score": 62,
@@ -458,17 +469,18 @@
       "lastRound": {
         "series": "Undisclosed",
         "amountUsd": null,
-        "postMoneyUsd": null,
+        "postMoneyUsd": 145730000,
         "date": null,
         "leads": [],
         "otherInvestors": [],
         "confidence": "undisclosed",
-        "postMoneyConfidence": null,
-        "note": "Total private funding is reported only as \"more than £100M\"; round details are not public.",
+        "postMoneyConfidence": "manual",
+        "note": "The $145.73M post-money valuation and the $120.65M total funding were entered manually from a source that is not public. Round stage, date and investors are not public.",
         "source": null
       },
       "metrics": {
-        "totalRaisedUsd": null
+        "totalRaisedUsd": 120650000,
+        "totalRaisedConfidence": "manual"
       },
       "news": [],
       "checks": [
@@ -479,7 +491,10 @@
           "date": "2026-11-05"
         }
       ],
-      "locked": [],
+      "locked": [
+        "lastRound.postMoneyUsd",
+        "metrics.totalRaisedUsd"
+      ],
       "lastVerified": "2026-11-05"
     },
     {

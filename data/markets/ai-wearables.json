@@ -149,7 +149,7 @@
       "lastRound": {
         "series": "Venture round",
         "amountUsd": 10000000,
-        "postMoneyUsd": null,
+        "postMoneyUsd": 100000000,
         "date": "2026-10-08",
         "leads": [
           "Vine Ventures"
@@ -161,8 +161,8 @@
           "Eight Sleep"
         ],
         "confidence": "reported",
-        "postMoneyConfidence": "undisclosed",
-        "note": "Stage, valuation and terms were not disclosed.",
+        "postMoneyConfidence": "manual",
+        "note": "The $100M post-money valuation ($10M at $90M pre-money) was entered manually from a source that is not public. The $10M round led by Vine Ventures was reported by Dealroom on October 8, 2026; its stage was not disclosed.",
         "source": {
           "url": "https://dealroom.co/news/160991-cal-ai-teen-founder-raises-10m-for-new-ai-assistant-persona/",
           "publisher": "Dealroom",
@@ -193,7 +193,10 @@
         }
       ],
       "checks": [],
-      "locked": [],
+      "locked": [
+        "lastRound.amountUsd",
+        "lastRound.postMoneyUsd"
+      ],
       "lastVerified": "2026-11-05"
     },
     {
