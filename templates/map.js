@@ -66,11 +66,11 @@ function initialize() {
   const stats = heroStats(DATA, SITE.asOf);
   $('#marketStats').innerHTML = [
     [stats.tracked, 'products tracked'],
-    [money(stats.raisedThisYear), `raised in ${stats.year}`],
+    [money(stats.raisedThisYear), `in latest rounds announced in ${stats.year}`],
     [stats.recentRounds, 'rounds in the last 90 days'],
     [stats.platforms, 'big-platform products'],
   ].map(([value, label]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('');
-  $('#statsNote').textContent = `${stats.year} total sums the latest round of ${stats.roundsThisYear} companies that raised this year; earlier rounds are not included.`;
+  $('#statsNote').textContent = `Adds up each company's most recent round when it was announced in ${stats.year} (${stats.roundsThisYear} ${stats.roundsThisYear === 1 ? 'company' : 'companies'}). It is not all money raised this year: a company's earlier ${stats.year} rounds, and rounds whose size was not disclosed, are left out.`;
   document.querySelectorAll('[data-home]').forEach(link => link.href = SITE.home);
   if (SITE.maps?.length > 1) {
     $('#mapSwitch').hidden = false;
@@ -96,6 +96,7 @@ function initialize() {
   }).join('');
   $('#scopeDetails').innerHTML = `<p>${esc(SITE.scope)}</p><ul>${SITE.inclusion.map(item => `<li>${esc(item)}</li>`).join('')}</ul>${SITE.exclusions.length ? `<p>Outside the target scope: ${esc(SITE.exclusions.join('; '))}.</p>` : ''}`;
   renderExclusions();
+  renderScoreLog();
 
   $('#categoryFilters').addEventListener('click', event => {
     const button = event.target.closest('[data-category]');
@@ -229,6 +230,17 @@ function trackSections() {
   update();
 }
 
+// Newest first; each change names the company, the axis and the reason.
+function renderScoreLog() {
+  const log = SITE.scoreLog || [];
+  if (!log.length) return;
+  $('#scoreLogPanel').hidden = false;
+  $('#scoreLogDetails').innerHTML = `<p>Every change to a published score is recorded here with its reason.</p>`
+    + [...log].reverse().map(entry => `<div class="score-log-entry"><p><strong>${esc(date(entry.date))}</strong> · ${esc(entry.note)}</p>`
+      + (entry.changes.length ? `<ul class="score-log">${entry.changes.map(ch => `<li><strong>${esc(ch.name)}</strong> · ${esc(AXIS_NAMES[ch.axis] || ch.axis)} ${ch.from} → ${ch.to}<span>${esc(ch.why)}</span></li>`).join('')}</ul>` : '')
+      + `</div>`).join('');
+}
+
 function renderExclusions() {
   const judged = SITE.judgedExcluded || [], regional = SITE.excludedNonUS || [];
   if (!judged.length && !regional.length) return;
@@ -299,8 +311,9 @@ function renderMap(rows) {
     x: x(company[xKey]), y: y(company[yKey]), r: markRadius(company, state.size, max, maxRadius),
     dot: bubbleRadius(company, state.size, max, maxRadius),
   }));
+  separateTies(nodes);
   const ticks = compact ? [0, 50, 100] : [0, 25, 50, 75, 100];
-  let grid = `<rect class="region" x="${x(50)}" y="${m.t}" width="${x(100) - x(50)}" height="${y(50) - m.t}"/>`;
+  let grid = '';
   for (const value of ticks) {
     grid += `<line class="grid-line ${value === 50 ? 'mid-line' : ''}" x1="${x(value)}" y1="${m.t}" x2="${x(value)}" y2="${H - m.b}"/><line class="grid-line ${value === 50 ? 'mid-line' : ''}" x1="${m.l}" y1="${y(value)}" x2="${W - m.r}" y2="${y(value)}"/><text class="tick" x="${x(value)}" y="${H - m.b + 16}" text-anchor="middle">${value}</text><text class="tick" x="${m.l - (compact ? 8 : 13)}" y="${y(value) + 3}" text-anchor="end">${value}</text>`;
   }

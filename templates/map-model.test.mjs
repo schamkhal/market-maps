@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { CATEGORIES, configureCategories, configureAxes, AXES, AXIS_NAMES, bubbleRadius, legendReferences, MIN_RADIUS, MAX_RADIUS, UNDISCLOSED_RADIUS, LOG_FLOOR, valueLabel, valueConfidence, raisedConfidence, tooltipLines, readState, stateQuery, configureDefaults, filterCompanies, sortCompanies, researchArticles, money, initials, labelFor, heroStats, safeUrl, rubricSteps, isCaveat, markRadius, RING_GAP } from './map-model.mjs';
+import { CATEGORIES, configureCategories, configureAxes, AXES, AXIS_NAMES, bubbleRadius, legendReferences, MIN_RADIUS, MAX_RADIUS, UNDISCLOSED_RADIUS, LOG_FLOOR, valueLabel, valueConfidence, raisedConfidence, tooltipLines, readState, stateQuery, configureDefaults, filterCompanies, sortCompanies, researchArticles, money, initials, labelFor, heroStats, safeUrl, rubricSteps, isCaveat, markRadius, RING_GAP, separateTies } from './map-model.mjs';
 
 // The same categories the dataset declares, so tests read like the live map.
 const dataset = JSON.parse(fs.readFileSync(new URL('../data/markets/personal-ai-agents.json', import.meta.url), 'utf8'));
@@ -246,4 +246,24 @@ test('an acquired company says what its figure is, and its ring takes room on th
   assert.deepEqual(tooltipLines(poke), ['Personal assistants · Acquired', '$300M before acquisition']);
   assert.equal(markRadius(poke, 'valuation', 1e10), bubbleRadius(poke, 'valuation', 1e10) + RING_GAP + 1);
   assert.equal(markRadius({ ...poke, cls: 'independent' }, 'valuation', 1e10), bubbleRadius(poke, 'valuation', 1e10));
+});
+
+test('companies with identical scores are drawn side by side, never one hidden under the other', () => {
+  const nodes = [
+    { id: 'b', x: 100, y: 200, r: 6 }, { id: 'a', x: 100, y: 200, r: 9 },
+    { id: 'c', x: 300, y: 120, r: 5 },
+  ];
+  separateTies(nodes);
+  const [b, a, c] = nodes;
+  // The lone mark does not move.
+  assert.deepEqual([c.x, c.y], [300, 120]);
+  // The tied pair sits level, either side of the shared point, far enough apart
+  // that the larger mark (plus a pixel) clears the other.
+  assert.equal(a.y, 200); assert.equal(b.y, 200);
+  assert.equal(a.x, 90); assert.equal(b.x, 110);
+  assert.ok(Math.hypot(a.x - b.x, a.y - b.y) >= a.r + b.r);
+  // Three tied marks spread round a circle; every pair clears.
+  const three = [0, 1, 2].map(i => ({ id: 'n' + i, x: 50, y: 50, r: 5 }));
+  separateTies(three);
+  for (let i = 0; i < 3; i++) for (let j = i + 1; j < 3; j++) assert.ok(Math.hypot(three[i].x - three[j].x, three[i].y - three[j].y) >= 10);
 });

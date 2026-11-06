@@ -49,6 +49,12 @@
     "file": "plaud.jpg",
     "fetched": "2026-11-05"
   },
+  "qwen-glasses": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/55/ad/76/55ad7608-c6a6-8974-9690-e0191509ac8d/AppIconDev-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
+    "file": "qwen-glasses.jpg",
+    "fetched": "2026-11-06"
+  },
   "rokid": {
     "page": "https://is1-ssl.mzstatic.com",
     "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/98/d0/9d/98d09d7c-2c6b-4349-521a-9130d9c02f7f/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
@@ -67,6 +73,12 @@
     "file": "taya.png",
     "dark": "https://framerusercontent.com/images/Db8hHTxtKKkCG4Y0qr8ug0SI.png",
     "darkFile": "taya-dark.png",
+    "fetched": "2026-11-06"
+  },
+  "xiaomi-ai-glasses": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/85/1d/e9/851de906-2d10-48fc-483d-593e4c3526b1/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "file": "xiaomi-ai-glasses.jpg",
     "fetched": "2026-11-06"
   }
 }

@@ -1,17 +1,16 @@
 # Market Maps
 
-Public, sourced, agent-refreshed VC market maps. Two maps so far: **Personal AI Agents (USA)**, US companies building agents that act on your behalf across your personal life, and **World Models (Global)**, companies worldwide building AI that generates worlds and predicts how they respond to actions. The site is built for up to ten.
+Public, sourced VC market maps, refreshed by hand. Six maps so far: **Personal AI Agents (USA)**, **World Models**, **Agentic Commerce**, **Robot Training Data**, **AI Wearables** and **AI Scientists**. The site is built for up to ten.
 
 The design rule the whole repo enforces: **every figure carries its source, or it is explicitly marked as having none.** A market map nobody can check is a screenshot.
 
 ```
 npm install
 npm run validate     # schema + editorial rules
-npm test             # agent guardrails, rules, build, labels, admin (no API key needed)
+npm test             # rules, build, labels, admin
 npm run build        # → dist/
 npm run preview      # → http://127.0.0.1:5173  see the whole site locally
 npm run admin        # → http://127.0.0.1:4321  edit data by hand
-npm run refresh:dry  # agent proposes, writes nothing
 npm run logos        # fetch logos for companies that lack one
 npm run previews     # link-preview images and the site icon (on a Mac)
 ```
@@ -201,8 +200,7 @@ data/markets/*.json   ← the only source of truth
       ├── scripts/preview.mjs    local server, see it before you push
       ├── scripts/admin.mjs      local form editor, writes back to the JSON
       ├── scripts/fetch-logos.mjs  company logos → data/logos/<market>/
-      ├── scripts/previews.mjs   link-preview images → data/previews/, icons → data/brand/
-      └── agent/refresh.mjs      weekly: proposes changes as a PR you approve
+      └── scripts/previews.mjs   link-preview images → data/previews/, icons → data/brand/
 
 scripts/lib/   the logic those commands share, each with its own tests
       ├── validate-market.mjs    every editorial rule, used by validate, admin and tests
@@ -218,7 +216,7 @@ Two details carry the design:
 
 **`source` on every figure**, not one citation per company. This is what lets a page say "as of Aug 2026, per TechCrunch" and mean it. The round has `source`; the valuation may carry its own `postMoneySource` (falling back to the round's), and total funding has `metrics.totalRaisedSource` with `metrics.totalRaisedConfidence`. A total with no recorded provenance is shown with "source not recorded" rather than borrowing a citation. Only `http(s)` links are accepted anywhere.
 
-**`locked`** is your manual override. Add a dot-path — `"locked": ["lastRound.postMoneyUsd"]` — and the weekly agent is forbidden from touching it. Without this, a number you typed in by hand silently disappears on the next Monday run. The admin editor's padlock buttons write this array; `agent/refresh.test.mjs` proves the agent honors it.
+**`locked`** is your manual override. Add a dot-path — `"locked": ["lastRound.postMoneyUsd"]` — and a refresh must leave that field alone; any change to it goes to you first. The admin editor's padlock buttons write this array, and rule 5 checks that every path resolves.
 
 `confidence` is one of `reported | estimated | rumored | manual | undisclosed`. In the admin editor, a valuation or funding total you type without attaching a new source is marked `manual` and locked automatically, so the UI never implies a citation that doesn't exist. The editor runs the same rules as `npm run validate` and refuses to save a change that breaks one (a manual valuation still needs its note, for example).
 
@@ -246,7 +244,7 @@ of them), `allDescription` (the line under the map title when every company is
 shown), `featured` (the map that links from before the hub still open),
 `judgedExcluded` and `excludedNonUS` (both shown under Methodology).
 
-A `manual` figure was entered by hand from a source that is not public. The map, the list and the tooltips show it like any other figure; the company profile says *"entered manually · source not public"* and the note explains it, instead of citing the round's article. Manual figures stay locked, so the refresh agent never replaces them.
+A `manual` figure was entered by hand from a source that is not public. The map, the list and the tooltips show it like any other figure; the company profile says *"entered manually · source not public"* and the note explains it, instead of citing the round's article. Manual figures stay locked, so a refresh never replaces them.
 
 ## Validation rules
 
@@ -258,11 +256,11 @@ A `manual` figure was entered by hand from a source that is not public. The map,
 | 2 | A stated post-money must carry a source, unless it is openly hand-entered (then rules 4 and 4b apply) |
 | 3 | `platform` companies must not carry a valuation — a parent's market cap is not a bet on one product |
 | 4 | An `estimated` or `manual` valuation must carry a note explaining the basis |
-| 4b | A `manual` valuation must be locked, or the agent will overwrite it |
+| 4b | A `manual` valuation must be locked, so a refresh cannot overwrite it |
 | 5 | Every `locked` path must resolve to a real field |
 | 6 | No date may be later than `market.asOf`, including verification checks |
 | 7 | A platform must carry a `parent` description |
-| 8 | *(warning)* The autonomy score should carry a rationale |
+| 8 | Every score carries a rationale, shown under it on the profile |
 | 9 | Every `category` must be one of `market.categories` |
 | 10 | A news title that reads like a verification check (“… checked September 26, 2026”) belongs in `checks` |
 | 11 | *(warning)* A platform should carry a `brand` for its map label |
@@ -271,58 +269,65 @@ A `manual` figure was entered by hand from a source that is not public. The map,
 | 14 | An independent's total funding cannot be smaller than its last round |
 | 15 | A reported, estimated or rumored total needs `totalRaisedSource`; a manual total must be locked |
 | 16 | An acquisition price (`postMoneyBasis: "acquisition"`) must state the figure and carry a note saying whose deal it is and whether it has closed |
+| 17 | `lastVerified` must be the date of the newest entry in `checks`, or null when there are none |
+| 18 | Every score change is logged in `market.scoreLog`: entries are dated on or before `asOf`, name a real axis, change something, and the newest entry for each score matches the score shown |
+| — | Scores are whole numbers from 0 to 100 in steps of 5 (schema) |
 | — | A platform carries no total funding (a parent's capital is not the product's); only one market may be `featured`; market ids are unique |
-| — | *(warning)* Not verified in 60 days, or verified more than 7 days before the `asOf` snapshot the site displays |
+| — | *(warning)* Never verified, not verified in 60 days, or verified more than 7 days before the `asOf` snapshot the site displays |
 | — | *(warning)* Total-funding figures with no recorded source, listed in one line |
 
 Rule 4 caught a real gap on its first run: Superhuman's $825M was marked estimated with nothing saying it was a pre-acquisition primary round rather than an exit price.
 
-## The weekly agent
+## Refreshing a map
 
-One GitHub Action, Mondays 06:00 ET, covering every map in one pull request (set `MARKET_FILE` to refresh just one). Five stages; only the first two call a model, each with a narrow job — cheaper and far easier to debug than one long loop.
+There is no scheduled agent. A refresh happens when you ask for one, about weekly,
+and nothing is published until you approve the push to `main`.
 
-| Stage | Model | Job |
-|-------|-------|-----|
-| 1 Discover | Haiku 4.5 | Poll RSS, company blogs and SEC EDGAR; triage headlines |
-| 2 Extract | Sonnet 5 | Read articles → typed claims with sources |
-| 3 Reconcile | — | Diff against live data, apply the guardrails below |
-| 4 Propose | — | Write JSON + a human-readable PR body |
-| 5 Publish | you | Merge; CI validates, builds and deploys |
+A refresh, for each company on a map:
 
-**Never Opus in this loop** — a job that is mostly reading and filling a schema does not need it.
+1. Reads first-party sources first: the company's site, blog and newsroom, and for
+   platform products the parent's product blog.
+2. Looks for news from the last 90 days and for new launches, and confirms any
+   aggregator claim (Dealroom, Crunchbase and similar) against the company or
+   tier-1 reporting before it changes a figure.
+3. Records what it looked at as a dated entry in `checks`. `lastVerified` is the
+   newest check's date (rule 17), so a "last verified" date always points at a page
+   someone actually read. A site that cannot be reached keeps its older date, and
+   `npm run validate` warns about it.
+4. Leaves locked fields alone and reports any conflict with them.
+5. Moves `market.asOf` to the refresh date and runs `npm run validate` and
+   `npm test`.
 
-Cost control: URLs come from free RSS, company blogs and EDGAR rather than paid web search. Two further levers are not active yet. The system blocks are marked for prompt caching, but caching only engages once a block passes the model's minimum cacheable length (1,024 tokens on Sonnet 5, 4,096 on Haiku 4.5), and today's prompts are shorter. The Batch API (50% off, and a weekly job can wait) is not wired in. The earlier **$12–15/month** projection assumed both discounts and has not been measured.
+## Editorial policy
 
-### Guardrails
+**Who is included.** An independent company qualifies with disclosed outside
+funding or material traction: reported revenue, users or units shipped. Products
+inside larger companies are shown as platform products and qualify on the map's
+criteria alone. Small products that have not raised money are left off. Each map
+lists the candidates it judged and excluded, with the criterion each one fails.
 
-Tested offline in `agent/refresh.test.mjs`:
+**Round dates.** A round is dated the day it was announced. Where it closed on a
+different day, or was never announced, the profile note says so and gives the
+deal date.
 
-- Locked fields are never overwritten, including via a locked parent path
-- A source older than the one behind the figure is rejected
-- Platforms never take round data or funding
-- Two sources that disagree are **flagged and neither value is applied**; agreeing sources become one change citing the newest
-- Trade press (tier 2) may fill a blank but never replaces a figure; aggregators (tier 3) are discovery only
-- A new series or date is a new round: the previous round's figures are cleared, never re-cited, and the PR lists what was cleared; if any are locked, the company escalates
-- Updating the round never re-cites the valuation: it keeps its own citation and confidence
-- A funding total takes its own citation; a traction update only adds coverage
-- A tier-1 report that matches a rumored, estimated or unsourced figure upgrades its label and citation, and a new round keeps any figure it restates rather than clearing it
-- More than five field changes to one company escalates instead of applying
-- Applying changes moves `market.asOf` to the run date, so new stories never fail validation for post-dating the snapshot
-- Coverage only grows (older stories are never dropped), and each entry keeps the article's headline
-- Paywalled outlets are read from the feed summary only; SEC Form D hits go to the PR for a human to confirm, not to the extractor
-- The agent can never delete a company
+**Scores.** Every score is set in steps of 5 against the rubric anchors shown on the
+map (0, 25, 50, 75, 100), with its reasoning shown under it. Scores are never moved
+to tidy the chart: companies with identical scores are drawn side by side around
+their shared point, and crowded labels are the label placer's problem. Every change
+to a published score is logged in `market.scoreLog` with its reason (rule 18), and
+the map shows the log under Methodology.
 
-**Run the first two weeks with `--dry-run`.** Read the PRs, close them, tune the prompts, and only then let one merge.
+**Figures entered by hand.** A figure with no public source is marked `manual`,
+locked and explained in a note. The map shows it as a plain number; only the
+profile says it was entered manually.
 
 ## Setup
 
 1. Push this repo to GitHub. Public repos get unlimited Actions minutes; a private repo works too, since these jobs are small.
-2. Add secret `ANTHROPIC_API_KEY`, and put a real contact address in `agent/sources.json` (SEC EDGAR expects one).
-3. For deploys, add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, plus repo variable `SITE_URL`.
-4. Create a Cloudflare Pages project named `market-maps`. Free tier, unlimited bandwidth.
-5. Run the refresh manually first: Actions → Weekly refresh → Run workflow, with **dry run** checked.
+2. For deploys, add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, plus repo variable `SITE_URL`.
+3. Create a Cloudflare Pages project named `market-maps`. Free tier, unlimited bandwidth.
 
-Until its secrets exist, the Deploy or Weekly refresh workflow is skipped with a notice rather than failing.
+Until its secrets exist, the Deploy workflow is skipped with a notice rather than failing.
 
 **Or let Cloudflare Pages build the site itself** (Workers & Pages → Create → connect this repository): framework preset *None*, build command `npm run build`, build output directory `dist`, environment variable `SITE_URL` set to the site's address. The Node version comes from `.node-version`. Leave the Cloudflare secrets out of GitHub so the Actions deploy stays skipped and the site is not deployed twice.
 
@@ -385,18 +390,106 @@ and Rhoda AI, Tesla, AMI Labs, Wayve and Veeda AI (the model is the product: AMI
 and Veeda AI have not released a model yet; Rhoda AI's, Tesla's and Wayve's world
 models serve their own robots and driving software).
 
+## Scope of map 03: Agentic Commerce
+
+Infrastructure built for AI agents to pay and buy. A company is included if it
+*lets AI agents pay or buy* (moves money, issues credentials or completes checkout
+for an agent), is *built for agents* (the product exists because software, not a
+person, is the buyer), and is *offered to others*.
+
+Axes: **spending autonomy** (hands off to a person to pay → agents pay one another
+with no person in the loop), **reach** (one merchant → any merchant on any payment
+method) and, as the alternative vertical axis, **availability** (announced →
+live at scale). Focus groups: payments and wallets, and checkout and catalog.
+
+25 entries, 19 of them US-based. The edition also covers Shopify (Canada), Alipay
+(China), Razorpay (India), Adyen (Netherlands), SolvaPay (Sweden) and Nevermined
+(Switzerland). Judged and excluded: Basis Theory, Lithic, Marqeta, Highnote,
+Forter, Checkout.com and Paymove (built for agents), Payman (offered to others),
+ShopAgentic, Azoma and Klarna (lets agents pay or buy).
+
+## Scope of map 04: Robot Training Data
+
+Companies whose product is training data for robot foundation models. A company is
+included if it *produces training data for robots* (robot runs, recorded human work
+or simulation), *the data is the product* (sold, licensed or released, not only used
+for its own robots), and it is *built for physical AI*.
+
+Axes: **real-world grounding** (generated → teleoperated runs on real robots),
+**breadth** (one robot and task → many embodiments and settings worldwide) and
+**openness** (contract-only → openly licensed). Focus groups: human capture, robot
+teleoperation and simulation.
+
+13 entries, 9 US-based; the edition also covers Config (South Korea), microagi
+(Germany), Ropedia (Singapore) and Lightwheel (China). Judged and excluded: Sunday
+Robotics, Tacta Systems, Proception, Avatar Robotics and Genesis AI (the data is
+the product), and Encord (produces training data).
+
+## Scope of map 05: AI Wearables
+
+Body-worn devices whose main job is a personal AI. A device is included if it is
+*worn on the body*, *the AI is the point* (an assistant or memory, not a health
+tracker, display or camera with AI added), and it is *for a person's own use, on
+sale or open for preorder*.
+
+Axes: **always-on capture** (press to record → always-on audio and camera),
+**agency** (records only → runs errands and transactions) and **availability**
+(announced → mainstream retail in many countries). Focus groups: pendants, bands
+and rings, and AI glasses.
+
+13 entries, 9 US-based; the edition also covers Even Realities, Rokid, Xiaomi and
+Alibaba (China). Judged and excluded: the OpenAI and Hark devices, Limitless
+Pendant, Humane Ai Pin and Samsung's Android XR glasses (on sale or open for
+preorder), Rabbit r1 (worn on the body), Mentra (for a person's own use), XREAL and
+Legato (the AI is the point).
+
+## Scope of map 06: AI Scientists
+
+Companies building AI that conducts research itself. A company is included if its
+system *runs research steps itself* (proposes, runs and learns from experiments,
+computational or physical), is *aimed at discovery*, and is a company or product
+line rather than a one-off paper.
+
+Axes: **research autonomy** (helps with one step → runs open-ended research
+programmes on its own), **scientific range** (one assay → any science) and
+**access** (in-house only → open source). Focus groups: lab in the loop, and
+computational.
+
+14 entries, 11 US-based; the edition also covers Chemify (UK), Drylab (Singapore)
+and Sakana AI (Japan). Judged and excluded: CuspAI, Harmonic and Tetsuwan
+Scientific (runs research steps itself), FutureHouse (a company: a non-profit lab
+whose AI scientist work moved to Edison Scientific), Elicit and NeoCognition (aimed
+at discovery).
+
 ## Known gaps
 
-- **Valuations use the latest reported figure** (checked October 5, 2026). **4 of 14 non-platform companies have no valuation** (Littlebird, Martin, Ollie, folk); none has been reported. The 10 platforms are excluded by rule 3, not missing. Four valuations (Duckbill, Ohai.ai, Wajo / Fo, Lindy) and their funding totals were entered manually from a source that is not public. Lindy's $235M follows a $35M Series B in July 2021, the round reported then for Teamflow, the company its founder ran before Lindy. Poke's is its last private-round valuation, not the acquisition price.
-- Pally's $30M is company-stated, per Business Insider; Dealroom lists $19.4M for the same round, which appears to be its own estimate. The figure stays locked, so any change to it goes to a human.
-- Every funding total now carries a source or is marked as entered manually.
-- `agent/sources.json` still carries a placeholder user agent. SEC EDGAR expects a real contact address; set one before the first live run.
-- Bubble size switches between **post-money** and **total raised**. Total raised is known for all 14 non-platform companies against 10 for valuation, so it shows more of the field; valuation is the better read on how the market prices them.
-- Town is drawn at the $1B valuation Upstarts Media reported for the $90M Series B it is raising. Its map label shows just the figure; the tooltip, list and profile mark it **rumored** because the round has not been announced. Its funding total follows the same basis: $163M, also rumored, counting the $18M seed (March 2025), the $55M Series A and the $90M Series B; confirmed funding is $73M. When a tier-1 source confirms the close, the refresh agent relabels both reported with that citation.
-- Comet was last verified on 2026-09-12, more than three weeks before the snapshot date, and 12 other companies were not re-checked in the October 5 refresh; `npm run validate` lists each until it is.
-- Axis scores are editorial judgments against a published rubric. Every score carries its own rationale, shown right under it on the profile; `npm run validate` fails a score without one. Argue with them via the correction link.
-- **Map 02:** World Labs is drawn at $8.2B, the value of AMD's all-stock agreement to buy it (announced September 28, 2026, not yet closed), labelled as an acquisition price and locked against the refresh agent. It did not disclose a valuation for its $1B February round, which Bloomberg reported was discussed at about $5B. General Intuition's September 2026 round has no reported series name. Moonlake AI, Overworld and SpAItial have no reported valuation. Decart's, World Labs' and General Intuition's funding totals add up the reported rounds; GigaAI's counts only its three 2026 rounds (CNY3.5B, $518M), so its true total is higher. Each profile's note says which.
-- Map 02's platform entries (Genie 3, Cosmos, Muse, V-JEPA 2) are research models from public companies. Microsoft has published nothing new on Muse since April 2025, so it is the entry most likely to go stale.
+As of the November 6, 2026 refresh.
+
+- **Figures entered by hand.** Ten valuations across four maps have no public source
+  (five on Personal AI Agents, three on AI Scientists, one each on AI Wearables and
+  World Models). They are marked `manual` and locked, and each profile says so.
+- **Old or borrowed figures still size some bubbles.** Lindy's $235M valuation
+  follows a July 2021 Series B reported for Teamflow, its founder's previous
+  company; Duckbill's and Rye's latest public rounds are from 2023 and 2022.
+  Bootstrapped companies such as Plaud have no figure and are drawn hollow.
+  World Labs is drawn at the $8.2B price of AMD's agreement to buy it, beside
+  companies drawn at round valuations.
+- **Figures that disagree with the company's own.** Chemify says it has secured more
+  than £110M (about $150M) including grants; the manual total is $120.65M. Prava's
+  seed may be a non-dilutive grant. Both are left as entered.
+- **Genspark** was last verified on October 6, 2026: its site refused connections
+  during the November refresh.
+- **AI Scientists autonomy** still sits in two clusters, near 50 (computational
+  research cycles) and near 75 (physical lab loops). That reflects the rubric's
+  anchors and where the companies are, not a scoring artefact.
+- **Non-US coverage** was researched for Agentic Commerce in November 2026, and
+  Xiaomi's and Alibaba's glasses joined AI Wearables then. The other maps list what
+  earlier editions found, so they may miss non-US players.
+- Map 02's platform research models (Cosmos, Muse, V-JEPA 2) are updated less
+  often than the startups. Microsoft has published nothing new on Muse since
+  April 2025.
+- Axis scores are editorial judgments against a published rubric. Argue with them
+  through the correction link.
 
 ---
 

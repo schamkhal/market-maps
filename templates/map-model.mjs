@@ -154,6 +154,34 @@ export const markRadius = (company, size, maximum, maxRadius = MAX_RADIUS) =>
 
 // The legend's reference sizes: one per tenfold step, from the floor up to
 // the dataset's largest figure.
+// Companies with identical scores land on the same spot, where the smaller
+// mark would vanish under the larger. Tied marks are spread evenly around the
+// shared point, just far enough apart to tell apart. Scores never change to
+// fix the layout; this is the only adjustment, and it is a few pixels.
+export function separateTies(nodes) {
+  const groups = new Map();
+  for (const node of nodes) {
+    const key = `${Math.round(node.x)}|${Math.round(node.y)}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(node);
+  }
+  for (const group of groups.values()) {
+    if (group.length < 2) continue;
+    group.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+    const cx = group[0].x, cy = group[0].y;
+    // Neighbours on a circle of radius ρ sit 2ρ·sin(π/k) apart; that gap must
+    // clear the largest mark (ring included) on both sides.
+    const reach = Math.max(...group.map(n => n.r)) + 1;
+    const spread = reach / Math.sin(Math.PI / group.length);
+    group.forEach((node, i) => {
+      const angle = Math.PI + 2 * Math.PI * i / group.length;
+      node.x = +(cx + spread * Math.cos(angle)).toFixed(2);
+      node.y = +(cy + spread * Math.sin(angle)).toFixed(2);
+    });
+  }
+  return nodes;
+}
+
 export function legendReferences(maximum) {
   if (!(maximum > 0)) return [];
   const refs = [];

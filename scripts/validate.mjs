@@ -5,8 +5,8 @@
  * The rules live in scripts/lib/validate-market.mjs so the admin editor and
  * the tests enforce exactly the same thing.
  *
- * This runs in CI on every pull request, so a malformed agent PR fails
- * before you ever open it.
+ * This runs in CI on every push and pull request, so a malformed data file
+ * fails before it deploys.
  *
  *   node scripts/validate.mjs
  */

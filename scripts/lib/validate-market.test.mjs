@@ -15,7 +15,7 @@ const company = (over = {}) => ({
     series: 'Seed', amountUsd: 5e6, postMoneyUsd: 2e7, date: '2026-01-01', leads: [], otherInvestors: [],
     confidence: 'reported', source: { url: 'https://news.test/acme', publisher: 'Wire', date: '2026-01-01' },
   },
-  metrics: { totalRaisedUsd: 5e6 }, news: [], checks: [], locked: [], lastVerified: '2026-09-20',
+  metrics: { totalRaisedUsd: 5e6 }, news: [], checks: [{ title: 'Acme site', url: 'https://acme.test/', publisher: 'Acme', date: '2026-09-20' }], locked: [], lastVerified: '2026-09-20',
   ...over,
 });
 const doc = (companies = [company()], market = {}) => ({
@@ -100,9 +100,42 @@ test('an acquisition price must be stated and explained (rule 16)', () => {
   assert.match(errorsOf(doc([deal({ postMoneyUsd: null, note: 'AMD deal.' })])).join('\n'), /no valuation is stated/);
   assert.deepEqual(errorsOf(doc([deal({ note: 'AMD agreed to buy it; not yet closed.' })])), []);
 });
+test('scores are set in steps of 5', () => {
+  const fine = company({ axes: { ...company().axes, breadth: { score: 52, rationale: 'Mail and calendar.' } } });
+  assert.match(errorsOf(doc([fine])).join('\n'), /must be multiple of 5/);
+});
 test('every score carries its reasoning (rule 8)', () => {
   const bare = company({ axes: { ...company().axes, breadth: { score: 50 } } });
   assert.match(errorsOf(doc([bare])).join('\n'), /no rationale on the breadth score/);
   const blank = company({ axes: { ...company().axes, autonomy: { score: 50, rationale: '  ' } } });
   assert.match(errorsOf(doc([blank])).join('\n'), /no rationale on the autonomy score/);
+});
+
+test('"last verified" is the date of the newest recorded check, never a bare claim (rule 17)', () => {
+  const check = date => ({ title: 'Acme newsroom', url: 'https://acme.test/news', publisher: 'Acme', date });
+  const errs = c => validateMarket(doc([company(c)])).errors.map(e => e.msg).join(' | ');
+  // A date with nothing behind it fails.
+  assert.match(errs({ checks: [], lastVerified: '2026-09-20' }), /no recorded check behind it/);
+  // A date later or earlier than the newest check fails.
+  assert.match(errs({ checks: [check('2026-09-01')], lastVerified: '2026-09-20' }), /must be the date of the latest check, 2026-09-01/);
+  assert.match(errs({ checks: [check('2026-09-01'), check('2026-09-25')], lastVerified: '2026-09-01' }), /latest check, 2026-09-25/);
+  // The newest check's date passes; no checks and null passes, with a warning.
+  assert.equal(errs({ checks: [check('2026-09-01'), check('2026-09-25')], lastVerified: '2026-09-25' }), '');
+  const none = validateMarket(doc([company({ checks: [], lastVerified: null })]));
+  assert.equal(none.errors.length, 0);
+  assert.ok(none.warnings.some(w => /never verified/.test(w.msg)));
+});
+
+test('every score change is logged, and the log agrees with the scores shown (rule 18)', () => {
+  const log = changes => ({ scoreLog: [{ date: '2026-09-20', note: 'Recalibrated', changes }] });
+  const change = over => ({ id: 'acme', axis: 'autonomy', from: 55, to: 50, why: 'Acts only on approval.', ...over });
+  // The log matches today's score: no error.
+  assert.deepEqual(errorsOf(doc([company()], log([change()]))), []);
+  // A score that moved again without a new entry fails.
+  assert.match(errorsOf(doc([company({ axes: { ...company().axes, autonomy: { score: 45, rationale: 'x' } } })], log([change()]))).join(' | '), /latest entry \(2026-09-20\) says 50; log the change/);
+  // An entry for an axis the map does not have, or one that changes nothing, fails.
+  assert.match(errorsOf(doc([company()], log([change(), change({ axis: 'speed', from: 1, to: 2 })]))).join(' | '), /axis "speed"/);
+  assert.match(errorsOf(doc([company()], log([change({ from: 50, to: 50 })]))).join(' | '), /records no change/);
+  // An entry dated after the snapshot fails.
+  assert.match(errorsOf(doc([company()], { scoreLog: [{ date: '2026-12-01', note: 'Later', changes: [change()] }] })).join(' | '), /after market.asOf/);
 });

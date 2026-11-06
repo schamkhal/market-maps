@@ -116,13 +116,14 @@ export function applyEdits(doc, { id, values = {}, locked }, { today = new Date(
     }
     if (get(c, confidence) === 'manual' && !lockSet.has(lockPath)) {
       lockSet.add(lockPath);
-      notes.push(`${label} locked so the weekly agent cannot overwrite it`);
+      notes.push(`${label} locked so a refresh cannot overwrite it`);
     }
   };
   vouch('lastRound.postMoneyUsd', 'lastRound.postMoneyConfidence', ['lastRound.source.url', 'lastRound.postMoneySource.url'], 'lastRound.postMoneyUsd', 'Valuation');
   vouch('metrics.totalRaisedUsd', 'metrics.totalRaisedConfidence', ['metrics.totalRaisedSource.url'], 'metrics.totalRaisedUsd', 'Total raised');
 
   c.locked = [...lockSet];
-  c.lastVerified = today;
+  // Saving is not verifying: the date follows the newest recorded check.
+  c.lastVerified = (c.checks ?? []).map(k => k.date).filter(Boolean).sort().pop() ?? null;
   return { company: c, notes };
 }

@@ -11,9 +11,14 @@
     "author": "Shamkhal Murtazaaliev",
     "regions": [
       "US",
-      "Canada"
+      "Canada",
+      "China",
+      "India",
+      "Netherlands",
+      "Sweden",
+      "Switzerland"
     ],
-    "scope": "Companies worldwide, judged on the same criteria; in this edition every qualifying company is US-based except Shopify (Canada). Each profile gives the headquarters.",
+    "scope": "Companies worldwide, judged on the same criteria. Most qualifying companies are US-based; this edition also covers Shopify (Canada), Alipay (China), Razorpay (India), Adyen (Netherlands), SolvaPay (Sweden) and Nevermined (Switzerland). Each profile gives the headquarters.",
     "inclusion": [
       "Lets AI agents pay or buy: moves money, issues credentials, or completes checkout for an agent",
       "Built for agents: the product exists because software, not a person, is the buyer",
@@ -55,6 +60,21 @@
         "name": "Forter",
         "fails": "built for agents",
         "why": "Merchant fraud platform with agent detection; it scores agent orders but does not move money or complete purchases"
+      },
+      {
+        "name": "Klarna",
+        "fails": "lets AI agents pay or buy",
+        "why": "Its Agentic Product Protocol (December 2025) is a product catalog for agents to search and compare; it does not complete checkout or move money"
+      },
+      {
+        "name": "Checkout.com",
+        "fails": "built for agents",
+        "why": "Supports OpenAI’s Agentic Commerce Protocol, Google’s AP2 and Mastercard Agent Pay as a processor, but has no agent product of its own"
+      },
+      {
+        "name": "Paymove",
+        "fails": "built for agents",
+        "why": "Polish QR-code payments for parking, transit and invoices (a €2.1M seed); agent payments are a later plan"
       }
     ],
     "axes": {
@@ -98,7 +118,140 @@
       }
     ],
     "defaultSize": "raised",
-    "asOf": "2026-11-05"
+    "asOf": "2026-11-06",
+    "scoreLog": [
+      {
+        "date": "2026-11-06",
+        "note": "Moved every score to steps of 5. These scores only moved to the nearest 5.",
+        "changes": [
+          {
+            "id": "natural",
+            "axis": "autonomy",
+            "from": 74,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "natural",
+            "axis": "reach",
+            "from": 58,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "catena-labs",
+            "axis": "autonomy",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "catena-labs",
+            "axis": "reach",
+            "from": 42,
+            "to": 40,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "sapiom",
+            "axis": "autonomy",
+            "from": 66,
+            "to": 65,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "sapiom",
+            "axis": "availability",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "monid",
+            "axis": "reach",
+            "from": 24,
+            "to": 25,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "crossmint",
+            "axis": "autonomy",
+            "from": 62,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "nekuda",
+            "axis": "reach",
+            "from": 32,
+            "to": 30,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "rye",
+            "axis": "reach",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "henry-labs",
+            "axis": "reach",
+            "from": 62,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "visa",
+            "axis": "reach",
+            "from": 86,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "visa",
+            "axis": "availability",
+            "from": 62,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "mastercard",
+            "axis": "reach",
+            "from": 84,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "paypal",
+            "axis": "reach",
+            "from": 74,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "google-ucp",
+            "axis": "reach",
+            "from": 58,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          }
+        ]
+      },
+      {
+        "date": "2026-11-06",
+        "note": "Recalibrated against the rubric anchors. Each of these moved because the evidence fits a different anchor, not to tidy the chart.",
+        "changes": [
+          {
+            "id": "prava",
+            "axis": "autonomy",
+            "from": 28,
+            "to": 25,
+            "why": "A person approves every purchase with a passkey: the 25 anchor exactly."
+          }
+        ]
+      }
+    ]
   },
   "companies": [
     {
@@ -134,11 +287,11 @@
       "traction": "Six products live at the Series A (July 2026), with agent-issued cards, per-call billing and credit lines on the roadmap; 17 employees at the time.",
       "axes": {
         "autonomy": {
-          "score": 74,
+          "score": 75,
           "rationale": "Agents hold their own insured balances and send, request and transfer money through the API under owner rules, rather than approving each payment."
         },
         "reach": {
-          "score": 58,
+          "score": 60,
           "rationale": "Bank transfers and payments to people and businesses through its own rails and partner bank; agent cards for merchant checkout are still on the roadmap."
         },
         "availability": {
@@ -192,9 +345,16 @@
           "date": "2026-07-21"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Natural site: $30M Series A of July 20, 2026",
+          "url": "https://www.natural.com",
+          "publisher": "Natural",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "catena-labs",
@@ -219,11 +379,11 @@
       "traction": "Filed with the OCC for a national trust bank charter alongside its May 2026 Series A, to hold customer funds and process agent payments.",
       "axes": {
         "autonomy": {
-          "score": 72,
+          "score": 70,
           "rationale": "Agents transact on their own within owner-set policies on amounts and counterparties, with an audit trail, rather than asking for approval each time."
         },
         "reach": {
-          "score": 42,
+          "score": 40,
           "rationale": "Payments to people and services in stablecoins or fiat; it is not a route into merchant checkout."
         },
         "availability": {
@@ -277,9 +437,16 @@
           "date": "2025-05-20"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Catena site: governance and banking platform for agents",
+          "url": "https://catena.com",
+          "publisher": "Catena Labs",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "sapiom",
@@ -304,7 +471,7 @@
       "traction": "Acquired Fewsats in June 2026. Company-reported: more than 270 million transactions processed and over 100,000 agent runs a day.",
       "axes": {
         "autonomy": {
-          "score": 66,
+          "score": 65,
           "rationale": "Agents pay on their own within owner rules; purchases above set limits are queued for a person to approve."
         },
         "reach": {
@@ -312,7 +479,7 @@
           "rationale": "Visa, Mastercard and American Express cards for online purchases, plus paid APIs, tools and compute through its own layer."
         },
         "availability": {
-          "score": 72,
+          "score": 70,
           "rationale": "Self-serve platform for developers, processing traffic at scale by its own account."
         }
       },
@@ -361,9 +528,16 @@
           "date": "2026-02-07"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Sapiom site: payments, card vault and issuing for agents; $50M raise",
+          "url": "https://www.sapiom.ai",
+          "publisher": "Sapiom",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "monid",
@@ -397,7 +571,7 @@
           "rationale": "Agents pay per call from a funded account as they use tools, with no person approving each payment."
         },
         "reach": {
-          "score": 24,
+          "score": 25,
           "rationale": "Limited to the tools listed in its own marketplace."
         },
         "availability": {
@@ -451,9 +625,16 @@
           "date": "2026-10-06"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Monid site: tool marketplace and per-call payments",
+          "url": "https://monid.ai",
+          "publisher": "Monid",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "kite",
@@ -471,7 +652,13 @@
       "website": "https://gokite.ai",
       "description": "Payments layer for autonomous agents built on its own blockchain. Kite Agent Passport gives each agent a verifiable identity with budgets, permissions and scope set up front, and Kite Chain settles agent payments instantly.",
       "founded": null,
-      "founders": [],
+      "founders": [
+        {
+          "name": "Chi Zhang",
+          "role": "Co-founder & CEO",
+          "linkedin": null
+        }
+      ],
       "parent": null,
       "traction": "Mainnet and Agent Passport launched on April 30, 2026, integrated with more than 90 service providers, with pilot integrations with PayPal and Shopify under way.",
       "axes": {
@@ -536,9 +723,22 @@
           "date": "2025-09-02"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Kite site: Agent Passport; no round since the 2025 Series A found",
+          "url": "https://gokite.ai",
+          "publisher": "Kite",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "PayPal newsroom: Kite Series A release names its co-founder and CEO",
+          "url": "https://newsroom.paypal-corp.com/2025-09-02-Kite-Raises-18M-in-Series-A-Funding-To-Enforce-Trust-in-the-Agentic-Web",
+          "publisher": "PayPal",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "crossmint",
@@ -551,13 +751,24 @@
       "hq": "United States",
       "website": "https://www.crossmint.com/solutions/ai-agents",
       "description": "Payments SDK that gives agents money and helps them spend it: non-custodial stablecoin wallets with programmable spending controls, agent cards that use a person's own credit or debit cards with limits and approvals, a checkout API for buying across online stores, and per-call payments over x402.",
-      "founded": null,
-      "founders": [],
+      "founded": 2022,
+      "founders": [
+        {
+          "name": "Rodrigo Fernández Touza",
+          "role": "Co-founder",
+          "linkedin": null
+        },
+        {
+          "name": "Alfonso Gómez-Jordana",
+          "role": "Co-founder",
+          "linkedin": null
+        }
+      ],
       "parent": null,
       "traction": "Its agent cards run on Visa Intelligent Commerce; earlier customers for its wider stablecoin infrastructure include Adidas and Red Bull.",
       "axes": {
         "autonomy": {
-          "score": 62,
+          "score": 60,
           "rationale": "Wallets can pay autonomously under programmable limits, while agent cards on a person's own card add per-purchase approvals."
         },
         "reach": {
@@ -603,15 +814,34 @@
       },
       "news": [
         {
+          "title": "Crossmint enables Visa card payments for AI agents and autonomous commerce",
+          "url": "https://cointelegraph.com/news/crossmint-enables-visa-card-payments-for-ai-agents-and-autonomous-commerce",
+          "publisher": "Cointelegraph",
+          "date": "2026-06-02"
+        },
+        {
           "title": "Blockchain Firm Crossmint Used by Adidas, Red Bull Raises $23.6M in Funding",
           "url": "https://www.coindesk.com/business/2025/03/18/blockchain-firm-crossmint-used-by-adidas-red-bull-raises-usd23-6m-in-funding",
           "publisher": "CoinDesk",
           "date": "2025-03-18"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Crossmint agent payments page; no round since March 2025 found",
+          "url": "https://www.crossmint.com/solutions/ai-agents",
+          "publisher": "Crossmint",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "Crossmint team page: the founders",
+          "url": "https://www.crossmint.com/team",
+          "publisher": "Crossmint",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "skyfire",
@@ -688,9 +918,16 @@
           "date": "2025-06-26"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Skyfire site: identity, payment credentials and checkout for agents",
+          "url": "https://skyfire.xyz",
+          "publisher": "Skyfire",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "prava",
@@ -720,7 +957,7 @@
       "traction": "Visa is live in the US, Southeast Asia and Australia; Mastercard and other methods are listed as coming. PCI DSS Level 2 certified.",
       "axes": {
         "autonomy": {
-          "score": 28,
+          "score": 25,
           "rationale": "A person approves every purchase with a passkey before a one-time credential is issued."
         },
         "reach": {
@@ -782,7 +1019,7 @@
           "rationale": "Helps agents act on merchant sites; spending authority stays with the site's own checkout and the shopper."
         },
         "reach": {
-          "score": 32,
+          "score": 30,
           "rationale": "Sites that adopt WebMCP tools."
         },
         "availability": {
@@ -871,7 +1108,7 @@
           "rationale": "Completes checkout for the agent; how much the agent may spend without asking is left to the app using it."
         },
         "reach": {
-          "score": 72,
+          "score": 70,
           "rationale": "Any online merchant by product URL, without merchant opt-in."
         },
         "availability": {
@@ -918,9 +1155,16 @@
           "date": "2026-03-12"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Rye site: universal checkout API, ChatGPT and OpenClaw integrations; no round since 2022 found",
+          "url": "https://rye.com",
+          "publisher": "Rye",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "firmly",
@@ -934,7 +1178,23 @@
       "website": "https://www.firmly.ai",
       "description": "No-code platform that connects a merchant's catalog, inventory, payments and checkout to AI agents, marketplaces and shoppable media through one integration, with the merchant staying merchant of record. It powers native checkout in Perplexity's shopping and launched Ask Agent, a conversational shopping assistant for merchant sites.",
       "founded": null,
-      "founders": [],
+      "founders": [
+        {
+          "name": "Kumar N Senthil",
+          "role": "Co-founder & CEO",
+          "linkedin": null
+        },
+        {
+          "name": "Damien Balsan",
+          "role": "Co-founder & President",
+          "linkedin": null
+        },
+        {
+          "name": "Murali Krishnamurthy",
+          "role": "Co-founder & CTO",
+          "linkedin": null
+        }
+      ],
       "parent": null,
       "traction": "Founded by former Samsung executives; in stealth for five years before its Perplexity partnership.",
       "axes": {
@@ -996,9 +1256,22 @@
           "date": "2026-03-12"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "firmly site: firmly Connect live for merchants",
+          "url": "https://www.firmly.ai",
+          "publisher": "firmly",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "firmly About: executive team",
+          "url": "https://www.firmly.ai/about",
+          "publisher": "firmly",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "henry-labs",
@@ -1023,7 +1296,7 @@
           "rationale": "One-click checkout inside the app, with the shopper confirming each order."
         },
         "reach": {
-          "score": 62,
+          "score": 60,
           "rationale": "Products from any merchant URL, in one cart across merchants."
         },
         "availability": {
@@ -1054,9 +1327,16 @@
           "date": "2026-03-12"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Henry Labs site: embedded agent checkout; no disclosed round amount found",
+          "url": "https://www.henrylabs.ai",
+          "publisher": "Henry Labs",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "channel3",
@@ -1131,9 +1411,211 @@
           "date": "2025-12-11"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Channel3 site: product graph for agents; no round since December 2025 found",
+          "url": "https://trychannel3.com",
+          "publisher": "Channel3",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
+    },
+    {
+      "id": "nevermined",
+      "name": "Nevermined",
+      "company": "Nevermined",
+      "aliases": [],
+      "class": "independent",
+      "category": "payments",
+      "region": "Switzerland",
+      "hq": "Zug, Switzerland",
+      "website": "https://nevermined.ai",
+      "description": "Payment infrastructure for AI agents: agents spend inside a mandate the user sets, paying per call by card or crypto, and buy from a catalog of paid AI services; banks and payment providers can run it on their own rails.",
+      "founded": 2022,
+      "founders": [
+        {
+          "name": "Don Gossen",
+          "role": "CEO",
+          "linkedin": null
+        }
+      ],
+      "parent": null,
+      "traction": "Self-serve for agent builders, with an MCP server for Claude Code, Codex and Cursor; company-reported ISO 27001 and SOC 2 Type II.",
+      "axes": {
+        "autonomy": {
+          "score": 70,
+          "rationale": "Agents pay per call inside a spend mandate, with no person approving each payment."
+        },
+        "reach": {
+          "score": 35,
+          "rationale": "Services in its own catalog and merchants that list with it; bank rails not yet live."
+        },
+        "availability": {
+          "score": 75,
+          "rationale": "Generally available and free to start for developers."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 4000000,
+        "postMoneyUsd": null,
+        "date": "2025-01-09",
+        "leads": [
+          "Generative Ventures"
+        ],
+        "otherInvestors": [
+          "Polymorphic Capital",
+          "NEAR",
+          "Halo Capital",
+          "Factor Capital",
+          "Lyrik Ventures",
+          "Arca"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Announced January 9, 2025. Valuation not disclosed.",
+        "source": {
+          "url": "https://finovate.com/nevermined-raises-4-million-for-decentralized-ai-payments-protocol/",
+          "publisher": "Finovate",
+          "date": "2025-01-15"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 7000000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://finovate.com/nevermined-raises-4-million-for-decentralized-ai-payments-protocol/",
+          "publisher": "Finovate",
+          "date": "2025-01-15"
+        }
+      },
+      "news": [
+        {
+          "title": "Nevermined Raises $4 Million to Help AI Agents Pay and Get Paid",
+          "url": "https://pymnts.com/news/investment-tracker/2025/nevermined-raises-4-million-to-help-ai-agents-pay-and-get-paid",
+          "publisher": "PYMNTS",
+          "date": "2025-01-09"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Nevermined site",
+          "url": "https://nevermined.ai",
+          "publisher": "Nevermined",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "Finovate: $4M round",
+          "url": "https://finovate.com/nevermined-raises-4-million-for-decentralized-ai-payments-protocol/",
+          "publisher": "Finovate",
+          "date": "2026-11-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-11-06"
+    },
+    {
+      "id": "solvapay",
+      "name": "SolvaPay",
+      "company": "SolvaPay",
+      "aliases": [],
+      "class": "independent",
+      "category": "payments",
+      "region": "Sweden",
+      "hq": "Stockholm, Sweden",
+      "website": "https://www.solvapay.com",
+      "description": "Payments for selling to and buying as AI agents: APIs, MCP servers and AI services set a price per call, credits or a subscription and get paid by agents inside Claude, ChatGPT or Cursor, and a business’s own agents can buy within a spending ceiling.",
+      "founded": null,
+      "founders": [
+        {
+          "name": "Viggo Stenseth",
+          "role": "Co-founder and CEO",
+          "linkedin": null
+        },
+        {
+          "name": "Ingemar Svensson",
+          "role": "Co-founder and CTO",
+          "linkedin": null
+        },
+        {
+          "name": "Tommy Berglind",
+          "role": "Co-founder and CPO",
+          "linkedin": null
+        }
+      ],
+      "parent": null,
+      "traction": "Selling side live and self-serve at 1% of payment volume on top of Stripe’s fee; buying side in early access. Selected for Mastercard’s first Start Path agentic commerce cohort in September 2026.",
+      "axes": {
+        "autonomy": {
+          "score": 55,
+          "rationale": "Agents pay per call within a spending ceiling, without approving each purchase."
+        },
+        "reach": {
+          "score": 35,
+          "rationale": "Services that integrate SolvaPay, payable from the main AI assistants."
+        },
+        "availability": {
+          "score": 65,
+          "rationale": "Live for sellers; agent buying in early access."
+        }
+      },
+      "lastRound": {
+        "series": "Pre-seed",
+        "amountUsd": 2800000,
+        "postMoneyUsd": null,
+        "date": "2026-04-15",
+        "leads": [
+          "Redstone",
+          "MS&AD Ventures"
+        ],
+        "otherInvestors": [
+          "Antler",
+          "Greens Ventures"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "undisclosed",
+        "note": "€2.4M, about $2.8M. Valuation not disclosed.",
+        "source": {
+          "url": "https://fintech.global/2026/04/15/solvapay-raises-e2-4m-for-agentic-payment-layer/",
+          "publisher": "FinTech Global",
+          "date": "2026-04-15"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "SolvaPay joins the inaugural Mastercard Start Path Agentic Commerce Services cohort",
+          "url": "https://www.solvapay.com",
+          "publisher": "SolvaPay",
+          "date": "2026-09-01"
+        },
+        {
+          "title": "SolvaPay raises €2.4m for agentic payment layer",
+          "url": "https://fintech.global/2026/04/15/solvapay-raises-e2-4m-for-agentic-payment-layer/",
+          "publisher": "FinTech Global",
+          "date": "2026-04-15"
+        }
+      ],
+      "checks": [
+        {
+          "title": "SolvaPay site",
+          "url": "https://www.solvapay.com",
+          "publisher": "SolvaPay",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "FinTech Global: pre-seed round",
+          "url": "https://fintech.global/2026/04/15/solvapay-raises-e2-4m-for-agentic-payment-layer/",
+          "publisher": "FinTech Global",
+          "date": "2026-11-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "visa",
@@ -1155,18 +1637,18 @@
       "founded": null,
       "founders": [],
       "parent": "Visa — public (NYSE: V). Intelligent Commerce is one of its payment products; the parent's market capitalization is not a standalone product valuation.",
-      "traction": "Hundreds of live agent transactions with partners in December 2025; in July 2026 live agentic transactions across Europe with more than 30 issuers and merchants including lastminute.com.",
+      "traction": "Hundreds of live agent transactions with partners in December 2025; live agentic transactions across Europe with more than 30 issuers and merchants in July 2026; a live B2B pilot with BILL and Billtrust from October 2026 lets agents complete approved invoice payments.",
       "axes": {
         "autonomy": {
           "score": 50,
           "rationale": "Agents spend with tokenized credentials under limits the cardholder sets, authenticated with payment passkeys."
         },
         "reach": {
-          "score": 86,
+          "score": 85,
           "rationale": "Visa acceptance at merchants worldwide, live in the US and Europe."
         },
         "availability": {
-          "score": 62,
+          "score": 60,
           "rationale": "Live transactions through partners and issuers; the single merchant integration rolls out later in 2026."
         }
       },
@@ -1191,10 +1673,22 @@
       },
       "news": [
         {
+          "title": "Visa Announces Enhanced Capabilities That Can Bring Trust and Control to the Future of Business Payments",
+          "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22866.html",
+          "publisher": "Visa",
+          "date": "2026-10-21"
+        },
+        {
           "title": "Visa and banks across Europe reach the next phase of agentic commerce",
           "url": "https://www.mynewsdesk.com/uk/visa/pressreleases/visa-and-banks-across-europe-reach-the-next-phase-of-agentic-commerce-unlocking-secure-access-to-merchants-3457328",
           "publisher": "Visa",
           "date": "2026-07-02"
+        },
+        {
+          "title": "Visa Opens the Door to AI-Driven Shopping for Businesses Worldwide",
+          "url": "https://www.mynewsdesk.com/uk/visa/pressreleases/visa-opens-the-door-to-ai-driven-shopping-for-businesses-worldwide-3442048",
+          "publisher": "Visa",
+          "date": "2026-04-09"
         },
         {
           "title": "Visa and Partners Complete Secure AI Transactions, Setting the Stage for Mainstream Adoption in 2026",
@@ -1203,9 +1697,16 @@
           "date": "2025-12-18"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Visa newsroom: Intelligent Commerce Connect pilot and October 2026 B2B agent pilot",
+          "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22866.html",
+          "publisher": "Visa",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "mastercard",
@@ -1223,14 +1724,14 @@
       "founded": null,
       "founders": [],
       "parent": "Mastercard — public (NYSE: MA). Agent Pay is one of its payment products; the parent's market capitalization is not a standalone product valuation.",
-      "traction": "Agent Pay reached all US cardholders by the 2025 holiday season, then Singapore and Malaysia; more than 30 firms supported the Agent Pay for Machines launch.",
+      "traction": "Agent Pay reached all US cardholders by the 2025 holiday season, then Singapore and Malaysia. Agent Pay for Machines opened early access to developers on October 20, 2026, after pilots with Cloudflare, Ant International, Coinbase, Base and BVNK.",
       "axes": {
         "autonomy": {
           "score": 55,
           "rationale": "Agentic Tokens carry cardholder-set controls, and Agent Pay for Machines lets machines pay continuously without per-payment checkout."
         },
         "reach": {
-          "score": 84,
+          "score": 85,
           "rationale": "Mastercard acceptance worldwide, live for US cardholders and rolling out across Asia-Pacific."
         },
         "availability": {
@@ -1259,15 +1760,28 @@
       },
       "news": [
         {
+          "title": "Watch Mastercard Agent Pay for Machines in action",
+          "url": "https://www.mastercard.com/global/en/news-and-trends/press/2026/october/Mastercard-Agent-Pay-for-Machines-in-action.html",
+          "publisher": "Mastercard",
+          "date": "2026-10-20"
+        },
+        {
           "title": "Mastercard Agent Pay for Machines launch",
           "url": "https://genfinity.io/2026/06/10/mastercard-agent-pay-for-machines-launch/",
           "publisher": "Genfinity",
           "date": "2026-06-10"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Mastercard newsroom: Agent Pay for Machines early access",
+          "url": "https://www.mastercard.com/global/en/news-and-trends/press/2026/october/Mastercard-Agent-Pay-for-Machines-in-action.html",
+          "publisher": "Mastercard",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "stripe",
@@ -1285,7 +1799,7 @@
       "founded": null,
       "founders": [],
       "parent": "Stripe — private. The Agentic Commerce Suite is one product line; Stripe's company valuation is not a standalone product valuation.",
-      "traction": "Launched with brands including URBN, Etsy, Coach and Revolve; tokens support Visa and Mastercard agent tokens plus Affirm and Klarna.",
+      "traction": "Launched with brands including URBN, Etsy, Coach and Revolve. At Sessions in April 2026 Stripe let any merchant sell through agents from its Dashboard, added Meta checkout inside Facebook ads and Google partnerships, and gave Link an agent wallet; tokens support Visa and Mastercard agent tokens plus Affirm and Klarna.",
       "axes": {
         "autonomy": {
           "score": 55,
@@ -1321,15 +1835,28 @@
       },
       "news": [
         {
+          "title": "Everything we announced at Sessions 2026",
+          "url": "https://stripe.com/blog/everything-we-announced-at-sessions-2026",
+          "publisher": "Stripe",
+          "date": "2026-04-29"
+        },
+        {
           "title": "Stripe launches agentic commerce suite with brands in tow",
           "url": "https://www.digitaltransactions.net/stripe-launches-agentic-commerce-suite-with-brands-in-tow",
           "publisher": "Digital Transactions",
           "date": "2025-12-12"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Stripe blog: Sessions 2026 agentic commerce announcements",
+          "url": "https://stripe.com/blog/everything-we-announced-at-sessions-2026",
+          "publisher": "Stripe",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "paypal",
@@ -1349,14 +1876,14 @@
       "founded": null,
       "founders": [],
       "parent": "PayPal — public (NASDAQ: PYPL). Agent Ready is one of its merchant products; the parent's market capitalization is not a standalone product valuation.",
-      "traction": "Agent Ready arrived in early 2026; Store Sync launch partners include Wix, Cymbio, Commerce and Shopware. PayPal also adopted OpenAI's Agentic Commerce Protocol.",
+      "traction": "Agent Ready arrived in early 2026; Store Sync is live for merchants on Microsoft Copilot and Perplexity. PayPal agreed to buy Cymbio, the catalog-syndication partner behind Store Sync, in January 2026, and adopted OpenAI’s Agentic Commerce Protocol.",
       "axes": {
         "autonomy": {
           "score": 35,
           "rationale": "Agents initiate purchases that the buyer pays through PayPal, with buyer protection; approval stays with the person."
         },
         "reach": {
-          "score": 74,
+          "score": 75,
           "rationale": "PayPal's existing merchants can accept agent payments without extra work."
         },
         "availability": {
@@ -1385,15 +1912,34 @@
       },
       "news": [
         {
+          "title": "Hey Savi and PayPal Launch UK’s First Agentic Commerce Platform with In-App Checkout",
+          "url": "https://newsroom.paypal-corp.com/2026-06-02-Hey-Savi-and-PayPal-Launch-UKs-First-Agentic-Commerce-Platform-with-In-App-Checkout-Debenhams-Group-Joins-as-First-Retail-Adopter",
+          "publisher": "PayPal",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "PayPal to Acquire Cymbio, Accelerating Agentic Commerce Capabilities",
+          "url": "https://newsroom.paypal-corp.com/2026-01-22-PayPal-to-Acquire-Cymbio,-Accelerating-Agentic-Commerce-Capabilities",
+          "publisher": "PayPal",
+          "date": "2026-01-22"
+        },
+        {
           "title": "PayPal Launches Agentic Commerce Services to Power AI-Driven Shopping",
           "url": "https://www.shopware.com/en/press/press-releases/paypal-launches-agentic-commerce-services-to-power-ai-driven-shopping",
           "publisher": "Shopware",
           "date": "2025-10-28"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "PayPal newsroom: Cymbio acquisition and Hey Savi launch",
+          "url": "https://newsroom.paypal-corp.com/2026-06-02-Hey-Savi-and-PayPal-Launch-UKs-First-Agentic-Commerce-Platform-with-In-App-Checkout-Debenhams-Group-Joins-as-First-Retail-Adopter",
+          "publisher": "PayPal",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "coinbase-x402",
@@ -1449,15 +1995,28 @@
       },
       "news": [
         {
+          "title": "AI agents can now buy domains on Atom using x402 payments via Coinbase",
+          "url": "https://cryptobriefing.com/atom-ai-agents-buy-domains-x402-coinbase/",
+          "publisher": "Crypto Briefing",
+          "date": "2026-10-27"
+        },
+        {
           "title": "Coinbase Q1 2026 results: payments",
           "url": "https://paymentexpert.com/2026/05/08/coinbase-q1-2026-results-payments/",
           "publisher": "Payment Expert",
           "date": "2026-05-08"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Crypto Briefing: Atom domain purchases over x402",
+          "url": "https://cryptobriefing.com/atom-ai-agents-buy-domains-x402-coinbase/",
+          "publisher": "Crypto Briefing",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "google-ucp",
@@ -1479,14 +2038,14 @@
       "founded": null,
       "founders": [],
       "parent": "Alphabet — public (NASDAQ: GOOGL). UCP and AP2 are open protocols, and checkout is part of Google Search and Gemini; the parent's market capitalization is not a standalone product valuation.",
-      "traction": "Universal Cart announced May 19, 2026, starting in the US with Walmart, Target, Wayfair, Sephora and many Shopify merchants; Canada, Australia and the UK next. AP2 reaches Google's products starting with Gemini Spark.",
+      "traction": "Universal Cart announced May 19, 2026, starting in the US with Walmart, Target, Wayfair, Sephora and many Shopify merchants. UCP checkout reached Canada on November 4, 2026 with lululemon, Shoppers Drug Mart and Simons; simplified UCP setup in Merchant Center is due in 2027. Google moved AP2 to the FIDO Alliance in April 2026.",
       "axes": {
         "autonomy": {
           "score": 50,
           "rationale": "With AP2, users set guardrails and the agent buys within them, leaving a signed record of the mandate."
         },
         "reach": {
-          "score": 58,
+          "score": 60,
           "rationale": "Merchants that join UCP, including major US retailers and Shopify stores."
         },
         "availability": {
@@ -1515,15 +2074,28 @@
       },
       "news": [
         {
+          "title": "A new way to shop: Introducing a more intuitive, agentic shopping experience for consumers and retailers in Canada",
+          "url": "https://blog.google/intl/en-ca/products/explore-get-answers/a-new-way-to-shop-introducing-a-more-intuitive-agentic-shopping-experience-for-consumers-and-retailers-in-canada",
+          "publisher": "Google",
+          "date": "2026-11-04"
+        },
+        {
           "title": "Google: Universal Cart Introduced To Power Agentic Commerce Across Search, Gemini And YouTube",
           "url": "https://pulse2.com/google-universal-cart/",
           "publisher": "Pulse 2.0",
           "date": "2026-05-21"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Google Canada blog: UCP checkout in AI Mode and Gemini",
+          "url": "https://blog.google/intl/en-ca/products/explore-get-answers/a-new-way-to-shop-introducing-a-more-intuitive-agentic-shopping-experience-for-consumers-and-retailers-in-canada",
+          "publisher": "Google",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "shopify",
@@ -1544,7 +2116,7 @@
       "founded": null,
       "founders": [],
       "parent": "Shopify — public (NASDAQ: SHOP). Agentic Storefronts are part of its merchant platform; the parent's market capitalization is not a standalone product valuation. Founded and headquartered in Ottawa, Canada, and listed on Nasdaq and the TSX.",
-      "traction": "Agentic Storefronts began rolling out on March 24, 2026, on by default for Shopify merchants; direct checkout with Shop Pay is live in Microsoft Copilot.",
+      "traction": "Agentic Storefronts began rolling out on March 24, 2026, on by default for Shopify merchants; direct checkout with Shop Pay is live in Microsoft Copilot. Since September 28, 2026 browser-based agents can read, update and submit checkouts on eligible stores with the buyer’s authorization.",
       "axes": {
         "autonomy": {
           "score": 30,
@@ -1580,15 +2152,256 @@
       },
       "news": [
         {
+          "title": "Shopify opens checkout to browser-based AI agents",
+          "url": "https://techcrunch.com/2026/09/28/shopify-opens-checkout-to-browser-based-ai-agents/",
+          "publisher": "TechCrunch",
+          "date": "2026-09-28"
+        },
+        {
           "title": "AI commerce at scale",
           "url": "https://www.shopify.com/news/ai-commerce-at-scale",
           "publisher": "Shopify",
           "date": "2026-01-11"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "TechCrunch: checkout opened to browser agents",
+          "url": "https://techcrunch.com/2026/09/28/shopify-opens-checkout-to-browser-based-ai-agents/",
+          "publisher": "TechCrunch",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
+    },
+    {
+      "aliases": [
+        "支付宝AI付",
+        "Ah Bao"
+      ],
+      "class": "platform",
+      "founded": null,
+      "founders": [],
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "locked": [],
+      "lastVerified": "2026-11-06",
+      "id": "alipay-ai-pay",
+      "name": "Alipay AI Pay",
+      "shortName": "AI Pay",
+      "company": "Ant Group",
+      "category": "payments",
+      "brand": "Alipay",
+      "region": "China",
+      "hq": "Hangzhou, China",
+      "website": "https://www.alipay.com",
+      "description": "Alipay’s payment layer for AI agents: users connect AI Pay to an agent, such as Qwen, Rokid glasses, a merchant’s mini-program or Claude Code, and authorize each purchase by voice. Alipay also offers a payment MCP server and agent subscription billing, and since August 2026 a merchant platform that turns services into agent-callable skills for its Ah Bao agent.",
+      "parent": "Ant Group — private (Hangzhou). Ant Group’s company valuation is not a standalone product valuation.",
+      "traction": "More than 100 million users and over 120 million agent transactions in the week of February 5–11, 2026, company-reported. Ah Bao connects to five smartphone brands with over 70% of China’s market and 16 automakers.",
+      "axes": {
+        "autonomy": {
+          "score": 25,
+          "rationale": "The agent completes the order, but every payment needs the user’s explicit authorization."
+        },
+        "reach": {
+          "score": 70,
+          "rationale": "Alipay merchants across China, reached through many agents and devices; little reach outside China."
+        },
+        "availability": {
+          "score": 95,
+          "rationale": "Live at scale: over 100 million users and inside widely used agents and apps."
+        }
+      },
+      "lastRound": {
+        "series": "Private — not comparable",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-08-17",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://www.antgroup.com/en/news-media/press-releases/1786946400000",
+          "publisher": "Ant Group",
+          "date": "2026-08-17"
+        }
+      },
+      "news": [
+        {
+          "title": "Alipay Launches China’s First Full-Stack Agentic Commerce Platform for Merchants",
+          "url": "https://www.antgroup.com/en/news-media/press-releases/1786946400000",
+          "publisher": "Ant Group",
+          "date": "2026-08-17"
+        },
+        {
+          "title": "Alipay expands AI Pay to OpenClaw-type agents",
+          "url": "https://fintech.global/2026/04/23/alipay-expands-ai-pay-to-openclaw-type-agents/",
+          "publisher": "FinTech Global",
+          "date": "2026-04-23"
+        },
+        {
+          "title": "Ant Group’s Alipay AI Pay and AI Health App AQ Each Surpass 100 Million Users During CNY",
+          "url": "https://www.theasianbanker.com/press-releases/ant-group-reports-100-million-users-for-alipay-ai-pay-and-aq-health-app",
+          "publisher": "Ant Group / The Asian Banker",
+          "date": "2026-02-23"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Ant Group: agentic commerce platform for merchants",
+          "url": "https://www.antgroup.com/en/news-media/press-releases/1786946400000",
+          "publisher": "Ant Group",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "FinTech Global: AI Pay for OpenClaw-type agents",
+          "url": "https://fintech.global/2026/04/23/alipay-expands-ai-pay-to-openclaw-type-agents/",
+          "publisher": "FinTech Global",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "class": "platform",
+      "founded": null,
+      "founders": [],
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "locked": [],
+      "lastVerified": "2026-11-06",
+      "id": "adyen-agentic",
+      "name": "Adyen Agentic",
+      "shortName": "Agentic",
+      "company": "Adyen",
+      "category": "checkout",
+      "brand": "Adyen",
+      "region": "Netherlands",
+      "hq": "Amsterdam, Netherlands",
+      "website": "https://www.adyen.com",
+      "description": "Adyen’s APIs for enterprise merchants selling through AI platforms: Agentic Feed distributes catalog, prices and stock; Agentic Cart connects existing checkout, tax and fulfillment; Agentic Payments handles agent-led payments, tokens and fraud across protocols.",
+      "parent": "Adyen — public (Euronext Amsterdam: ADYEN). The parent’s market capitalization is not a standalone product valuation.",
+      "traction": "Launched June 16, 2026 with American Express, Mastercard, Salesforce and Visa as partners and ESW, Scheels, Sézane and SharkNinja as early retailers; works with Meta’s AI checkout.",
+      "axes": {
+        "autonomy": {
+          "score": 25,
+          "rationale": "Agents complete checkout on AI platforms, with the shopper approving each purchase there."
+        },
+        "reach": {
+          "score": 50,
+          "rationale": "Enterprise Adyen merchants that opt in, across several agent platforms and protocols."
+        },
+        "availability": {
+          "score": 50,
+          "rationale": "Limited availability for US enterprise merchants; global expansion planned."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-06-16",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://www.adyen.com/press-and-media/adyen-agentic",
+          "publisher": "Adyen",
+          "date": "2026-06-16"
+        }
+      },
+      "news": [
+        {
+          "title": "Adyen Announces Adyen Agentic As the Universal Translator for the Next Era of Commerce",
+          "url": "https://www.adyen.com/press-and-media/adyen-agentic",
+          "publisher": "Adyen",
+          "date": "2026-06-16"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Adyen: Adyen Agentic announcement",
+          "url": "https://www.adyen.com/press-and-media/adyen-agentic",
+          "publisher": "Adyen",
+          "date": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "aliases": [],
+      "class": "platform",
+      "founded": null,
+      "founders": [],
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "locked": [],
+      "lastVerified": "2026-11-06",
+      "id": "razorpay-agentic",
+      "name": "Razorpay Agentic Payments",
+      "shortName": "Agentic Payments",
+      "company": "Razorpay",
+      "category": "payments",
+      "brand": "Razorpay",
+      "region": "India",
+      "hq": "Bengaluru, India",
+      "website": "https://razorpay.com",
+      "description": "UPI payments inside AI assistants, built with India’s NPCI: the user approves one spending limit for a merchant with UPI Reserve Pay, and the assistant then orders and pays without a PIN each time. Piloted in ChatGPT from October 2025 and in Claude from February 2026.",
+      "parent": "Razorpay — private (Bengaluru). The parent’s company valuation is not a standalone product valuation.",
+      "traction": "Pilots with a small group of users: Zomato, Swiggy and Zepto orders in Claude, and an earlier ChatGPT pilot through Axis Bank and Airtel Payments Bank.",
+      "axes": {
+        "autonomy": {
+          "score": 50,
+          "rationale": "Pays within a spending limit the user sets per merchant, without approving each purchase."
+        },
+        "reach": {
+          "score": 25,
+          "rationale": "A few partner merchants in food, grocery and quick delivery."
+        },
+        "availability": {
+          "score": 25,
+          "rationale": "Pilots with a small group of users."
+        }
+      },
+      "lastRound": {
+        "series": "Private — not comparable",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-02-20",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://razorpay.com/newsroom/razorpay-npci-launch-agentic-payments-on-claude-powering-zomato-swiggy-zepto-at-the-india-ai-impact-summit/",
+          "publisher": "Razorpay",
+          "date": "2026-02-20"
+        }
+      },
+      "news": [
+        {
+          "title": "Razorpay & NPCI Launch Agentic Payments on Claude, Powering Zomato, Swiggy & Zepto",
+          "url": "https://razorpay.com/newsroom/razorpay-npci-launch-agentic-payments-on-claude-powering-zomato-swiggy-zepto-at-the-india-ai-impact-summit/",
+          "publisher": "Razorpay",
+          "date": "2026-02-20"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Razorpay newsroom: Agentic Payments on Claude",
+          "url": "https://razorpay.com/newsroom/razorpay-npci-launch-agentic-payments-on-claude-powering-zomato-swiggy-zepto-at-the-india-ai-impact-summit/",
+          "publisher": "Razorpay",
+          "date": "2026-11-06"
+        }
+      ]
     }
   ]
 }

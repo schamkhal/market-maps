@@ -34,6 +34,8 @@ export const valuationConfidence = round => round.postMoneyConfidence ?? round.c
 // The valuation may carry its own citation; otherwise it shares the round's.
 export const valuationSource = round => round.postMoneySource ?? round.source ?? null;
 // A lock on a parent path ("lastRound") covers every field beneath it.
+// The date of the newest recorded check, or null when there is none.
+export const latestCheckDate = company => (company.checks ?? []).map(k => k.date).filter(Boolean).sort().pop() ?? null;
 export const isLocked = (company, path) => (company.locked ?? []).some(p => path === p || path.startsWith(p + '.'));
 const resolve = (obj, path) => path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj);
 const usd = v => v >= 1e9 ? `$${+(v / 1e9).toFixed(2)}B` : `$${+(v / 1e6).toFixed(1)}M`;
@@ -102,10 +104,10 @@ export function validateMarket(doc) {
       fail(at, `${valConf} valuation must carry a note explaining the basis`);
     }
 
-    // Rule 4b: a hand-entered figure must be locked, or the weekly agent will
+    // Rule 4b: a hand-entered figure must be locked, or a later refresh could
     // quietly replace it with whatever the press says next.
     if (valConf === 'manual' && round.postMoneyUsd != null && !isLocked(c, 'lastRound.postMoneyUsd')) {
-      fail(at, 'manual valuation must be locked against the refresh agent');
+      fail(at, 'manual valuation must be locked so a refresh cannot replace it');
     }
 
     // Rule 5: locked paths must point at something real.
@@ -170,7 +172,7 @@ export function validateMarket(doc) {
       fail(at, `total funding is "${totalConf}" but no totalRaisedSource is attached`);
     }
     if (totalRaised != null && totalConf === 'manual' && !isLocked(c, 'metrics.totalRaisedUsd')) {
-      fail(at, 'manual total funding must be locked against the refresh agent');
+      fail(at, 'manual total funding must be locked so a refresh cannot replace it');
     }
     if (totalRaised != null && !totalConf && !c.metrics.totalRaisedSource) unsourcedTotals.push(c.id);
 
@@ -181,12 +183,42 @@ export function validateMarket(doc) {
       if (!round.note) fail(at, 'an acquisition price must carry a note saying whose deal it is and whether it has closed');
     }
 
-    // Staleness is a warning, not an error — it is what the agent exists to fix.
+    // Rule 17: "last verified" means a recorded check. The date must be the
+    // latest entry in `checks`, so it can never claim a visit nobody logged.
+    const latestCheck = latestCheckDate(c);
+    if ((c.lastVerified ?? null) !== latestCheck) {
+      fail(at, latestCheck
+        ? `lastVerified ${c.lastVerified ?? 'null'} must be the date of the latest check, ${latestCheck}`
+        : `lastVerified ${c.lastVerified} has no recorded check behind it; add the check or set it to null`);
+    }
+
+    // Staleness is a warning, not an error — it is what the weekly refresh exists to fix.
     // Two thresholds: long-unverified, and lagging the snapshot date the site shows,
     // which would otherwise imply every row was checked on that day.
     const days = (new Date(market.asOf) - new Date(c.lastVerified)) / 864e5;
-    if (days > 60) warn(at, `not verified in ${Math.round(days)} days`);
+    if (!c.lastVerified) warn(at, 'never verified: no recorded check');
+    else if (days > 60) warn(at, `not verified in ${Math.round(days)} days`);
     else if (days > 7) warn(at, `last verified ${c.lastVerified}, ${Math.round(days)} days before the ${market.asOf} snapshot — re-verify`);
+  }
+
+  // Rule 18: the score log is the record of every published change. Each entry
+  // names a real axis and an actual change, is no later than the snapshot, and
+  // the newest entry for a company and axis matches the score shown today.
+  const latestLogged = new Map();
+  for (const entry of market.scoreLog ?? []) {
+    if (after(entry.date)) fail('', `score log entry dated ${entry.date} is after market.asOf`);
+    for (const ch of entry.changes) {
+      if (!axes.includes(ch.axis)) fail(ch.id, `score log names axis "${ch.axis}", which market.axes does not define`);
+      if (ch.from === ch.to) fail(ch.id, `score log entry for ${ch.axis} records no change (${ch.from})`);
+      latestLogged.set(`${ch.id}|${ch.axis}`, { to: ch.to, date: entry.date });
+    }
+  }
+  for (const [key, { to, date }] of latestLogged) {
+    const [id, axis] = key.split('|');
+    const company = doc.companies.find(c => c.id === id);
+    if (company && company.axes[axis] && company.axes[axis].score !== to) {
+      fail(id, `${axis} is ${company.axes[axis].score}, but the score log's latest entry (${date}) says ${to}; log the change`);
+    }
   }
 
   // One line rather than one per company: this is a backlog, not an alarm.

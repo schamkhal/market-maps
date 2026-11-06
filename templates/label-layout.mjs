@@ -46,6 +46,9 @@ export const geometry = { overlapArea, segmentsCross, segmentHitsBox, gapTo, ins
 export const leaderShown = (node, box, compact) => gapTo(node, box) > (compact ? 9 : 17);
 // Space between a name and its value when both share one line.
 export const INLINE_GAP = 6;
+// Desktop, last pass only: a label still showing just its name may take its
+// figure at the end of a short leader, up to this far from its mark.
+const SHORT_LEADER = 48;
 
 // Chart frame for a given pixel width: the map is drawn at the frame's real
 // width, so it re-lays out rather than scrolling sideways.
@@ -222,7 +225,7 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
   const crowd = n => nodes.filter(other => other !== n && Math.hypot(other.x - n.x, other.y - n.y) < 120).length;
   const ordered = [...nodes].sort(compact ? (a, b) => b.r - a.r || crowd(b) - crowd(a) : (a, b) => crowd(b) - crowd(a) || b.r - a.r);
   const labels = new Map();
-  const choose = (node, far = false) => {
+  const choose = (node, far = false, shortLeader = false) => {
     const { name, value } = node;
     const nameWidth = measure(name, 'map-label');
     const compactForm = best(node, nameWidth + (compact ? 8 : 4), compact ? 17 : 20, far);
@@ -236,7 +239,8 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
       // name-only label next to the mark beats a full one at the end of a
       // leader line. The value stays in the tooltip and the profile.
       const needsLeader = form => leaderShown(node, form.box, compact);
-      const worth = form => !form.collides && !(!compactForm.collides && needsLeader(form) && !needsLeader(compactForm))
+      const farOut = form => !shortLeader || gapTo(node, form.box) > SHORT_LEADER;
+      const worth = form => !form.collides && !(!compactForm.collides && needsLeader(form) && farOut(form) && !needsLeader(compactForm))
         && (compactForm.collides || form.score <= compactForm.score + (needsLeader(compactForm) ? 80 : 40));
       const options = [stacked, inline].filter(worth);
       chosen = options.find(form => !needsLeader(form)) ?? options[0] ?? chosen;
@@ -308,6 +312,16 @@ function attempt({ nodes, W, H, m, compact, measure, fixed = [] }, nameOnly) {
       }
       put(node.id, mine); put(other.id, theirs);
     }
+  }
+  // Last, a label still showing only its name tries for its figure once more,
+  // now allowed a short leader: boxed in by neighbours on every side, the
+  // figure a few pixels out beats no figure at all.
+  if (!compact) for (const node of ordered) {
+    const mine = labels.get(node.id);
+    if (!mine || mine.full || !node.value || nameOnly.has(node.id)) continue;
+    put(node.id, null);
+    const next = choose(node, false, true);
+    put(node.id, next?.full ? next : mine);
   }
   const hidden = [...labels.values()].filter(label => !label).length;
 

@@ -8,8 +8,8 @@
  *   npm run admin      →  http://127.0.0.1:4321
  *
  * Locking: tick the padlock on a field and its dot-path is added to the
- * company's `locked` array. The weekly agent is forbidden from overwriting
- * anything listed there — that is how a hand-entered number survives Monday.
+ * company's `locked` array. A refresh never overwrites anything listed there
+ * without the editor's approval — that is how a hand-entered number survives.
  *
  * Saving runs the same rules as `npm run validate` (scripts/lib/validate-market.mjs)
  * and refuses to write a change that breaks one. A valuation or funding total
@@ -134,7 +134,7 @@ main .sub{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink
 </style></head><body>
 <header>
   <h1>Market map admin</h1>
-  <span class="hint">writes to data/markets/ · review with git diff · 🔒 = agent may never overwrite</span>
+  <span class="hint">writes to data/markets/ · review with git diff · 🔒 = a refresh may never overwrite</span>
 </header>
 <div class="layout"><aside id="list"></aside><main id="pane"></main></div>
 <script>
@@ -168,8 +168,8 @@ function renderPane(){
   const {c} = cur;
   document.getElementById('pane').innerHTML = \`
     <h2>\${esc(c.name)}</h2>
-    <p class="sub">\${esc(c.id)} · \${esc(c.class)} · last verified \${esc(c.lastVerified)}</p>
-    <p class="locknote">Lock a field when you have entered a number the agent will not find publicly. Locked paths go into the company's <code>locked</code> array and the weekly refresh skips them entirely. A valuation or total you type without a new source is marked manual and locked for you.</p>
+    <p class="sub">\${esc(c.id)} · \${esc(c.class)} · last check \${esc(c.lastVerified || 'none recorded')}</p>
+    <p class="locknote">Lock a field when you have entered a number that is not public. Locked paths go into the company's <code>locked</code> array and a refresh never changes them without your approval. A valuation or total you type without a new source is marked manual and locked for you.</p>
     \${cur.fields.map(f=>field(f,c)).join('')}
     <div class="bar"><button id="save">Save to JSON</button><span class="msg" id="msg"></span></div>
     <ul class="problems" id="problems" hidden></ul>\`;
@@ -196,7 +196,7 @@ function field(f,c){
   else if(f.type==='range') input=\`<div class="rangewrap"><input type="range" min="0" max="100" value="\${esc(val||0)}" data-p="\${esc(f.path)}"><output>\${esc(val||0)}</output></div>\`;
   else input=\`<input type="\${esc(f.type)}" value="\${esc(val)}" data-p="\${esc(f.path)}">\`;
   return \`<div class="f"><label>\${esc(f.label)}</label>\${input}
-    <button class="lockbtn" data-p="\${esc(f.path)}" aria-pressed="\${locked.has(f.path)}" title="Lock this field against the agent">🔒</button></div>\`;
+    <button class="lockbtn" data-p="\${esc(f.path)}" aria-pressed="\${locked.has(f.path)}" title="Lock this field against refreshes">🔒</button></div>\`;
 }
 async function saveCompany(){
   const btn=document.getElementById('save'), msg=document.getElementById('msg'), list=document.getElementById('problems');
@@ -212,7 +212,7 @@ async function saveCompany(){
   list.innerHTML=lines.map(([kind,text])=>\`<li class="\${kind}">\${esc(text)}</li>\`).join('');
   list.hidden=!lines.length;
   if(r.ok){
-    msg.className='msg ok'; msg.textContent='saved · verified '+r.lastVerified+' · passes validation';
+    msg.className='msg ok'; msg.textContent='saved · last check '+(r.lastVerified||'none recorded')+' · passes validation';
     markets = await (await fetch('/api/markets')).json();
     const m=markets.find(x=>x.file===cur.file);
     cur.c=m.doc.companies.find(x=>x.id===cur.id); cur.market=m.doc.market; cur.fields=m.fields;

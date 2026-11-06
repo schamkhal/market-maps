@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { configureCategories, markRadius, labelFor, valueLabel, MAX_RADIUS } from './map-model.mjs';
+import { configureCategories, markRadius, labelFor, valueLabel, MAX_RADIUS, separateTies } from './map-model.mjs';
 import { placeLabels, chartFrame, quadrantLabels, leaderEnd, leaderShown, geometry } from './label-layout.mjs';
 
 const { overlapArea, segmentsCross, segmentHitsBox, gapTo, insideBubble } = geometry;
@@ -33,6 +33,7 @@ function layout(doc, width, axis, size) {
     y: H - m.b - c.scores[axis] / 100 * (H - m.t - m.b),
     r: markRadius(c, size, max, maxRadius),
   }));
+  separateTies(nodes);   // as the page does: tied marks are drawn side by side
   const fixed = quadrantLabels({ names: doc.market.quadrants?.[axis], W, H, m, compact, measure }).map(q => q.box);
   return { frame, nodes, fixed, result: placeLabels({ nodes, W, H, m, compact, measure, fixed }) };
 }

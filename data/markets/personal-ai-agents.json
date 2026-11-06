@@ -199,7 +199,497 @@
         "description": "Agents for email, planning, browsing, and recall across the tools you work in."
       }
     ],
-    "asOf": "2026-11-05"
+    "asOf": "2026-11-06",
+    "scoreLog": [
+      {
+        "date": "2026-11-06",
+        "note": "Moved every score to steps of 5. These scores only moved to the nearest 5.",
+        "changes": [
+          {
+            "id": "town",
+            "axis": "distribution",
+            "from": 48,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "superhuman-go",
+            "axis": "autonomy",
+            "from": 32,
+            "to": 30,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "superhuman-go",
+            "axis": "distribution",
+            "from": 82,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "duckbill",
+            "axis": "distribution",
+            "from": 52,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "lindy",
+            "axis": "autonomy",
+            "from": 76,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "ohai",
+            "axis": "autonomy",
+            "from": 28,
+            "to": 30,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "pally",
+            "axis": "autonomy",
+            "from": 36,
+            "to": 35,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "martin",
+            "axis": "autonomy",
+            "from": 66,
+            "to": 65,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "martin",
+            "axis": "distribution",
+            "from": 74,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "comet",
+            "axis": "breadth",
+            "from": 74,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "comet",
+            "axis": "distribution",
+            "from": 36,
+            "to": 35,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "muse",
+            "axis": "distribution",
+            "from": 92,
+            "to": 90,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "spark",
+            "axis": "distribution",
+            "from": 88,
+            "to": 90,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "chatgpt",
+            "axis": "breadth",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "alexa",
+            "axis": "autonomy",
+            "from": 12,
+            "to": 10,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "alexa",
+            "axis": "breadth",
+            "from": 66,
+            "to": 65,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "alexa",
+            "axis": "distribution",
+            "from": 84,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "siri",
+            "axis": "autonomy",
+            "from": 6,
+            "to": 5,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "siri",
+            "axis": "breadth",
+            "from": 62,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "ollie",
+            "axis": "autonomy",
+            "from": 44,
+            "to": 45,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "ollie",
+            "axis": "breadth",
+            "from": 56,
+            "to": 55,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "poke",
+            "axis": "autonomy",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "poke",
+            "axis": "breadth",
+            "from": 76,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "grok-bot",
+            "axis": "breadth",
+            "from": 64,
+            "to": 65,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "folk",
+            "axis": "autonomy",
+            "from": 58,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "folk",
+            "axis": "breadth",
+            "from": 46,
+            "to": 45,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "folk",
+            "axis": "distribution",
+            "from": 82,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "microsoft-copilot",
+            "axis": "autonomy",
+            "from": 26,
+            "to": 25,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "microsoft-copilot",
+            "axis": "distribution",
+            "from": 88,
+            "to": 90,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "genspark",
+            "axis": "autonomy",
+            "from": 52,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "genspark",
+            "axis": "breadth",
+            "from": 54,
+            "to": 55,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "genspark",
+            "axis": "distribution",
+            "from": 36,
+            "to": 35,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "tab",
+            "axis": "breadth",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "tab",
+            "axis": "distribution",
+            "from": 78,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "persona",
+            "axis": "breadth",
+            "from": 66,
+            "to": 65,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "persona",
+            "axis": "distribution",
+            "from": 76,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "tomo",
+            "axis": "autonomy",
+            "from": 52,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          }
+        ]
+      },
+      {
+        "date": "2026-11-06",
+        "note": "Recalibrated against the rubric anchors. Each of these moved because the evidence fits a different anchor, not to tidy the chart.",
+        "changes": [
+          {
+            "id": "hark",
+            "axis": "autonomy",
+            "from": 66,
+            "to": 55,
+            "why": "Runs errands end to end; its proactivity is a launch claim not yet shown, the same standard applied to Persona."
+          },
+          {
+            "id": "hark",
+            "axis": "breadth",
+            "from": 80,
+            "to": 75,
+            "why": "Work and personal life with shopping and rides matches the 75 anchor; payments, health and home are not shown."
+          },
+          {
+            "id": "hark",
+            "axis": "distribution",
+            "from": 30,
+            "to": 25,
+            "why": "Its own apps on the web and phones is the 25 anchor exactly."
+          },
+          {
+            "id": "instinct",
+            "axis": "autonomy",
+            "from": 88,
+            "to": 75,
+            "why": "Background follow-up and reaching out first is the 75 anchor; nothing shows it running on standing goals with minimal oversight."
+          },
+          {
+            "id": "instinct",
+            "axis": "breadth",
+            "from": 88,
+            "to": 80,
+            "why": "Work and personal life including bookings is the 75 anchor; group errands such as carpools add a little, but health and home are not covered."
+          },
+          {
+            "id": "town",
+            "axis": "autonomy",
+            "from": 80,
+            "to": 75,
+            "why": "Background routines within set permissions is the 75 anchor, not beyond it."
+          },
+          {
+            "id": "town",
+            "axis": "breadth",
+            "from": 64,
+            "to": 55,
+            "why": "All of work life is the 50 anchor; phone and browser tasks add a little, and payments and home are not described."
+          },
+          {
+            "id": "duckbill",
+            "axis": "breadth",
+            "from": 62,
+            "to": 55,
+            "why": "Household errands, bookings and purchases cover one part of life (the 50 anchor) without the inbox or calendar."
+          },
+          {
+            "id": "lindy",
+            "axis": "breadth",
+            "from": 15,
+            "to": 50,
+            "why": "Email, calendar, meetings and work tools cover all of work life, the 50 anchor; 15 placed it below agents that reach only two surfaces."
+          },
+          {
+            "id": "lindy",
+            "axis": "distribution",
+            "from": 58,
+            "to": 50,
+            "why": "Email, Slack and phone alongside its own app is the 50 anchor, the same as Town."
+          },
+          {
+            "id": "littlebird",
+            "axis": "autonomy",
+            "from": 12,
+            "to": 25,
+            "why": "Multi-step work you start, plus scheduled Routines, is the 25 anchor; 12 put it below agents that act one request at a time."
+          },
+          {
+            "id": "littlebird",
+            "axis": "breadth",
+            "from": 26,
+            "to": 30,
+            "why": "Everything on the work screen plus meetings and connected apps is several work surfaces, just above the 25 anchor."
+          },
+          {
+            "id": "littlebird",
+            "axis": "distribution",
+            "from": 28,
+            "to": 25,
+            "why": "A desktop app with phone companions is the 25 anchor exactly."
+          },
+          {
+            "id": "ohai",
+            "axis": "breadth",
+            "from": 44,
+            "to": 50,
+            "why": "Family calendars, school, chores, meals and groceries are the home example given for the 50 anchor."
+          },
+          {
+            "id": "pally",
+            "axis": "breadth",
+            "from": 60,
+            "to": 65,
+            "why": "Mail, calendars, files, calls, bookings and purchases span work and personal life, approaching the 75 anchor."
+          },
+          {
+            "id": "comet",
+            "axis": "autonomy",
+            "from": 40,
+            "to": 30,
+            "why": "Writes ask before they fire, which is the 25 anchor; it runs longer multi-step errands than most at that level."
+          },
+          {
+            "id": "muse",
+            "axis": "autonomy",
+            "from": 90,
+            "to": 80,
+            "why": "Background work on longer goals is above the 75 anchor, but it still asks for approval, so it falls short of 100 (minimal oversight)."
+          },
+          {
+            "id": "muse",
+            "axis": "breadth",
+            "from": 84,
+            "to": 80,
+            "why": "Work and personal life including payments is just above the 75 anchor; health and home are not described."
+          },
+          {
+            "id": "spark",
+            "axis": "autonomy",
+            "from": 86,
+            "to": 80,
+            "why": "Runs continuously, above the 75 anchor, but hands payments and sensitive actions back to you, short of 100."
+          },
+          {
+            "id": "spark",
+            "axis": "breadth",
+            "from": 85,
+            "to": 75,
+            "why": "Workspace plus the web is work and personal life together (the 75 anchor); payments are handed back, so it sits below Muse."
+          },
+          {
+            "id": "chatgpt",
+            "axis": "autonomy",
+            "from": 92,
+            "to": 85,
+            "why": "Dots pursue standing goals in the background, close to the 100 anchor, but the feature is a beta with a read-only mode while you are away."
+          },
+          {
+            "id": "cowork",
+            "axis": "autonomy",
+            "from": 74,
+            "to": 70,
+            "why": "Follows up and reaches out first (the 75 anchor), but checks with you before acting and is a waitlisted preview."
+          },
+          {
+            "id": "cowork",
+            "axis": "breadth",
+            "from": 52,
+            "to": 55,
+            "why": "All of work life (the 50 anchor) plus read-only personal finance."
+          },
+          {
+            "id": "cowork",
+            "axis": "distribution",
+            "from": 30,
+            "to": 25,
+            "why": "Its own apps on the web and phones is the 25 anchor exactly."
+          },
+          {
+            "id": "wajo",
+            "axis": "autonomy",
+            "from": 78,
+            "to": 60,
+            "why": "Runs errands end to end with its own card (above the 50 anchor), but no background routines or watchers are described, so it is short of 75."
+          },
+          {
+            "id": "wajo",
+            "axis": "breadth",
+            "from": 80,
+            "to": 75,
+            "why": "Mail, calls, calendars, bookings and purchases is the 75 anchor; health and home are not covered."
+          },
+          {
+            "id": "wajo",
+            "axis": "distribution",
+            "from": 72,
+            "to": 75,
+            "why": "Reached by text, email and phone with no app to install, the 75 anchor, like the other text-native agents."
+          },
+          {
+            "id": "poke",
+            "axis": "distribution",
+            "from": 84,
+            "to": 80,
+            "why": "A third-party contact inside Messages, WhatsApp and Telegram is above the 75 anchor but not built into those apps (the 100 anchor)."
+          },
+          {
+            "id": "grok-bot",
+            "axis": "autonomy",
+            "from": 78,
+            "to": 70,
+            "why": "Scheduled routines reach the 75 anchor, but each purchase waits for approval."
+          },
+          {
+            "id": "tab",
+            "axis": "autonomy",
+            "from": 60,
+            "to": 50,
+            "why": "Runs an errand end to end, the 50 anchor; no background routines or watchers are described."
+          },
+          {
+            "id": "persona",
+            "axis": "autonomy",
+            "from": 56,
+            "to": 50,
+            "why": "Runs an errand end to end, the 50 anchor; how far it acts unprompted is not yet shown."
+          }
+        ]
+      }
+    ]
   },
   "companies": [
     {
@@ -225,15 +715,15 @@
       "traction": "Hark Pro launched October 6, 2026: free to try, with $20 and $100 monthly plans, and the paid plan free for the first 100,000 sign-ups. Devices are planned for 2027. Multi-year partnership with NVIDIA announced in August 2026.",
       "axes": {
         "autonomy": {
-          "score": 66,
-          "rationale": "Hark Pro is built to be proactive and carries out tasks such as buying groceries and booking rides. Scored on its launch materials, since the app is new as of October 6, 2026."
+          "score": 55,
+          "rationale": "Hark Pro carries out errands such as buying groceries and booking rides end to end, and is pitched as proactive. Scored on its launch materials (October 6, 2026); how much it does unprompted is not yet shown."
         },
         "breadth": {
-          "score": 80,
+          "score": 75,
           "rationale": "Aimed at the whole of a person's digital life with persistent memory; shopping, rides and documents at launch."
         },
         "distribution": {
-          "score": 30,
+          "score": 25,
           "rationale": "Its own app on the web, iOS and Android; the devices meant to put it everywhere arrive in 2027."
         }
       },
@@ -323,10 +813,16 @@
           "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
           "publisher": "TechCrunch",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Hark site: Hark Pro on the App Store and Play Store",
+          "url": "https://hark.com",
+          "publisher": "Hark",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "instinct",
@@ -351,16 +847,16 @@
       "traction": "Invite-only since August 2026. Group chats reached early-access users on October 5, 2026: the agent can join a thread with friends who have no account, to plan trips, buy tickets or coordinate carpools.",
       "axes": {
         "autonomy": {
-          "score": 88,
-          "rationale": "Works across connected apps and real-world errands, joins group chats to plan and buy, and follows up on its own. Held a notch below the leaders because the product is invite-only and untested outside early access."
+          "score": 75,
+          "rationale": "Works across connected apps and real-world errands, joins group chats to plan and buy, and follows up on its own: background work that reaches out first. Invite-only, and untested outside early access."
         },
         "breadth": {
-          "score": 88,
-          "rationale": "Email, messaging, calendars and other connected apps plus real-world errands such as bookings, tickets and carpools: close to whole-life."
+          "score": 80,
+          "rationale": "Email, messaging, calendars and other connected apps plus real-world errands such as bookings, tickets and carpools: work and personal life together, without health or home."
         },
         "distribution": {
           "score": 80,
-          "rationale": "Reached by text and phone with no app, and since October 5, 2026 it joins group chats, even with friends who have no account. That matches the other text-native agents (Pally, Ollie). Rescored from 72."
+          "rationale": "Reached by text and phone with no app, and since October 5, 2026 it joins group chats, even with friends who have no account, like the other text-native agents (Pally, Ollie)."
         }
       },
       "lastRound": {
@@ -448,10 +944,16 @@
           "url": "https://instinct.com/",
           "publisher": "Instinct",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Instinct site: text or call it; no round since September 2026 found",
+          "url": "https://instinct.com",
+          "publisher": "Instinct",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "town",
@@ -481,15 +983,15 @@
       "traction": "Public product. With the Series B (October 19, 2026), Townies can ask each other questions and hand off work across a team, each still working for its own person and sharing only what that person would share; they can also deal with customers, partners and candidates outside the company over email and text.",
       "axes": {
         "autonomy": {
-          "score": 80,
+          "score": 75,
           "rationale": "Runs recurring routines and cross-tool tasks in the background, across email, Slack, the browser and phone, within the permissions you set."
         },
         "breadth": {
-          "score": 64,
+          "score": 55,
           "rationale": "Aimed at professional life: email, calendar, documents, Slack, phone, browser tasks and maps; payments and home are not described."
         },
         "distribution": {
-          "score": 48,
+          "score": 50,
           "rationale": "Reached on the web, by email, in Slack and by phone; mostly through its own surfaces rather than the apps you already live in."
         }
       },
@@ -597,10 +1099,16 @@
           "url": "https://www.town.com/press/series-b",
           "publisher": "Town",
           "date": "2026-10-26"
+        },
+        {
+          "title": "Town site: Series B banner, no later round found",
+          "url": "https://www.town.com",
+          "publisher": "Town",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "superhuman-go",
@@ -624,7 +1132,7 @@
       "traction": "Launched October 29, 2025 with the rebrand; included in every Superhuman plan, with a free tier. Works as Chrome and Edge extensions, Windows and Mac apps, iOS and Android apps, on the web and in Slack.",
       "axes": {
         "autonomy": {
-          "score": 32,
+          "score": 30,
           "rationale": "Proactive: it looks for chances to help without being prompted, and it can draft, sort, schedule and update across connected apps. But every action waits for your approval (Go suggests, you decide), so it does not act on its own."
         },
         "breadth": {
@@ -632,7 +1140,7 @@
           "rationale": "A cluster of work tools: email, calendar, documents and tickets through connectors."
         },
         "distribution": {
-          "score": 82,
+          "score": 80,
           "rationale": "Chrome and Edge extensions, Windows and Mac apps, phones, the web and Slack: it shows up inside the tools you already use."
         }
       },
@@ -681,10 +1189,16 @@
           "url": "https://help.superhuman.com/hc/en-us/articles/46242137727757-About-Superhuman-Go-agents-and-connectors",
           "publisher": "Superhuman Help Center",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Superhuman Go page; no change found",
+          "url": "https://superhuman.com/products/go-ai-assistant",
+          "publisher": "Superhuman",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "duckbill",
@@ -713,11 +1227,11 @@
           "rationale": "You hand over an errand, such as a return, an appointment or a gift, and it is done end to end, but a human is still in the loop on execution, so the software’s own autonomy is capped."
         },
         "breadth": {
-          "score": 62,
+          "score": 55,
           "rationale": "Household errands, returns, appointments, gifts and bookings: broad personal life, though not your inbox or calendar."
         },
         "distribution": {
-          "score": 52,
+          "score": 50,
           "rationale": "Its own app, plus an API and MCP that let other AI products hand it errands."
         }
       },
@@ -770,13 +1284,19 @@
           "url": "https://getduckbill.com/",
           "publisher": "Duckbill",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Duckbill site; no new round found",
+          "url": "https://www.getduckbill.com",
+          "publisher": "Duckbill",
+          "date": "2026-11-06"
         }
       ],
       "locked": [
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "lindy",
@@ -801,15 +1321,15 @@
       "traction": "Plans advertised from $29.99 per user per month; seven-day free trial. Usage and connected-inbox limits vary by plan.",
       "axes": {
         "autonomy": {
-          "score": 76,
+          "score": 75,
           "rationale": "Runs delegated workflows in the background, started by triggers such as a new email, a meeting or a schedule, within the permissions you set; you still define each workflow."
         },
         "breadth": {
-          "score": 15,
-          "rationale": "Work-shaped: email, calendar, meetings and work tools; it does not reach payments, health or home."
+          "score": 50,
+          "rationale": "Work-shaped: email, calendar, meetings, Slack and other work tools cover the whole of work life; it does not reach payments, health or home."
         },
         "distribution": {
-          "score": 58,
+          "score": 50,
           "rationale": "Works through email, Slack and phone as well as its own web app."
         }
       },
@@ -849,13 +1369,19 @@
           "url": "https://www.clay.com/dossier/lindy-funding",
           "publisher": "Clay",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Lindy site; no new round found",
+          "url": "https://www.lindy.ai",
+          "publisher": "Lindy",
+          "date": "2026-11-06"
         }
       ],
       "locked": [
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "littlebird",
@@ -890,15 +1416,15 @@
       "traction": "Free download and mobile companions are advertised; users can pause capture, exclude sources and delete stored context.",
       "axes": {
         "autonomy": {
-          "score": 12,
-          "rationale": "Reads your screen and meetings for context, drafts work, acts through connected apps and runs scheduled Routines; it acts when asked or on a schedule, not on its own judgement."
+          "score": 25,
+          "rationale": "Reads your screen and meetings for context, then drafts work and acts through connected apps on tasks you start, and runs scheduled Routines; it does not act on its own judgement."
         },
         "breadth": {
-          "score": 26,
+          "score": 30,
           "rationale": "Everything on your work screen plus meetings and connected apps; little reach into personal errands."
         },
         "distribution": {
-          "score": 28,
+          "score": 25,
           "rationale": "A desktop app with mobile companions; you go to it."
         }
       },
@@ -952,10 +1478,16 @@
           "url": "https://littlebird.ai/",
           "publisher": "Littlebird",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Littlebird site; no round since March 2026 found",
+          "url": "https://littlebird.ai",
+          "publisher": "Littlebird",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "ohai",
@@ -980,12 +1512,12 @@
       "traction": "Consumer household product remains available with a trial.",
       "axes": {
         "autonomy": {
-          "score": 28,
+          "score": 30,
           "rationale": "Turns forwarded emails, texts and voice requests into schedules, reminders and plans, and coordinates calendars, chores and meals across the family; you start each task."
         },
         "breadth": {
-          "score": 44,
-          "rationale": "Family logistics: shared calendars, school information, meal planning, groceries and reminders."
+          "score": 50,
+          "rationale": "Family logistics: shared calendars, school information, chores, meal planning, groceries and reminders, which is the whole of home life."
         },
         "distribution": {
           "score": 50,
@@ -1051,13 +1583,19 @@
           "url": "https://www.ohai.ai/",
           "publisher": "Ohai.ai",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Ohai site; no round since August 2025 found",
+          "url": "https://www.ohai.ai",
+          "publisher": "Ohai",
+          "date": "2026-11-06"
         }
       ],
       "locked": [
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "pally",
@@ -1087,12 +1625,12 @@
       "traction": "Free plan; Pro $25/month; Max $100/month. Calling allowances and connected-app limits vary by plan.",
       "axes": {
         "autonomy": {
-          "score": 36,
+          "score": 35,
           "rationale": "Runs briefs, reminders and automations on its own, and makes calls, bookings and purchases, but asks for approval before sending messages, paying or creating invitations."
         },
         "breadth": {
-          "score": 60,
-          "rationale": "Messaging, email, calendars, files, phone calls, bookings and purchases: broad, though home and health are not covered."
+          "score": 65,
+          "rationale": "Messaging, email, calendars, files, phone calls, bookings and purchases: work and personal tasks together, though home and health are not covered."
         },
         "distribution": {
           "score": 80,
@@ -1174,12 +1712,18 @@
           "url": "https://pally.com/",
           "publisher": "Pally",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Pally site: text or Telegram, no waitlist",
+          "url": "https://pally.com",
+          "publisher": "Pally",
+          "date": "2026-11-06"
         }
       ],
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "martin",
@@ -1209,7 +1753,7 @@
       "traction": "Basic $35/month or $21/month billed annually; Pro $49/month or $30/month billed annually. Seven-day trial advertised.",
       "axes": {
         "autonomy": {
-          "score": 66,
+          "score": 65,
           "rationale": "Proactive by design: it sends daily summaries of what needs attention and acts for you by sending messages or making phone calls; its integrations are shallower than the funded leaders."
         },
         "breadth": {
@@ -1217,7 +1761,7 @@
           "rationale": "Inbox, calendar, to-do lists, calls and texts: the everyday admin cluster."
         },
         "distribution": {
-          "score": 74,
+          "score": 75,
           "rationale": "Reachable by text, phone, email and Slack, with an iOS app."
         }
       },
@@ -1280,10 +1824,16 @@
           "url": "https://www.trymartin.com/",
           "publisher": "Martin",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Martin site; no round since February 2025 found",
+          "url": "https://www.trymartin.com",
+          "publisher": "Martin",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "comet",
@@ -1304,15 +1854,15 @@
       "traction": "$200M raised for Comet in June 2026; total funding ~$1.7B",
       "axes": {
         "autonomy": {
-          "score": 40,
+          "score": 30,
           "rationale": "Carries out multi-step errands across every site you are signed into, but writes such as booking and paying ask before they fire."
         },
         "breadth": {
-          "score": 74,
+          "score": 75,
           "rationale": "Anything you can do on a website you are signed into: shopping, travel, forms, email in the browser."
         },
         "distribution": {
-          "score": 36,
+          "score": 35,
           "rationale": "You have to switch to Perplexity's browser to use it."
         }
       },
@@ -1350,7 +1900,15 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06",
+      "checks": [
+        {
+          "title": "Latest Comet coverage: no news since the June 2026 round found",
+          "url": "https://www.techtimes.com/articles/318028/20260608/perplexity-raises-200-million-comet-ai-browser-agent-economy-front-door.htm",
+          "publisher": "Tech Times",
+          "date": "2026-11-06"
+        }
+      ]
     },
     {
       "id": "muse",
@@ -1372,15 +1930,15 @@
       "traction": "Launched September 8, 2026. Meta said on September 23 that Muse is coming to its AI glasses, and on September 30 launched Muse for Small Business. Prior app-chart and pricing claims were not reverified. On October 12 Meta introduced Muse Wonder models for agentic tasks, which it says will soon power Muse, starting with subscribers. Muse reached Canada in September, Japan on October 23 and Singapore on October 27, 2026; voice and expressive avatars arrived in the Muse app on November 5.",
       "axes": {
         "autonomy": {
-          "score": 90,
-          "rationale": "Works in the background in its own virtual computer, keeps making progress on longer goals after you close the app, and can book, fill forms, negotiate and pay, asking when it needs approval."
+          "score": 80,
+          "rationale": "Works in the background in its own virtual computer and keeps making progress on longer goals after you close the app; it can book, fill forms, negotiate and pay, but asks when it needs approval."
         },
         "breadth": {
-          "score": 84,
+          "score": 80,
           "rationale": "Email, travel, forms, shopping and payments across connected apps; health and home are not described."
         },
         "distribution": {
-          "score": 92,
+          "score": 90,
           "rationale": "Inside WhatsApp, which billions already use, and in its own app; coming to Meta's AI glasses."
         }
       },
@@ -1478,7 +2036,15 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06",
+      "checks": [
+        {
+          "title": "Meta: Muse gets a voice and avatars (November 5, 2026)",
+          "url": "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+          "publisher": "Meta",
+          "date": "2026-11-06"
+        }
+      ]
     },
     {
       "id": "spark",
@@ -1498,15 +2064,15 @@
       "traction": "Google AI Pro and Ultra access in supported countries; Chrome browsing rollout initially covers the US.",
       "axes": {
         "autonomy": {
-          "score": 86,
+          "score": 80,
           "rationale": "Runs continuously rather than per-session, from inside the inbox and documents most people already live in; payments and other sensitive actions are handed back to you."
         },
         "breadth": {
-          "score": 85,
-          "rationale": "Gmail, Docs and other Workspace tools plus the web through Chrome: much of a digital life."
+          "score": 75,
+          "rationale": "Gmail, Docs and other Workspace tools plus the web through Chrome: work and personal life together; payments are handed back to you."
         },
         "distribution": {
-          "score": 88,
+          "score": 90,
           "rationale": "Inside Gmail, Chrome and the Gemini app that most people already have."
         }
       },
@@ -1550,7 +2116,15 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06",
+      "checks": [
+        {
+          "title": "Google: Gemini Spark works in Chrome",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-july-2026/",
+          "publisher": "Google",
+          "date": "2026-11-06"
+        }
+      ]
     },
     {
       "id": "chatgpt",
@@ -1573,11 +2147,11 @@
       "traction": "Dots rolled out from September 29, 2026 to Pro and Business Premium subscribers in eligible markets, with the first dot included in the plan. Since late October 2026, US Pro users can text their dot over iMessage or RCS in beta, and the dot can text them first. Tools and access vary by plan, region and workspace settings.",
       "axes": {
         "autonomy": {
-          "score": 92,
-          "rationale": "Dots pursue user-set goals continuously in the background with minimal oversight, on their own cloud computer and browser; a read-only mode keeps them out of your browser or computer while you are away."
+          "score": 85,
+          "rationale": "Dots pursue user-set goals continuously in the background on their own cloud computer and browser; a read-only mode keeps them out of your browser or computer while you are away. A beta so far."
         },
         "breadth": {
-          "score": 72,
+          "score": 70,
           "rationale": "More than 4,000 app connections cover work tools and everyday tasks such as restaurant bookings; payments, health and home are not described."
         },
         "distribution": {
@@ -1630,10 +2204,16 @@
           "url": "https://learn.chatgpt.com/docs/use-chatgpt",
           "publisher": "OpenAI documentation",
           "date": "2026-09-26"
+        },
+        {
+          "title": "ChatGPT What's new: nothing for Dots after October 28, 2026",
+          "url": "https://learn.chatgpt.com/docs/whats-new",
+          "publisher": "OpenAI",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "cowork",
@@ -1659,15 +2239,15 @@
       "traction": "Rolling out to Pro and Max plans on web, desktop and mobile from September 16, 2026; Team and Free plans next, with 30 days notice for Enterprise. Claude Duet opened as a research preview by waitlist on October 21, 2026, for US Pro, Max and Ultra subscribers; its background checks count against normal Claude usage limits. Personal Finance, read-only access to connected bank and card accounts, began rolling out in beta to US Pro, Max and Ultra users on November 5, 2026.",
       "axes": {
         "autonomy": {
-          "score": 74,
+          "score": 70,
           "rationale": "Claude Duet watches your connected apps, follows up and reaches out first, and keeps working while you are away; it checks with you before acting on your behalf, and it is a waitlisted research preview."
         },
         "breadth": {
-          "score": 52,
+          "score": 55,
           "rationale": "Work and business life through 6,000+ connectors: email, Slack, calendar, documents and finance tools such as QuickBooks and Stripe. Personal Finance (November 2026) adds read-only access to your own bank and card accounts; still no personal errands, home or health."
         },
         "distribution": {
-          "score": 30,
+          "score": 25,
           "rationale": "The Claude apps and the standalone Claude Duet app on iOS, Android and the web; Duet messages you inside its own app, not in messaging apps or the operating system."
         }
       },
@@ -1723,13 +2303,19 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05",
+      "lastVerified": "2026-11-06",
       "checks": [
         {
           "title": "Anthropic announcement: Cowork merged into Claude",
           "url": "https://claude.com/blog/cowork-is-now-claude",
           "publisher": "Anthropic",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Claude Cowork product page",
+          "url": "https://claude.com/product/cowork",
+          "publisher": "Anthropic",
+          "date": "2026-11-06"
         }
       ]
     },
@@ -1748,18 +2334,18 @@
       "founded": 1994,
       "founders": [],
       "parent": "Amazon — public (NASDAQ: AMZN). Alexa+ is bundled free with Prime, so adoption reflects Prime's installed base and tells you little about standalone demand.",
-      "traction": "US Prime members get full Alexa+ at no extra charge; non-Prime full access costs $19.99/month, with a limited free text-chat tier.",
+      "traction": "US Prime members get full Alexa+ at no extra charge; non-Prime full access costs $19.99/month, with a limited free text-chat tier. Amazon says Alexa+ Update 12 is rolling out, first in English on its newest devices (November 2026).",
       "axes": {
         "autonomy": {
-          "score": 12,
+          "score": 10,
           "rationale": "Still largely command-and-response: it shops, books and runs the home when asked, one request at a time."
         },
         "breadth": {
-          "score": 66,
+          "score": 65,
           "rationale": "Smart home, shopping, reservations, rides, home services and family calendars."
         },
         "distribution": {
-          "score": 84,
+          "score": 85,
           "rationale": "Hundreds of millions of Alexa devices plus the app and the web."
         }
       },
@@ -1797,7 +2383,15 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06",
+      "checks": [
+        {
+          "title": "Alexa+ page: Update 12 rolling out",
+          "url": "https://www.amazon.com/alexaplus",
+          "publisher": "Amazon",
+          "date": "2026-11-06"
+        }
+      ]
     },
     {
       "id": "siri",
@@ -1820,11 +2414,11 @@
       "traction": "English beta in the 27-series operating systems from September 14, 2026. Device, language and regional restrictions apply.",
       "axes": {
         "autonomy": {
-          "score": 6,
+          "score": 5,
           "rationale": "Based on the shipping beta: Siri looks up personal context across Messages, Mail and Photos and acts in supported apps (WhatsApp and Audible today), chaining a lookup to an action, but only on request and with no background work."
         },
         "breadth": {
-          "score": 62,
+          "score": 60,
           "rationale": "Messages, Mail, Photos and supported apps on your devices."
         },
         "distribution": {
@@ -1872,7 +2466,15 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06",
+      "checks": [
+        {
+          "title": "Apple Siri page: Siri AI",
+          "url": "https://www.apple.com/siri/",
+          "publisher": "Apple",
+          "date": "2026-11-06"
+        }
+      ]
     },
     {
       "id": "wajo",
@@ -1900,15 +2502,15 @@
       "traction": "Opened to the public on September 28, 2026 after a month of invite-only alpha: a free Fo Mini plan with a daily task limit, invite-only OG Fo with unlimited tasks, and a Pro plan priced on request. Fo acts with its own phone number, email address and single-use payment cards, and hands a task to a human operator when a business will not deal with AI. Company-wide financing figures are user-provided, not publicly verified.",
       "axes": {
         "autonomy": {
-          "score": 78,
-          "rationale": "Editorial estimate: Fo runs real-world errands end to end with its own email address, phone number and payment card, within permission boundaries, and hands off to a human assistant when it gets stuck; not an independently measured success rate."
+          "score": 60,
+          "rationale": "Editorial estimate: Fo runs real-world errands end to end with its own email address, phone number and payment card, within permission boundaries, and hands off to a human assistant when it gets stuck; no background routines or watchers are described."
         },
         "breadth": {
-          "score": 80,
+          "score": 75,
           "rationale": "Email, phone calls, calendars, errands, bookings and purchases with its own payment cards."
         },
         "distribution": {
-          "score": 72,
+          "score": 75,
           "rationale": "Reached by text, email and phone with its own number and address; it also joins group conversations."
         }
       },
@@ -1966,13 +2568,19 @@
           "url": "https://wajo.ai/about",
           "publisher": "Wajo",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Wajo site: Fo calls, books and pays",
+          "url": "https://wajo.ai",
+          "publisher": "Wajo",
+          "date": "2026-11-06"
         }
       ],
       "locked": [
         "lastRound.postMoneyUsd",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "ollie",
@@ -2007,11 +2615,11 @@
       "traction": "Free plan with 50 messages a month; Everyday $25/month with 150 messages for the whole family group chat; Always-On $100/month with 1,000 messages. Top-ups cost $0.30 or $0.25 a message (ollie.ai pricing, October 2026). The earlier meal-planning app also remains available.",
       "axes": {
         "autonomy": {
-          "score": 44,
+          "score": 45,
           "rationale": "Editorial estimate: keeps the family’s calendars, email, lists and meal plans in sync and reports by text; it coordinates more than it executes."
         },
         "breadth": {
-          "score": 56,
+          "score": 55,
           "rationale": "Family calendars and email, shared lists, meal planning, groceries, appointments and payments."
         },
         "distribution": {
@@ -2074,10 +2682,16 @@
           "url": "https://ollie.ai/about/",
           "publisher": "Ollie",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Ollie site; no round since September 2026 found",
+          "url": "https://ollie.ai",
+          "publisher": "Ollie",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "poke",
@@ -2093,20 +2707,26 @@
       "website": "https://poke.com",
       "description": "Proactive personal assistant in Messages, WhatsApp and Telegram. It uses connected email, calendars and other services to run recurring recipes, send reminders and carry out everyday tasks.",
       "founded": null,
-      "founders": [],
+      "founders": [
+        {
+          "name": "Marvin von Hagen",
+          "role": "Co-founder",
+          "linkedin": null
+        }
+      ],
       "parent": null,
       "traction": "Still available after joining Cognition. Free, Pro $19/month and Ultra $199/month plans are advertised.",
       "axes": {
         "autonomy": {
-          "score": 72,
+          "score": 70,
           "rationale": "Editorial estimate: persistent messaging-based help and background recipes across connected services; capability varies with integrations and approvals."
         },
         "breadth": {
-          "score": 76,
+          "score": 75,
           "rationale": "Email, calendars, planning, health and fitness, smart-home controls and photos through connected services, recipes and reminders."
         },
         "distribution": {
-          "score": 84,
+          "score": 80,
           "rationale": "Lives in Messages, WhatsApp and Telegram."
         }
       },
@@ -2174,10 +2794,16 @@
           "url": "https://aventure.vc/companies/poke-palo-alto-ca-us",
           "publisher": "aVenture",
           "date": "2026-09-26"
+        },
+        {
+          "title": "Poke site: joining Cognition, plans unchanged",
+          "url": "https://poke.com",
+          "publisher": "The Interaction Company",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "grok-bot",
@@ -2200,11 +2826,11 @@
       "traction": "Beta launched August 11, 2026; access expanded August 26 to SuperGrok and Cursor Pro and Teams plans. Online purchases through Stripe Link for US users from August 28, 2026; each purchase needs your approval. Since October 12, 2026 it is included in the Premium ($30 a month), Super and Ultra tiers of the X Subscription, which bundles Grok, Grok Bot, Cursor and X Premium.",
       "axes": {
         "autonomy": {
-          "score": 78,
-          "rationale": "Editorial estimate: persistent computer use, scheduled routines and connected apps enable delegated work; access still depends on setup and permission review."
+          "score": 70,
+          "rationale": "Editorial estimate: persistent computer use, scheduled routines and connected apps enable delegated work; each purchase waits for your approval, and access depends on setup and permission review."
         },
         "breadth": {
-          "score": 64,
+          "score": 65,
           "rationale": "Research, inbox and calendar, scheduled routines and completed purchases: since August 28, 2026 it buys online for US users through Stripe Link single-use cards, with your approval for each purchase. Bots can also have their own email address."
         },
         "distribution": {
@@ -2281,10 +2907,16 @@
           "url": "https://x.ai/legal/faq",
           "publisher": "SpaceXSI",
           "date": "2026-09-26"
+        },
+        {
+          "title": "xAI docs: Grok Bot on the X Subscription",
+          "url": "https://docs.x.ai/x-subscription/grok-bot",
+          "publisher": "xAI",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "folk",
@@ -2311,15 +2943,15 @@
       "traction": "Free plan with unlimited chatting and three background watchers; Pro $9.99 a month (folk.com, October 5, 2026).",
       "axes": {
         "autonomy": {
-          "score": 58,
+          "score": 60,
           "rationale": "Editorial estimate: it texts first, runs background watchers on flights and prices, and books tables or handles email when asked; payments and phone calls are not advertised."
         },
         "breadth": {
-          "score": 46,
+          "score": 45,
           "rationale": "Messaging, email, restaurant bookings and flight and price watching; no payments or phone calls."
         },
         "distribution": {
-          "score": 82,
+          "score": 80,
           "rationale": "Lives entirely inside iMessage, Telegram and WhatsApp, with no app to install."
         }
       },
@@ -2375,10 +3007,16 @@
           "url": "https://www.nozomio.com/about",
           "publisher": "Nozomio Labs",
           "date": "2026-10-05"
+        },
+        {
+          "title": "folk site; no new round found",
+          "url": "https://www.folk.com",
+          "publisher": "Nozomio",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "microsoft-copilot",
@@ -2404,7 +3042,7 @@
       "traction": "Connectors, memory and proactive suggestions arrived in the fall 2025 release. On September 25, 2026 Microsoft merged its consumer and work Copilot apps and announced Autopilot, an always-on agent, in private preview.",
       "axes": {
         "autonomy": {
-          "score": 26,
+          "score": 25,
           "rationale": "Books and buys on your behalf through partner sites and acts across Edge tabs, but every booking or purchase waits for your confirmation, and the always-on Autopilot is still a private preview."
         },
         "breadth": {
@@ -2412,7 +3050,7 @@
           "rationale": "Email, calendar, contacts and files through connectors, plus dining, travel, tickets and shopping; no home or health."
         },
         "distribution": {
-          "score": 88,
+          "score": 90,
           "rationale": "Built into Windows and Edge, with iOS and Android apps and the web."
         }
       },
@@ -2455,10 +3093,16 @@
           "url": "https://support.microsoft.com/en-us/microsoft-copilot/connecting-microsoft-copilot-to-other-services",
           "publisher": "Microsoft Support",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Copilot site: Cowork and Work IQ listed",
+          "url": "https://copilot.microsoft.com",
+          "publisher": "Microsoft",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "genspark",
@@ -2497,15 +3141,15 @@
       "traction": "Grew to about $250M in annualized revenue within a year of its April 2025 relaunch as an agent, per reports. Call For Me places calls in more than 40 countries, through Twilio.",
       "axes": {
         "autonomy": {
-          "score": 52,
+          "score": 50,
           "rationale": "Runs multi-step tasks on its own, including outbound phone calls to businesses and people, and sends or schedules email; you start each task."
         },
         "breadth": {
-          "score": 54,
+          "score": 55,
           "rationale": "Email, calendar, phone calls, documents and the web; no payments, home or health."
         },
         "distribution": {
-          "score": 36,
+          "score": 35,
           "rationale": "Its own web app, browser and mobile apps; it reaches other people by phone, but you have to come to Genspark."
         }
       },
@@ -2555,7 +3199,7 @@
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-10-06"
     },
     {
       "id": "tab",
@@ -2590,15 +3234,15 @@
       "traction": "Came out of stealth on October 6, 2026. Private beta behind a waitlist, growing mostly by word of mouth; user numbers and revenue not disclosed.",
       "axes": {
         "autonomy": {
-          "score": 60,
+          "score": 50,
           "rationale": "Editorial estimate: runs errands end to end with its own phone number, computer and wallet, asking approval before it spends; no background routines or standing watchers described yet."
         },
         "breadth": {
-          "score": 72,
+          "score": 70,
           "rationale": "Flights, groceries, calls, email drafts and documents: work and personal tasks including bookings and purchases."
         },
         "distribution": {
-          "score": 78,
+          "score": 80,
           "rationale": "Lives in iMessage and WhatsApp with no app to install; still a waitlisted private beta."
         }
       },
@@ -2651,9 +3295,16 @@
           "date": "2026-10-06"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Tab site: text Tab, waitlist open",
+          "url": "https://tab.bot",
+          "publisher": "Terrasoft",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "persona",
@@ -2678,15 +3329,15 @@
       "traction": "Free iMessage beta with \"a few thousand\" users; wristband preorders in the five figures of revenue, shipping in December 2026. An app is in development.",
       "axes": {
         "autonomy": {
-          "score": 56,
+          "score": 50,
           "rationale": "Editorial estimate: pitched as proactive and runs errands such as flight bookings end to end, asking approval before purchases; how far it acts unprompted is not yet shown."
         },
         "breadth": {
-          "score": 66,
+          "score": 65,
           "rationale": "Travel, scheduling, email and shopping across work and personal life."
         },
         "distribution": {
-          "score": 76,
+          "score": 75,
           "rationale": "Lives in iMessage with no app to install; a wristband adds a second way in from December."
         }
       },
@@ -2742,12 +3393,19 @@
           "date": "2026-09-15"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Persona site: iMessage assistant and Persona Band",
+          "url": "https://yourpersona.com",
+          "publisher": "Persona",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [
         "lastRound.amountUsd",
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "tomo",
@@ -2779,7 +3437,7 @@
       "traction": "Grew by word of mouth to more than 10,000 paying subscribers in about 3.5 months while in stealth; users text it on average 20 days a month. Plans from $19.99 a month. A companion app for its most active users generates personalized trackers. Named to Newcomer and Felicis’s Emergent list in November 2026.",
       "axes": {
         "autonomy": {
-          "score": 52,
+          "score": 50,
           "rationale": "Plans and checks in on its own to keep goals and streaks on track, and handles reminders, calendar and shopping when asked; fewer end-to-end errands than the leading agents."
         },
         "breadth": {
@@ -2857,10 +3515,16 @@
           "url": "https://tomo.ai",
           "publisher": "Tomo",
           "date": "2026-11-05"
+        },
+        {
+          "title": "Tomo site: heavy-volume notice, product live",
+          "url": "https://tomo.ai",
+          "publisher": "Tomo",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     }
   ]
 }

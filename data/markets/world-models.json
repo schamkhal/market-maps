@@ -117,7 +117,266 @@
         "description": "World models that train, test and plan for robots, vehicles and AI agents."
       }
     ],
-    "asOf": "2026-11-05"
+    "asOf": "2026-11-06",
+    "scoreLog": [
+      {
+        "date": "2026-11-06",
+        "note": "Moved every score to steps of 5. These scores only moved to the nearest 5.",
+        "changes": [
+          {
+            "id": "world-labs",
+            "axis": "generality",
+            "from": 86,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "world-labs",
+            "axis": "access",
+            "from": 76,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "odyssey",
+            "axis": "interactivity",
+            "from": 74,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "decart",
+            "axis": "generality",
+            "from": 56,
+            "to": 55,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "decart",
+            "axis": "access",
+            "from": 78,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "general-intuition",
+            "axis": "interactivity",
+            "from": 84,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "runway",
+            "axis": "interactivity",
+            "from": 82,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "runway",
+            "axis": "access",
+            "from": 48,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "moonlake",
+            "axis": "interactivity",
+            "from": 44,
+            "to": 45,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "moonlake",
+            "axis": "generality",
+            "from": 54,
+            "to": 55,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "moonlake",
+            "axis": "access",
+            "from": 24,
+            "to": 25,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "overworld",
+            "axis": "interactivity",
+            "from": 78,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "overworld",
+            "axis": "access",
+            "from": 94,
+            "to": 95,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "genie",
+            "axis": "interactivity",
+            "from": 86,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "genie",
+            "axis": "access",
+            "from": 38,
+            "to": 40,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "cosmos",
+            "axis": "generality",
+            "from": 64,
+            "to": 65,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "microsoft-muse",
+            "axis": "access",
+            "from": 64,
+            "to": 65,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "v-jepa",
+            "axis": "interactivity",
+            "from": 4,
+            "to": 5,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "v-jepa",
+            "axis": "generality",
+            "from": 54,
+            "to": 55,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "v-jepa",
+            "axis": "access",
+            "from": 92,
+            "to": 90,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "spaitial",
+            "axis": "interactivity",
+            "from": 24,
+            "to": 25,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "spaitial",
+            "axis": "generality",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "spaitial",
+            "axis": "access",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "gigaai",
+            "axis": "interactivity",
+            "from": 12,
+            "to": 10,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "gigaai",
+            "axis": "generality",
+            "from": 52,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "gigaai",
+            "axis": "access",
+            "from": 56,
+            "to": 55,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "black-forest-labs",
+            "axis": "interactivity",
+            "from": 18,
+            "to": 20,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "black-forest-labs",
+            "axis": "access",
+            "from": 84,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "hy-world",
+            "axis": "interactivity",
+            "from": 82,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "hy-world",
+            "axis": "access",
+            "from": 92,
+            "to": 90,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "matrix-game",
+            "axis": "interactivity",
+            "from": 86,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "matrix-game",
+            "axis": "generality",
+            "from": 52,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "matrix-game",
+            "axis": "access",
+            "from": 96,
+            "to": 95,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "happy-oyster",
+            "axis": "generality",
+            "from": 76,
+            "to": 75,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          }
+        ]
+      },
+      {
+        "date": "2026-11-06",
+        "note": "Recalibrated against the rubric anchors. Each of these moved because the evidence fits a different anchor, not to tidy the chart.",
+        "changes": [
+          {
+            "id": "microsoft-muse",
+            "axis": "generality",
+            "from": 8,
+            "to": 5,
+            "why": "One game per model is the 0 anchor."
+          }
+        ]
+      }
+    ]
   },
   "companies": [
     {
@@ -165,11 +424,11 @@
           "rationale": "Frameboy (November 2026) streams new Atlas frames to your browser at up to 15 fps as you steer the camera through a generated or real scene, so the view is generated live as you move; only the camera responds, the world itself does not react, and 15 fps is below real time."
         },
         "generality": {
-          "score": 86,
+          "score": 85,
           "rationale": "Any scene, real or imagined, from text, images, video or a rough 3D layout; Atlas extends this to reconstruction of real places and robot simulation."
         },
         "access": {
-          "score": 76,
+          "score": 75,
           "rationale": "A web app with free and paid tiers, and a self-serve World API since January 2026."
         }
       },
@@ -261,12 +520,18 @@
           "url": "https://newsroom.amd.com/news/amd-acquire-world-labs/",
           "publisher": "AMD",
           "date": "2026-10-06"
+        },
+        {
+          "title": "World Labs site: Atlas in real time (November 5, 2026)",
+          "url": "https://www.worldlabs.ai",
+          "publisher": "World Labs",
+          "date": "2026-11-06"
         }
       ],
       "locked": [
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "odyssey",
@@ -299,7 +564,7 @@
       "traction": "Odyssey-3 opened as a free research preview on October 8, 2026, with developer access by request. Series B investors include Amazon, GV, AMD Ventures and IQT. Its early models were trained on real-world footage captured with its own backpack camera rigs.",
       "axes": {
         "interactivity": {
-          "score": 74,
+          "score": 75,
           "rationale": "Odyssey-3 (October 8, 2026) builds worlds from a prompt and predicts how they change as you act or introduce events; its distilled Flash variant runs in real time, and Pro generates at 1280×720. Agora-2 adds real-time interaction between several agents. Session limits are not published, so it sits below Genie 3."
         },
         "generality": {
@@ -375,10 +640,16 @@
           "url": "https://odyssey.systems/our-series-b",
           "publisher": "Odyssey",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Odyssey site: Odyssey-3 and the $310M Series B",
+          "url": "https://odyssey.systems",
+          "publisher": "Odyssey",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "decart",
@@ -416,11 +687,11 @@
           "rationale": "Built for live interaction: Lucy edits a video stream as it plays and responds to input in under 30 ms, and Oasis renders a playable world frame by frame."
         },
         "generality": {
-          "score": 56,
+          "score": 55,
           "rationale": "Lucy restyles and edits any video you feed it, but it transforms an existing stream rather than inventing a world from nothing; Oasis worlds are game-like."
         },
         "access": {
-          "score": 78,
+          "score": 80,
           "rationale": "Models are sold through Decart's API, alongside enterprise deployments."
         }
       },
@@ -511,9 +782,16 @@
           "date": "2025-08-07"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Decart site: Lucy 2.6 live",
+          "url": "https://decart.ai",
+          "publisher": "Decart",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "general-intuition",
@@ -546,7 +824,7 @@
       "traction": "Commercial models in limited testing with robotics, simulation and entertainment customers (September 2026). Medal, its sister platform, has 17 million monthly active users.",
       "axes": {
         "interactivity": {
-          "score": 84,
+          "score": 85,
           "rationale": "MIRA generates game footage at 20 fps in response to players' actions, on a single B200 GPU, and the company says it runs indefinitely without diverging."
         },
         "generality": {
@@ -616,10 +894,16 @@
           "url": "https://www.generalintuition.com",
           "publisher": "General Intuition",
           "date": "2026-10-06"
+        },
+        {
+          "title": "General Intuition site: model access by waitlist",
+          "url": "https://www.generalintuition.com",
+          "publisher": "General Intuition",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "runway",
@@ -658,7 +942,7 @@
       "traction": "Raised its Series E to pre-train the next generation of world models; a member of NVIDIA's Cosmos Coalition since June 2026. GWM Worlds 2 and Solaris are research previews; Praxis-1 is being tested with early robotics partners and will be released publicly with open weights in the coming months.",
       "axes": {
         "interactivity": {
-          "score": 82,
+          "score": 80,
           "rationale": "GWM Worlds 2 generates 720p video at 24 fps with audio in real time, steered by camera moves and typed actions for characters and the scene, with no fixed session length and several players at once; still a research preview, and long-session consistency is not published."
         },
         "generality": {
@@ -666,7 +950,7 @@
           "rationale": "Worlds from any text or image prompt with generated audio and characters, plus robot control (GWM Robotics, Praxis-1), conversational avatars and generated software interfaces (Solaris)."
         },
         "access": {
-          "score": 48,
+          "score": 50,
           "rationale": "Avatars ship in the API and web app; Worlds, Worlds 2, Robotics and Solaris are research previews or early access by request. Praxis-1 is promised with open weights but not yet released."
         }
       },
@@ -756,10 +1040,16 @@
           "url": "https://runway.com/research/introducing-runway-gwm-1",
           "publisher": "Runway",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Runway site; no new round found",
+          "url": "https://runway.com",
+          "publisher": "Runway",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "moonlake",
@@ -792,15 +1082,15 @@
       "traction": "Named to CB Insights' 2026 AI 100. Recent work covers robot policy evaluation in its world-model simulator and simulation-ready 3D assets for robotics.",
       "axes": {
         "interactivity": {
-          "score": 44,
+          "score": 45,
           "rationale": "Produces simulations a robot can act in, where objects respond under physics, but the world is built ahead of time rather than generated live as actions arrive."
         },
         "generality": {
-          "score": 54,
+          "score": 55,
           "rationale": "Reconstructs real scenes and objects from images, video or text, within what a physics simulator can represent."
         },
         "access": {
-          "score": 24,
+          "score": 25,
           "rationale": "Sales-led: customers book a demo."
         }
       },
@@ -859,10 +1149,16 @@
           "url": "https://moonlakeai.com/articles",
           "publisher": "Moonlake AI",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Moonlake site: robot-learning posts through October 2026",
+          "url": "https://moonlakeai.com",
+          "publisher": "Moonlake",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "overworld",
@@ -896,7 +1192,7 @@
       "traction": "Waypoint 2 runs locally on a PC or by streaming; Terraformer, built on it, turns a single prompt into a first-person game.",
       "axes": {
         "interactivity": {
-          "score": 78,
+          "score": 80,
           "rationale": "Responds to keyboard and mouse input frame by frame: 56 fps at 720p on an RTX 5090 and 30 fps on an RTX 3090, per the Waypoint-1.5 model card."
         },
         "generality": {
@@ -904,7 +1200,7 @@
           "rationale": "Trained on video-game footage, so its worlds look and behave like games; Waypoint 2 takes text and image prompts."
         },
         "access": {
-          "score": 94,
+          "score": 95,
           "rationale": "Waypoint-1.5 weights are on Hugging Face under Apache 2.0; Waypoint 2 is in an invite-based beta."
         }
       },
@@ -965,10 +1261,16 @@
           "url": "https://over.world",
           "publisher": "Overworld",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Overworld: Waypoint 2 beta by invite",
+          "url": "https://over.world/waypoint-2.0",
+          "publisher": "Overworld",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "genie",
@@ -992,7 +1294,7 @@
       "traction": "Project Genie opened to Google AI Ultra subscribers in the US on January 29, 2026, and has been rolling out to eligible subscribers worldwide (18+) since May 19, 2026. Genie 4 is a research preview for trusted testers, coming next to AI Ultra subscribers in Project Genie and early-access partners of the Gemini API and Google AI Studio.",
       "axes": {
         "interactivity": {
-          "score": 86,
+          "score": 85,
           "rationale": "Generates the world ahead in real time as you move, and Genie 4 responds to typed events, new characters and weather changes mid-session, for a few minutes of continuous interaction rather than Genie 3's 60 seconds; details can drift over longer sessions."
         },
         "generality": {
@@ -1000,7 +1302,7 @@
           "rationale": "Any world from text or an image, real or imagined, with Street View grounding for real places; Genie 4 adds native sound, talking characters and simulations used for robot planning."
         },
         "access": {
-          "score": 38,
+          "score": 40,
           "rationale": "Genie 3 is an experimental prototype for Google AI Ultra subscribers only; Genie 4 is limited to trusted testers so far, with no developer API yet."
         }
       },
@@ -1049,9 +1351,16 @@
           "date": "2026-01-29"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Google DeepMind Genie page: Genie 4",
+          "url": "https://deepmind.google/models/genie/",
+          "publisher": "Google DeepMind",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "cosmos",
@@ -1078,7 +1387,7 @@
           "rationale": "Mostly predicts future world states for training and evaluation, ahead of time. Cosmos 3 Edge runs inside a robot's control loop at 15 Hz on Jetson Thor, but it drives a robot rather than rendering a world you explore."
         },
         "generality": {
-          "score": 64,
+          "score": 65,
           "rationale": "Physical-world video across robotics, driving and vision-agent domains; not built for imagined or game worlds."
         },
         "access": {
@@ -1119,9 +1428,16 @@
           "date": "2026-06-01"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "NVIDIA Cosmos page",
+          "url": "https://www.nvidia.com/en-us/ai/cosmos/",
+          "publisher": "NVIDIA",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "microsoft-muse",
@@ -1150,11 +1466,11 @@
           "rationale": "Responds to controller input frame by frame, but slowly: the original model ran at about one frame per second, and WHAMM's Quake II demo at a little over 10 fps."
         },
         "generality": {
-          "score": 8,
+          "score": 5,
           "rationale": "Each model learns one game: Bleeding Edge for Muse, a single Quake II level for WHAMM."
         },
         "access": {
-          "score": 64,
+          "score": 65,
           "rationale": "Weights are downloadable for research under the Microsoft Research License."
         }
       },
@@ -1191,10 +1507,16 @@
           "url": "https://huggingface.co/microsoft/wham",
           "publisher": "Hugging Face",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Xbox Wire: Muse announcement page",
+          "url": "https://news.xbox.com/en-us/2025/02/19/muse-ai-xbox-empowering-creators-and-players/",
+          "publisher": "Microsoft",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "v-jepa",
@@ -1218,15 +1540,15 @@
       "traction": "Code and weights on GitHub and Hugging Face since June 2025. Yann LeCun, who led the JEPA research, has since left Meta and founded AMI Labs.",
       "axes": {
         "interactivity": {
-          "score": 4,
+          "score": 5,
           "rationale": "Action-conditioned: it predicts what a robot's move will do and plans toward a goal image, but it neither renders a world nor responds live."
         },
         "generality": {
-          "score": 54,
+          "score": 55,
           "rationale": "Learned from over a million hours of internet video; its robot planning is shown on tabletop manipulation."
         },
         "access": {
-          "score": 92,
+          "score": 90,
           "rationale": "Code and weights on GitHub and Hugging Face."
         }
       },
@@ -1263,10 +1585,16 @@
           "url": "https://ai.meta.com/vjepa/",
           "publisher": "Meta",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Meta V-JEPA 2 page",
+          "url": "https://ai.meta.com/vjepa/",
+          "publisher": "Meta",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "spaitial",
@@ -1281,7 +1609,7 @@
       "region": "UK",
       "hq": "London, UK",
       "website": "https://www.spaitial.ai",
-      "description": "Builds physically grounded world models. Echo-2 (April 2026) turns a single image or a text prompt into a persistent 3D world, stored as Gaussian splats, that you can explore in real time and edit object by object; it is available in SpAItial's studio app and through an API.",
+      "description": "Builds physically grounded world models. Echo-2 (April 2026) turns a single image or a text prompt into a persistent 3D world, stored as Gaussian splats, that you can explore in real time and edit object by object. Echo-3 (October 2026) rebuilds a real space from an iPhone capture as a 3D world at real-world scale, filling in what the camera missed.",
       "founded": 2025,
       "founders": [
         {
@@ -1306,18 +1634,18 @@
         }
       ],
       "parent": null,
-      "traction": "Creative partners and startups can apply for credits and early access. SpAItial says later versions will add change over time and physics.",
+      "traction": "Echo-2 is available in the web app and through an API; Echo-3 ships in a subscription iPhone app with the first month free. Creative partners and startups can apply for credits. SpAItial says later versions will add change over time and physics.",
       "axes": {
         "interactivity": {
-          "score": 24,
+          "score": 25,
           "rationale": "Echo-2 builds a persistent 3D scene you can explore in real time and edit object by object, but the world does not yet move or react; SpAItial plans change over time and physics for later versions."
         },
         "generality": {
-          "score": 72,
+          "score": 70,
           "rationale": "Any scene from a single image or a text prompt, from real rooms and buildings to imagined settings."
         },
         "access": {
-          "score": 72,
+          "score": 70,
           "rationale": "A studio app and a developer API; partner programs offer credits and early access."
         }
       },
@@ -1325,7 +1653,7 @@
         "series": "Seed",
         "amountUsd": 14380000,
         "postMoneyUsd": 59720000,
-        "date": "2025-05-26",
+        "date": "2025-05-27",
         "leads": [
           "Earlybird Venture Capital"
         ],
@@ -1334,7 +1662,7 @@
         ],
         "confidence": "manual",
         "postMoneyConfidence": "manual",
-        "note": "Entered manually from a source that is not public: the $14.4M seed on May 26, 2025 and its $59.7M post-money valuation. Tech.eu reported the round on May 27, 2025 as €11.4M ($13M), led by Earlybird Venture Capital.",
+        "note": "Dated by the public announcement: SpAItial came out of stealth on May 27, 2025, with Tech.eu reporting the seed as €11.4M ($13M), led by Earlybird Venture Capital. Entered manually from a source that is not public: the round as $14.4M on May 26, 2025 and its $59.7M post-money valuation.",
         "source": {
           "url": "https://tech.eu/2025/05/27/spaitial-emerges-from-stealth-with-13m-seed-for-ai-native-3d-applications/",
           "publisher": "Tech.eu",
@@ -1346,6 +1674,12 @@
         "totalRaisedConfidence": "manual"
       },
       "news": [
+        {
+          "title": "Introducing Echo-3 and the SpAItial app: your world, faithfully reconstructed",
+          "url": "https://www.spaitial.ai/blog/echo-3-release",
+          "publisher": "SpAItial",
+          "date": "2026-10-27"
+        },
         {
           "title": "SpAItial emerges from stealth with $13M Seed for AI-native 3D applications",
           "url": "https://tech.eu/2025/05/27/spaitial-emerges-from-stealth-with-13m-seed-for-ai-native-3d-applications/",
@@ -1359,15 +1693,20 @@
           "url": "https://www.spaitial.ai",
           "publisher": "SpAItial",
           "date": "2026-10-06"
+        },
+        {
+          "title": "SpAItial: Echo-3 release (October 27, 2026)",
+          "url": "https://www.spaitial.ai/blog/echo-3-release",
+          "publisher": "SpAItial",
+          "date": "2026-11-06"
         }
       ],
       "locked": [
         "lastRound.amountUsd",
         "lastRound.postMoneyUsd",
-        "lastRound.date",
         "metrics.totalRaisedUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "gigaai",
@@ -1396,15 +1735,15 @@
       "traction": "Raised CNY3.5B ($518M) across three rounds from March to June 2026. It has converted into a joint-stock company ahead of a planned Hong Kong listing, with an application reported as early as the end of 2026. GigaBrain models are deployed with clients including Li Auto and ECARX.",
       "axes": {
         "interactivity": {
-          "score": 12,
+          "score": 10,
           "rationale": "GigaWorld generates video and 3D scenes under control of camera, action and appearance, to make training data for robots; it renders ahead of time rather than reacting live."
         },
         "generality": {
-          "score": 52,
+          "score": 50,
           "rationale": "The physical world across several domains: driving, factory and household robotics."
         },
         "access": {
-          "score": 56,
+          "score": 55,
           "rationale": "The GigaWorld-0 framework is open source on GitHub; the full models are sold in integrated projects."
         }
       },
@@ -1463,10 +1802,16 @@
           "url": "https://github.com/open-gigaai/giga-world-0",
           "publisher": "GitHub",
           "date": "2026-10-06"
+        },
+        {
+          "title": "GigaAI site",
+          "url": "https://gigaai.cc",
+          "publisher": "GigaAI",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "black-forest-labs",
@@ -1502,7 +1847,7 @@
       "traction": "FLUX image models power image generation for partners including Mistral's Le Chat, Adobe and Meta. FLUX 3 Action tops NVIDIA's RoboLab-120 simulation benchmark, per the company.",
       "axes": {
         "interactivity": {
-          "score": 18,
+          "score": 20,
           "rationale": "Predicts video of what each chunk of motor commands will do, inside a robot's control loop; it is not a world you explore, and it does not yet run game worlds in real time."
         },
         "generality": {
@@ -1510,7 +1855,7 @@
           "rationale": "Robot manipulation, shown on a Franka arm and the SO-101, built on the general FLUX 3 multimodal backbone."
         },
         "access": {
-          "score": 84,
+          "score": 85,
           "rationale": "Open weights on Hugging Face, under non-commercial and self-hosted commercial licenses."
         }
       },
@@ -1582,10 +1927,16 @@
           "url": "https://bfl.ai/blog/flux-3-action",
           "publisher": "Black Forest Labs",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Black Forest Labs site: FLUX 3",
+          "url": "https://bfl.ai",
+          "publisher": "Black Forest Labs",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "hy-world",
@@ -1610,7 +1961,7 @@
       "traction": "Code and weights on GitHub and Hugging Face under Tencent community licenses. Tencent says HY-World 2.0 ranks first among open models on the WorldScore benchmark.",
       "axes": {
         "interactivity": {
-          "score": 82,
+          "score": 80,
           "rationale": "HY-World 1.5 responds to keyboard and mouse in real time at 24 fps with long-range geometric consistency; 2.0's 3D scenes are explored rather than simulated."
         },
         "generality": {
@@ -1618,7 +1969,7 @@
           "rationale": "Any scene from text, images or video, as interactive video or as 3D assets."
         },
         "access": {
-          "score": 92,
+          "score": 90,
           "rationale": "Code and weights on GitHub and Hugging Face under Tencent's community licenses."
         }
       },
@@ -1655,10 +2006,16 @@
           "url": "https://huggingface.co/tencent/HY-World-2.0",
           "publisher": "Hugging Face",
           "date": "2026-10-06"
+        },
+        {
+          "title": "HY-World 2.0 model page: releases through May 2026",
+          "url": "https://huggingface.co/tencent/HY-World-2.0",
+          "publisher": "Tencent",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "matrix-game",
@@ -1683,15 +2040,15 @@
       "traction": "Apache 2.0 code and weights on GitHub and Hugging Face; trained on Unreal Engine scenes, game recordings and real-world video.",
       "axes": {
         "interactivity": {
-          "score": 86,
+          "score": 85,
           "rationale": "Responds to actions frame by frame at 40 fps in 720p, with a memory that holds the world together over minute-long sessions."
         },
         "generality": {
-          "score": 52,
+          "score": 50,
           "rationale": "Game-like and real-world scenes from an image and a text prompt, trained largely on game and engine footage."
         },
         "access": {
-          "score": 96,
+          "score": 95,
           "rationale": "Apache 2.0 code and weights on GitHub and Hugging Face."
         }
       },
@@ -1728,10 +2085,16 @@
           "url": "https://huggingface.co/Skywork/Matrix-Game-3.0",
           "publisher": "Hugging Face",
           "date": "2026-10-06"
+        },
+        {
+          "title": "Matrix-Game repo: 4.0 released October 15, 2026",
+          "url": "https://github.com/SkyworkAI/Matrix-Game",
+          "publisher": "Skywork AI",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "happy-oyster",
@@ -1759,7 +2122,7 @@
           "rationale": "Generates while you steer, adding elements, redirecting characters or moving the camera mid-scene, for sessions of up to three minutes."
         },
         "generality": {
-          "score": 76,
+          "score": 75,
           "rationale": "Open-ended worlds for games, film and drama from text and image prompts."
         },
         "access": {
@@ -1800,10 +2163,16 @@
           "url": "https://fal.ai/happy-oyster",
           "publisher": "fal",
           "date": "2026-10-06"
+        },
+        {
+          "title": "fal: Happy Oyster page",
+          "url": "https://fal.ai/happy-oyster",
+          "publisher": "fal",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     }
   ]
 }

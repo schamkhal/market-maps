@@ -16,7 +16,7 @@
       "Germany",
       "Singapore"
     ],
-    "scope": "Companies worldwide, judged on the same criteria; each profile gives the headquarters.",
+    "scope": "Companies worldwide, judged on the same criteria. Most qualifying companies are US-based; this edition also covers Config (South Korea), microagi (Germany), Ropedia (Singapore) and Lightwheel (China). Each profile gives the headquarters.",
     "inclusion": [
       "Produces training data for robots: robot runs, recorded human work, or simulation",
       "The data is the product: sold, licensed or released to others, not only used to train its own robots",
@@ -107,7 +107,133 @@
       }
     ],
     "defaultSize": "raised",
-    "asOf": "2026-11-05"
+    "asOf": "2026-11-06",
+    "scoreLog": [
+      {
+        "date": "2026-11-06",
+        "note": "Moved every score to steps of 5. These scores only moved to the nearest 5.",
+        "changes": [
+          {
+            "id": "xdof",
+            "axis": "grounding",
+            "from": 88,
+            "to": 90,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "xdof",
+            "axis": "breadth",
+            "from": 52,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "config",
+            "axis": "grounding",
+            "from": 78,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "prismax",
+            "axis": "breadth",
+            "from": 32,
+            "to": 30,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "mecka",
+            "axis": "breadth",
+            "from": 72,
+            "to": 70,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "ropedia",
+            "axis": "grounding",
+            "from": 62,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "ropedia",
+            "axis": "openness",
+            "from": 32,
+            "to": 30,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "human-archive",
+            "axis": "grounding",
+            "from": 56,
+            "to": 55,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "lightwheel",
+            "axis": "grounding",
+            "from": 28,
+            "to": 30,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "scale-physical-ai",
+            "axis": "grounding",
+            "from": 84,
+            "to": 85,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "micro1-robotics",
+            "axis": "openness",
+            "from": 22,
+            "to": 20,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "doordash-tasks",
+            "axis": "breadth",
+            "from": 58,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "doordash-tasks",
+            "axis": "openness",
+            "from": 12,
+            "to": 10,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          }
+        ]
+      },
+      {
+        "date": "2026-11-06",
+        "note": "Recalibrated against the rubric anchors. Each of these moved because the evidence fits a different anchor, not to tidy the chart.",
+        "changes": [
+          {
+            "id": "xdof",
+            "axis": "openness",
+            "from": 72,
+            "to": 75,
+            "why": "A large open dataset (ABC-130K, Apache 2.0) alongside paid programs is the 75 anchor exactly."
+          },
+          {
+            "id": "scale-physical-ai",
+            "axis": "openness",
+            "from": 28,
+            "to": 25,
+            "why": "Managed programs for named customers, with the public dataset still unreleased, sit at the 25 anchor."
+          },
+          {
+            "id": "micro1-robotics",
+            "axis": "breadth",
+            "from": 68,
+            "to": 60,
+            "why": "Many tasks in one kind of setting, homes, is the 50 anchor; 71 countries adds geography but not settings, so it should not sit above DoorDash."
+          }
+        ]
+      }
+    ]
   },
   "companies": [
     {
@@ -143,15 +269,15 @@
       "traction": "About 20 customers including several frontier AI labs at launch. Released ABC-130K, more than 130,000 teleoperated episodes (about 3,600 hours) across roughly 195 bimanual tasks, under Apache 2.0.",
       "axes": {
         "grounding": {
-          "score": 88,
+          "score": 90,
           "rationale": "Mostly teleoperation on real robots, including the customer's own deployed robot, with an egocentric tier underneath."
         },
         "breadth": {
-          "score": 52,
+          "score": 50,
           "rationale": "Bimanual manipulation across many tasks, concentrated in warehouse and household-style settings."
         },
         "openness": {
-          "score": 72,
+          "score": 75,
           "rationale": "A large open dataset (ABC-130K, Apache 2.0) alongside paid collection programs."
         }
       },
@@ -200,9 +326,16 @@
           "date": "2026-06-17"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "XDOF site; no round since the June 2026 Series A found",
+          "url": "https://www.xdof.ai",
+          "publisher": "XDOF",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "config",
@@ -237,7 +370,7 @@
       "traction": "Data operations in Seoul and Hanoi with nearly 300 people; reported to hold more than 100,000 hours of human motion data. Its investors are Korea's largest manufacturers, which are also its customers. Offices in Seoul and San Jose.",
       "axes": {
         "grounding": {
-          "score": 78,
+          "score": 80,
           "rationale": "Human bimanual demonstrations converted into robot actions and validated by training and testing policies on real robots."
         },
         "breadth": {
@@ -294,15 +427,28 @@
           "date": "2026-08-24"
         },
         {
+          "title": "HABIT, the Dataset for Interactive Action Models",
+          "url": "https://config.inc",
+          "publisher": "Config",
+          "date": "2026-08-07"
+        },
+        {
           "title": "Samsung, Hyundai and LG just showed you where robotics is heading, and it's all about data",
           "url": "https://techround.co.uk/artificial-intelligence/samsung-hyundai-and-lg-just-showed-you-where-robotics-is-heading-and-its-all-about-data/",
           "publisher": "TechRound",
           "date": "2026-05-12"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Config site: data infrastructure and HABIT dataset (August 2026)",
+          "url": "https://config.inc",
+          "publisher": "Config",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "prismax",
@@ -331,7 +477,7 @@
           "rationale": "Teleoperation of real robot arms by a paid operator network, plus egocentric episodes."
         },
         "breadth": {
-          "score": 32,
+          "score": 30,
           "rationale": "Arm manipulation across tasks and scenes, without whole-body or deployment data."
         },
         "openness": {
@@ -379,9 +525,16 @@
           "date": "2026-08-24"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "PrismaX site: teleoperation data, $1M+ paid to contributors; no 2026 round found",
+          "url": "https://prismax.ai",
+          "publisher": "PrismaX",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "mecka",
@@ -412,7 +565,7 @@
           "rationale": "Measured hand and full-body motion from wearable sensors, paired with phone video."
         },
         "breadth": {
-          "score": 72,
+          "score": 70,
           "rationale": "Hands, gait and whole-body motion across household and work settings."
         },
         "openness": {
@@ -474,9 +627,16 @@
           "date": "2026-09-11"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Mecka site: $60M Series B led by Sequoia",
+          "url": "https://www.mecka.ai",
+          "publisher": "Mecka",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "microagi",
@@ -503,7 +663,7 @@
         }
       ],
       "parent": null,
-      "traction": "Five companies collecting data through the platform and one preparing a line deployment at the seed, across automotive, logistics and food.",
+      "traction": "Company-reported annual run rate above $100M in October 2026, six months after launching Shift, its data-collection app; not independently verified. At the July seed, five companies were collecting data through the platform and one was preparing a line deployment.",
       "axes": {
         "grounding": {
           "score": 70,
@@ -552,6 +712,12 @@
       },
       "news": [
         {
+          "title": "MicroAGI claims $100M+ annual run rate six months after Shift launch",
+          "url": "https://dealroom.co/news/161796-microagi-claims-100m-annual-run-rate-six-months-after-shift-launch/",
+          "publisher": "Dealroom",
+          "date": "2026-10-12"
+        },
+        {
           "title": "An F1 aerodynamicist just raised $55m to teach factory robots, using footage of people doing chores",
           "url": "https://thenextweb.com/news/microagi-55m-seed-robot-training-data-shift",
           "publisher": "The Next Web",
@@ -564,9 +730,16 @@
           "date": "2026-07-16"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Dealroom: company-reported run rate, October 2026",
+          "url": "https://dealroom.co/news/161796-microagi-claims-100m-annual-run-rate-six-months-after-shift-launch/",
+          "publisher": "Dealroom",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "ropedia",
@@ -585,7 +758,7 @@
       "traction": "Launched HOMIE Gen2 and, in September 2026, an academic partner program giving universities research kits. Says its approach cuts collection costs by up to 50 times.",
       "axes": {
         "grounding": {
-          "score": 62,
+          "score": 60,
           "rationale": "Multi-sensor first-person capture with hand tracking and body motion, though no gloves or robot actions."
         },
         "breadth": {
@@ -593,7 +766,7 @@
           "rationale": "Everyday tasks in homes and workplaces across Southeast Asia and North America."
         },
         "openness": {
-          "score": 32,
+          "score": 30,
           "rationale": "Custom collection for labs, with research kits for academics."
         }
       },
@@ -636,9 +809,16 @@
           "date": "2026-07-23"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Ropedia site: Xperience-10M and HOMIE hardware",
+          "url": "https://ropedia.com",
+          "publisher": "Ropedia",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "build-ai",
@@ -710,10 +890,16 @@
           "url": "https://huggingface.co/datasets/builddotai/egocentric-100k",
           "publisher": "Hugging Face",
           "date": "2026-11-05"
+        },
+        {
+          "title": "Build AI site; no 2026 round found",
+          "url": "https://www.build.ai",
+          "publisher": "Build AI",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "human-archive",
@@ -738,7 +924,7 @@
       "traction": "More than 1,000 active headsets in India, company-reported, expanding to Southeast Asia and the US. Indian regulators are examining consent practices; Urban Company and Pronto declined to partner over privacy.",
       "axes": {
         "grounding": {
-          "score": 56,
+          "score": 55,
           "rationale": "Headset video with depth and other sensors from real work; measured hand data is still being added."
         },
         "breadth": {
@@ -788,9 +974,16 @@
           "date": "2026-05-26"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Human Archive site; no news since the May 2026 seed found",
+          "url": "https://www.humanarchive.ai",
+          "publisher": "Human Archive",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "lightwheel",
@@ -803,7 +996,7 @@
       "hq": "China",
       "website": "https://www.lightwheel.ai",
       "description": "Simulation-first robot data company founded by NVIDIA's former simulation lead. It builds SimReady assets with measured physical properties for Isaac Sim, sells EgoSuite egocentric human data and the RoboFinals evaluation platform, and generates simulated training corpora.",
-      "founded": null,
+      "founded": 2023,
       "founders": [
         {
           "linkedin": null,
@@ -815,7 +1008,7 @@
       "traction": "Names Google DeepMind, Figure, AgiBot, ByteDance, Geely and BYD among teams using its assets; reported RMB 550M (about $77M) of new orders in Q1 2026.",
       "axes": {
         "grounding": {
-          "score": 28,
+          "score": 30,
           "rationale": "Simulation built from measured real-world physical properties, plus an egocentric human-data line."
         },
         "breadth": {
@@ -875,9 +1068,16 @@
           "date": "2026-05-27"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Lightwheel site and July 2026 round coverage",
+          "url": "https://cryptobriefing.com/lightwheel-raises-145m-robotics-simulation/",
+          "publisher": "Crypto Briefing",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "scale-physical-ai",
@@ -898,7 +1098,7 @@
       "traction": "Named robotics customers include Physical Intelligence, Generalist, Cobot and Dyna. The UR AI Trainer launched at NVIDIA GTC in March 2026, with a large industrial dataset from UR robots planned for later in the year.",
       "axes": {
         "grounding": {
-          "score": 84,
+          "score": 85,
           "rationale": "Teleoperated and demonstrated runs on real robots, including production arms, with multimodal capture."
         },
         "breadth": {
@@ -906,7 +1106,7 @@
           "rationale": "Data factories, homes and commercial deployments, with experience from driving data."
         },
         "openness": {
-          "score": 28,
+          "score": 25,
           "rationale": "Managed programs for named customers; the UR dataset is planned but not yet released."
         }
       },
@@ -937,9 +1137,16 @@
           "date": "2026-03-16"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Scale physical AI page; no announcement since March 2026 found",
+          "url": "https://scale.com/physical-ai",
+          "publisher": "Scale AI",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "micro1-robotics",
@@ -964,11 +1171,11 @@
           "rationale": "Video of people doing household tasks, without measured actions."
         },
         "breadth": {
-          "score": 68,
-          "rationale": "Homes across 71 countries."
+          "score": 60,
+          "rationale": "Household tasks in homes across 71 countries: one kind of setting, with unusually wide geography."
         },
         "openness": {
-          "score": 22,
+          "score": 20,
           "rationale": "Collected for customers under contract."
         }
       },
@@ -999,9 +1206,16 @@
           "date": "2026-08-24"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "micro1 site: robotics data offering",
+          "url": "https://www.micro1.ai",
+          "publisher": "micro1",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "doordash-tasks",
@@ -1026,11 +1240,11 @@
           "rationale": "Hands-visible video of real chores, without measured actions."
         },
         "breadth": {
-          "score": 58,
+          "score": 60,
           "rationale": "Homes and commercial locations across the US."
         },
         "openness": {
-          "score": 12,
+          "score": 10,
           "rationale": "Data goes to AI and robotics developers privately."
         }
       },
@@ -1061,9 +1275,16 @@
           "date": "2026-03-19"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "DoorDash Tasks coverage; no update since March 2026 found",
+          "url": "https://www.eweek.com/news/doordash-launches-app-paying-workers-to-train-ai/",
+          "publisher": "eWeek",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "nvidia-gr00t-dreams",
@@ -1127,9 +1348,16 @@
           "date": "2025-06-16"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "NVIDIA Isaac developer page; no 2026 GR00T-Dreams update found",
+          "url": "https://developer.nvidia.com/isaac",
+          "publisher": "NVIDIA",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     }
   ]
 }

@@ -1,4 +1,16 @@
 {
+  "adyen-agentic": {
+    "page": "https://www.adyen.com",
+    "light": "https://www.adyen.com/icon.svg",
+    "file": "adyen-agentic.svg",
+    "fetched": "2026-11-06"
+  },
+  "alipay-ai-pay": {
+    "page": "https://is1-ssl.mzstatic.com",
+    "light": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/af/9f/48/af9f485f-b1bd-fbe3-b8d9-b565bf037838/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+    "file": "alipay-ai-pay.jpg",
+    "fetched": "2026-11-06"
+  },
   "catena-labs": {
     "page": "https://catena.com",
     "light": "https://catena.com/apple-touch-icon.png",
@@ -71,6 +83,12 @@
     "file": "nekuda.png",
     "fetched": "2026-11-05"
   },
+  "nevermined": {
+    "page": "https://nevermined.ai",
+    "light": "https://nevermined.ai/icon.png?a71dad74ef3f924e",
+    "file": "nevermined.png",
+    "fetched": "2026-11-06"
+  },
   "paypal": {
     "page": "https://www.paypal.com",
     "light": "https://www.paypalobjects.com/marketing/web/icons/monogram/pp258.png",
@@ -82,6 +100,14 @@
     "light": "https://framerusercontent.com/images/1Lgb16Xnv0za4crviPafzfQM.png",
     "file": "prava.png",
     "fetched": "2026-11-05"
+  },
+  "razorpay-agentic": {
+    "page": "https://razorpay.com",
+    "light": "https://razorpay.com/apple-touch-icon.png",
+    "file": "razorpay-agentic.png",
+    "fetched": "2026-11-06",
+    "dark": "https://framerusercontent.com/images/CU1m0xFonUl76ZeaW0IdkQ0M.png",
+    "darkFile": "razorpay-agentic-dark.png"
   },
   "rye": {
     "page": "https://rye.com",
@@ -107,6 +133,12 @@
     "file": "skyfire.svg",
     "fetched": "2026-11-05",
     "via": "Symbol from Skyfire's own header logo; the site blocks automated icon reads"
+  },
+  "solvapay": {
+    "page": "https://www.solvapay.com",
+    "light": "https://solvapay.com/favicon.svg",
+    "file": "solvapay.svg",
+    "fetched": "2026-11-06"
   },
   "stripe": {
     "page": "https://stripe.com",

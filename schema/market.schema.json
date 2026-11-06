@@ -41,6 +41,34 @@
             }
           }
         },
+        "scoreLog": {
+          "type": "array",
+          "description": "Every change to a published score, oldest first. The newest entry for a company and axis must match its current score.",
+          "items": {
+            "type": "object",
+            "required": ["date", "note", "changes"],
+            "additionalProperties": false,
+            "properties": {
+              "date": { "type": "string", "format": "date" },
+              "note": { "type": "string", "minLength": 1 },
+              "changes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "axis", "from", "to", "why"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": { "type": "string", "minLength": 1 },
+                    "axis": { "type": "string", "minLength": 1 },
+                    "from": { "type": "integer", "minimum": 0, "maximum": 100 },
+                    "to": { "type": "integer", "minimum": 0, "maximum": 100 },
+                    "why": { "type": "string", "minLength": 1 }
+                  }
+                }
+              }
+            }
+          }
+        },
         "judgedExcluded": {
           "type": "array",
           "description": "Candidates judged against the inclusion criteria and left off, with the criterion each one fails.",
@@ -155,7 +183,7 @@
       "type": "object",
       "required": ["score"],
       "properties": {
-        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100, "multipleOf": 5 },
         "rationale": { "type": "string" }
       }
     },
@@ -273,10 +301,10 @@
         "locked": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "Dot-paths the weekly agent must never overwrite, e.g. lastRound.postMoneyUsd"
+          "description": "Dot-paths a refresh must never overwrite without the editor's approval, e.g. lastRound.postMoneyUsd"
         },
 
-        "lastVerified": { "type": "string", "format": "date" }
+        "lastVerified": { "type": ["string", "null"], "format": "date", "description": "Date of the most recent entry in `checks`; null until something has been checked. Never set by hand to a date with no recorded check." }
       }
     }
   }

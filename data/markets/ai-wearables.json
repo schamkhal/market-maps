@@ -13,7 +13,7 @@
       "US",
       "China"
     ],
-    "scope": "Companies worldwide, judged on the same criteria; each profile gives the headquarters.",
+    "scope": "Companies worldwide, judged on the same criteria. Most qualifying companies are US-based; this edition also covers Even Realities, Rokid, Xiaomi and Alibaba (China). Each profile gives the headquarters.",
     "inclusion": [
       "Worn on the body: glasses, pendant, wristband, clip or ring",
       "The AI is the point: an assistant or memory, not a health tracker, display or camera with AI added",
@@ -113,7 +113,70 @@
       }
     ],
     "defaultSize": "raised",
-    "asOf": "2026-11-06"
+    "asOf": "2026-11-06",
+    "scoreLog": [
+      {
+        "date": "2026-11-06",
+        "note": "Moved every score to steps of 5. These scores only moved to the nearest 5.",
+        "changes": [
+          {
+            "id": "persona",
+            "axis": "agency",
+            "from": 78,
+            "to": 80,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "omi",
+            "axis": "availability",
+            "from": 62,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "friend",
+            "axis": "availability",
+            "from": 58,
+            "to": 60,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "rokid",
+            "axis": "capture",
+            "from": 32,
+            "to": 30,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "rokid",
+            "axis": "agency",
+            "from": 38,
+            "to": 40,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          },
+          {
+            "id": "bee",
+            "axis": "agency",
+            "from": 52,
+            "to": 50,
+            "why": "Rounded to the nearest 5; the evidence is unchanged."
+          }
+        ]
+      },
+      {
+        "date": "2026-11-06",
+        "note": "Recalibrated against the rubric anchors. Each of these moved because the evidence fits a different anchor, not to tidy the chart.",
+        "changes": [
+          {
+            "id": "nirva",
+            "axis": "capture",
+            "from": 82,
+            "to": 75,
+            "why": "Listening all day with filtering is the 75 anchor exactly; it has no camera (the 100 anchor)."
+          }
+        ]
+      }
+    ]
   },
   "companies": [
     {
@@ -143,7 +206,7 @@
           "rationale": "Activated by a button press or a flick of the wrist; it does not listen all the time."
         },
         "agency": {
-          "score": 78,
+          "score": 80,
           "rationale": "Runs errands such as flight bookings, scheduling and email, and makes purchases with approval."
         },
         "availability": {
@@ -197,12 +260,19 @@
           "date": "2026-09-15"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Persona site: band listens only when asked",
+          "url": "https://yourpersona.com",
+          "publisher": "Persona",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [
         "lastRound.amountUsd",
         "lastRound.postMoneyUsd"
       ],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "nirva",
@@ -237,7 +307,7 @@
       "traction": "Orders open in November 2026 at $249, with first shipments expected by year end; battery lasts up to three days.",
       "axes": {
         "capture": {
-          "score": 82,
+          "score": 75,
           "rationale": "Always on, listening to the wearer's own speech and filtering out other voices."
         },
         "agency": {
@@ -291,9 +361,16 @@
           "date": "2026-07-31"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Nirva site: AI jewelry, orders open",
+          "url": "https://www.nirva.life",
+          "publisher": "Nirva",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "plaud",
@@ -310,7 +387,13 @@
       "website": "https://www.plaud.ai",
       "description": "AI note-takers: the card-sized Plaud Note and the wearable NotePin record meetings, calls and conversations when switched on, then transcribe, summarize and pull out to-dos in its app, sold with transcription subscriptions.",
       "founded": null,
-      "founders": [],
+      "founders": [
+        {
+          "name": "Nathan Xu",
+          "role": "Co-founder & CEO",
+          "linkedin": null
+        }
+      ],
       "parent": null,
       "traction": "More than 3 million users (company); Bloomberg reported in June 2026 that it had passed $250M in annual recurring revenue and is targeting $500M in 2026 sales. Offices from San Francisco to Shenzhen and Tokyo.",
       "axes": {
@@ -356,10 +439,22 @@
           "url": "https://www.plaud.ai/pages/about-us",
           "publisher": "Plaud",
           "date": "2026-11-05"
+        },
+        {
+          "title": "Plaud site; no round or new figures since July 2026 found",
+          "url": "https://www.plaud.ai",
+          "publisher": "Plaud",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "Plaud news: NYSE spotlight with its co-founder and CEO",
+          "url": "https://www.plaud.ai/blogs/news/nyse-spotlight-plaud-s-wearable-ai-notetaker-with-founder-ceo-nathan-xu",
+          "publisher": "Plaud",
+          "date": "2026-11-06"
         }
       ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "sandbar",
@@ -439,9 +534,16 @@
           "date": "2026-03-10"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Sandbar site: Stream ring still on preorder",
+          "url": "https://www.sandbar.com",
+          "publisher": "Sandbar",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "taya",
@@ -569,7 +671,7 @@
           "rationale": "Summaries and memories plus third-party apps that send reminders or push to other tools."
         },
         "availability": {
-          "score": 62,
+          "score": 60,
           "rationale": "On sale online worldwide."
         }
       },
@@ -610,9 +712,16 @@
           "date": "2025-01-08"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Omi site: sold with a free plan; no round since January 2025 found",
+          "url": "https://www.omi.me",
+          "publisher": "Omi",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "friend",
@@ -624,7 +733,7 @@
       "region": "US",
       "hq": "San Francisco, CA",
       "website": "https://friend.com",
-      "description": "Always-listening AI companion pendant that hears your day and texts you its thoughts, built to keep you company rather than to take notes or do tasks.",
+      "description": "Always-listening AI companion worn as a pendant that hears your day and talks with you about it; the 2026 version ($249) speaks aloud, where the first texted its thoughts. It is built to keep you company rather than to take notes or do tasks.",
       "founded": null,
       "founders": [
         {
@@ -634,7 +743,7 @@
         }
       ],
       "parent": null,
-      "traction": "On sale in the US; the company paid $1.8M for the friend.com domain.",
+      "traction": "On sale in the US; the original $129 pendant was retired for the talking version in 2026. The company paid $1.8M for the friend.com domain.",
       "axes": {
         "capture": {
           "score": 75,
@@ -645,7 +754,7 @@
           "rationale": "Companion conversation by text; it does not organize information or take actions."
         },
         "availability": {
-          "score": 58,
+          "score": 60,
           "rationale": "On sale in the US."
         }
       },
@@ -679,15 +788,28 @@
       },
       "news": [
         {
+          "title": "Avi Schiffmann’s controversial AI Friend is back. And now it can talk",
+          "url": "https://sfstandard.com/2026/08/02/avi-schiffmann-new-ai-friend-can-talk/",
+          "publisher": "The San Francisco Standard",
+          "date": "2026-08-02"
+        },
+        {
           "title": "Friend is an AI companion backed by founders of Solana, Perplexity and Z Fellows",
           "url": "https://techcrunch.com/2024/07/30/friend-is-an-ai-companion-backed-by-founders-of-solana-perplexity-and-zfellows/",
           "publisher": "TechCrunch",
           "date": "2024-07-30"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "SF Standard: the talking $249 Friend (August 2026)",
+          "url": "https://sfstandard.com/2026/08/02/avi-schiffmann-new-ai-friend-can-talk/",
+          "publisher": "The San Francisco Standard",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "even-realities",
@@ -703,7 +825,13 @@
       "website": "https://www.evenrealities.com",
       "description": "Maker of the Even G2, camera-free smart glasses with a small display: an AI assistant answers questions, translates, prompts you during talks and shows navigation and notifications, controlled with a companion ring.",
       "founded": null,
-      "founders": [],
+      "founders": [
+        {
+          "name": "Will Wang",
+          "role": "Founder & CEO",
+          "linkedin": null
+        }
+      ],
       "parent": null,
       "traction": "G2 launched in November 2025 at $599 and is sold internationally.",
       "axes": {
@@ -758,9 +886,16 @@
           "date": "2026-07-06"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Even Realities site: G2 and R1 on sale",
+          "url": "https://www.evenrealities.com",
+          "publisher": "Even Realities",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "rokid",
@@ -776,16 +911,22 @@
       "website": "https://global.rokid.com",
       "description": "Hangzhou maker of Rokid Glasses, lightweight AI and AR glasses with a camera and display: an assistant answers what you see and hear, translates, records and prompts.",
       "founded": 2014,
-      "founders": [],
+      "founders": [
+        {
+          "name": "Misa Zhu",
+          "role": "Founder & CEO",
+          "linkedin": null
+        }
+      ],
       "parent": null,
       "traction": "Sold in China and internationally after a Kickstarter that raised more than $4M; partnered with optician chain Krys in France in June 2026. Reported to be preparing a Hong Kong listing.",
       "axes": {
         "capture": {
-          "score": 32,
+          "score": 30,
           "rationale": "Camera and microphones on demand, through voice or touch."
         },
         "agency": {
-          "score": 38,
+          "score": 40,
           "rationale": "Visual answers, translation, recording and teleprompting."
         },
         "availability": {
@@ -816,9 +957,16 @@
           "date": "2026-06-22"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Rokid store; Hong Kong listing reported in April 2026, no filing found",
+          "url": "https://technode.com/2026/04/08/rokid-reportedly-prepares-hong-kong-ipo/",
+          "publisher": "TechNode",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "bee",
@@ -832,7 +980,13 @@
       "website": "https://bee.computer",
       "description": "Always-listening wearable AI that turns your conversations into daily insights, reminders and to-dos; bought by Amazon, which launched the lighter, water-resistant Bee Frontier band-and-clip and the phone-mounted Bee Eclipse in October 2026.",
       "founded": null,
-      "founders": [],
+      "founders": [
+        {
+          "name": "Maria de Lourdes Zollo",
+          "role": "Co-founder & CEO",
+          "linkedin": null
+        }
+      ],
       "parent": null,
       "traction": "Bee Pro ($11.99 a month) connects it to Alexa+, Amazon shopping, Gmail, Google Calendar, Outlook and Apple Health, so Echo devices can answer questions about past conversations.",
       "axes": {
@@ -841,7 +995,7 @@
           "rationale": "Listens all day by default, with conversations processed into summaries."
         },
         "agency": {
-          "score": 52,
+          "score": 50,
           "rationale": "Proactive insights and to-dos, with connections to email, calendar and Alexa+ on the paid tier."
         },
         "availability": {
@@ -872,9 +1026,22 @@
           "date": "2026-10-15"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Bee site: Eclipse and Frontier under Amazon",
+          "url": "https://bee.computer",
+          "publisher": "Bee",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "Pulse 2.0: Amazon buys Bee, announced by its co-founder",
+          "url": "https://pulse2.com/amazon-buys-wearable-ai-technology-company-bee/",
+          "publisher": "Pulse 2.0",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "meta-ai-glasses",
@@ -938,9 +1105,191 @@
           "date": "2026-09-24"
         }
       ],
-      "checks": [],
+      "checks": [
+        {
+          "title": "Meta: Connect 2026 announcements",
+          "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+          "publisher": "Meta",
+          "date": "2026-11-06"
+        }
+      ],
       "locked": [],
-      "lastVerified": "2026-11-05"
+      "lastVerified": "2026-11-06"
+    },
+    {
+      "id": "xiaomi-ai-glasses",
+      "name": "Xiaomi AI Glasses",
+      "shortName": "AI Glasses",
+      "company": "Xiaomi",
+      "aliases": [
+        "小米AI眼镜",
+        "Xiaomi Glasses"
+      ],
+      "class": "platform",
+      "category": "glasses",
+      "brand": "Xiaomi",
+      "region": "China",
+      "hq": "Beijing, China",
+      "website": "https://www.mi.com/prod/xiaomi-ai-glasses",
+      "description": "Xiaomi’s camera glasses, sold in mainland China since June 2025. The Hyper XiaoAi assistant answers questions about what you see, translates speech and text, takes photos and video, and pays Alipay QR codes once you confirm the amount aloud.",
+      "founded": null,
+      "founders": [],
+      "parent": "Xiaomi Corporation — public (HKEX: 1810). The parent’s market capitalization is not a standalone product valuation.",
+      "traction": "Xiaomi says the glasses ranked third worldwide and first in mainland China by 2025 shipments, citing Omdia. Sold only in mainland China, from ¥1,999 at launch.",
+      "axes": {
+        "capture": {
+          "score": 25,
+          "rationale": "Wakes on “Xiao Ai” or a touch; the camera records on request."
+        },
+        "agency": {
+          "score": 55,
+          "rationale": "Answers about what you see, translates, and pays Alipay QR codes after a spoken confirmation; no wider actions in other apps."
+        },
+        "availability": {
+          "score": 75,
+          "rationale": "On sale broadly in mainland China, online and in Xiaomi stores; not sold elsewhere."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-04-28",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://ir.mi.com/system/files-encrypted/nasdaq_kms/assets/2026/04/28/5-29-08/Xiaomi%202025%20AR_EN.pdf",
+          "publisher": "Xiaomi",
+          "date": "2026-04-28"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Xiaomi AI Glasses Launch Alipay’s “Look and Pay” Feature",
+          "url": "https://www.itiger.com/news/1130941498",
+          "publisher": "Tiger Brokers",
+          "date": "2025-09-08"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Xiaomi AI Glasses product page",
+          "url": "https://www.mi.com/prod/xiaomi-ai-glasses",
+          "publisher": "Xiaomi",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "Xiaomi 2025 annual report: AI glasses shipment ranking",
+          "url": "https://ir.mi.com/system/files-encrypted/nasdaq_kms/assets/2026/04/28/5-29-08/Xiaomi%202025%20AR_EN.pdf",
+          "publisher": "Xiaomi",
+          "date": "2026-11-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-11-06"
+    },
+    {
+      "id": "qwen-glasses",
+      "name": "Alibaba Qwen Glasses",
+      "shortName": "Qwen Glasses",
+      "company": "Alibaba Group",
+      "aliases": [
+        "Quark AI Glasses",
+        "Qwen AI Glasses",
+        "Qwen Glasses N1"
+      ],
+      "class": "platform",
+      "category": "glasses",
+      "brand": "Alibaba",
+      "region": "China",
+      "hq": "Hangzhou, China",
+      "website": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen-glasses-at-mwc-barcelona-accelerating-ai-hardware-ambitions_602920",
+      "description": "Alibaba’s camera glasses, some with in-lens displays. They launched as Quark AI Glasses in November 2025 and were renamed Qwen Glasses in March 2026. The Qwen assistant answers about what you see, translates, takes meeting notes, gives proactive reminders, and is gaining voice-ordered food delivery, rides and hotel booking through Alibaba’s apps.",
+      "founded": null,
+      "founders": [],
+      "parent": "Alibaba Group — public (NYSE: BABA; HKEX: 9988). The parent’s market capitalization is not a standalone product valuation.",
+      "traction": "Sold in mainland China on Tmall, JD.com and Douyin and through more than 600 optical stores. The N1 and N1 Pro went on sale October 13, 2026 from RMB 2,899; Alibaba plans an international version within 2026.",
+      "axes": {
+        "capture": {
+          "score": 25,
+          "rationale": "Wakes on “Hello Qwen” or a touch; the camera records on request. Proactive reminders draw on location, weather and calendar, not continuous capture."
+        },
+        "agency": {
+          "score": 75,
+          "rationale": "Voice-ordered food delivery, rides and hotel booking through Alibaba’s apps, rolled out in phases from late March 2026, and iris-verified payment on the N1 Pro; not yet independently tested."
+        },
+        "availability": {
+          "score": 75,
+          "rationale": "On sale broadly in mainland China, online and in optical stores; the international version is not yet on sale."
+        }
+      },
+      "lastRound": {
+        "series": "Public company",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": "2026-09-25",
+        "leads": [],
+        "otherInvestors": [],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": null,
+        "source": {
+          "url": "https://www.alibabacloud.com/blog/alibaba-unveils-agentic-computer-ai-wearables-and-more-at-2026-apsara-conference_603599",
+          "publisher": "Alibaba",
+          "date": "2026-09-25"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Alibaba launches Qwen N1 AI glasses with swappable batteries, starting at RMB 2,899",
+          "url": "https://technode.com/2026/10/14/alibaba-launches-qwen-n1-ai-glasses-with-swappable-batteries-starting-at-rmb-2899/",
+          "publisher": "TechNode",
+          "date": "2026-10-14"
+        },
+        {
+          "title": "Alibaba Unveils Agentic Computer, AI Wearables and More at 2026 Apsara Conference",
+          "url": "https://www.alibabacloud.com/blog/alibaba-unveils-agentic-computer-ai-wearables-and-more-at-2026-apsara-conference_603599",
+          "publisher": "Alibaba",
+          "date": "2026-09-25"
+        },
+        {
+          "title": "China’s Smart Glasses Are Already Leaving Ray-Bans in the Dust",
+          "url": "https://gizmodo.com/chinas-smart-glasses-are-already-leaving-ray-bans-in-the-dust-2000757009",
+          "publisher": "Gizmodo",
+          "date": "2026-05-11"
+        },
+        {
+          "title": "Alibaba Unveils Qwen Glasses at MWC Barcelona, Accelerating AI Hardware Ambitions",
+          "url": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen-glasses-at-mwc-barcelona-accelerating-ai-hardware-ambitions_602920",
+          "publisher": "Alibaba",
+          "date": "2026-03-04"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Alibaba: Qwen Glasses at MWC Barcelona",
+          "url": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen-glasses-at-mwc-barcelona-accelerating-ai-hardware-ambitions_602920",
+          "publisher": "Alibaba",
+          "date": "2026-11-06"
+        },
+        {
+          "title": "Alibaba: 2026 Apsara Conference wearables",
+          "url": "https://www.alibabacloud.com/blog/alibaba-unveils-agentic-computer-ai-wearables-and-more-at-2026-apsara-conference_603599",
+          "publisher": "Alibaba",
+          "date": "2026-11-06"
+        }
+      ],
+      "locked": [],
+      "lastVerified": "2026-11-06"
     }
   ]
 }

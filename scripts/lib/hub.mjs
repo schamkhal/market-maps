@@ -33,7 +33,6 @@ export function mapPreview({ market, companies }, { width = 360, height = 210 } 
       + (c.class === 'acquired' ? `<circle class="preview-ring" cx="${cx}" cy="${cy}" r="${n(r + 2)}" ${hue}/>` : '');
   }).join('');
   return `<svg viewBox="0 0 ${width} ${height}" aria-hidden="true" focusable="false">`
-    + `<rect class="preview-region" x="${n(x(50))}" y="${m.t}" width="${n(x(100) - x(50))}" height="${n(y(50) - m.t)}"/>`
     + `<rect class="preview-frame" x="${m.l}" y="${m.t}" width="${width - m.l - m.r}" height="${height - m.t - m.b}"/>`
     + `<line class="preview-mid" x1="${n(x(50))}" y1="${m.t}" x2="${n(x(50))}" y2="${height - m.b}"/>`
     + `<line class="preview-mid" x1="${m.l}" y1="${n(y(50))}" x2="${width - m.r}" y2="${n(y(50))}"/>`
@@ -88,6 +87,6 @@ export function renderHub(docs, { link }) {
   <section class="hub-method" aria-label="How the maps are made">
     <div><h3>Sourced</h3><p>Every valuation and funding total cites the page it came from, or is labeled as having no public source.</p></div>
     <div><h3>Scored</h3><p>Positions are editorial judgments against rubrics published on each map, and every company profile explains its scores.</p></div>
-    <div><h3>Kept current</h3><p>Each map is re-checked against new reporting, and figures and scores change when the evidence does.</p></div>
+    <div><h3>Kept current</h3><p>Each map is re-checked by hand against new reporting. Figures and scores change when the evidence does, and every score change is logged with its reason.</p></div>
   </section>`;
 }
