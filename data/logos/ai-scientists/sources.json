@@ -1,4 +1,10 @@
 {
+  "autolab": {
+    "page": "https://www.autolab.ai",
+    "light": "https://www.autolab.ai/apple-touch-icon.png",
+    "file": "autolab.png",
+    "fetched": "2026-11-06"
+  },
   "autoscience": {
     "page": "https://www.autoscience.ai",
     "light": "https://www.autoscience.ai/assets/apple-touch-icon.png",
@@ -29,6 +35,12 @@
     "file": "google-co-scientist.png",
     "fetched": "2026-11-05"
   },
+  "intology": {
+    "page": "https://intology.ai",
+    "light": "https://intology.ai/apple-touch-icon.png",
+    "file": "intology.png",
+    "fetched": "2026-11-06"
+  },
   "lila-sciences": {
     "page": "https://www.lila.ai",
     "light": "https://cdn.prod.website-files.com/691b0352c971a4b94f493c44/693bfab338ddb8637840c152_Lila%20Webclip.png",
@@ -48,6 +60,20 @@
     "dark": "https://framerusercontent.com/images/cOeuHXRZxDwOwINvkbtErxkr4.png",
     "darkFile": "periodic-labs-dark.png",
     "fetched": "2026-11-05"
+  },
+  "phylo": {
+    "page": "https://phylo.bio",
+    "light": "https://phylo.bio/svg/dark.svg",
+    "file": "phylo.svg",
+    "fetched": "2026-11-06",
+    "dark": "https://phylo.bio/svg/light.svg",
+    "darkFile": "phylo-dark.svg"
+  },
+  "potato": {
+    "page": "https://www.potato.ai",
+    "light": "https://www.potato.ai/assets/favicon-BWGDVeI8.png?w=32&format=png",
+    "file": "potato.png",
+    "fetched": "2026-11-06"
   },
   "radical-ai": {
     "page": "https://www.radical-ai.com",

@@ -100,7 +100,7 @@
       }
     ],
     "defaultSize": "raised",
-    "asOf": "2026-11-05"
+    "asOf": "2026-11-06"
   },
   "companies": [
     {
@@ -498,6 +498,120 @@
       "lastVerified": "2026-11-05"
     },
     {
+      "id": "potato",
+      "name": "Potato",
+      "company": "Happy Potato, Inc.",
+      "aliases": [
+        "Tater",
+        "The Optimizer"
+      ],
+      "class": "independent",
+      "category": "lab",
+      "region": "US",
+      "hq": "Seattle, United States",
+      "website": "https://www.potato.ai",
+      "description": "Builds AI software that turns a scientist’s goal into lab-ready work: it researches methods, writes protocols, designs plate-based experiments, outputs robot worklists and, in closed-loop mode, recommends each next round from the results.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Nick Edwards, PhD",
+          "role": "Founder & CEO"
+        },
+        {
+          "linkedin": null,
+          "name": "Ryan Kosai",
+          "role": "Founder & CTO"
+        }
+      ],
+      "parent": null,
+      "traction": "Free Open Access tier; Potato+ ($1,500 a month) and PotatoPro ($10,000 a month, closed-loop optimization with automation) are offered through early access, with enterprise robot and instrument integrations.",
+      "axes": {
+        "autonomy": {
+          "score": 45,
+          "rationale": "Designs experiments, prepares robot-ready runs and picks the next round by Bayesian optimization, but scientists approve each step and the experiments run on the customer’s own equipment."
+        },
+        "range": {
+          "score": 25,
+          "rationale": "Focused on protocols and plate-based assay optimization in biology labs."
+        },
+        "access": {
+          "score": 55,
+          "rationale": "A free tier is open to anyone; the optimization products are paid plans offered through early access."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 5000000,
+        "postMoneyUsd": 17000000,
+        "date": "2025-04-15",
+        "leads": [
+          "Draper Associates"
+        ],
+        "otherInvestors": [
+          "Ensemble VC",
+          "Defined Capital",
+          "Alumni Ventures",
+          "Boost VC",
+          "Dolby Family Ventures",
+          "Thefounder.vc",
+          "Gaingels",
+          "Silicon Badia",
+          "Geoff Entress",
+          "Actions Capital",
+          "Michael Liou"
+        ],
+        "confidence": "manual",
+        "postMoneyConfidence": "manual",
+        "note": "Entered manually from a source that is not public: the $5M seed on April 15, 2025, its $12M pre-money valuation ($17M post-money), the investor list and the $6M total funding. Draper Associates announced on April 10, 2025 that it led a $4.5M seed with Dolby Family Ventures, Boost VC and Ensemble VC.",
+        "source": {
+          "url": "https://www.draper.vc/newsroom/draper-associates-leads-potato-seed",
+          "publisher": "Draper Associates",
+          "date": "2025-04-10"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 6000000,
+        "totalRaisedConfidence": "manual"
+      },
+      "news": [
+        {
+          "title": "AI co-scientist startup CTO on ‘hypothesis slop,’ deterministic code and the goal of compressing a century of science into a decade",
+          "url": "https://www.rdworldonline.com/ai-co-scientist-startup-cto-on-hypothesis-slop-deterministic-code-and-the-goal-of-compressing-a-century-of-science-into-a-decade/",
+          "publisher": "R&D World",
+          "date": "2026-05-21"
+        },
+        {
+          "title": "Researchers become scientific tastemakers by handing more R&D to autonomous labs",
+          "url": "https://www.pharmaceutical-technology.com/features/researchers-become-scientific-tastemakers-by-handing-more-rnd-to-autonomous-labs/",
+          "publisher": "Pharmaceutical Technology",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "Draper Associates leads Potato’s $4.5M seed to build autonomous AI scientists",
+          "url": "https://www.draper.vc/newsroom/draper-associates-leads-potato-seed",
+          "publisher": "Draper Associates",
+          "date": "2025-04-10"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Potato pricing: free tier, early-access optimization plans — checked November 6, 2026",
+          "url": "https://www.potato.ai/pricing",
+          "publisher": "Potato",
+          "date": "2026-11-06"
+        }
+      ],
+      "locked": [
+        "lastRound.amountUsd",
+        "lastRound.postMoneyUsd",
+        "lastRound.date",
+        "lastRound.otherInvestors",
+        "metrics.totalRaisedUsd"
+      ],
+      "lastVerified": "2026-11-06"
+    },
+    {
       "id": "edison-scientific",
       "name": "Edison Scientific",
       "company": "Edison Scientific",
@@ -729,6 +843,269 @@
       "checks": [],
       "locked": [],
       "lastVerified": "2026-11-05"
+    },
+    {
+      "id": "phylo",
+      "name": "Phylo",
+      "company": "Phylo, Inc.",
+      "aliases": [
+        "Biomni",
+        "Biomni Lab"
+      ],
+      "class": "independent",
+      "category": "computational",
+      "region": "US",
+      "hq": "South San Francisco, United States",
+      "website": "https://phylo.bio",
+      "description": "Stanford AI Lab spinout behind Biomni Lab, a workspace where biologists hand research tasks to AI agents that plan and run analyses across hundreds of biology tools, check their work against a knowledge graph and report back with references.",
+      "founded": null,
+      "founders": [
+        {
+          "linkedin": null,
+          "name": "Kexin Huang",
+          "role": "Co-founder & CEO; first author of the original Biomni paper"
+        },
+        {
+          "linkedin": null,
+          "name": "Yuanhao (Jerry) Qu",
+          "role": "Co-founder & President"
+        }
+      ],
+      "parent": null,
+      "traction": "The open-source Biomni agent appeared in June 2025; Biomni Lab launched in research preview in February 2026 and now has free, Pro ($100 a month), Team and Enterprise plans. The company cites a Ginkgo Bioworks case study.",
+      "axes": {
+        "autonomy": {
+          "score": 40,
+          "rationale": "Plans and runs multi-step analyses, from data to written results, but as a collaborator that a biologist directs rather than a system that runs research cycles on its own."
+        },
+        "range": {
+          "score": 50,
+          "rationale": "Built for biomedicine across the biopharma value chain, with 100+ prebuilt workflows; one science."
+        },
+        "access": {
+          "score": 80,
+          "rationale": "Generally available with a free plan and paid tiers, and the original Biomni agent is open source."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 13500000,
+        "postMoneyUsd": 61500000,
+        "date": "2026-02-03",
+        "leads": [
+          "Andreessen Horowitz",
+          "Menlo Ventures (Anthology Fund)"
+        ],
+        "otherInvestors": [
+          "Anthropic",
+          "Valkyrie Sciences",
+          "Etna Labs",
+          "MoE Capital",
+          "Ensemble Labs",
+          "Hawktail",
+          "Silicon Gardens",
+          "Zetta Venture Partners",
+          "Conviction Partners",
+          "SV Angel"
+        ],
+        "confidence": "reported",
+        "postMoneyConfidence": "manual",
+        "note": "The $61.5M post-money valuation ($13.49M at $48.01M pre-money) and the full investor list were entered manually from a source that is not public. The $13.5M seed co-led by Andreessen Horowitz and Menlo Ventures’ Anthology Fund was announced on February 3, 2026.",
+        "source": {
+          "url": "https://www.vcaonline.com/news/2026020320/phylo-introduces-biomni-lab-an-integrated-environment-for-ai-native-biology/",
+          "publisher": "Venture Capital Access Online (press release)",
+          "date": "2026-02-03"
+        }
+      },
+      "metrics": {
+        "totalRaisedUsd": 13500000,
+        "totalRaisedConfidence": "reported",
+        "totalRaisedSource": {
+          "url": "https://www.vcaonline.com/news/2026020320/phylo-introduces-biomni-lab-an-integrated-environment-for-ai-native-biology/",
+          "publisher": "Venture Capital Access Online (press release)",
+          "date": "2026-02-03"
+        }
+      },
+      "news": [
+        {
+          "title": "Phylo introduces Biomni Lab, an integrated environment for AI-native biology",
+          "url": "https://www.vcaonline.com/news/2026020320/phylo-introduces-biomni-lab-an-integrated-environment-for-ai-native-biology/",
+          "publisher": "Venture Capital Access Online (press release)",
+          "date": "2026-02-03"
+        },
+        {
+          "title": "Phylo raises $13.5M in seed funding to launch AI-enabled biomedical lab environment",
+          "url": "https://genomeweb.com/business-news/phylo-raises-135m-seed-funding-launch-ai-enabled-biomedical-lab-environment",
+          "publisher": "GenomeWeb",
+          "date": "2026-02-04"
+        }
+      ],
+      "checks": [
+        {
+          "title": "Phylo pricing: free, Pro, Team and Enterprise plans — checked November 6, 2026",
+          "url": "https://phylo.bio/pricing",
+          "publisher": "Phylo",
+          "date": "2026-11-06"
+        }
+      ],
+      "locked": [
+        "lastRound.postMoneyUsd",
+        "lastRound.otherInvestors"
+      ],
+      "lastVerified": "2026-11-06"
+    },
+    {
+      "id": "intology",
+      "name": "Intology",
+      "company": "Intology",
+      "aliases": [
+        "Zochi",
+        "Locus"
+      ],
+      "class": "independent",
+      "category": "computational",
+      "region": "US",
+      "hq": "San Francisco Bay Area, United States",
+      "website": "https://intology.ai",
+      "description": "Research lab building “artificial scientists” for AI research: Zochi wrote a paper accepted to the ACL 2025 main track, and Locus runs thousands of experiments in parallel over days to improve models, now including molecular-design models.",
+      "founded": null,
+      "founders": [],
+      "parent": null,
+      "traction": "Locus beat human experts on METR’s RE-Bench in November 2025, set a NanoGPT speedrun record in January 2026, reported state-of-the-art automated post-training in August 2026 and molecular-discovery results in November 2026, including a proprietary commercial task.",
+      "axes": {
+        "autonomy": {
+          "score": 60,
+          "rationale": "Runs research end to end in code: Locus forms hypotheses, runs and stops experiments and builds on results for days, and Zochi took a paper through peer review. It does not run physical experiments."
+        },
+        "range": {
+          "score": 35,
+          "rationale": "AI research and model building, now applied to molecular property prediction and antibody design as well."
+        },
+        "access": {
+          "score": 20,
+          "rationale": "No public product; results come from its own runs and an unnamed commercial task, which suggests work with partners by arrangement."
+        }
+      },
+      "lastRound": {
+        "series": "Seed",
+        "amountUsd": 8000000,
+        "postMoneyUsd": null,
+        "date": "2025-01-08",
+        "leads": [],
+        "otherInvestors": [
+          "Carya Venture Partners",
+          "HOF Capital",
+          "Samsung NEXT Ventures",
+          "Wing Venture Capital"
+        ],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Entered manually from a source that is not public: an $8M seed on January 8, 2025 from Carya Venture Partners, HOF Capital, Samsung NEXT Ventures and Wing Venture Capital. No round has been announced publicly; total funding is taken as this round. Valuation not disclosed.",
+        "source": null
+      },
+      "metrics": {
+        "totalRaisedUsd": 8000000,
+        "totalRaisedConfidence": "manual"
+      },
+      "news": [
+        {
+          "title": "Automating AI R&D for molecular discovery",
+          "url": "https://intology.ai/blog/automating-ai-rd-for-molecular-discovery",
+          "publisher": "Intology",
+          "date": "2026-11-03"
+        },
+        {
+          "title": "Scaling automated post-training",
+          "url": "https://intology.ai/blog/scaling-automated-post-training",
+          "publisher": "Intology",
+          "date": "2026-08-03"
+        },
+        {
+          "title": "Previewing Locus: outperforming human experts at AI R&D",
+          "url": "https://intology.ai/blog/previewing-locus",
+          "publisher": "Intology",
+          "date": "2025-11-19"
+        }
+      ],
+      "checks": [],
+      "locked": [
+        "lastRound.amountUsd",
+        "lastRound.date",
+        "lastRound.otherInvestors",
+        "metrics.totalRaisedUsd"
+      ],
+      "lastVerified": "2026-11-06"
+    },
+    {
+      "id": "autolab",
+      "name": "Autolab",
+      "company": "Autolab",
+      "aliases": [
+        "autolab.ai"
+      ],
+      "class": "independent",
+      "category": "computational",
+      "region": "US",
+      "hq": "San Francisco, United States",
+      "website": "https://www.autolab.ai",
+      "description": "Agents that improve a customer’s own AI models: given a target metric, they read the code, propose changes, run each as an experiment across the customer’s GPUs, stop weak runs early and return the winning change for human review.",
+      "founded": null,
+      "founders": [],
+      "parent": null,
+      "traction": "Early access with a command-line installer and demos; publishes running benchmarks of frontier models on research tasks. Hiring its first engineers in San Francisco.",
+      "axes": {
+        "autonomy": {
+          "score": 55,
+          "rationale": "Runs the full experimental loop in code, from proposed change through training runs to a chosen winner, with people setting the goal and approving the result."
+        },
+        "range": {
+          "score": 15,
+          "rationale": "Optimizes machine-learning models against a chosen metric: one problem type within AI research."
+        },
+        "access": {
+          "score": 45,
+          "rationale": "Available through early access and demos rather than general release."
+        }
+      },
+      "lastRound": {
+        "series": "Undisclosed",
+        "amountUsd": null,
+        "postMoneyUsd": null,
+        "date": null,
+        "leads": [
+          "Tectonic Ventures"
+        ],
+        "otherInvestors": [
+          "Link Ventures"
+        ],
+        "confidence": "undisclosed",
+        "postMoneyConfidence": "undisclosed",
+        "note": "Round size, stage and date are not public. The investors were entered manually from a source that is not public: Tectonic Ventures led, with Link Ventures participating.",
+        "source": null
+      },
+      "metrics": {
+        "totalRaisedUsd": null
+      },
+      "news": [
+        {
+          "title": "Running model comparison: frontier models on fixed research tasks",
+          "url": "https://www.autolab.ai/research/best-model/",
+          "publisher": "Autolab",
+          "date": "2026-09-02"
+        },
+        {
+          "title": "How to pick the best model for autoresearch",
+          "url": "https://www.autolab.ai/research/blog-1-how-to-pick-the-best-model/",
+          "publisher": "Autolab",
+          "date": "2026-07-22"
+        }
+      ],
+      "checks": [],
+      "locked": [
+        "lastRound.leads",
+        "lastRound.otherInvestors"
+      ],
+      "lastVerified": "2026-11-06"
     },
     {
       "id": "google-co-scientist",
